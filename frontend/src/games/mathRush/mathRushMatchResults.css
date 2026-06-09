@@ -1,0 +1,806 @@
+/* Math Rush match results — dark arena theme (scoped .mrr-*) */
+
+/* Full viewport when results are shown (default .game-root is 92vh — leaves a gap + double-scroll feel) */
+.game-root:has(> .mrr-root) {
+  height: 100vh;
+  height: 100dvh;
+  max-height: 100vh;
+  max-height: 100dvh;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.game-root:has(> .mrr-root) > .Math-Rush-header {
+  flex-shrink: 0;
+}
+
+.mrr-root {
+  --mrr-night: #06040f;
+  --mrr-panel: rgba(18, 14, 36, 0.92);
+  --mrr-violet: #7c4dff;
+  --mrr-gold: #e8c547;
+  --mrr-gold-dark: #8b6914;
+  --mrr-danger: #e53935;
+  --mrr-blue: #5c6bc0;
+  --mrr-text: rgba(255, 255, 255, 0.92);
+  --mrr-muted: rgba(255, 255, 255, 0.45);
+  --mrr-orange: #ff9800;
+
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 16px 14px 24px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  color: var(--mrr-text);
+  /* Base tint; art + gradients live in .mrr-atmosphere */
+  background: var(--mrr-night);
+}
+
+@media (min-width: 768px) {
+  .mrr-root {
+    padding: 18px 24px 20px;
+    justify-content: flex-start;
+  }
+}
+
+/* --- Atmosphere (castle silhouettes + embers) --- */
+.mrr-atmosphere {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Arena art: place file at frontend/public/mathRush/match-results-arena-bg.png */
+.mrr-atmosphere-photo {
+  position: absolute;
+  inset: 0;
+  background-color: #06040f;
+  background-image:
+    linear-gradient(180deg, rgba(6, 4, 15, 0.55) 0%, rgba(6, 4, 15, 0.25) 40%, rgba(6, 4, 15, 0.78) 100%),
+    url('/mathRush/match-results-arena-bg.png');
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+}
+
+.mrr-atmosphere-sky {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 100% 55% at 50% -5%, rgba(112, 0, 255, 0.18), transparent 58%),
+    radial-gradient(ellipse 80% 40% at 80% 20%, rgba(66, 133, 244, 0.06), transparent 50%),
+    linear-gradient(180deg, rgba(15, 10, 26, 0.5) 0%, transparent 38%, rgba(10, 6, 24, 0.35) 100%);
+}
+
+.mrr-atmosphere-castle {
+  position: absolute;
+  bottom: 0;
+  width: 42%;
+  height: 38%;
+  background: #020308;
+  opacity: 0.28;
+  filter: blur(0.3px);
+}
+
+.mrr-atmosphere-castle--l {
+  left: -5%;
+  clip-path: polygon(
+    0% 100%,
+    0% 55%,
+    8% 55%,
+    8% 40%,
+    14% 40%,
+    14% 52%,
+    22% 52%,
+    22% 35%,
+    28% 28%,
+    28% 48%,
+    36% 48%,
+    36% 38%,
+    44% 30%,
+    44% 100%
+  );
+}
+
+.mrr-atmosphere-castle--r {
+  right: -5%;
+  clip-path: polygon(
+    100% 100%,
+    100% 50%,
+    92% 50%,
+    92% 38%,
+    86% 38%,
+    86% 48%,
+    78% 48%,
+    78% 32%,
+    70% 26%,
+    70% 45%,
+    62% 45%,
+    62% 36%,
+    54% 28%,
+    54% 100%
+  );
+}
+
+.mrr-atmosphere-embers {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 32%;
+  max-height: 42vh;
+  background: radial-gradient(ellipse 50% 45% at 50% 100%, rgba(255, 87, 34, 0.35), transparent 70%),
+    radial-gradient(ellipse 35% 30% at 30% 95%, rgba(255, 152, 0, 0.2), transparent 55%),
+    radial-gradient(ellipse 35% 30% at 70% 95%, rgba(255, 193, 7, 0.15), transparent 55%);
+  opacity: 0.9;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .mrr-atmosphere-embers {
+    animation: mrr-ember-pulse 4s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes mrr-ember-pulse {
+  0% {
+    opacity: 0.75;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.02);
+  }
+}
+
+.mrr-inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/* --- Hero --- */
+.mrr-hero {
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+.mrr-kicker {
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: var(--mrr-muted);
+  margin: 0 0 14px;
+}
+
+.mrr-hero-ring {
+  width: 76px;
+  height: 76px;
+  margin: 0 auto 14px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3px;
+}
+
+.mrr-hero-ring-inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at 35% 30%, rgba(255, 255, 255, 0.12), transparent 55%), #120e22;
+}
+
+.mrr-hero-ring--lose {
+  background: linear-gradient(145deg, rgba(229, 57, 53, 0.95), rgba(120, 20, 20, 0.9));
+  box-shadow: 0 0 28px rgba(229, 57, 53, 0.55), inset 0 0 20px rgba(255, 255, 255, 0.08);
+}
+
+.mrr-hero-ring--lose .mrr-hero-ring-inner {
+  color: #fff;
+}
+
+.mrr-hero-ring--win {
+  background: linear-gradient(145deg, rgba(232, 197, 71, 0.95), rgba(139, 105, 20, 0.95));
+  box-shadow: 0 0 28px rgba(232, 197, 71, 0.4), inset 0 0 16px rgba(255, 255, 255, 0.15);
+}
+
+.mrr-hero-ring--win .mrr-hero-ring-inner {
+  color: #1a1206;
+}
+
+.mrr-hero-ring--draw {
+  background: linear-gradient(145deg, rgba(120, 120, 140, 0.8), rgba(40, 40, 55, 0.95));
+  box-shadow: 0 0 20px rgba(180, 180, 200, 0.25);
+}
+
+.mrr-hero-ring--draw .mrr-hero-ring-inner {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.mrr-hero-svg {
+  width: 34px;
+  height: 34px;
+}
+
+.mrr-headline {
+  font-size: clamp(2rem, 7vw, 3.25rem);
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  line-height: 1.05;
+  margin: 0 0 10px;
+  text-transform: uppercase;
+}
+
+.mrr-headline--win,
+.mrr-headline--lose,
+.mrr-headline--draw {
+  background: linear-gradient(92deg, #64b5f6 0%, #b39ddb 35%, #e040fb 70%, #7c4dff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 2px 24px rgba(124, 77, 255, 0.35));
+}
+
+.mrr-subline {
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+  margin: 0;
+}
+
+/* --- Meta row --- */
+.mrr-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px 14px;
+  margin: 0 0 20px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.mrr-meta-strong {
+  color: var(--mrr-orange);
+  font-weight: 900;
+}
+
+.mrr-meta-sep {
+  color: rgba(255, 255, 255, 0.2);
+  font-weight: 400;
+}
+
+/* --- Player cards --- */
+.mrr-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+@media (min-width: 768px) {
+  .mrr-cards {
+    grid-template-columns: 1fr auto 1fr;
+    align-items: stretch;
+    gap: 18px;
+  }
+}
+
+.mrr-card {
+  position: relative;
+  border-radius: 14px;
+  padding: 18px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  overflow: hidden;
+  background: linear-gradient(165deg, rgba(35, 28, 58, 0.98) 0%, rgba(14, 10, 28, 0.99) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.mrr-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 40%);
+  pointer-events: none;
+}
+
+.mrr-card--winner {
+  border-color: rgba(229, 57, 53, 0.55);
+  box-shadow: 0 0 0 1px rgba(229, 57, 53, 0.2), 0 12px 40px rgba(229, 57, 53, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.mrr-card--loser {
+  border-color: rgba(92, 107, 192, 0.55);
+  box-shadow: 0 0 0 1px rgba(92, 107, 192, 0.2), 0 12px 40px rgba(92, 107, 192, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.mrr-card--draw {
+  border-color: rgba(179, 157, 219, 0.45);
+  box-shadow: 0 0 24px rgba(124, 77, 255, 0.12);
+}
+
+.mrr-badge {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 8px 12px 8px 10px;
+  border-radius: 10px;
+}
+
+.mrr-badge-icon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.mrr-badge--winner {
+  background: linear-gradient(135deg, #a67c1f, #f4e4a6 45%, #c9a227 100%);
+  color: #1a0f02;
+  box-shadow: 0 4px 16px rgba(232, 197, 71, 0.35);
+}
+
+.mrr-badge--runner {
+  background: linear-gradient(135deg, rgba(57, 73, 171, 0.95), rgba(92, 107, 192, 0.85));
+  color: #e8eaf6;
+  box-shadow: 0 4px 14px rgba(57, 73, 171, 0.35);
+}
+
+.mrr-badge--draw {
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.mrr-card-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+  z-index: 1;
+  padding-right: 100px;
+}
+
+.mrr-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  object-fit: cover;
+  border: 2px solid rgba(255, 255, 255, 0.12);
+  flex-shrink: 0;
+}
+
+.mrr-avatar--placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(145deg, #2a2540, #1a1528);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.mrr-avatar-svg {
+  width: 26px;
+  height: 26px;
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.mrr-card--winner .mrr-avatar {
+  border-color: rgba(229, 57, 53, 0.45);
+}
+
+.mrr-card--loser .mrr-avatar {
+  border-color: rgba(92, 107, 192, 0.45);
+}
+
+.mrr-name-block {
+  min-width: 0;
+  flex: 1;
+}
+
+.mrr-name {
+  font-size: 1.125rem;
+  font-weight: 800;
+  color: #fff;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mrr-bot-pill {
+  display: block;
+  margin-top: 4px;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--mrr-muted);
+}
+
+.mrr-score-big {
+  position: relative;
+  z-index: 1;
+  font-size: 2.5rem;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  color: #fff;
+  line-height: 1;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.45);
+}
+
+.mrr-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  position: relative;
+  z-index: 1;
+}
+
+.mrr-stat {
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 10px;
+  padding: 10px 6px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.35);
+}
+
+.mrr-stat-label {
+  display: block;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.38);
+  margin-bottom: 6px;
+}
+
+.mrr-stat-value {
+  font-size: 1.125rem;
+  font-weight: 800;
+  color: #fff;
+}
+
+.mrr-stat-value--ok {
+  color: #69f0ae;
+}
+
+.mrr-stat-value--bad {
+  color: #ff8a80;
+}
+
+.mrr-stat-value--acc {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.mrr-vs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 0;
+}
+
+@media (min-width: 768px) {
+  .mrr-vs {
+    padding: 0 6px;
+    align-self: center;
+  }
+}
+
+.mrr-vs-inner {
+  font-size: 15px;
+  font-weight: 900;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--mrr-violet);
+  text-shadow: 0 0 20px rgba(124, 77, 255, 0.55);
+}
+
+.mrr-bot-footnote {
+  text-align: center;
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.42);
+  margin: 0 0 16px;
+  letter-spacing: 0.04em;
+}
+
+/* --- Rewards + alert --- */
+.mrr-rewards-wrap {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.mrr-alert {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  margin-bottom: 14px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #ff8a80;
+  background: rgba(20, 8, 12, 0.85);
+  border: 1px solid rgba(229, 57, 53, 0.45);
+  box-shadow: inset 0 0 20px rgba(229, 57, 53, 0.08);
+}
+
+.mrr-alert-icon {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  color: #e53935;
+}
+
+.mrr-rewards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+@media (min-width: 520px) {
+  .mrr-rewards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.mrr-reward-card {
+  border-radius: 14px;
+  padding: 1px;
+  overflow: hidden;
+}
+
+.mrr-reward-card--xp {
+  background: linear-gradient(145deg, rgba(100, 181, 246, 0.35), rgba(40, 20, 70, 0.9));
+  box-shadow: 0 8px 28px rgba(66, 133, 244, 0.15);
+}
+
+.mrr-reward-card--coins {
+  background: linear-gradient(145deg, rgba(255, 152, 0, 0.35), rgba(60, 30, 12, 0.92));
+  box-shadow: 0 8px 28px rgba(255, 152, 0, 0.12);
+}
+
+.mrr-reward-card-inner {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  min-height: 112px;
+  padding: 16px 14px;
+  border-radius: 13px;
+  background: linear-gradient(165deg, rgba(22, 16, 40, 0.97), rgba(8, 5, 18, 0.98));
+}
+
+.mrr-reward-deco {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  width: 22px;
+  height: 22px;
+  color: rgba(187, 134, 252, 0.65);
+}
+
+.mrr-reward-card--coins .mrr-reward-deco {
+  color: rgba(255, 193, 7, 0.7);
+}
+
+.mrr-reward-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 36px 0 8px;
+}
+
+.mrr-reward-label {
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+  margin-bottom: 8px;
+}
+
+.mrr-reward-value {
+  font-size: 2rem;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: -0.02em;
+}
+
+.mrr-reward-value--coins {
+  color: #ffd54f;
+  text-shadow: 0 0 20px rgba(255, 193, 7, 0.25);
+}
+
+.mrr-reward-wallet {
+  margin: 8px 0 0;
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.mrr-reward-chip {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  color: rgba(187, 134, 252, 0.9);
+  border: 1px solid rgba(187, 134, 252, 0.35);
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.mrr-reward-coins-stack {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 40% 35%, rgba(255, 224, 130, 0.35), transparent 55%),
+    linear-gradient(145deg, #ffb300 0%, #ff6f00 50%, #e65100 100%);
+  box-shadow: 0 4px 16px rgba(255, 152, 0, 0.35), inset 0 -2px 6px rgba(0, 0, 0, 0.25);
+  opacity: 0.92;
+}
+
+.mrr-reward-coins-stack::after {
+  content: '';
+  position: absolute;
+  inset: 6px;
+  border-radius: 50%;
+  border: 2px dashed rgba(255, 255, 255, 0.25);
+}
+
+.mrr-reward-skel {
+  height: 2.25rem;
+  width: 80%;
+  border-radius: 8px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.04) 100%);
+  background-size: 200% 100%;
+  animation: mrr-shimmer 1.2s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mrr-reward-skel {
+    animation: none;
+    background: rgba(255, 255, 255, 0.06);
+  }
+}
+
+@keyframes mrr-shimmer {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}
+
+.mrr-reward-unavailable {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.45);
+  margin: 0;
+  padding: 12px;
+}
+
+/* --- Actions --- */
+.mrr-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+@media (min-width: 480px) {
+  .mrr-actions {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+.mrr-btn {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 52px;
+  padding: 0 20px;
+  border-radius: 14px;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.mrr-btn-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mrr-btn {
+    transition: none;
+  }
+}
+
+.mrr-btn:focus-visible {
+  outline: 2px solid #b39ddb;
+  outline-offset: 3px;
+}
+
+.mrr-btn--primary {
+  background: linear-gradient(92deg, #4285f4 0%, #7c4dff 45%, #9c27b0 100%);
+  color: #fff;
+  box-shadow: 0 10px 36px rgba(66, 133, 244, 0.35), 0 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+.mrr-btn--primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 44px rgba(124, 77, 255, 0.4);
+}
+
+.mrr-btn--ghost {
+  background: rgba(18, 14, 32, 0.75);
+  color: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.mrr-btn--ghost:hover {
+  background: rgba(35, 28, 58, 0.9);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.28);
+}

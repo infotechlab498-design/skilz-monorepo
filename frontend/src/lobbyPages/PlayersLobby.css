@@ -1,0 +1,1534 @@
+.players-lobby {
+  min-height: 100vh;
+  background: radial-gradient(900px 500px at 50% 10%, rgba(49, 204, 146, 0.12), rgba(6, 8, 16, 0)), #060810;
+  color: #ffffff;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.players-lobby__grid-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16;
+
+  /* margin-left: 50px; */
+
+}
+
+.players-lobby__grid {
+  display: grid;
+  grid-template-columns: 380px minmax(520px, 1fr) 320px;
+  gap: 20px;
+  align-items: start;
+}
+
+.card {
+  background: #202738;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  padding: 14px;
+  margin-top: 20px;
+
+  /* min-height: 500px;
+  overflow-y: scroll; */
+
+}
+
+.card__title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #1da1f2;
+
+}
+
+.btn {
+  border: none;
+  border-radius: 10px;
+  padding: 10px 12px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn--primary {
+  background: #31cc92;
+  color: #061012;
+}
+
+.btn--blue {
+  background: #1da1f2;
+  color: #fff;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.Chat-card {
+  background: #202738;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  padding: 14px;
+
+  /* margin-top: 20px; */
+  /* min-height: 500px;
+  overflow-y: scroll; */
+
+}
+
+.featured {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 12px;
+  border-radius: 14px;
+  background: rgba(0, 0, 0, 0.18);
+}
+
+.featured__avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;
+  background: #24303a;
+  overflow: hidden;
+  flex: 0 0 auto;
+}
+
+.featured__avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.featured__meta {
+  flex: 1;
+  min-width: 0;
+}
+
+.featured__name {
+  font-size: 12px !important;
+  font-weight: 700;
+  color: white !important;
+}
+
+.featured__sub {
+  font-size: 12px;
+  opacity: 0.85;
+  margin-top: 2px;
+  color: white !important;
+}
+
+/* .list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 520px;
+  overflow: auto;
+  padding-right: 6px;
+  min-height: 250px;
+  overflow-y: scroll;
+  
+} */
+/* .list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 250px;
+  overflow-y: scroll;   
+  overflow-x: hidden; 
+  padding-right: 6px;
+
+} */
+/* Player list container */
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  /* SHOW ONLY 6 PLAYERS */
+  max-height: calc((72px * 6) + (10px * 5));
+  /* row height × 6 + gaps */
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  padding-right: 8px;
+}
+
+/* Individual row */
+.row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  height: 72px;
+  /* IMPORTANT: fixed height */
+  padding: 10px;
+
+  background: #ffffff;
+  border-radius: 10px;
+}
+
+/* Optional: smooth scrolling */
+.list {
+  scroll-behavior: smooth;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 10px;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.18);
+}
+
+.row__avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  background: #24303a;
+  overflow: hidden;
+}
+
+.row__avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.row__main {
+  flex: 1;
+  min-width: 0;
+}
+
+.row__name {
+  font-weight: 600;
+  font-size: 12px !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: white;
+}
+
+.row__stat {
+  font-size: 12px;
+  opacity: 0.85;
+  margin-top: 2px;
+  color: white !important;
+}
+
+.hscroll {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+}
+
+.hitem {
+  min-width: 260px;
+}
+
+.Game-image-container {
+  width: 100%;
+  height: 280px;
+  padding-top: 20px;
+}
+
+.lobbyCard {
+  width: 470px;
+  height: 250px;
+
+}
+
+.center__hero {
+  display: grid;
+  /* grid-template-columns: 2fr; */
+  width: 390px;
+  gap: 14px;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* .modeGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+} */
+
+.pill {
+  padding: 12px;
+  border-radius: 14px;
+  background: rgba(0, 0, 0, 0.18);
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.pill--active {
+  border-color: rgba(49, 204, 146, 0.6);
+  box-shadow: 0 0 0 3px rgba(49, 204, 146, 0.12) inset;
+}
+
+.pill__title {
+  font-weight: 500;
+  font-size: 10px;
+
+
+}
+
+.pill__sub {
+  font-size: 8px;
+  opacity: 0.85;
+  /* margin-top: 4px; */
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+
+.statRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.18);
+}
+
+.muted {
+
+  opacity: 0.8;
+  font-size: 12px;
+
+}
+
+.slider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+
+
+
+.slider__image img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #4f7cff;
+}
+
+.slider__dots {
+  display: flex;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background: #aaa;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dot.active {
+  background: #4f7cff;
+}
+
+/* new */
+.slider {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.slider__row {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.slider__item {
+  cursor: pointer;
+  transition: transform 0.25s ease;
+}
+
+.slider__item:hover {
+  transform: scale(1.08);
+}
+
+.slider__item img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #4f7cff;
+}
+
+.slider__dots {
+  display: flex;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  background: #999;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dot.active {
+  background: #4f7cff;
+}
+
+.featured__meta--relative {
+  position: relative;
+  margin-top: 20px;
+}
+
+/* Top-right small box */
+.players-count {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: linear-gradient(135deg, #4f7cff, #6f9cff);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  z-index: 5;
+  pointer-events: none;
+}
+
+/* @media (max-width: 1100px) {
+  .players-lobby__grid {
+    grid-template-columns: 1fr;
+  }
+} */
+
+
+
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.popup {
+  width: min(92vw, 540px);
+  background: #f8fafc;
+  border-radius: 18px;
+  padding: 20px 22px;
+  box-shadow: 0 16px 44px rgba(15, 23, 42, 0.32);
+  border: 1px solid rgba(148, 163, 184, 0.35);
+}
+
+.popup--tips {
+  width: min(92vw, 560px);
+}
+
+.popup-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.popup-title {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.1;
+}
+
+.popup-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.close-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(135deg, #ff8a00, #ff3d57);
+  color: #fff;
+  font-size: 19px;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.invite-by-email {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.select-checkpoint {
+  margin: 0;
+  font-size: 15px;
+  color: #0f172a;
+  font-weight: 600;
+}
+
+.invite-input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #cbd5e1;
+  background: #f8fafc;
+  color: #0f172a;
+}
+
+.invite-share-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.invite-share-btn {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.send-btn {
+  width: 100%;
+  margin-top: 2px;
+  padding: 12px 14px;
+  background: #ff855e;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.invite-start-btn {
+  width: 100%;
+  margin-top: 0;
+}
+
+.tips-list {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.tips-list-item {
+  margin-bottom: 8px;
+}
+
+
+
+
+@media (max-width: 1024px) {
+  .players-lobby__grid {
+    max-width: 1000px;
+
+    grid-template-columns: 1fr 1fr 1fr;
+
+  }
+
+  .TriviaLobby-container-main-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+
+  }
+
+  .players-lobby__grid-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16;
+    margin-left: 2px;
+    /* margin-left: 50px; */
+  }
+
+  .card {
+    margin-top: 10px;
+  }
+
+  /* 
+  .players-lobby__grid {
+    display: grid;
+    grid-template-columns: 380px minmax(520px, 1fr) 320px;
+    gap: 20px;
+    align-items: start;
+  } */
+
+
+}
+
+
+
+
+@media (max-width: 768px) {
+  .TriviaLobby-container {
+    padding: 1.1rem;
+  }
+
+  .TriviaLobby-container-main-content {
+    display: flex;
+    flex-direction: row;
+    width: 734px;
+    /* gap: 20px; */
+  }
+
+  .leftSidebar {
+    width: 251px !important;
+    margin-right: 220px;
+  }
+
+  .card {
+    width: 228px;
+    background: #202738;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 16px;
+    padding: 14px;
+    margin-top: 20px;
+  }
+  .players-lobby__grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    width: 200px;
+  }
+
+  .featured__avatar {
+    width: 34px !important;
+    height: 34px !important;
+  }
+
+  .slider {
+    width: 80%;
+  }
+
+  .slider__item img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #4f7cff;
+  }
+
+  .card__title {
+    font-size: 10px;
+  }
+
+  .row__name {
+    font-size: 8px !important;
+  }
+
+  .row__stat {
+    font-size: 8px !important;
+  }
+
+  .muted {
+    font-size: 10px !important;
+  }
+
+  .Game-image-container {
+    width: 90%;
+    height: 60%;
+    padding-top: 2px;
+    margin-top: 2px !important;
+    padding-left: 5px;
+    margin-left: 4px;
+  }
+
+  .row__avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 999px;
+    background: #24303a;
+    overflow: hidden;
+  }
+
+  .lobbyCard {
+    width: 225px;
+    height: 135px;
+    padding-top: 8px;
+    /* margin-top: 2px; */
+    padding-left: 10px;
+  }
+
+  .featured__name {
+    font-size: 8px !important;
+  }
+
+  .featured__sub {
+    font-size: 6px;
+  }
+
+  .card-invitee {
+    background: #202738;
+    width: 182px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 16px;
+    padding: 7px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .card-invitee {
+    background: #202738;
+    width: 276px;
+    /* margin-left: 90px; */
+
+
+
+  }
+
+  .centerContent {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .TriviaLobby-container-main-content {
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+
+  .leftSidebar {
+    width: 100% !important;
+    margin-right:0px !important;
+  }
+
+  .card {
+    width: 345px !important;
+    margin-right: 0 !important;
+    margin-left: 20px;
+  }
+
+  .players-lobby {
+    background: radial-gradient(900px 500px at 50% 10%, rgba(49, 204, 146, 0.12), rgba(6, 8, 16, 0)), #060810;
+    width: 100%;
+  }
+
+  .players-lobby__grid-container {
+    grid-template-columns: 1fr;
+    margin-left: 0px;
+    width: 280px;
+  }
+
+  .players-lobby__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    align-items: start;
+  }
+
+  .lobbyCard {
+    width: 95%;
+    height: 100%;
+  }
+
+  .featured__avatar {
+    width: 34px !important;
+    height: 34px !important;
+    border-radius: 999px;
+    background: #24303a;
+    overflow: hidden;
+    flex: 0 0 auto;
+  }
+
+  .featured__name {
+    font-size: 10px !important;
+    font-weight: 500;
+  }
+
+  .Chat-card {
+    width: 340px;
+  }
+}
+
+@media (max-width: 320px) {
+  .players-lobby__grid {
+    grid-template-columns: 1fr;
+    /* margin-left: 10px; */
+    gap: 10px;
+  }
+
+  .players-lobby__grid-container {
+
+    margin-left: 0px;
+    margin-right: 10px;
+
+  }
+
+  .featured__avatar {
+
+    width: 46px;
+    height: 46px;
+    border-radius: 999px;
+    background: #24303a;
+    overflow: hidden;
+    flex: 0 0 auto;
+
+  }
+
+  .featured__name {
+    font-size: 9px;
+    color: white !important;
+  }
+
+  .card__title {
+    font-size: 14px;
+    margin-bottom: 10px;
+
+  }
+
+  .lobbyCard {
+
+    width: 97%;
+    border-radius: 8px;
+    height: 138px;
+
+  }
+
+  /* .featured__sub {
+    font-size: 10px;
+  } */
+}
+
+/* ═══════════════════════════════════════════════════════════
+   CHAT BOX
+   ═══════════════════════════════════════════════════════════ */
+
+.chat-box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 0;
+  isolation: isolate;
+  /* Arena art (same asset as Math Rush match results). Add file: frontend/public/mathRush/match-results-arena-bg.png */
+  background-color: #0a0315;
+  background-image:
+    linear-gradient(180deg, rgba(8, 4, 20, 0.9) 0%, rgba(8, 4, 20, 0.78) 42%, rgba(8, 4, 20, 0.88) 100%),
+    url('/mathRush/match-results-arena-bg.png');
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+/* Trivia (and same left-rail layout): breathing room above chat under LobbySliders */
+.trivia-lobby-left-column .chat-box {
+  margin-top: 24px;
+}
+
+/* Header */
+.chat-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  background: rgba(6, 4, 15, 0.72);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.chat-header__title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1da1f2;
+}
+
+.chat-header__lobby {
+  font-size: 11px;
+  color: #31cc92;
+  background: rgba(49, 204, 146, 0.12);
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 140px;
+}
+
+.chat-presence-strip {
+  background: rgba(6, 4, 15, 0.58);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.chat-presence-strip strong,
+.chat-presence-strip span {
+  color: inherit;
+}
+
+/* Footer row under input (voice toggle) — keep readable on dark panels */
+.chat-voice-row {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.chat-voice-row label {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+/* Message list */
+.chat-messages {
+  flex: 1;
+  min-height: 0; /* allow flex child to shrink so overflow-y scrolls */
+  height: 280px;
+  max-height: min(40vh, 360px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  scroll-behavior: smooth;
+  background: rgba(6, 4, 15, 0.48);
+  color: rgba(255, 255, 255, 0.92); /* default text in list (errors, etc.) */
+}
+
+.chat-messages::-webkit-scrollbar {
+  width: 4px;
+}
+
+.chat-messages::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 4px;
+}
+
+/* Empty / error */
+.chat-empty {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.35);
+  font-size: 13px;
+  padding: 40px 0;
+}
+
+.chat-error {
+  background: rgba(220, 60, 60, 0.18);
+  color: #ff9898;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+
+/* System message */
+
+.chat-system-msg {
+  text-align: center;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.38);
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 20px;
+  padding: 4px 12px;
+  margin: 6px auto;
+  max-width: 90%;
+}
+
+/* Bubble row */
+
+.chat-bubble-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.chat-bubble-row--mine {
+  flex-direction: row-reverse;
+}
+
+/* Avatar circle */
+
+.chat-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #24303a;
+  border: 2px solid rgba(79, 124, 255, 0.5);
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.chat-avatar--mine {
+  border-color: rgba(49, 204, 146, 0.6);
+}
+
+.chat-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Name + time */
+
+.chat-bubble-group {
+  display: flex;
+  flex-direction: column;
+  max-width: 72%;
+  gap: 2px;
+}
+
+.chat-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+}
+
+.chat-meta--right {
+  flex-direction: row-reverse;
+}
+
+.chat-name {
+  color: #1da1f2;
+  font-weight: 600;
+}
+
+.chat-time {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+/* Bubbles */
+
+.chat-bubble {
+  padding: 8px 12px;
+  border-radius: 14px;
+  font-size: 13px;
+  line-height: 1.45;
+  word-break: break-word;
+}
+
+.chat-bubble--other {
+  background: #1e2d40;
+  color: #e8eaf0;
+  border-bottom-left-radius: 4px;
+}
+
+.chat-bubble--mine {
+  background: linear-gradient(135deg, #1da1f2, #0e6db5);
+  color: #fff;
+  border-bottom-right-radius: 4px;
+}
+
+/*
+ * ChatBox.jsx uses .chat-row + .chat-bubble + .meta (not .chat-bubble--mine/--other).
+ * Without these rules, bubble text inherits a dark theme color and disappears on the chat background.
+ */
+.chat-box .chat-row {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 2px;
+  max-width: min(94%, 520px);
+}
+
+.chat-box .chat-row.mine {
+  align-self: flex-end;
+  align-items: flex-end;
+}
+
+.chat-box .chat-row .chat-bubble {
+  max-width: 100%;
+  background: rgba(28, 42, 62, 0.96);
+  color: #eef2f7;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.28);
+}
+
+.chat-box .chat-row.mine .chat-bubble {
+  background: linear-gradient(145deg, #1a9ce8, #0c5fa0);
+  color: #fff;
+  border-color: rgba(29, 161, 242, 0.4);
+}
+
+.chat-box .chat-row .chat-bubble .meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.chat-box .chat-row .chat-bubble .meta span {
+  font-weight: 500;
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.58);
+}
+
+.chat-box .chat-row .chat-bubble > div:not(.meta) {
+  color: inherit;
+  font-size: 13px;
+  line-height: 1.45;
+  word-break: break-word;
+}
+
+/* Voice audio */
+
+.chat-audio {
+  width: 100%;
+  height: 32px;
+  border-radius: 8px;
+  margin-top: 4px;
+}
+
+/* Emoji picker */
+
+.chat-emoji-picker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 8px 12px;
+  background: rgba(6, 4, 15, 0.55);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.chat-emoji-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 6px;
+  transition: background 0.15s;
+}
+
+.chat-emoji-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Input row */
+.chat-input-row {
+  display: flex;
+  align-items: center;
+  /* gap: 8px; */
+  padding: 10px 0px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(6, 4, 15, 0.68);
+  backdrop-filter: blur(6px);
+}
+
+.chat-emoji-toggle {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 6px;
+  flex-shrink: 0;
+  transition: transform 0.15s;
+}
+
+.chat-emoji-toggle:hover {
+  transform: scale(1.2);
+}
+
+.chat-input {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 8px 12px;
+  color: #fff;
+  font-size: 13px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.chat-input::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.chat-input:focus {
+  border-color: #1da1f2;
+}
+
+.chat-input:disabled {
+  opacity: 0.5;
+}
+
+.chat-send-btn {
+  background: linear-gradient(135deg, #1da1f2, #0e6db5);
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 13px;
+  padding: 8px 16px;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: opacity 0.2s, transform 0.15s;
+}
+
+.chat-send-btn:hover:not(:disabled) {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.chat-send-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+@media (max-width: 480px) {
+  .chat-messages {
+    height: 200px;
+    min-height: 0;
+  }
+
+  .chat-bubble-group {
+    max-width: 85%;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .pill__title {
+    font-size: 8px;
+  }
+
+  .pill__sub {
+    font-size: 6px;
+  }
+
+  .Chat-card {
+    width: 305px;
+    margin-left: -6px;
+
+  }
+
+  .chat-header__title {
+    font-size: 10px;
+  }
+
+  .chat-header__lobby {
+    font-size: 8px;
+  }
+
+  .chat-system-msg {
+    font-size: 8px;
+  }
+
+  .chat-input {
+    width: 70px;
+    font-size: 8px;
+    padding: 8px;
+    height: 30px;
+  }
+
+  .chat-send-btn {
+    width: 70px;
+    font-size: 8px;
+    padding: 8px;
+    height: 30px;
+  }
+
+  .featured__sub {
+    font-size: 6px;
+  }
+
+  .btn--primary {
+    font-size: 10px;
+    margin-top: 8px;
+  }
+
+  /* .chat-messages {
+    height: 200px;
+  }
+
+  .chat-bubble-group {
+    max-width: 85%;
+  } */
+
+}
+
+/* ===============================
+   Trivia Lobby Responsive System
+   Mobile-first: 320 -> 1024+
+================================== */
+.TriviaLobby-container {
+  width: 100%;
+  max-width: 100%;
+  padding: 0.5rem;
+  overflow-x: clip;
+}
+
+.players-lobby,
+.TriviaLobby-container-main-content,
+.trivia-lobby-layout {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+.trivia-lobby-layout {
+  display: grid !important;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+  align-items: start;
+}
+
+.trivia-lobby-left-column,
+.trivia-lobby-center-column,
+.trivia-lobby-right-column,
+.leftSidebar,
+.centerContent,
+.TriviaLobby-container-main-content-right {
+  width: 100%;
+  min-width: 0;
+  margin: 0 !important;
+}
+
+.players-lobby__grid,
+.players-lobby__grid-container {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  margin: 0 !important;
+}
+
+.players-lobby__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+
+.players-lobby__grid-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.mode-selection-container,
+.difficulty-container,
+.Chat-card,
+.card,
+.card-invitee,
+.TriviaLobby-container-main-content-right-stats-container,
+.TriviaLobby-container-main-content-right-daily-streak-container {
+  width: 100% !important;
+  max-width: 100%;
+  min-width: 0;
+  margin: 0 !important;
+  padding: 0.75rem !important;
+}
+
+.lobbyCard {
+  width: 100% !important;
+  max-width: 100%;
+  height: auto !important;
+}
+
+.Game-image-container {
+  width: 100%;
+  height: auto;
+  min-height: 180px;
+  padding-top: 0.5rem;
+}
+
+.Game-image-container img,
+.slider__item img,
+.featured__avatar img,
+.row__avatar img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.trivia-card-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+}
+
+.trivia-card {
+  width: 100%;
+}
+
+.difficulty-btn-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+}
+
+.difficulty-btn,
+.nextMove,
+.btn,
+.btn--primary,
+.btn--blue,
+.send-btn,
+.invite-start-btn {
+  width: 100%;
+  min-height: 44px;
+}
+
+.card__title,
+.difficulty-container-title {
+  font-size: 1.125rem;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+
+.confirm-text-title,
+.confirm-text-category,
+.confirm-text-difficulty,
+.row__name,
+.row__stat,
+.muted,
+.trivia-card-sub,
+.featured__name,
+.featured__sub {
+  font-size: 0.875rem;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.row,
+.featured {
+  gap: 0.625rem;
+  padding: 0.625rem;
+}
+
+.row__main,
+.featured__meta {
+  min-width: 0;
+}
+
+.row__name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.list,
+.hscroll,
+.chat-messages {
+  max-width: 100%;
+}
+
+@media (min-width: 375px) {
+  .TriviaLobby-container {
+    padding: 0.625rem;
+  }
+
+  .trivia-lobby-layout {
+    gap: 0.875rem;
+  }
+
+  .difficulty-btn-row {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 425px) {
+  .TriviaLobby-container {
+    padding: 0.75rem;
+  }
+
+  .trivia-card-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 768px) {
+  .TriviaLobby-container {
+    padding: 1rem;
+  }
+
+  .trivia-lobby-layout {
+    grid-template-columns: minmax(240px, 1fr) minmax(300px, 1.1fr);
+    gap: 1rem;
+  }
+
+  .trivia-lobby-right-column {
+    grid-column: 1 / -1;
+  }
+
+  .TriviaLobby-container-main-content-right {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .card-invitee {
+    max-width: 420px;
+  }
+
+  .nextMove,
+  .btn,
+  .btn--primary,
+  .btn--blue {
+    width: auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .TriviaLobby-container {
+    padding: 1.5rem;
+  }
+
+  .trivia-lobby-layout {
+    grid-template-columns: 300px minmax(380px, 1fr) 300px;
+    gap: 1.25rem;
+  }
+
+  .trivia-lobby-right-column {
+    grid-column: auto;
+  }
+
+  .TriviaLobby-container-main-content-right {
+    grid-template-columns: 1fr;
+  }
+
+  .trivia-card-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

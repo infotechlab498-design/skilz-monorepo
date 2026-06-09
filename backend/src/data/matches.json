@@ -1,0 +1,3205 @@
+{
+  "matches": [
+    {
+      "gameId": "local-game-1774953122475",
+      "status": "PLAYING",
+      "mode": "VS_BOT",
+      "players": {
+        "RED": {
+          "name": "Player 1",
+          "type": "HUMAN",
+          "difficulty": "MEDIUM"
+        },
+        "BLUE": {
+          "name": "CPU Blue",
+          "type": "BOT",
+          "difficulty": "MEDIUM"
+        },
+        "YELLOW": {
+          "name": "CPU Yellow",
+          "type": "EMPTY",
+          "difficulty": "MEDIUM"
+        },
+        "GREEN": {
+          "name": "CPU Green",
+          "type": "EMPTY",
+          "difficulty": "MEDIUM"
+        }
+      },
+      "tokens": {
+        "RED": [
+          {
+            "id": 1,
+            "color": "RED",
+            "position": 0
+          },
+          {
+            "id": 2,
+            "color": "RED",
+            "position": 0
+          },
+          {
+            "id": 3,
+            "color": "RED",
+            "position": 0
+          },
+          {
+            "id": 4,
+            "color": "RED",
+            "position": 0
+          }
+        ],
+        "BLUE": [
+          {
+            "id": 1,
+            "color": "BLUE",
+            "position": 0
+          },
+          {
+            "id": 2,
+            "color": "BLUE",
+            "position": 0
+          },
+          {
+            "id": 3,
+            "color": "BLUE",
+            "position": 0
+          },
+          {
+            "id": 4,
+            "color": "BLUE",
+            "position": 0
+          }
+        ],
+        "YELLOW": [
+          {
+            "id": 1,
+            "color": "YELLOW",
+            "position": 0
+          },
+          {
+            "id": 2,
+            "color": "YELLOW",
+            "position": 0
+          },
+          {
+            "id": 3,
+            "color": "YELLOW",
+            "position": 0
+          },
+          {
+            "id": 4,
+            "color": "YELLOW",
+            "position": 0
+          }
+        ],
+        "GREEN": [
+          {
+            "id": 1,
+            "color": "GREEN",
+            "position": 0
+          },
+          {
+            "id": 2,
+            "color": "GREEN",
+            "position": 0
+          },
+          {
+            "id": 3,
+            "color": "GREEN",
+            "position": 0
+          },
+          {
+            "id": 4,
+            "color": "GREEN",
+            "position": 0
+          }
+        ]
+      },
+      "currentTurn": "RED",
+      "diceValue": null,
+      "consecutiveSixes": 0,
+      "winners": [],
+      "logs": [
+        {
+          "id": 1774953149165.7378,
+          "msg": "BLUE rolled a 1. No moves."
+        },
+        {
+          "id": 1774953146941.3582,
+          "msg": "RED rolled a 1. No moves."
+        },
+        {
+          "id": 1774953143735.805,
+          "msg": "BLUE rolled a 3. No moves."
+        },
+        {
+          "id": 1774953140799.107,
+          "msg": "RED rolled a 5. No moves."
+        },
+        {
+          "id": 1774953137924.986,
+          "msg": "BLUE rolled a 2. No moves."
+        },
+        {
+          "id": 1774953135004.8955,
+          "msg": "RED rolled a 4. No moves."
+        },
+        {
+          "id": 1774953122475.0242,
+          "msg": "Match Started! Enjoy Ludo Master."
+        },
+        {
+          "id": 1774953105448,
+          "msg": "Welcome to Ludo Master!"
+        }
+      ],
+      "isRolling": false,
+      "waitingForMove": false,
+      "timeLeft": 30,
+      "settings": {
+        "turnTimerSec": 30,
+        "exactRollToHome": true,
+        "safeStars": true
+      },
+      "memory": {},
+      "lastUpdated": "2026-03-31T10:32:30.406Z"
+    },
+    {
+      "gameId": "local-game-1774954549298",
+      "status": "PLAYING",
+      "mode": "VS_BOT",
+      "players": {
+        "RED": {
+          "name": "Player 1",
+          "type": "HUMAN",
+          "difficulty": "MEDIUM"
+        },
+        "BLUE": {
+          "name": "CPU Blue",
+          "type": "BOT",
+          "difficulty": "MEDIUM"
+        },
+        "YELLOW": {
+          "name": "CPU Yellow",
+          "type": "EMPTY",
+          "difficulty": "MEDIUM"
+        },
+        "GREEN": {
+          "name": "CPU Green",
+          "type": "EMPTY",
+          "difficulty": "MEDIUM"
+        }
+      },
+      "tokens": {
+        "RED": [
+          {
+            "id": 1,
+            "color": "RED",
+            "position": 0
+          },
+          {
+            "id": 2,
+            "color": "RED",
+            "position": 0
+          },
+          {
+            "id": 3,
+            "color": "RED",
+            "position": 0
+          },
+          {
+            "id": 4,
+            "color": "RED",
+            "position": 0
+          }
+        ],
+        "BLUE": [
+          {
+            "id": 1,
+            "color": "BLUE",
+            "position": 0
+          },
+          {
+            "id": 2,
+            "color": "BLUE",
+            "position": 0
+          },
+          {
+            "id": 3,
+            "color": "BLUE",
+            "position": 0
+          },
+          {
+            "id": 4,
+            "color": "BLUE",
+            "position": 0
+          }
+        ],
+        "YELLOW": [
+          {
+            "id": 1,
+            "color": "YELLOW",
+            "position": 0
+          },
+          {
+            "id": 2,
+            "color": "YELLOW",
+            "position": 0
+          },
+          {
+            "id": 3,
+            "color": "YELLOW",
+            "position": 0
+          },
+          {
+            "id": 4,
+            "color": "YELLOW",
+            "position": 0
+          }
+        ],
+        "GREEN": [
+          {
+            "id": 1,
+            "color": "GREEN",
+            "position": 0
+          },
+          {
+            "id": 2,
+            "color": "GREEN",
+            "position": 0
+          },
+          {
+            "id": 3,
+            "color": "GREEN",
+            "position": 0
+          },
+          {
+            "id": 4,
+            "color": "GREEN",
+            "position": 0
+          }
+        ]
+      },
+      "currentTurn": "RED",
+      "diceValue": null,
+      "consecutiveSixes": 0,
+      "winners": [],
+      "logs": [
+        {
+          "id": 1774954549298.1577,
+          "msg": "Match Started! Enjoy Ludo Master."
+        },
+        {
+          "id": 1774954531803,
+          "msg": "Welcome to Ludo Master!"
+        }
+      ],
+      "isRolling": false,
+      "waitingForMove": false,
+      "timeLeft": 30,
+      "settings": {
+        "turnTimerSec": 30,
+        "exactRollToHome": true,
+        "safeStars": true
+      },
+      "memory": {},
+      "lastUpdated": "2026-03-31T10:55:49.328Z"
+    },
+    {
+      "gameId": "local-game-1774954572609",
+      "status": "PLAYING",
+      "mode": "VS_BOT",
+      "players": {
+        "RED": {
+          "name": "Player 1",
+          "type": "HUMAN",
+          "difficulty": "MEDIUM"
+        },
+        "BLUE": {
+          "name": "CPU Blue",
+          "type": "BOT",
+          "difficulty": "MEDIUM"
+        },
+        "YELLOW": {
+          "name": "CPU Yellow",
+          "type": "EMPTY",
+          "difficulty": "MEDIUM"
+        },
+        "GREEN": {
+          "name": "CPU Green",
+          "type": "EMPTY",
+          "difficulty": "MEDIUM"
+        }
+      },
+      "tokens": {
+        "RED": [
+          {
+            "id": 1,
+            "color": "RED",
+            "position": 0
+          },
+          {
+            "id": 2,
+            "color": "RED",
+            "position": 0
+          },
+          {
+            "id": 3,
+            "color": "RED",
+            "position": 0
+          },
+          {
+            "id": 4,
+            "color": "RED",
+            "position": 0
+          }
+        ],
+        "BLUE": [
+          {
+            "id": 1,
+            "color": "BLUE",
+            "position": 0
+          },
+          {
+            "id": 2,
+            "color": "BLUE",
+            "position": 0
+          },
+          {
+            "id": 3,
+            "color": "BLUE",
+            "position": 0
+          },
+          {
+            "id": 4,
+            "color": "BLUE",
+            "position": 0
+          }
+        ],
+        "YELLOW": [
+          {
+            "id": 1,
+            "color": "YELLOW",
+            "position": 0
+          },
+          {
+            "id": 2,
+            "color": "YELLOW",
+            "position": 0
+          },
+          {
+            "id": 3,
+            "color": "YELLOW",
+            "position": 0
+          },
+          {
+            "id": 4,
+            "color": "YELLOW",
+            "position": 0
+          }
+        ],
+        "GREEN": [
+          {
+            "id": 1,
+            "color": "GREEN",
+            "position": 0
+          },
+          {
+            "id": 2,
+            "color": "GREEN",
+            "position": 0
+          },
+          {
+            "id": 3,
+            "color": "GREEN",
+            "position": 0
+          },
+          {
+            "id": 4,
+            "color": "GREEN",
+            "position": 0
+          }
+        ]
+      },
+      "currentTurn": "RED",
+      "diceValue": null,
+      "consecutiveSixes": 0,
+      "winners": [],
+      "logs": [
+        {
+          "id": 1774954572609.5442,
+          "msg": "Match Started! Enjoy Ludo Master."
+        },
+        {
+          "id": 1774954549298.1577,
+          "msg": "Match Started! Enjoy Ludo Master."
+        },
+        {
+          "id": 1774954531803,
+          "msg": "Welcome to Ludo Master!"
+        }
+      ],
+      "isRolling": false,
+      "waitingForMove": false,
+      "timeLeft": 30,
+      "settings": {
+        "turnTimerSec": 30,
+        "exactRollToHome": true,
+        "safeStars": true
+      },
+      "memory": {},
+      "lastUpdated": "2026-03-31T10:56:12.626Z"
+    },
+    {
+      "gameId": "local-game-1774958340959",
+      "status": "PLAYING",
+      "mode": "VS_BOT",
+      "players": {
+        "RED": {
+          "name": "Player 1",
+          "type": "HUMAN",
+          "difficulty": "MEDIUM"
+        },
+        "BLUE": {
+          "name": "CPU Blue",
+          "type": "BOT",
+          "difficulty": "MEDIUM"
+        },
+        "YELLOW": {
+          "name": "CPU Yellow",
+          "type": "EMPTY",
+          "difficulty": "MEDIUM"
+        },
+        "GREEN": {
+          "name": "CPU Green",
+          "type": "EMPTY",
+          "difficulty": "MEDIUM"
+        }
+      },
+      "tokens": {
+        "RED": [
+          {
+            "id": 1,
+            "color": "RED",
+            "position": 0
+          },
+          {
+            "id": 2,
+            "color": "RED",
+            "position": 0
+          },
+          {
+            "id": 3,
+            "color": "RED",
+            "position": 0
+          },
+          {
+            "id": 4,
+            "color": "RED",
+            "position": 0
+          }
+        ],
+        "BLUE": [
+          {
+            "id": 1,
+            "color": "BLUE",
+            "position": 0
+          },
+          {
+            "id": 2,
+            "color": "BLUE",
+            "position": 0
+          },
+          {
+            "id": 3,
+            "color": "BLUE",
+            "position": 0
+          },
+          {
+            "id": 4,
+            "color": "BLUE",
+            "position": 0
+          }
+        ],
+        "YELLOW": [
+          {
+            "id": 1,
+            "color": "YELLOW",
+            "position": 0
+          },
+          {
+            "id": 2,
+            "color": "YELLOW",
+            "position": 0
+          },
+          {
+            "id": 3,
+            "color": "YELLOW",
+            "position": 0
+          },
+          {
+            "id": 4,
+            "color": "YELLOW",
+            "position": 0
+          }
+        ],
+        "GREEN": [
+          {
+            "id": 1,
+            "color": "GREEN",
+            "position": 0
+          },
+          {
+            "id": 2,
+            "color": "GREEN",
+            "position": 0
+          },
+          {
+            "id": 3,
+            "color": "GREEN",
+            "position": 0
+          },
+          {
+            "id": 4,
+            "color": "GREEN",
+            "position": 0
+          }
+        ]
+      },
+      "currentTurn": "RED",
+      "diceValue": null,
+      "consecutiveSixes": 0,
+      "winners": [],
+      "logs": [
+        {
+          "id": 1774958340959.7393,
+          "msg": "Match Started! Enjoy Ludo Master."
+        },
+        {
+          "id": 1774958334440,
+          "msg": "Welcome to Ludo Master!"
+        }
+      ],
+      "isRolling": false,
+      "waitingForMove": false,
+      "timeLeft": 30,
+      "settings": {
+        "turnTimerSec": 30,
+        "exactRollToHome": true,
+        "safeStars": true
+      },
+      "memory": {},
+      "lastUpdated": "2026-03-31T11:59:00.976Z"
+    },
+    {
+      "gameId": "local-game-1774958474100",
+      "status": "PLAYING",
+      "mode": "VS_BOT",
+      "players": {
+        "RED": {
+          "name": "Player 1",
+          "type": "HUMAN",
+          "difficulty": "MEDIUM"
+        },
+        "BLUE": {
+          "name": "CPU Blue",
+          "type": "BOT",
+          "difficulty": "MEDIUM"
+        },
+        "YELLOW": {
+          "name": "CPU Yellow",
+          "type": "EMPTY",
+          "difficulty": "MEDIUM"
+        },
+        "GREEN": {
+          "name": "CPU Green",
+          "type": "EMPTY",
+          "difficulty": "MEDIUM"
+        }
+      },
+      "tokens": {
+        "RED": [
+          {
+            "id": 1,
+            "color": "RED",
+            "position": 0
+          },
+          {
+            "id": 2,
+            "color": "RED",
+            "position": 0
+          },
+          {
+            "id": 3,
+            "color": "RED",
+            "position": 0
+          },
+          {
+            "id": 4,
+            "color": "RED",
+            "position": 0
+          }
+        ],
+        "BLUE": [
+          {
+            "id": 1,
+            "color": "BLUE",
+            "position": 0
+          },
+          {
+            "id": 2,
+            "color": "BLUE",
+            "position": 0
+          },
+          {
+            "id": 3,
+            "color": "BLUE",
+            "position": 0
+          },
+          {
+            "id": 4,
+            "color": "BLUE",
+            "position": 0
+          }
+        ],
+        "YELLOW": [
+          {
+            "id": 1,
+            "color": "YELLOW",
+            "position": 0
+          },
+          {
+            "id": 2,
+            "color": "YELLOW",
+            "position": 0
+          },
+          {
+            "id": 3,
+            "color": "YELLOW",
+            "position": 0
+          },
+          {
+            "id": 4,
+            "color": "YELLOW",
+            "position": 0
+          }
+        ],
+        "GREEN": [
+          {
+            "id": 1,
+            "color": "GREEN",
+            "position": 0
+          },
+          {
+            "id": 2,
+            "color": "GREEN",
+            "position": 0
+          },
+          {
+            "id": 3,
+            "color": "GREEN",
+            "position": 0
+          },
+          {
+            "id": 4,
+            "color": "GREEN",
+            "position": 0
+          }
+        ]
+      },
+      "currentTurn": "RED",
+      "diceValue": null,
+      "consecutiveSixes": 0,
+      "winners": [],
+      "logs": [
+        {
+          "id": 1774958505603.0432,
+          "msg": "BLUE rolled a 5. No moves."
+        },
+        {
+          "id": 1774958504477.327,
+          "msg": "RED went AFK! Turn passed."
+        },
+        {
+          "id": 1774958474100.202,
+          "msg": "Match Started! Enjoy Ludo Master."
+        },
+        {
+          "id": 1774958334440,
+          "msg": "Welcome to Ludo Master!"
+        }
+      ],
+      "isRolling": false,
+      "waitingForMove": false,
+      "timeLeft": 30,
+      "settings": {
+        "turnTimerSec": 30,
+        "exactRollToHome": true,
+        "safeStars": true
+      },
+      "memory": {},
+      "lastUpdated": "2026-03-31T12:01:46.813Z"
+    },
+    {
+      "gameId": "local-game-1774958620556",
+      "status": "PLAYING",
+      "mode": "VS_BOT",
+      "players": {
+        "RED": {
+          "name": "Player 1",
+          "type": "HUMAN",
+          "difficulty": "MEDIUM"
+        },
+        "BLUE": {
+          "name": "CPU Blue",
+          "type": "BOT",
+          "difficulty": "MEDIUM"
+        },
+        "YELLOW": {
+          "name": "CPU Yellow",
+          "type": "EMPTY",
+          "difficulty": "MEDIUM"
+        },
+        "GREEN": {
+          "name": "CPU Green",
+          "type": "EMPTY",
+          "difficulty": "MEDIUM"
+        }
+      },
+      "tokens": {
+        "RED": [
+          {
+            "id": 1,
+            "color": "RED",
+            "position": 0
+          },
+          {
+            "id": 2,
+            "color": "RED",
+            "position": 0
+          },
+          {
+            "id": 3,
+            "color": "RED",
+            "position": 0
+          },
+          {
+            "id": 4,
+            "color": "RED",
+            "position": 0
+          }
+        ],
+        "BLUE": [
+          {
+            "id": 1,
+            "color": "BLUE",
+            "position": 0
+          },
+          {
+            "id": 2,
+            "color": "BLUE",
+            "position": 0
+          },
+          {
+            "id": 3,
+            "color": "BLUE",
+            "position": 0
+          },
+          {
+            "id": 4,
+            "color": "BLUE",
+            "position": 0
+          }
+        ],
+        "YELLOW": [
+          {
+            "id": 1,
+            "color": "YELLOW",
+            "position": 0
+          },
+          {
+            "id": 2,
+            "color": "YELLOW",
+            "position": 0
+          },
+          {
+            "id": 3,
+            "color": "YELLOW",
+            "position": 0
+          },
+          {
+            "id": 4,
+            "color": "YELLOW",
+            "position": 0
+          }
+        ],
+        "GREEN": [
+          {
+            "id": 1,
+            "color": "GREEN",
+            "position": 0
+          },
+          {
+            "id": 2,
+            "color": "GREEN",
+            "position": 0
+          },
+          {
+            "id": 3,
+            "color": "GREEN",
+            "position": 0
+          },
+          {
+            "id": 4,
+            "color": "GREEN",
+            "position": 0
+          }
+        ]
+      },
+      "currentTurn": "RED",
+      "diceValue": null,
+      "consecutiveSixes": 0,
+      "winners": [],
+      "logs": [
+        {
+          "id": 1774958620556.845,
+          "msg": "Match Started! Enjoy Ludo Master."
+        },
+        {
+          "id": 1774958334440,
+          "msg": "Welcome to Ludo Master!"
+        }
+      ],
+      "isRolling": false,
+      "waitingForMove": false,
+      "timeLeft": 30,
+      "settings": {
+        "turnTimerSec": 30,
+        "exactRollToHome": true,
+        "safeStars": true
+      },
+      "memory": {},
+      "lastUpdated": "2026-03-31T12:03:40.583Z"
+    },
+    {
+      "gameId": "local-game-1775019604885",
+      "status": "PLAYING",
+      "mode": "VS_BOT",
+      "players": {
+        "RED": {
+          "name": "Player 1",
+          "type": "HUMAN",
+          "difficulty": "MEDIUM"
+        },
+        "BLUE": {
+          "name": "CPU Blue",
+          "type": "BOT",
+          "difficulty": "MEDIUM"
+        },
+        "YELLOW": {
+          "name": "CPU Yellow",
+          "type": "EMPTY",
+          "difficulty": "MEDIUM"
+        },
+        "GREEN": {
+          "name": "CPU Green",
+          "type": "EMPTY",
+          "difficulty": "MEDIUM"
+        }
+      },
+      "tokens": {
+        "RED": [
+          {
+            "id": 1,
+            "color": "RED",
+            "position": 0
+          },
+          {
+            "id": 2,
+            "color": "RED",
+            "position": 0
+          },
+          {
+            "id": 3,
+            "color": "RED",
+            "position": 0
+          },
+          {
+            "id": 4,
+            "color": "RED",
+            "position": 0
+          }
+        ],
+        "BLUE": [
+          {
+            "id": 1,
+            "color": "BLUE",
+            "position": 40
+          },
+          {
+            "id": 2,
+            "color": "BLUE",
+            "position": 0
+          },
+          {
+            "id": 3,
+            "color": "BLUE",
+            "position": 0
+          },
+          {
+            "id": 4,
+            "color": "BLUE",
+            "position": 0
+          }
+        ],
+        "YELLOW": [
+          {
+            "id": 1,
+            "color": "YELLOW",
+            "position": 0
+          },
+          {
+            "id": 2,
+            "color": "YELLOW",
+            "position": 0
+          },
+          {
+            "id": 3,
+            "color": "YELLOW",
+            "position": 0
+          },
+          {
+            "id": 4,
+            "color": "YELLOW",
+            "position": 0
+          }
+        ],
+        "GREEN": [
+          {
+            "id": 1,
+            "color": "GREEN",
+            "position": 0
+          },
+          {
+            "id": 2,
+            "color": "GREEN",
+            "position": 0
+          },
+          {
+            "id": 3,
+            "color": "GREEN",
+            "position": 0
+          },
+          {
+            "id": 4,
+            "color": "GREEN",
+            "position": 0
+          }
+        ]
+      },
+      "currentTurn": "BLUE",
+      "diceValue": 6,
+      "consecutiveSixes": 1,
+      "winners": [],
+      "logs": [
+        {
+          "id": 1775019836348.686,
+          "msg": "BLUE moved token 1 to 40"
+        },
+        {
+          "id": 1775019831364.7363,
+          "msg": "RED went AFK! Turn passed."
+        },
+        {
+          "id": 1775019769345.6658,
+          "msg": "BLUE rolled a 4. No moves."
+        },
+        {
+          "id": 1775019767385.834,
+          "msg": "RED went AFK! Turn passed."
+        },
+        {
+          "id": 1775019705353.364,
+          "msg": "BLUE rolled a 5. No moves."
+        },
+        {
+          "id": 1775019703383.5227,
+          "msg": "RED went AFK! Turn passed."
+        },
+        {
+          "id": 1775019645342.1887,
+          "msg": "BLUE rolled a 4. No moves."
+        },
+        {
+          "id": 1775019643360.0764,
+          "msg": "RED went AFK! Turn passed."
+        },
+        {
+          "id": 1775019604885.5742,
+          "msg": "Match Started! Enjoy Ludo Master."
+        },
+        {
+          "id": 1775019600298,
+          "msg": "Welcome to Ludo Master!"
+        }
+      ],
+      "isRolling": false,
+      "waitingForMove": false,
+      "timeLeft": 30,
+      "settings": {
+        "turnTimerSec": 30,
+        "exactRollToHome": true,
+        "safeStars": true
+      },
+      "memory": {},
+      "lastUpdated": "2026-04-01T05:03:56.394Z"
+    },
+    {
+      "gameId": "local-game-1775020302237",
+      "status": "PLAYING",
+      "mode": "VS_BOT",
+      "players": {
+        "RED": {
+          "name": "Player 1",
+          "type": "HUMAN",
+          "difficulty": "MEDIUM"
+        },
+        "BLUE": {
+          "name": "CPU Blue",
+          "type": "BOT",
+          "difficulty": "MEDIUM"
+        },
+        "YELLOW": {
+          "name": "CPU Yellow",
+          "type": "EMPTY",
+          "difficulty": "MEDIUM"
+        },
+        "GREEN": {
+          "name": "CPU Green",
+          "type": "EMPTY",
+          "difficulty": "MEDIUM"
+        }
+      },
+      "tokens": {
+        "RED": [
+          {
+            "id": 1,
+            "color": "RED",
+            "position": 0
+          },
+          {
+            "id": 2,
+            "color": "RED",
+            "position": 0
+          },
+          {
+            "id": 3,
+            "color": "RED",
+            "position": 0
+          },
+          {
+            "id": 4,
+            "color": "RED",
+            "position": 0
+          }
+        ],
+        "BLUE": [
+          {
+            "id": 1,
+            "color": "BLUE",
+            "position": 40
+          },
+          {
+            "id": 2,
+            "color": "BLUE",
+            "position": 0
+          },
+          {
+            "id": 3,
+            "color": "BLUE",
+            "position": 0
+          },
+          {
+            "id": 4,
+            "color": "BLUE",
+            "position": 0
+          }
+        ],
+        "YELLOW": [
+          {
+            "id": 1,
+            "color": "YELLOW",
+            "position": 0
+          },
+          {
+            "id": 2,
+            "color": "YELLOW",
+            "position": 0
+          },
+          {
+            "id": 3,
+            "color": "YELLOW",
+            "position": 0
+          },
+          {
+            "id": 4,
+            "color": "YELLOW",
+            "position": 0
+          }
+        ],
+        "GREEN": [
+          {
+            "id": 1,
+            "color": "GREEN",
+            "position": 0
+          },
+          {
+            "id": 2,
+            "color": "GREEN",
+            "position": 0
+          },
+          {
+            "id": 3,
+            "color": "GREEN",
+            "position": 0
+          },
+          {
+            "id": 4,
+            "color": "GREEN",
+            "position": 0
+          }
+        ]
+      },
+      "currentTurn": "BLUE",
+      "diceValue": 6,
+      "consecutiveSixes": 1,
+      "winners": [],
+      "logs": [
+        {
+          "id": 1775020369377.0396,
+          "msg": "BLUE moved token 1 to 40"
+        },
+        {
+          "id": 1775020366791.068,
+          "msg": "RED went AFK! Turn passed."
+        },
+        {
+          "id": 1775020334629.7532,
+          "msg": "BLUE rolled a 5. No moves."
+        },
+        {
+          "id": 1775020333435.8684,
+          "msg": "RED went AFK! Turn passed."
+        },
+        {
+          "id": 1775020302237.1135,
+          "msg": "Match Started! Enjoy Ludo Master."
+        },
+        {
+          "id": 1775020283698,
+          "msg": "Welcome to Ludo Master!"
+        }
+      ],
+      "isRolling": false,
+      "waitingForMove": false,
+      "timeLeft": 30,
+      "settings": {
+        "turnTimerSec": 30,
+        "exactRollToHome": true,
+        "safeStars": true
+      },
+      "memory": {},
+      "lastUpdated": "2026-04-01T05:12:49.406Z"
+    },
+    {
+      "gameId": "local-game-1775020524272",
+      "status": "PLAYING",
+      "mode": "LOCAL_4P",
+      "players": {
+        "RED": {
+          "name": "Player 1",
+          "type": "HUMAN",
+          "difficulty": "MEDIUM"
+        },
+        "BLUE": {
+          "name": "CPU Blue",
+          "type": "BOT",
+          "difficulty": "MEDIUM"
+        },
+        "YELLOW": {
+          "name": "CPU Yellow",
+          "type": "BOT",
+          "difficulty": "MEDIUM"
+        },
+        "GREEN": {
+          "name": "CPU Green",
+          "type": "BOT",
+          "difficulty": "MEDIUM"
+        }
+      },
+      "tokens": {
+        "RED": [
+          {
+            "id": 1,
+            "color": "RED",
+            "position": 0
+          },
+          {
+            "id": 2,
+            "color": "RED",
+            "position": 0
+          },
+          {
+            "id": 3,
+            "color": "RED",
+            "position": 0
+          },
+          {
+            "id": 4,
+            "color": "RED",
+            "position": 0
+          }
+        ],
+        "BLUE": [
+          {
+            "id": 1,
+            "color": "BLUE",
+            "position": 0
+          },
+          {
+            "id": 2,
+            "color": "BLUE",
+            "position": 0
+          },
+          {
+            "id": 3,
+            "color": "BLUE",
+            "position": 0
+          },
+          {
+            "id": 4,
+            "color": "BLUE",
+            "position": 0
+          }
+        ],
+        "YELLOW": [
+          {
+            "id": 1,
+            "color": "YELLOW",
+            "position": 0
+          },
+          {
+            "id": 2,
+            "color": "YELLOW",
+            "position": 0
+          },
+          {
+            "id": 3,
+            "color": "YELLOW",
+            "position": 0
+          },
+          {
+            "id": 4,
+            "color": "YELLOW",
+            "position": 0
+          }
+        ],
+        "GREEN": [
+          {
+            "id": 1,
+            "color": "GREEN",
+            "position": 14
+          },
+          {
+            "id": 2,
+            "color": "GREEN",
+            "position": 0
+          },
+          {
+            "id": 3,
+            "color": "GREEN",
+            "position": 0
+          },
+          {
+            "id": 4,
+            "color": "GREEN",
+            "position": 0
+          }
+        ]
+      },
+      "currentTurn": "GREEN",
+      "diceValue": 6,
+      "consecutiveSixes": 1,
+      "winners": [],
+      "logs": [
+        {
+          "id": 1775020600782.5037,
+          "msg": "GREEN moved token 1 to 14"
+        },
+        {
+          "id": 1775020596795.7368,
+          "msg": "YELLOW rolled a 2. No moves."
+        },
+        {
+          "id": 1775020594356.8464,
+          "msg": "BLUE rolled a 3. No moves."
+        },
+        {
+          "id": 1775020593387.7625,
+          "msg": "RED went AFK! Turn passed."
+        },
+        {
+          "id": 1775020561296.188,
+          "msg": "GREEN rolled a 4. No moves."
+        },
+        {
+          "id": 1775020558662.1943,
+          "msg": "YELLOW rolled a 5. No moves."
+        },
+        {
+          "id": 1775020556294.8606,
+          "msg": "BLUE rolled a 1. No moves."
+        },
+        {
+          "id": 1775020555332.281,
+          "msg": "RED went AFK! Turn passed."
+        },
+        {
+          "id": 1775020524272.2349,
+          "msg": "Match Started! Enjoy Ludo Master."
+        },
+        {
+          "id": 1775020426376,
+          "msg": "Welcome to Ludo Master!"
+        }
+      ],
+      "isRolling": false,
+      "waitingForMove": false,
+      "timeLeft": 30,
+      "settings": {
+        "turnTimerSec": 30,
+        "exactRollToHome": true,
+        "safeStars": true
+      },
+      "memory": {},
+      "lastUpdated": "2026-04-01T05:16:40.811Z"
+    },
+    {
+      "gameId": "local-game-1775023001742",
+      "status": "PLAYING",
+      "mode": "VS_BOT",
+      "players": {
+        "RED": {
+          "name": "Player 1",
+          "type": "HUMAN",
+          "difficulty": "MEDIUM"
+        },
+        "BLUE": {
+          "name": "CPU Blue",
+          "type": "BOT",
+          "difficulty": "MEDIUM"
+        },
+        "YELLOW": {
+          "name": "CPU Yellow",
+          "type": "EMPTY",
+          "difficulty": "MEDIUM"
+        },
+        "GREEN": {
+          "name": "CPU Green",
+          "type": "EMPTY",
+          "difficulty": "MEDIUM"
+        }
+      },
+      "tokens": {
+        "RED": [
+          {
+            "id": 1,
+            "color": "RED",
+            "position": 0
+          },
+          {
+            "id": 2,
+            "color": "RED",
+            "position": 0
+          },
+          {
+            "id": 3,
+            "color": "RED",
+            "position": 0
+          },
+          {
+            "id": 4,
+            "color": "RED",
+            "position": 0
+          }
+        ],
+        "BLUE": [
+          {
+            "id": 1,
+            "color": "BLUE",
+            "position": 40
+          },
+          {
+            "id": 2,
+            "color": "BLUE",
+            "position": 0
+          },
+          {
+            "id": 3,
+            "color": "BLUE",
+            "position": 0
+          },
+          {
+            "id": 4,
+            "color": "BLUE",
+            "position": 0
+          }
+        ],
+        "YELLOW": [
+          {
+            "id": 1,
+            "color": "YELLOW",
+            "position": 0
+          },
+          {
+            "id": 2,
+            "color": "YELLOW",
+            "position": 0
+          },
+          {
+            "id": 3,
+            "color": "YELLOW",
+            "position": 0
+          },
+          {
+            "id": 4,
+            "color": "YELLOW",
+            "position": 0
+          }
+        ],
+        "GREEN": [
+          {
+            "id": 1,
+            "color": "GREEN",
+            "position": 0
+          },
+          {
+            "id": 2,
+            "color": "GREEN",
+            "position": 0
+          },
+          {
+            "id": 3,
+            "color": "GREEN",
+            "position": 0
+          },
+          {
+            "id": 4,
+            "color": "GREEN",
+            "position": 0
+          }
+        ]
+      },
+      "currentTurn": "BLUE",
+      "diceValue": 6,
+      "consecutiveSixes": 1,
+      "winners": [],
+      "logs": [
+        {
+          "id": 1775023101892.7446,
+          "msg": "BLUE moved token 1 to 40"
+        },
+        {
+          "id": 1775023099814.9216,
+          "msg": "RED went AFK! Turn passed."
+        },
+        {
+          "id": 1775023067721.33,
+          "msg": "BLUE rolled a 2. No moves."
+        },
+        {
+          "id": 1775023066449.629,
+          "msg": "RED went AFK! Turn passed."
+        },
+        {
+          "id": 1775023034277.8992,
+          "msg": "BLUE rolled a 4. No moves."
+        },
+        {
+          "id": 1775023032584.8618,
+          "msg": "RED went AFK! Turn passed."
+        },
+        {
+          "id": 1775023001742.0322,
+          "msg": "Match Started! Enjoy Ludo Master."
+        },
+        {
+          "id": 1775019590868,
+          "msg": "Welcome to Ludo Master!"
+        }
+      ],
+      "isRolling": false,
+      "waitingForMove": false,
+      "timeLeft": 30,
+      "settings": {
+        "turnTimerSec": 30,
+        "exactRollToHome": true,
+        "safeStars": true
+      },
+      "memory": {},
+      "lastUpdated": "2026-04-01T05:58:21.921Z"
+    },
+    {
+      "gameId": "local-game-1775031964946",
+      "status": "PLAYING",
+      "mode": "VS_BOT",
+      "players": {
+        "RED": {
+          "name": "Player 1",
+          "type": "HUMAN",
+          "difficulty": "MEDIUM"
+        },
+        "BLUE": {
+          "name": "CPU Blue",
+          "type": "BOT",
+          "difficulty": "MEDIUM"
+        },
+        "YELLOW": {
+          "name": "CPU Yellow",
+          "type": "EMPTY",
+          "difficulty": "MEDIUM"
+        },
+        "GREEN": {
+          "name": "CPU Green",
+          "type": "EMPTY",
+          "difficulty": "MEDIUM"
+        }
+      },
+      "tokens": {
+        "RED": [
+          {
+            "id": 1,
+            "color": "RED",
+            "position": 0
+          },
+          {
+            "id": 2,
+            "color": "RED",
+            "position": 4
+          },
+          {
+            "id": 3,
+            "color": "RED",
+            "position": 0
+          },
+          {
+            "id": 4,
+            "color": "RED",
+            "position": 4
+          }
+        ],
+        "BLUE": [
+          {
+            "id": 1,
+            "color": "BLUE",
+            "position": 0
+          },
+          {
+            "id": 2,
+            "color": "BLUE",
+            "position": 0
+          },
+          {
+            "id": 3,
+            "color": "BLUE",
+            "position": 0
+          },
+          {
+            "id": 4,
+            "color": "BLUE",
+            "position": 0
+          }
+        ],
+        "YELLOW": [
+          {
+            "id": 1,
+            "color": "YELLOW",
+            "position": 0
+          },
+          {
+            "id": 2,
+            "color": "YELLOW",
+            "position": 0
+          },
+          {
+            "id": 3,
+            "color": "YELLOW",
+            "position": 0
+          },
+          {
+            "id": 4,
+            "color": "YELLOW",
+            "position": 0
+          }
+        ],
+        "GREEN": [
+          {
+            "id": 1,
+            "color": "GREEN",
+            "position": 0
+          },
+          {
+            "id": 2,
+            "color": "GREEN",
+            "position": 0
+          },
+          {
+            "id": 3,
+            "color": "GREEN",
+            "position": 0
+          },
+          {
+            "id": 4,
+            "color": "GREEN",
+            "position": 0
+          }
+        ]
+      },
+      "currentTurn": "RED",
+      "diceValue": null,
+      "consecutiveSixes": 0,
+      "winners": [],
+      "logs": [
+        {
+          "id": 1775031985601.433,
+          "msg": "RED moved token 2 to 4"
+        },
+        {
+          "id": 1775031981592.763,
+          "msg": "RED moved token 2 to 1"
+        },
+        {
+          "id": 1775031977993.0789,
+          "msg": "RED moved token 4 to 4"
+        },
+        {
+          "id": 1775031971916.0413,
+          "msg": "RED moved token 4 to 3"
+        },
+        {
+          "id": 1775031968564.1619,
+          "msg": "RED moved token 4 to 1"
+        },
+        {
+          "id": 1775031964946.88,
+          "msg": "Match Started! Enjoy Ludo Master."
+        },
+        {
+          "id": 1775031964544,
+          "msg": "Welcome to Ludo Master!"
+        }
+      ],
+      "isRolling": false,
+      "waitingForMove": false,
+      "timeLeft": 30,
+      "settings": {
+        "turnTimerSec": 30,
+        "exactRollToHome": true,
+        "safeStars": true
+      },
+      "memory": {},
+      "lastUpdated": "2026-04-01T08:26:25.615Z"
+    },
+    {
+      "gameId": "local-game-1775032677166",
+      "status": "PLAYING",
+      "mode": "LOCAL_4P",
+      "players": {
+        "RED": {
+          "name": "Player 1",
+          "type": "HUMAN",
+          "difficulty": "MEDIUM"
+        },
+        "BLUE": {
+          "name": "CPU Blue",
+          "type": "BOT",
+          "difficulty": "MEDIUM"
+        },
+        "YELLOW": {
+          "name": "CPU Yellow",
+          "type": "BOT",
+          "difficulty": "MEDIUM"
+        },
+        "GREEN": {
+          "name": "CPU Green",
+          "type": "BOT",
+          "difficulty": "MEDIUM"
+        }
+      },
+      "tokens": {
+        "RED": [
+          {
+            "id": 1,
+            "color": "RED",
+            "position": 0
+          },
+          {
+            "id": 2,
+            "color": "RED",
+            "position": 0
+          },
+          {
+            "id": 3,
+            "color": "RED",
+            "position": 0
+          },
+          {
+            "id": 4,
+            "color": "RED",
+            "position": 0
+          }
+        ],
+        "BLUE": [
+          {
+            "id": 1,
+            "color": "BLUE",
+            "position": 0
+          },
+          {
+            "id": 2,
+            "color": "BLUE",
+            "position": 0
+          },
+          {
+            "id": 3,
+            "color": "BLUE",
+            "position": 0
+          },
+          {
+            "id": 4,
+            "color": "BLUE",
+            "position": 0
+          }
+        ],
+        "YELLOW": [
+          {
+            "id": 1,
+            "color": "YELLOW",
+            "position": 0
+          },
+          {
+            "id": 2,
+            "color": "YELLOW",
+            "position": 0
+          },
+          {
+            "id": 3,
+            "color": "YELLOW",
+            "position": 0
+          },
+          {
+            "id": 4,
+            "color": "YELLOW",
+            "position": 0
+          }
+        ],
+        "GREEN": [
+          {
+            "id": 1,
+            "color": "GREEN",
+            "position": 0
+          },
+          {
+            "id": 2,
+            "color": "GREEN",
+            "position": 0
+          },
+          {
+            "id": 3,
+            "color": "GREEN",
+            "position": 0
+          },
+          {
+            "id": 4,
+            "color": "GREEN",
+            "position": 14
+          }
+        ]
+      },
+      "currentTurn": "GREEN",
+      "diceValue": 6,
+      "consecutiveSixes": 1,
+      "winners": [],
+      "logs": [
+        {
+          "id": 1775035341827.452,
+          "msg": "GREEN moved token 4 to 14"
+        },
+        {
+          "id": 1775035336824.4016,
+          "msg": "YELLOW rolled a 3. No moves."
+        },
+        {
+          "id": 1775035331840.8267,
+          "msg": "BLUE rolled a 5. No moves."
+        },
+        {
+          "id": 1775035328859.486,
+          "msg": "RED went AFK! Turn passed."
+        },
+        {
+          "id": 1775032677166.1238,
+          "msg": "Match Started! Enjoy Ludo Master."
+        },
+        {
+          "id": 1775032677081,
+          "msg": "Welcome to Ludo Master!"
+        }
+      ],
+      "isRolling": false,
+      "waitingForMove": false,
+      "timeLeft": 30,
+      "settings": {
+        "turnTimerSec": 30,
+        "exactRollToHome": true,
+        "safeStars": true
+      },
+      "memory": {},
+      "lastUpdated": "2026-04-01T09:22:21.854Z"
+    },
+    {
+      "gameId": "local-game-1775032678961",
+      "status": "PLAYING",
+      "mode": "VS_BOT",
+      "players": {
+        "RED": {
+          "name": "Player 1",
+          "type": "HUMAN",
+          "difficulty": "MEDIUM"
+        },
+        "BLUE": {
+          "name": "CPU Blue",
+          "type": "BOT",
+          "difficulty": "MEDIUM"
+        },
+        "YELLOW": {
+          "name": "CPU Yellow",
+          "type": "EMPTY",
+          "difficulty": "MEDIUM"
+        },
+        "GREEN": {
+          "name": "CPU Green",
+          "type": "EMPTY",
+          "difficulty": "MEDIUM"
+        }
+      },
+      "tokens": {
+        "RED": [
+          {
+            "id": 1,
+            "color": "RED",
+            "position": 0
+          },
+          {
+            "id": 2,
+            "color": "RED",
+            "position": 0
+          },
+          {
+            "id": 3,
+            "color": "RED",
+            "position": 0
+          },
+          {
+            "id": 4,
+            "color": "RED",
+            "position": 0
+          }
+        ],
+        "BLUE": [
+          {
+            "id": 1,
+            "color": "BLUE",
+            "position": 40
+          },
+          {
+            "id": 2,
+            "color": "BLUE",
+            "position": 0
+          },
+          {
+            "id": 3,
+            "color": "BLUE",
+            "position": 0
+          },
+          {
+            "id": 4,
+            "color": "BLUE",
+            "position": 0
+          }
+        ],
+        "YELLOW": [
+          {
+            "id": 1,
+            "color": "YELLOW",
+            "position": 0
+          },
+          {
+            "id": 2,
+            "color": "YELLOW",
+            "position": 0
+          },
+          {
+            "id": 3,
+            "color": "YELLOW",
+            "position": 0
+          },
+          {
+            "id": 4,
+            "color": "YELLOW",
+            "position": 0
+          }
+        ],
+        "GREEN": [
+          {
+            "id": 1,
+            "color": "GREEN",
+            "position": 0
+          },
+          {
+            "id": 2,
+            "color": "GREEN",
+            "position": 0
+          },
+          {
+            "id": 3,
+            "color": "GREEN",
+            "position": 0
+          },
+          {
+            "id": 4,
+            "color": "GREEN",
+            "position": 0
+          }
+        ]
+      },
+      "currentTurn": "BLUE",
+      "diceValue": 6,
+      "consecutiveSixes": 1,
+      "winners": [],
+      "logs": [
+        {
+          "id": 1775035334839.9458,
+          "msg": "BLUE moved token 1 to 40"
+        },
+        {
+          "id": 1775035330862.783,
+          "msg": "RED went AFK! Turn passed."
+        },
+        {
+          "id": 1775032678961.9656,
+          "msg": "Match Started! Enjoy Ludo Master."
+        },
+        {
+          "id": 1775032678339,
+          "msg": "Welcome to Ludo Master!"
+        }
+      ],
+      "isRolling": false,
+      "waitingForMove": false,
+      "timeLeft": 30,
+      "settings": {
+        "turnTimerSec": 30,
+        "exactRollToHome": true,
+        "safeStars": true
+      },
+      "memory": {},
+      "lastUpdated": "2026-04-01T09:22:14.871Z"
+    },
+    {
+      "gameId": "local-game-1775036353568",
+      "status": "PLAYING",
+      "mode": "VS_BOT",
+      "players": {
+        "RED": {
+          "name": "Player 1",
+          "type": "HUMAN",
+          "difficulty": "MEDIUM"
+        },
+        "BLUE": {
+          "name": "CPU Blue",
+          "type": "BOT",
+          "difficulty": "MEDIUM"
+        },
+        "YELLOW": {
+          "name": "CPU Yellow",
+          "type": "EMPTY",
+          "difficulty": "MEDIUM"
+        },
+        "GREEN": {
+          "name": "CPU Green",
+          "type": "EMPTY",
+          "difficulty": "MEDIUM"
+        }
+      },
+      "tokens": {
+        "RED": [
+          {
+            "id": 1,
+            "color": "RED",
+            "position": 0
+          },
+          {
+            "id": 2,
+            "color": "RED",
+            "position": 0
+          },
+          {
+            "id": 3,
+            "color": "RED",
+            "position": 0
+          },
+          {
+            "id": 4,
+            "color": "RED",
+            "position": 0
+          }
+        ],
+        "BLUE": [
+          {
+            "id": 1,
+            "color": "BLUE",
+            "position": 40
+          },
+          {
+            "id": 2,
+            "color": "BLUE",
+            "position": 0
+          },
+          {
+            "id": 3,
+            "color": "BLUE",
+            "position": 0
+          },
+          {
+            "id": 4,
+            "color": "BLUE",
+            "position": 0
+          }
+        ],
+        "YELLOW": [
+          {
+            "id": 1,
+            "color": "YELLOW",
+            "position": 0
+          },
+          {
+            "id": 2,
+            "color": "YELLOW",
+            "position": 0
+          },
+          {
+            "id": 3,
+            "color": "YELLOW",
+            "position": 0
+          },
+          {
+            "id": 4,
+            "color": "YELLOW",
+            "position": 0
+          }
+        ],
+        "GREEN": [
+          {
+            "id": 1,
+            "color": "GREEN",
+            "position": 0
+          },
+          {
+            "id": 2,
+            "color": "GREEN",
+            "position": 0
+          },
+          {
+            "id": 3,
+            "color": "GREEN",
+            "position": 0
+          },
+          {
+            "id": 4,
+            "color": "GREEN",
+            "position": 0
+          }
+        ]
+      },
+      "currentTurn": "BLUE",
+      "diceValue": 6,
+      "consecutiveSixes": 1,
+      "winners": [],
+      "logs": [
+        {
+          "id": 1775036415838.6868,
+          "msg": "BLUE moved token 1 to 40"
+        },
+        {
+          "id": 1775036412847.665,
+          "msg": "RED went AFK! Turn passed."
+        },
+        {
+          "id": 1775036353569.8557,
+          "msg": "Match Started! Enjoy Ludo Master."
+        },
+        {
+          "id": 1775036352946,
+          "msg": "Welcome to Ludo Master!"
+        }
+      ],
+      "isRolling": false,
+      "waitingForMove": false,
+      "timeLeft": 30,
+      "settings": {
+        "turnTimerSec": 30,
+        "exactRollToHome": true,
+        "safeStars": true
+      },
+      "memory": {},
+      "lastUpdated": "2026-04-01T09:40:15.862Z"
+    },
+    {
+      "gameId": "local-game-1775037722933",
+      "status": "PLAYING",
+      "mode": "VS_BOT",
+      "players": {
+        "RED": {
+          "name": "Player 1",
+          "type": "HUMAN",
+          "difficulty": "MEDIUM"
+        },
+        "BLUE": {
+          "name": "CPU Blue",
+          "type": "BOT",
+          "difficulty": "MEDIUM"
+        },
+        "YELLOW": {
+          "name": "CPU Yellow",
+          "type": "EMPTY",
+          "difficulty": "MEDIUM"
+        },
+        "GREEN": {
+          "name": "CPU Green",
+          "type": "EMPTY",
+          "difficulty": "MEDIUM"
+        }
+      },
+      "tokens": {
+        "RED": [
+          {
+            "id": 1,
+            "color": "RED",
+            "position": 0
+          },
+          {
+            "id": 2,
+            "color": "RED",
+            "position": 0
+          },
+          {
+            "id": 3,
+            "color": "RED",
+            "position": 0
+          },
+          {
+            "id": 4,
+            "color": "RED",
+            "position": 0
+          }
+        ],
+        "BLUE": [
+          {
+            "id": 1,
+            "color": "BLUE",
+            "position": 40
+          },
+          {
+            "id": 2,
+            "color": "BLUE",
+            "position": 0
+          },
+          {
+            "id": 3,
+            "color": "BLUE",
+            "position": 0
+          },
+          {
+            "id": 4,
+            "color": "BLUE",
+            "position": 0
+          }
+        ],
+        "YELLOW": [
+          {
+            "id": 1,
+            "color": "YELLOW",
+            "position": 0
+          },
+          {
+            "id": 2,
+            "color": "YELLOW",
+            "position": 0
+          },
+          {
+            "id": 3,
+            "color": "YELLOW",
+            "position": 0
+          },
+          {
+            "id": 4,
+            "color": "YELLOW",
+            "position": 0
+          }
+        ],
+        "GREEN": [
+          {
+            "id": 1,
+            "color": "GREEN",
+            "position": 0
+          },
+          {
+            "id": 2,
+            "color": "GREEN",
+            "position": 0
+          },
+          {
+            "id": 3,
+            "color": "GREEN",
+            "position": 0
+          },
+          {
+            "id": 4,
+            "color": "GREEN",
+            "position": 0
+          }
+        ]
+      },
+      "currentTurn": "BLUE",
+      "diceValue": 6,
+      "consecutiveSixes": 1,
+      "winners": [],
+      "logs": [
+        {
+          "id": 1775037785840.9463,
+          "msg": "BLUE moved token 1 to 40"
+        },
+        {
+          "id": 1775037782850.589,
+          "msg": "RED went AFK! Turn passed."
+        },
+        {
+          "id": 1775037722933.3193,
+          "msg": "Match Started! Enjoy Ludo Master."
+        },
+        {
+          "id": 1775037721703,
+          "msg": "Welcome to Ludo Master!"
+        }
+      ],
+      "isRolling": false,
+      "waitingForMove": false,
+      "timeLeft": 30,
+      "settings": {
+        "turnTimerSec": 30,
+        "exactRollToHome": true,
+        "safeStars": true
+      },
+      "memory": {},
+      "lastUpdated": "2026-04-01T10:03:05.859Z"
+    },
+    {
+      "gameId": "local-game-1775037899802",
+      "status": "PLAYING",
+      "mode": "LOCAL_4P",
+      "players": {
+        "RED": {
+          "name": "Player 1",
+          "type": "HUMAN",
+          "difficulty": "MEDIUM"
+        },
+        "BLUE": {
+          "name": "CPU Blue",
+          "type": "BOT",
+          "difficulty": "MEDIUM"
+        },
+        "YELLOW": {
+          "name": "CPU Yellow",
+          "type": "BOT",
+          "difficulty": "MEDIUM"
+        },
+        "GREEN": {
+          "name": "CPU Green",
+          "type": "BOT",
+          "difficulty": "MEDIUM"
+        }
+      },
+      "tokens": {
+        "RED": [
+          {
+            "id": 1,
+            "color": "RED",
+            "position": 0
+          },
+          {
+            "id": 2,
+            "color": "RED",
+            "position": 0
+          },
+          {
+            "id": 3,
+            "color": "RED",
+            "position": 0
+          },
+          {
+            "id": 4,
+            "color": "RED",
+            "position": 0
+          }
+        ],
+        "BLUE": [
+          {
+            "id": 1,
+            "color": "BLUE",
+            "position": 0
+          },
+          {
+            "id": 2,
+            "color": "BLUE",
+            "position": 0
+          },
+          {
+            "id": 3,
+            "color": "BLUE",
+            "position": 0
+          },
+          {
+            "id": 4,
+            "color": "BLUE",
+            "position": 0
+          }
+        ],
+        "YELLOW": [
+          {
+            "id": 1,
+            "color": "YELLOW",
+            "position": 0
+          },
+          {
+            "id": 2,
+            "color": "YELLOW",
+            "position": 0
+          },
+          {
+            "id": 3,
+            "color": "YELLOW",
+            "position": 0
+          },
+          {
+            "id": 4,
+            "color": "YELLOW",
+            "position": 0
+          }
+        ],
+        "GREEN": [
+          {
+            "id": 1,
+            "color": "GREEN",
+            "position": 0
+          },
+          {
+            "id": 2,
+            "color": "GREEN",
+            "position": 0
+          },
+          {
+            "id": 3,
+            "color": "GREEN",
+            "position": 0
+          },
+          {
+            "id": 4,
+            "color": "GREEN",
+            "position": 0
+          }
+        ]
+      },
+      "currentTurn": "RED",
+      "diceValue": null,
+      "consecutiveSixes": 0,
+      "winners": [],
+      "logs": [
+        {
+          "id": 1775037899802.5542,
+          "msg": "Match Started! Enjoy Ludo Master."
+        },
+        {
+          "id": 1775037899745,
+          "msg": "Welcome to Ludo Master!"
+        }
+      ],
+      "isRolling": false,
+      "waitingForMove": false,
+      "timeLeft": 30,
+      "settings": {
+        "turnTimerSec": 30,
+        "exactRollToHome": true,
+        "safeStars": true
+      },
+      "memory": {},
+      "lastUpdated": "2026-04-01T10:04:59.841Z"
+    },
+    {
+      "gameId": "local-game-1775037938532",
+      "status": "PLAYING",
+      "mode": "VS_BOT",
+      "players": {
+        "RED": {
+          "name": "Player 1",
+          "type": "HUMAN",
+          "difficulty": "MEDIUM"
+        },
+        "BLUE": {
+          "name": "CPU Blue",
+          "type": "BOT",
+          "difficulty": "MEDIUM"
+        },
+        "YELLOW": {
+          "name": "CPU Yellow",
+          "type": "EMPTY",
+          "difficulty": "MEDIUM"
+        },
+        "GREEN": {
+          "name": "CPU Green",
+          "type": "EMPTY",
+          "difficulty": "MEDIUM"
+        }
+      },
+      "tokens": {
+        "RED": [
+          {
+            "id": 1,
+            "color": "RED",
+            "position": 0
+          },
+          {
+            "id": 2,
+            "color": "RED",
+            "position": 0
+          },
+          {
+            "id": 3,
+            "color": "RED",
+            "position": 0
+          },
+          {
+            "id": 4,
+            "color": "RED",
+            "position": 0
+          }
+        ],
+        "BLUE": [
+          {
+            "id": 1,
+            "color": "BLUE",
+            "position": 0
+          },
+          {
+            "id": 2,
+            "color": "BLUE",
+            "position": 0
+          },
+          {
+            "id": 3,
+            "color": "BLUE",
+            "position": 0
+          },
+          {
+            "id": 4,
+            "color": "BLUE",
+            "position": 0
+          }
+        ],
+        "YELLOW": [
+          {
+            "id": 1,
+            "color": "YELLOW",
+            "position": 0
+          },
+          {
+            "id": 2,
+            "color": "YELLOW",
+            "position": 0
+          },
+          {
+            "id": 3,
+            "color": "YELLOW",
+            "position": 0
+          },
+          {
+            "id": 4,
+            "color": "YELLOW",
+            "position": 0
+          }
+        ],
+        "GREEN": [
+          {
+            "id": 1,
+            "color": "GREEN",
+            "position": 0
+          },
+          {
+            "id": 2,
+            "color": "GREEN",
+            "position": 0
+          },
+          {
+            "id": 3,
+            "color": "GREEN",
+            "position": 0
+          },
+          {
+            "id": 4,
+            "color": "GREEN",
+            "position": 0
+          }
+        ]
+      },
+      "currentTurn": "RED",
+      "diceValue": null,
+      "consecutiveSixes": 0,
+      "winners": [],
+      "logs": [
+        {
+          "id": 1775037938532.779,
+          "msg": "Match Started! Enjoy Ludo Master."
+        },
+        {
+          "id": 1775037938355,
+          "msg": "Welcome to Ludo Master!"
+        }
+      ],
+      "isRolling": false,
+      "waitingForMove": false,
+      "timeLeft": 30,
+      "settings": {
+        "turnTimerSec": 30,
+        "exactRollToHome": true,
+        "safeStars": true
+      },
+      "memory": {},
+      "lastUpdated": "2026-04-01T10:05:38.591Z"
+    },
+    {
+      "gameId": "local-game-1775037946596",
+      "status": "PLAYING",
+      "mode": "VS_BOT",
+      "players": {
+        "RED": {
+          "name": "Player 1",
+          "type": "HUMAN",
+          "difficulty": "MEDIUM"
+        },
+        "BLUE": {
+          "name": "CPU Blue",
+          "type": "BOT",
+          "difficulty": "MEDIUM"
+        },
+        "YELLOW": {
+          "name": "CPU Yellow",
+          "type": "EMPTY",
+          "difficulty": "MEDIUM"
+        },
+        "GREEN": {
+          "name": "CPU Green",
+          "type": "EMPTY",
+          "difficulty": "MEDIUM"
+        }
+      },
+      "tokens": {
+        "RED": [
+          {
+            "id": 1,
+            "color": "RED",
+            "position": 0
+          },
+          {
+            "id": 2,
+            "color": "RED",
+            "position": 0
+          },
+          {
+            "id": 3,
+            "color": "RED",
+            "position": 0
+          },
+          {
+            "id": 4,
+            "color": "RED",
+            "position": 0
+          }
+        ],
+        "BLUE": [
+          {
+            "id": 1,
+            "color": "BLUE",
+            "position": 0
+          },
+          {
+            "id": 2,
+            "color": "BLUE",
+            "position": 0
+          },
+          {
+            "id": 3,
+            "color": "BLUE",
+            "position": 0
+          },
+          {
+            "id": 4,
+            "color": "BLUE",
+            "position": 0
+          }
+        ],
+        "YELLOW": [
+          {
+            "id": 1,
+            "color": "YELLOW",
+            "position": 0
+          },
+          {
+            "id": 2,
+            "color": "YELLOW",
+            "position": 0
+          },
+          {
+            "id": 3,
+            "color": "YELLOW",
+            "position": 0
+          },
+          {
+            "id": 4,
+            "color": "YELLOW",
+            "position": 0
+          }
+        ],
+        "GREEN": [
+          {
+            "id": 1,
+            "color": "GREEN",
+            "position": 0
+          },
+          {
+            "id": 2,
+            "color": "GREEN",
+            "position": 0
+          },
+          {
+            "id": 3,
+            "color": "GREEN",
+            "position": 0
+          },
+          {
+            "id": 4,
+            "color": "GREEN",
+            "position": 0
+          }
+        ]
+      },
+      "currentTurn": "RED",
+      "diceValue": null,
+      "consecutiveSixes": 0,
+      "winners": [],
+      "logs": [
+        {
+          "id": 1775037946596.6726,
+          "msg": "Match Started! Enjoy Ludo Master."
+        },
+        {
+          "id": 1775037938355,
+          "msg": "Welcome to Ludo Master!"
+        }
+      ],
+      "isRolling": false,
+      "waitingForMove": false,
+      "timeLeft": 30,
+      "settings": {
+        "turnTimerSec": 30,
+        "exactRollToHome": true,
+        "safeStars": true
+      },
+      "memory": {},
+      "lastUpdated": "2026-04-01T10:05:46.616Z"
+    },
+    {
+      "gameId": "local-game-1775038050258",
+      "status": "PLAYING",
+      "mode": "VS_BOT",
+      "players": {
+        "RED": {
+          "name": "Player 1",
+          "type": "HUMAN",
+          "difficulty": "MEDIUM"
+        },
+        "BLUE": {
+          "name": "CPU Blue",
+          "type": "BOT",
+          "difficulty": "MEDIUM"
+        },
+        "YELLOW": {
+          "name": "CPU Yellow",
+          "type": "EMPTY",
+          "difficulty": "MEDIUM"
+        },
+        "GREEN": {
+          "name": "CPU Green",
+          "type": "EMPTY",
+          "difficulty": "MEDIUM"
+        }
+      },
+      "tokens": {
+        "RED": [
+          {
+            "id": 1,
+            "color": "RED",
+            "position": 0
+          },
+          {
+            "id": 2,
+            "color": "RED",
+            "position": 0
+          },
+          {
+            "id": 3,
+            "color": "RED",
+            "position": 0
+          },
+          {
+            "id": 4,
+            "color": "RED",
+            "position": 0
+          }
+        ],
+        "BLUE": [
+          {
+            "id": 1,
+            "color": "BLUE",
+            "position": 0
+          },
+          {
+            "id": 2,
+            "color": "BLUE",
+            "position": 0
+          },
+          {
+            "id": 3,
+            "color": "BLUE",
+            "position": 0
+          },
+          {
+            "id": 4,
+            "color": "BLUE",
+            "position": 0
+          }
+        ],
+        "YELLOW": [
+          {
+            "id": 1,
+            "color": "YELLOW",
+            "position": 0
+          },
+          {
+            "id": 2,
+            "color": "YELLOW",
+            "position": 0
+          },
+          {
+            "id": 3,
+            "color": "YELLOW",
+            "position": 0
+          },
+          {
+            "id": 4,
+            "color": "YELLOW",
+            "position": 0
+          }
+        ],
+        "GREEN": [
+          {
+            "id": 1,
+            "color": "GREEN",
+            "position": 0
+          },
+          {
+            "id": 2,
+            "color": "GREEN",
+            "position": 0
+          },
+          {
+            "id": 3,
+            "color": "GREEN",
+            "position": 0
+          },
+          {
+            "id": 4,
+            "color": "GREEN",
+            "position": 0
+          }
+        ]
+      },
+      "currentTurn": "RED",
+      "diceValue": null,
+      "consecutiveSixes": 0,
+      "winners": [],
+      "logs": [
+        {
+          "id": 1775038050258.8303,
+          "msg": "Match Started! Enjoy Ludo Master."
+        },
+        {
+          "id": 1775037938355,
+          "msg": "Welcome to Ludo Master!"
+        }
+      ],
+      "isRolling": false,
+      "waitingForMove": false,
+      "timeLeft": 30,
+      "settings": {
+        "turnTimerSec": 30,
+        "exactRollToHome": true,
+        "safeStars": true
+      },
+      "memory": {},
+      "lastUpdated": "2026-04-01T10:07:30.280Z"
+    },
+    {
+      "gameId": "local-game-1775038141585",
+      "status": "PLAYING",
+      "mode": "VS_BOT",
+      "players": {
+        "RED": {
+          "name": "Player 1",
+          "type": "HUMAN",
+          "difficulty": "MEDIUM"
+        },
+        "BLUE": {
+          "name": "CPU Blue",
+          "type": "BOT",
+          "difficulty": "MEDIUM"
+        },
+        "YELLOW": {
+          "name": "CPU Yellow",
+          "type": "EMPTY",
+          "difficulty": "MEDIUM"
+        },
+        "GREEN": {
+          "name": "CPU Green",
+          "type": "EMPTY",
+          "difficulty": "MEDIUM"
+        }
+      },
+      "tokens": {
+        "RED": [
+          {
+            "id": 1,
+            "color": "RED",
+            "position": 0
+          },
+          {
+            "id": 2,
+            "color": "RED",
+            "position": 0
+          },
+          {
+            "id": 3,
+            "color": "RED",
+            "position": 0
+          },
+          {
+            "id": 4,
+            "color": "RED",
+            "position": 0
+          }
+        ],
+        "BLUE": [
+          {
+            "id": 1,
+            "color": "BLUE",
+            "position": 0
+          },
+          {
+            "id": 2,
+            "color": "BLUE",
+            "position": 0
+          },
+          {
+            "id": 3,
+            "color": "BLUE",
+            "position": 0
+          },
+          {
+            "id": 4,
+            "color": "BLUE",
+            "position": 0
+          }
+        ],
+        "YELLOW": [
+          {
+            "id": 1,
+            "color": "YELLOW",
+            "position": 0
+          },
+          {
+            "id": 2,
+            "color": "YELLOW",
+            "position": 0
+          },
+          {
+            "id": 3,
+            "color": "YELLOW",
+            "position": 0
+          },
+          {
+            "id": 4,
+            "color": "YELLOW",
+            "position": 0
+          }
+        ],
+        "GREEN": [
+          {
+            "id": 1,
+            "color": "GREEN",
+            "position": 0
+          },
+          {
+            "id": 2,
+            "color": "GREEN",
+            "position": 0
+          },
+          {
+            "id": 3,
+            "color": "GREEN",
+            "position": 0
+          },
+          {
+            "id": 4,
+            "color": "GREEN",
+            "position": 0
+          }
+        ]
+      },
+      "currentTurn": "RED",
+      "diceValue": null,
+      "consecutiveSixes": 0,
+      "winners": [],
+      "logs": [
+        {
+          "id": 1775038141585.9473,
+          "msg": "Match Started! Enjoy Ludo Master."
+        },
+        {
+          "id": 1775038141176,
+          "msg": "Welcome to Ludo Master!"
+        }
+      ],
+      "isRolling": false,
+      "waitingForMove": false,
+      "timeLeft": 30,
+      "settings": {
+        "turnTimerSec": 30,
+        "exactRollToHome": true,
+        "safeStars": true
+      },
+      "memory": {},
+      "lastUpdated": "2026-04-01T10:09:01.620Z"
+    },
+    {
+      "gameId": "game-1bgawc5z4-1775040059891",
+      "status": "PLAYING",
+      "mode": "VS_BOT",
+      "players": {
+        "RED": {
+          "name": "Player 1",
+          "type": "HUMAN",
+          "difficulty": "MEDIUM",
+          "xp": 0,
+          "coins": 100
+        },
+        "BLUE": {
+          "name": "CPU Blue",
+          "type": "BOT",
+          "difficulty": "MEDIUM",
+          "xp": 5,
+          "coins": 100
+        },
+        "YELLOW": {
+          "name": "CPU Yellow",
+          "type": "EMPTY",
+          "difficulty": "MEDIUM"
+        },
+        "GREEN": {
+          "name": "CPU Green",
+          "type": "EMPTY",
+          "difficulty": "MEDIUM"
+        }
+      },
+      "tokens": {
+        "RED": [
+          {
+            "id": 1,
+            "color": "RED",
+            "position": 0
+          },
+          {
+            "id": 2,
+            "color": "RED",
+            "position": 0
+          },
+          {
+            "id": 3,
+            "color": "RED",
+            "position": 0
+          },
+          {
+            "id": 4,
+            "color": "RED",
+            "position": 0
+          }
+        ],
+        "BLUE": [
+          {
+            "id": 1,
+            "color": "BLUE",
+            "position": 40
+          },
+          {
+            "id": 2,
+            "color": "BLUE",
+            "position": 0
+          },
+          {
+            "id": 3,
+            "color": "BLUE",
+            "position": 0
+          },
+          {
+            "id": 4,
+            "color": "BLUE",
+            "position": 0
+          }
+        ],
+        "YELLOW": [
+          {
+            "id": 1,
+            "color": "YELLOW",
+            "position": 0
+          },
+          {
+            "id": 2,
+            "color": "YELLOW",
+            "position": 0
+          },
+          {
+            "id": 3,
+            "color": "YELLOW",
+            "position": 0
+          },
+          {
+            "id": 4,
+            "color": "YELLOW",
+            "position": 0
+          }
+        ],
+        "GREEN": [
+          {
+            "id": 1,
+            "color": "GREEN",
+            "position": 0
+          },
+          {
+            "id": 2,
+            "color": "GREEN",
+            "position": 0
+          },
+          {
+            "id": 3,
+            "color": "GREEN",
+            "position": 0
+          },
+          {
+            "id": 4,
+            "color": "GREEN",
+            "position": 0
+          }
+        ]
+      },
+      "currentTurn": "BLUE",
+      "diceValue": 6,
+      "consecutiveSixes": 1,
+      "winners": [],
+      "logs": [
+        {
+          "id": 1775040199191.0886,
+          "msg": "BLUE moved token 1 to 40"
+        },
+        {
+          "id": 1775040196989.1409,
+          "msg": "RED went AFK! Turn passed."
+        },
+        {
+          "id": 1775040163294.4177,
+          "msg": "BLUE rolled a 4. No moves."
+        },
+        {
+          "id": 1775040162053.2556,
+          "msg": "RED went AFK! Turn passed."
+        },
+        {
+          "id": 1775040128539.4006,
+          "msg": "BLUE rolled a 5. No moves."
+        },
+        {
+          "id": 1775040127221.6091,
+          "msg": "RED went AFK! Turn passed."
+        },
+        {
+          "id": 1775040093732.232,
+          "msg": "BLUE rolled a 5. No moves."
+        },
+        {
+          "id": 1775040091981.4062,
+          "msg": "RED went AFK! Turn passed."
+        },
+        {
+          "id": 1775040060002.2239,
+          "msg": "Match Started! Entry fee deducted."
+        },
+        {
+          "id": 1775040042505,
+          "msg": "Welcome to Ludo Master!"
+        }
+      ],
+      "isRolling": false,
+      "waitingForMove": false,
+      "timeLeft": 30,
+      "settings": {
+        "turnTimerSec": 30,
+        "exactRollToHome": true,
+        "safeStars": true
+      },
+      "memory": {},
+      "playerPerformanceHistory": [],
+      "botDifficulties": {
+        "BLUE": "MEDIUM"
+      },
+      "lastUpdated": "2026-04-01T10:43:19.222Z"
+    }
+  ]
+}

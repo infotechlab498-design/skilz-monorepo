@@ -1,0 +1,115 @@
+.ludo-celebration-root {
+  position: fixed;
+  inset: 0;
+  z-index: 9000;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.ludo-celebration-root--interactive {
+  pointer-events: auto;
+}
+
+.ludo-celebration-backdrop {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at 50% 40%,
+    rgba(15, 23, 42, 0.45) 0%,
+    rgba(15, 23, 42, 0.72) 100%
+  );
+  backdrop-filter: blur(3px);
+}
+
+.ludo-celebration-backdrop--red {
+  background: radial-gradient(ellipse at 50% 40%, rgba(190, 18, 60, 0.2), rgba(15, 23, 42, 0.75));
+}
+
+.ludo-celebration-backdrop--green {
+  background: radial-gradient(ellipse at 50% 40%, rgba(5, 150, 105, 0.22), rgba(15, 23, 42, 0.75));
+}
+
+.ludo-celebration-backdrop--yellow {
+  background: radial-gradient(ellipse at 50% 40%, rgba(217, 119, 6, 0.22), rgba(15, 23, 42, 0.75));
+}
+
+.ludo-celebration-backdrop--blue {
+  background: radial-gradient(ellipse at 50% 40%, rgba(2, 132, 199, 0.22), rgba(15, 23, 42, 0.75));
+}
+
+.ludo-petal-layer {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.ludo-petal {
+  position: absolute;
+  top: -12%;
+  width: clamp(8px, 1.4vw, 14px);
+  height: clamp(10px, 1.8vw, 18px);
+  border-radius: 50% 50% 50% 0;
+  opacity: 0.88;
+  animation: ludoPetalFall linear forwards;
+  transform-origin: center;
+}
+
+@keyframes ludoPetalFall {
+  0% {
+    transform: translateY(0) rotate(0deg) translateX(0);
+    opacity: 0;
+  }
+  8% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(110vh) rotate(720deg) translateX(var(--drift, 0px));
+    opacity: 0.15;
+  }
+}
+
+.ludo-firework-burst {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: ludoFirework 1.8s ease-out forwards;
+}
+
+@keyframes ludoFirework {
+  0% {
+    transform: scale(0.2);
+    opacity: 0.8;
+    box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.6);
+  }
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+    box-shadow: 0 0 40px 20px transparent;
+  }
+}
+
+.ludo-celebration-skip {
+  position: absolute;
+  bottom: clamp(16px, 4vw, 32px);
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: auto;
+  padding: 10px 20px;
+  border-radius: 99px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(15, 23, 42, 0.55);
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+  z-index: 9010;
+}
+
+.ludo-celebration-skip:hover {
+  background: rgba(15, 23, 42, 0.75);
+  transform: translateX(-50%) scale(1.03);
+}

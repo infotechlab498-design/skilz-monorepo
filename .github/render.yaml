@@ -1,0 +1,63 @@
+# Render Blueprint — Skilz monorepo (Express + Socket.IO + Vite SPA)
+# Docs: docs/RENDER_DEPLOYMENT_AUDIT.md
+#
+# Deploy: connect repo in Render Dashboard → New Blueprint → select render.yaml
+# Or: single Web Service with these settings manually.
+#
+# Firebase Cloud Functions stay on Google — deploy separately:
+#   cd backend && firebase deploy --only functions,firestore,storage,database
+
+services:
+  - type: web
+    name: skilz
+    runtime: node
+    region: frankfurt
+    plan: free
+    branch: main
+    buildCommand: >-
+      npm ci &&
+      npm run build &&
+      node scripts/render-prepare-firebase.mjs
+    startCommand: npm run start
+    healthCheckPath: /
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NODE_VERSION
+        value: "20"
+      - key: FIREBASE_SERVICE_ACCOUNT_PATH
+        value: secrets/render-service-account.json
+      - key: FIREBASE_DATABASE_URL
+        value: https://skilz-63d0a-default-rtdb.firebaseio.com
+      - key: FIREBASE_PROJECT_ID
+        value: skilz-63d0a
+      - key: APP_BASE_URL
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: ADMIN_EMAIL
+        sync: false
+      - key: CLOUDINARY_CLOUD_NAME
+        sync: false
+      - key: CLOUDINARY_API_KEY
+        sync: false
+      - key: CLOUDINARY_API_SECRET
+        sync: false
+      - key: FIREBASE_SERVICE_ACCOUNT_JSON
+        sync: false
+      - key: SOCKET_CORS_ORIGINS
+        sync: false
+      # Optional — uncomment in Dashboard or switch plan + add Redis service
+      # - key: REDIS_URL
+      #   fromService:
+      #     name: skilz-redis
+      #     type: redis
+      #     property: connectionString
+
+  # Optional (paid): Render Redis for horizontal scaling / Socket.IO adapter
+  # - type: redis
+  #   name: skilz-redis
+  #   plan: free
+  #   maxmemoryPolicy: allkeys-lru
+  #   ipAllowList: []

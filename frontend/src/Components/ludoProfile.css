@@ -1,0 +1,493 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --bg-color: #08090d;
+    --card-bg: #12141a;
+    --text-primary: #ffffff;
+    --text-secondary: rgba(255, 255, 255, 0.4);
+    --accent-blue: #3b82f6;
+    --accent-blue-stats: #7aa4ff;
+    --accent-pink: #ec4899;
+    --accent-gold: #f59e0b;
+    --accent-orange: #f97316;
+    --accent-orange-stats: #ffb443;
+    --accent-success: #10b981;
+    --border-subtle: rgba(255, 255, 255, 0.05);
+    --font-main: 'Inter', sans-serif;
+    --font-pill: 'Outfit', sans-serif;
+    --card-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+    --border-radius-lg: 32px;
+    --border-radius-pill: 60px;
+}
+
+.profile-container {
+    /* background-color: var(--bg-color); */
+    color: var(--text-primary);
+    min-height: 100vh;
+    /* padding: 30px 6%; */
+    font-family: var(--font-main);
+    margin-top: 5px;
+    /* overflow-x: hidden; */
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+/* --- TOP NAVBAR --- */
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+    gap: 220px;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.nav-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1.5px;
+    cursor: pointer;
+}
+
+.brand-name {
+    font-family: var(--font-pill);
+    font-weight: 800;
+    font-size: 1rem;
+    letter-spacing: -0.2px;
+    color: #000000;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.xp-pill {
+    background: #1c1c24;
+    padding: 8px 16px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.xp-icon-gold {
+    color: #f59e0b;
+}
+
+.wallet-btn {
+    background: #111e3b;
+    color: var(--accent-blue);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+/* --- MAIN LAYOUT GRID --- */
+.profile-grid {
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 50px;
+}
+
+/* --- HEADER SECTION --- */
+.profile-header {
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    flex-direction: column;
+}
+
+.user-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.username-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.username-h1 {
+    font-size: 2.6rem;
+    font-weight: 900;
+    letter-spacing: -1px;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.rank-badge {
+    background: #f43f5e;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 0.65rem;
+    font-weight: 900;
+    letter-spacing: 0.5px;
+}
+
+/* --- LEVEL PROGRESS --- */
+.level-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.level-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.level-tag {
+    color: #5fb5ff;
+    font-weight: 900;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+.next-level-xp {
+    color: var(--text-secondary);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.progress-track {
+    width: 100%;
+    height: 8px;
+    background: #1c1c24;
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #3b82f6, #ec4899);
+    border-radius: 50px;
+}
+
+/* --- TOTAL COINS WON CARD --- */
+.coins-won-card {
+    background: #14161c;
+    padding: 15px 30px;
+    border-radius: var(--border-radius-lg);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 360px;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--border-subtle);
+    position: relative;
+}
+
+.coins-won-card::before {
+    content: '';
+    position: absolute;
+    top: 20%;
+    left: 0;
+    width: 3px;
+    height: 60%;
+    background: #3b82f6;
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.6);
+}
+
+.coins-label {
+    font-size: 0.7rem;
+    font-weight: 800;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.coins-value-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.coin-icon-large {
+    width: 48px;
+    height: 48px;
+    background: #f59e0b;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.coins-amount {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+/* --- SECTION HEADERS --- */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* margin-top: 50px; */
+    margin-bottom: 5px;
+}
+
+.section-title {
+    font-size: 1.2rem;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.view-all {
+    color: #5fb5ff;
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+}
+
+/* --- ELITE ACHIEVEMENTS --- */
+.achievements-scroll {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.achievement-card {
+    background: #14161c;
+    padding: 14px 55px;
+    border-radius: var(--border-radius-lg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+    border: 1px solid var(--border-subtle);
+    box-shadow: var(--card-shadow);
+}
+
+.achievement-icon-wrapper {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 5px;
+}
+
+.achievement-icon-wrapper.active {
+    background: #f97316;
+    box-shadow: 0 0 35px rgba(249, 115, 22, 0.4);
+}
+
+.achievement-icon-wrapper.locked {
+    background: #1c1c24;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.achievement-title {
+    font-size: 0.9rem;
+    font-weight: 900;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.achievement-subtitle {
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    font-weight: 700;
+    width: 120px;
+}
+
+/* --- GAME STATISTICS --- */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* background: #0c0d12; */
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid var(--border-subtle);
+}
+
+.stat-item {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border-right: 1px solid var(--border-subtle);
+    border-bottom: 1px solid var(--border-subtle);
+    border-radius: 15px;
+    background-color: #08090d;
+}
+
+.stat-item:nth-child(3n) {
+    border-right: none;
+}
+
+.stat-item:nth-child(n+4) {
+    border-bottom: none;
+}
+
+.stat-label {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.stat-value {
+    font-size: 1.8rem;
+    font-weight: 900;
+}
+
+.stat-value.highlight-blue {
+    color: var(--accent-blue-stats);
+}
+
+.stat-value.highlight-orange {
+    color: var(--accent-orange-stats);
+}
+
+/* --- RECENT ACTIVITY --- */
+.sidebar-section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.activity-card {
+    background: #14161c;
+    padding: 16px 20px;
+    border-radius: var(--border-radius-pill);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border: 1px solid var(--border-subtle);
+    margin-bottom: 10px;
+}
+
+.activity-icon-container {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bg-victory {
+    background: rgba(16, 185, 129, 0.1);
+    color: #10b981;
+}
+
+.bg-follower {
+    background: rgba(59, 130, 246, 0.1);
+    color: #3b82f6;
+}
+
+.bg-badge {
+    background: rgba(249, 115, 22, 0.1);
+    color: #f97316;
+}
+
+.activity-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.activity-main-text {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.activity-meta-text {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+
+/* --- RESPONSIVE ADJUSTMENTS --- */
+@media (max-width: 1200px) {
+    .profile-header {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .coins-won-card {
+        width: 100%;
+    }
+
+    .profile-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .achievements-scroll {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stat-item:nth-child(n) {
+        border-right: 1px solid var(--border-subtle);
+        border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .stat-item:nth-child(2n) {
+        border-right: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .achievements-scroll {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .top-nav {
+        flex-direction: column;
+        gap: 20px;
+        align-items: flex-start;
+    }
+}

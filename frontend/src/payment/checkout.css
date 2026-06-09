@@ -1,0 +1,1596 @@
+/* coins plans */
+
+.checkout_plans_container {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: 268px;
+    height: fit-content;
+    position: relative;
+}
+
+.container .basic-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    height: 268px;
+    position: relative;
+    width: 100%;
+}
+
+.container .checkout_plans_icon_wrapper {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    left: 32px;
+    position: absolute;
+    top: 32px;
+    width: calc(100% - 64px);
+}
+
+.container .checkout_plans_icon {
+    height: 33px;
+    position: relative;
+    width: 33px;
+}
+
+.container .checkout_plans_heading {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    left: 32px;
+    position: absolute;
+    top: 96px;
+    width: calc(100% - 64px);
+}
+
+.container .checkout_plans_text {
+    align-items: center;
+    color: #2c2f31;
+    display: flex;
+    font-family: "Space Grotesk-Bold", Helvetica;
+    font-size: 24px;
+    font-weight: 700;
+    height: 32px;
+    letter-spacing: 0;
+    line-height: 32px;
+    margin-top: -1.00px;
+    position: relative;
+    white-space: nowrap;
+    width: 115.5px;
+}
+
+.container .checkout_plans_text_wrapper {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    left: 32px;
+    position: absolute;
+    top: 136px;
+    width: calc(100% - 64px);
+}
+
+.container .div {
+    color: #595c5e;
+    font-family: "Manrope-Regular", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    height: 40px;
+    letter-spacing: 0;
+    line-height: 20px;
+    margin-top: -1.00px;
+    position: relative;
+    width: 127.86px;
+}
+
+.container .div-wrapper {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    left: 32px;
+    position: absolute;
+    top: 200px;
+    width: calc(100% - 64px);
+}
+
+.container .text-2 {
+    align-items: center;
+    color: #4647d3;
+    display: flex;
+    font-family: "Manrope-Bold", Helvetica;
+    font-size: 30px;
+    font-weight: 700;
+    height: 36px;
+    letter-spacing: 0;
+    line-height: 36px;
+    margin-top: -1.00px;
+    position: relative;
+    white-space: nowrap;
+    width: 99.11px;
+}
+
+.container .best-value-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0px 20px 40px #4647d31a, 0px 0px 0px 2px #4647d3;
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    height: 268px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.container .img {
+    height: 30px;
+    position: relative;
+    width: 30px;
+}
+
+.container .text-3 {
+    align-items: center;
+    color: #2c2f31;
+    display: flex;
+    font-family: "Space Grotesk-Bold", Helvetica;
+    font-size: 24px;
+    font-weight: 700;
+    height: 32px;
+    letter-spacing: 0;
+    line-height: 32px;
+    margin-top: -1.00px;
+    position: relative;
+    white-space: nowrap;
+    width: 127.5px;
+}
+
+.container .p {
+    color: #595c5e;
+    font-family: "Manrope-Regular", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    height: 40px;
+    letter-spacing: 0;
+    line-height: 20px;
+    margin-top: -1.00px;
+    position: relative;
+    width: 152.87px;
+}
+
+.container .text-4 {
+    align-items: center;
+    color: #4647d3;
+    display: flex;
+    font-family: "Manrope-Bold", Helvetica;
+    font-size: 30px;
+    font-weight: 700;
+    height: 36px;
+    letter-spacing: 0;
+    line-height: 36px;
+    margin-top: -1.00px;
+    position: relative;
+    white-space: nowrap;
+    width: 122.31px;
+}
+
+.container .background {
+    align-items: flex-start;
+    background-color: #4647d3;
+    border-radius: 0px 0px 0px 12px;
+    display: inline-flex;
+    flex-direction: column;
+    padding: 4px 16px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.container .text-5 {
+    align-items: center;
+    color: #f4f1ff;
+    display: flex;
+    font-family: "Manrope-Bold", Helvetica;
+    font-size: 12px;
+    font-weight: 700;
+    height: 16px;
+    letter-spacing: 1.20px;
+    line-height: 16px;
+    margin-top: -1.00px;
+    position: relative;
+    white-space: nowrap;
+    width: 80.69px;
+}
+
+.container .mega-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+    height: 268px;
+    position: relative;
+    width: 100%;
+}
+
+.container .icon-2 {
+    height: 30.11px;
+    position: relative;
+    width: 30.07px;
+}
+
+.container .text-6 {
+    align-items: center;
+    color: #2c2f31;
+    display: flex;
+    font-family: "Space Grotesk-Bold", Helvetica;
+    font-size: 24px;
+    font-weight: 700;
+    height: 32px;
+    letter-spacing: 0;
+    line-height: 32px;
+    margin-top: -1.00px;
+    position: relative;
+    white-space: nowrap;
+    width: 131.05px;
+}
+
+.container .text-7 {
+    color: #595c5e;
+    font-family: "Manrope-Regular", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    height: 40px;
+    letter-spacing: 0;
+    line-height: 20px;
+    margin-top: -1.00px;
+    position: relative;
+    width: 112.75px;
+}
+
+.container .text-8 {
+    align-items: center;
+    color: #4647d3;
+    display: flex;
+    font-family: "Manrope-Bold", Helvetica;
+    font-size: 30px;
+    font-weight: 700;
+    height: 36px;
+    letter-spacing: 0;
+    line-height: 36px;
+    margin-top: -1.00px;
+    position: relative;
+    white-space: nowrap;
+    width: 125.88px;
+}
+
+/* payment form  */
+
+
+
+.payment-form-section {
+    align-items: flex-start;
+    background-color: #eef1f3;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 40px;
+    position: relative;
+}
+
+.payment-form-section .div {
+    align-items: flex-start;
+    align-self: stretch;
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    gap: 24px;
+    position: relative;
+    width: 100%;
+}
+
+.payment-form-section .checkout_plans_heading {
+    align-items: center;
+    align-self: stretch;
+    display: flex;
+    flex: 0 0 auto;
+    gap: 8px;
+    position: relative;
+    width: 100%;
+}
+
+.payment-form-section .checkout_plans_container {
+    align-items: flex-start;
+    display: inline-flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    position: relative;
+}
+
+.payment-form-section .checkout_plans_icon {
+    height: 18px;
+    position: relative;
+    width: 19px;
+}
+
+.payment-form-section .checkout_plans_text {
+    align-items: center;
+    color: #2c2f31;
+    display: flex;
+    font-family: "Space Grotesk-Bold", Helvetica;
+    font-size: 20px;
+    font-weight: 700;
+    height: 28px;
+    letter-spacing: 0;
+    line-height: 28px;
+    margin-top: -1.00px;
+    position: relative;
+    white-space: nowrap;
+    width: 165.64px;
+}
+
+.payment-form-section .checkout_plans_container_2 {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: 116px;
+    height: fit-content;
+}
+
+.payment-form-section .background-border {
+    align-items: center;
+    background-color: #ffffff;
+    border: 2px solid;
+    border-color: #4647d3;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    height: fit-content;
+    padding: 16px;
+    position: relative;
+    width: 100%;
+}
+
+.payment-form-section .background {
+    align-items: center;
+    background-color: #dcfce7;
+    border-radius: 8px;
+    display: flex;
+    height: 48px;
+    justify-content: center;
+    position: relative;
+    width: 48px;
+}
+
+.payment-form-section .checkout_plans_text_wrapper {
+    align-items: center;
+    color: #16a34a;
+    display: flex;
+    font-family: "Manrope-Bold", Helvetica;
+    font-size: 16px;
+    font-weight: 700;
+    height: 24px;
+    justify-content: center;
+    letter-spacing: 0;
+    line-height: 24px;
+    position: relative;
+    text-align: center;
+    white-space: nowrap;
+    width: 19.58px;
+}
+
+.payment-form-section .text-2 {
+    align-items: center;
+    color: #2c2f31;
+    display: flex;
+    font-family: "Manrope-Bold", Helvetica;
+    font-size: 14px;
+    font-weight: 700;
+    height: 20px;
+    letter-spacing: 0;
+    line-height: 20px;
+    margin-top: -1.00px;
+    position: relative;
+    white-space: nowrap;
+    width: 67.66px;
+}
+
+.payment-form-section .background-border-2 {
+    align-items: center;
+    background-color: #ffffff;
+    border: 2px solid;
+    border-color: transparent;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    height: fit-content;
+    padding: 16px;
+    position: relative;
+    width: 100%;
+}
+
+.payment-form-section .div-wrapper {
+    align-items: center;
+    background-color: #fee2e2;
+    border-radius: 8px;
+    display: flex;
+    height: 48px;
+    justify-content: center;
+    position: relative;
+    width: 48px;
+}
+
+.payment-form-section .text-3 {
+    align-items: center;
+    color: #dc2626;
+    display: flex;
+    font-family: "Manrope-Bold", Helvetica;
+    font-size: 16px;
+    font-weight: 700;
+    height: 24px;
+    justify-content: center;
+    letter-spacing: 0;
+    line-height: 24px;
+    position: relative;
+    text-align: center;
+    white-space: nowrap;
+    width: 19.83px;
+}
+
+.payment-form-section .text-4 {
+    align-items: center;
+    color: #2c2f31;
+    display: flex;
+    font-family: "Manrope-Bold", Helvetica;
+    font-size: 14px;
+    font-weight: 700;
+    height: 20px;
+    letter-spacing: 0;
+    line-height: 20px;
+    margin-top: -1.00px;
+    position: relative;
+    white-space: nowrap;
+    width: 64.75px;
+}
+
+.payment-form-section .background-border-3 {
+    align-items: center;
+    background-color: #ffffff;
+    border: 2px solid;
+    border-color: transparent;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+    height: fit-content;
+    padding: 16px;
+    position: relative;
+    width: 100%;
+}
+
+.payment-form-section .container-wrapper {
+    align-items: center;
+    background-color: #e0e7ff;
+    border-radius: 8px;
+    display: flex;
+    height: 48px;
+    justify-content: center;
+    position: relative;
+    width: 48px;
+}
+
+.payment-form-section .img {
+    height: 20px;
+    position: relative;
+    width: 20px;
+}
+
+.payment-form-section .text-5 {
+    align-items: center;
+    color: #2c2f31;
+    display: flex;
+    font-family: "Manrope-Bold", Helvetica;
+    font-size: 14px;
+    font-weight: 700;
+    height: 20px;
+    letter-spacing: 0;
+    line-height: 20px;
+    margin-top: -1.00px;
+    position: relative;
+    white-space: nowrap;
+    width: 92.63px;
+}
+
+.payment-form-section .icon-2 {
+    height: 16px;
+    position: relative;
+    width: 16px;
+}
+
+.payment-form-section .text-6 {
+    align-items: center;
+    color: #2c2f31;
+    display: flex;
+    font-family: "Space Grotesk-Bold", Helvetica;
+    font-size: 20px;
+    font-weight: 700;
+    height: 28px;
+    letter-spacing: 0;
+    line-height: 28px;
+    margin-top: -1.00px;
+    position: relative;
+    white-space: nowrap;
+    width: 161.27px;
+}
+
+.payment-form-section .localized-fields {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: 80px;
+    height: fit-content;
+    padding: 8px 0px 0px;
+}
+
+.payment-form-section .checkout_plans_container_3 {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 8.5px;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    height: fit-content;
+    position: relative;
+    width: 100%;
+}
+
+.payment-form-section .account-name {
+    align-items: center;
+    color: #595c5e;
+    display: flex;
+    font-family: "Manrope-Bold", Helvetica;
+    font-size: 12px;
+    font-weight: 700;
+    height: 16px;
+    letter-spacing: 1.20px;
+    line-height: 16px;
+    margin-top: -1.00px;
+    position: relative;
+    white-space: nowrap;
+    width: 127.94px;
+}
+
+.payment-form-section .input {
+    align-items: flex-start;
+    align-self: stretch;
+    background-color: #ffffff;
+    border-radius: 8px;
+    display: flex;
+    flex: 0 0 auto;
+    justify-content: center;
+    overflow: hidden;
+    padding: 17px 16px;
+    position: relative;
+    width: 100%;
+}
+
+.payment-form-section .checkout_plans_container_4 {
+    align-items: flex-start;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    flex-grow: 1;
+    position: relative;
+}
+
+.payment-form-section .text-wrapper-2 {
+    align-items: center;
+    align-self: stretch;
+    color: #6b7280;
+    display: flex;
+    font-family: "Manrope-Regular", Helvetica;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: normal;
+    margin-top: -1.00px;
+    position: relative;
+}
+
+.payment-form-section .checkout_plans_container_5 {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 8.5px;
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    height: fit-content;
+    position: relative;
+    width: 100%;
+}
+
+.payment-form-section .label-transaction-ID {
+    align-items: center;
+    color: #595c5e;
+    display: flex;
+    font-family: "Manrope-Bold", Helvetica;
+    font-size: 12px;
+    font-weight: 700;
+    height: 16px;
+    letter-spacing: 1.20px;
+    line-height: 16px;
+    margin-top: -1.00px;
+    position: relative;
+    white-space: nowrap;
+    width: 115.66px;
+}
+
+.payment-form-section .checkout_plans_container_6 {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: 80px 80px;
+    height: fit-content;
+}
+
+.payment-form-section .card-number {
+    align-items: center;
+    color: #595c5e;
+    display: flex;
+    font-family: "Manrope-Bold", Helvetica;
+    font-size: 12px;
+    font-weight: 700;
+    height: 16px;
+    letter-spacing: 1.20px;
+    line-height: 16px;
+    margin-top: -1.00px;
+    position: relative;
+    white-space: nowrap;
+    width: 132px;
+}
+
+.payment-form-section .expiry-date {
+    align-items: center;
+    color: #595c5e;
+    display: flex;
+    font-family: "Manrope-Bold", Helvetica;
+    font-size: 12px;
+    font-weight: 700;
+    height: 16px;
+    letter-spacing: 1.20px;
+    line-height: 16px;
+    margin-top: -1.00px;
+    position: relative;
+    white-space: nowrap;
+    width: 108.19px;
+}
+
+.payment-form-section .checkout_plans_container_7 {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 8.5px;
+    grid-column: 1 / 3;
+    grid-row: 2 / 3;
+    height: fit-content;
+    position: relative;
+    width: 100%;
+}
+
+.payment-form-section .text-wrapper-3 {
+    align-items: center;
+    color: #595c5e;
+    display: flex;
+    font-family: "Manrope-Bold", Helvetica;
+    font-size: 12px;
+    font-weight: 700;
+    height: 16px;
+    letter-spacing: 1.20px;
+    line-height: 16px;
+    margin-top: -1.00px;
+    position: relative;
+    white-space: nowrap;
+    width: 107.78px;
+}
+
+
+.right-column-order {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    padding: 0px 0px 329.5px;
+    position: relative;
+}
+
+.right-column-order .checkout_plans_container {
+    align-items: flex-start;
+    align-self: stretch;
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    gap: 32px;
+    position: relative;
+    width: 100%;
+}
+
+.right-column-order .background-border {
+    align-self: stretch;
+    background-color: #ffffff;
+    border: 1px solid;
+    border-color: #f1f5f9;
+    border-radius: 12px;
+    box-shadow: 0px 20px 40px #6366f10f;
+    height: 495px;
+    position: relative;
+    width: 100%;
+}
+
+.right-column-order .checkout_plans_heading {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    left: 41px;
+    position: absolute;
+    top: 41px;
+    width: calc(100% - 82px);
+}
+
+.right-column-order .checkout_plans_text {
+    align-items: center;
+    color: #2c2f31;
+    display: flex;
+    font-family: "Space Grotesk-Bold", Helvetica;
+    font-size: 24px;
+    font-weight: 700;
+    height: 32px;
+    letter-spacing: 0;
+    line-height: 32px;
+    margin-top: -1.00px;
+    position: relative;
+    white-space: nowrap;
+    width: 178.55px;
+}
+
+.right-column-order .div {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    left: 41px;
+    position: absolute;
+    top: 105px;
+    width: calc(100% - 82px);
+}
+
+.right-column-order .checkout_plans_container_2 {
+    align-items: center;
+    align-self: stretch;
+    display: flex;
+    flex: 0 0 auto;
+    justify-content: space-between;
+    position: relative;
+    width: 100%;
+}
+
+.right-column-order .checkout_plans_container_3 {
+    align-items: flex-start;
+    display: inline-flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    position: relative;
+}
+
+.right-column-order .checkout_plans_text_wrapper {
+    align-items: center;
+    color: #595c5e;
+    display: flex;
+    font-family: "Manrope-Regular", Helvetica;
+    font-size: 16px;
+    font-weight: 400;
+    height: 24px;
+    letter-spacing: 0;
+    line-height: 24px;
+    margin-top: -1.00px;
+    position: relative;
+    white-space: nowrap;
+    width: 101.8px;
+}
+
+.right-column-order .text-2 {
+    align-items: center;
+    color: #2c2f31;
+    display: flex;
+    font-family: "Manrope-Bold", Helvetica;
+    font-size: 16px;
+    font-weight: 700;
+    height: 24px;
+    letter-spacing: 0;
+    line-height: 24px;
+    margin-top: -1.00px;
+    position: relative;
+    white-space: nowrap;
+    width: 155.59px;
+}
+
+.right-column-order .text-3 {
+    align-items: center;
+    color: #595c5e;
+    display: flex;
+    font-family: "Manrope-Regular", Helvetica;
+    font-size: 16px;
+    font-weight: 400;
+    height: 24px;
+    letter-spacing: 0;
+    line-height: 24px;
+    margin-top: -1.00px;
+    position: relative;
+    white-space: nowrap;
+    width: 63.44px;
+}
+
+.right-column-order .text-4 {
+    align-items: center;
+    color: #2c2f31;
+    display: flex;
+    font-family: "Manrope-Bold", Helvetica;
+    font-size: 16px;
+    font-weight: 700;
+    height: 24px;
+    letter-spacing: 0;
+    line-height: 24px;
+    margin-top: -1.00px;
+    position: relative;
+    white-space: nowrap;
+    width: 65.23px;
+}
+
+.right-column-order .text-5 {
+    align-items: center;
+    color: #595c5e;
+    display: flex;
+    font-family: "Manrope-Regular", Helvetica;
+    font-size: 16px;
+    font-weight: 400;
+    height: 24px;
+    letter-spacing: 0;
+    line-height: 24px;
+    margin-top: -1.00px;
+    position: relative;
+    white-space: nowrap;
+    width: 66.77px;
+}
+
+.right-column-order .text-6 {
+    align-items: center;
+    color: #2c2f31;
+    display: flex;
+    font-family: "Manrope-Bold", Helvetica;
+    font-size: 16px;
+    font-weight: 700;
+    height: 24px;
+    letter-spacing: 0;
+    line-height: 24px;
+    margin-top: -1.00px;
+    position: relative;
+    white-space: nowrap;
+    width: 32.95px;
+}
+
+.right-column-order .horizontal-border {
+    align-items: center;
+    align-self: stretch;
+    border-color: #f1f5f9;
+    border-top-style: solid;
+    border-top-width: 1px;
+    display: flex;
+    flex: 0 0 auto;
+    justify-content: space-between;
+    padding: 24px 5.68e-14px 0px 0px;
+    position: relative;
+    width: 100%;
+}
+
+.right-column-order .text-7 {
+    align-items: center;
+    color: #2c2f31;
+    display: flex;
+    font-family: "Manrope-Bold", Helvetica;
+    font-size: 20px;
+    font-weight: 700;
+    height: 28px;
+    letter-spacing: 0;
+    line-height: 28px;
+    margin-top: -1.00px;
+    position: relative;
+    white-space: nowrap;
+    width: 111.27px;
+}
+
+.right-column-order .text-8 {
+    align-items: center;
+    color: #4647d3;
+    display: flex;
+    font-family: "Space Grotesk-Bold", Helvetica;
+    font-size: 30px;
+    font-weight: 700;
+    height: 36px;
+    letter-spacing: 0;
+    line-height: 36px;
+    margin-top: -1.00px;
+    position: relative;
+    white-space: nowrap;
+    width: 122.64px;
+}
+
+.right-column-order .checkout_plans_button {
+    all: unset;
+    align-items: center;
+    background: linear-gradient(90deg,
+            rgba(70, 71, 211, 1) 0%,
+            rgba(0, 87, 189, 1) 100%);
+    border-radius: 12px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    left: 41px;
+    padding: 20px 0px;
+    position: absolute;
+    top: 342px;
+    width: calc(100% - 82px);
+}
+
+.right-column-order .text-9 {
+    align-items: center;
+    color: #f4f1ff;
+    display: flex;
+    font-family: "Manrope-Bold", Helvetica;
+    font-size: 18px;
+    font-weight: 700;
+    height: 28px;
+    justify-content: center;
+    letter-spacing: 0;
+    line-height: 28px;
+    margin-top: -1.00px;
+    position: relative;
+    text-align: center;
+    white-space: nowrap;
+    width: 72.89px;
+}
+
+.right-column-order .checkout_plans_container_4 {
+    align-items: center;
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    left: 41px;
+    position: absolute;
+    top: 434px;
+    width: calc(100% - 82px);
+}
+
+.right-column-order .checkout_plans_container_5 {
+    align-items: center;
+    display: inline-flex;
+    flex: 0 0 auto;
+    gap: 3.99px;
+    position: relative;
+}
+
+.right-column-order .checkout_plans_icon {
+    height: 12.25px;
+    position: relative;
+    width: 9.33px;
+}
+
+.right-column-order .text-10 {
+    align-items: center;
+    color: #94a3b8;
+    display: flex;
+    font-family: "Manrope-Bold", Helvetica;
+    font-size: 12px;
+    font-weight: 700;
+    height: 16px;
+    letter-spacing: -0.60px;
+    line-height: 16px;
+    margin-top: -1.00px;
+    position: relative;
+    white-space: nowrap;
+    width: 65.22px;
+}
+
+.right-column-order .background {
+    background-color: #cbd5e1;
+    border-radius: 9999px;
+    height: 4px;
+    position: relative;
+    width: 4px;
+}
+
+.right-column-order .checkout_plans_container_6 {
+    align-items: center;
+    display: inline-flex;
+    flex: 0 0 auto;
+    gap: 4px;
+    position: relative;
+}
+
+.right-column-order .img {
+    height: 12.25px;
+    position: relative;
+    width: 12.83px;
+}
+
+.right-column-order .text-11 {
+    align-items: center;
+    color: #94a3b8;
+    display: flex;
+    font-family: "Manrope-Bold", Helvetica;
+    font-size: 12px;
+    font-weight: 700;
+    height: 16px;
+    letter-spacing: -0.60px;
+    line-height: 16px;
+    margin-top: -1.00px;
+    position: relative;
+    white-space: nowrap;
+    width: 109.64px;
+}
+
+.right-column-order .overlay-border {
+    align-items: flex-end;
+    align-self: stretch;
+    background-color: #eef2ff80;
+    border: 1px solid;
+    border-color: #e0e7ff;
+    border-radius: 12px;
+    display: flex;
+    flex: 0 0 auto;
+    gap: 15.99px;
+    padding: 22.88px 24px 24px;
+    position: relative;
+    width: 100%;
+}
+
+.right-column-order .checkout_plans_icon_wrapper {
+    align-items: flex-start;
+    display: inline-flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    height: 45.5px;
+    position: relative;
+}
+
+.right-column-order .icon-2 {
+    height: 20px;
+    position: relative;
+    width: 20px;
+}
+
+.right-column-order .div-wrapper {
+    align-items: flex-start;
+    align-self: stretch;
+    display: inline-flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    padding: 0px 8.59px 0px 0px;
+    position: relative;
+}
+
+.right-column-order .p {
+    color: #595c5e;
+    font-family: "Manrope-Regular", Helvetica;
+    font-size: 14px;
+    font-weight: 400;
+    height: 46px;
+    letter-spacing: 0;
+    line-height: 22.8px;
+    margin-top: -1.00px;
+    position: relative;
+    width: 386.74px;
+}
+
+/* -------------------------------------------------- */
+/* PREMIUM DESIGN SYSTEM (COINFORGE, QUANTUMPAY, NEONEDGE) */
+/* -------------------------------------------------- */
+
+:root {
+    --coinForge-primary: #6366f1;
+    --coinForge-secondary: #4f46e5;
+    --coinForge-accent: #10b981;
+    --coinForge-bg: #ffffff;
+    --coinForge-text: #1f2937;
+    --neonEdge-bg: #f3f4f6;
+    --quantumPay-accent: #10b981;
+}
+
+/* Page Layout */
+.checkout_pageWrapper {
+    min-height: 100vh;
+    background: #f8fafc;
+    padding: 40px 20px;
+}
+
+.checkout_mainContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.checkout_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.checkout_backBtn {
+    background: none;
+    border: none;
+    color: #6366f1;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.checkout_title {
+    font-size: 32px;
+    font-weight: 800;
+    color: #111827;
+}
+
+.checkout_grid {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 32px;
+}
+
+.checkout_section {
+    margin-bottom: 40px;
+}
+
+.checkout_sectionHeader {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: #374151;
+}
+
+.checkout_plansGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* Pricing Cards */
+.coinForge_card {
+    background: var(--coinForge-bg);
+    border-radius: 16px;
+    padding: 24px;
+    border: 2px solid transparent;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.coinForge_card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    border-color: var(--coinForge-primary);
+}
+
+.coinForge_card--selected {
+    border-color: var(--coinForge-primary);
+    background: #f5f3ff;
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+}
+
+.coinForge_card--bestValue {
+    border-color: var(--coinForge-primary);
+}
+
+.coinForge_badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: var(--coinForge-primary);
+    color: white;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 4px 12px;
+    border-radius: 0 0 0 12px;
+    letter-spacing: 1px;
+}
+
+.coinForge_iconWrap {
+    width: 64px;
+    height: 64px;
+    background: #f3f4f6;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.coinForge_icon {
+    font-size: 24px;
+    z-index: 1;
+}
+
+.coinForge_glow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(--coinForge-primary);
+    filter: blur(20px);
+    opacity: 0.1;
+}
+
+.coinForge_title {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--coinForge-text);
+    margin: 0 0 8px 0;
+}
+
+.coinForge_subTitle {
+    font-size: 14px;
+    color: #6b7280;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.coinForge_priceTag {
+    margin-top: 24px;
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+}
+
+.coinForge_currency {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--coinForge-primary);
+}
+
+.coinForge_amount {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--coinForge-primary);
+}
+
+.coinForge_selectionIndicator {
+    margin-top: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #9ca3af;
+}
+
+.coinForge_card--selected .coinForge_selectionIndicator {
+    color: var(--coinForge-primary);
+}
+
+/* User Balance */
+.quantumPay_balanceBox {
+    background: #111827;
+    padding: 12px 20px;
+    border-radius: 12px;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.quantumPay_balanceLabel {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #9ca3af;
+}
+
+.quantumPay_balanceValue {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.quantumPay_coinIconWrap {
+    width: 24px;
+    height: 24px;
+    background: rgba(16, 185, 129, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.quantumPay_coinIcon {
+    width: 14px;
+    height: 14px;
+}
+
+.quantumPay_amount {
+    font-size: 18px;
+    font-weight: 800;
+    color: white;
+}
+
+/* Checkout Form */
+.neonEdge_formBox {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.neonEdge_sectionTitle {
+    font-size: 18px;
+    font-weight: 700;
+    color: #111827;
+    margin: 0 0 20px 0;
+}
+
+.neonEdge_methodGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.neonEdge_methodCard {
+    padding: 16px;
+    border: 2px solid #f3f4f6;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.neonEdge_methodCard--active {
+    border-color: var(--coinForge-primary);
+    background: #f5f3ff;
+}
+
+.neonEdge_methodIcon {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 800;
+}
+
+.neonEdge_methodName {
+    font-size: 12px;
+    font-weight: 700;
+    color: #374151;
+}
+
+.neonEdge_inputGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.neonEdge_label {
+    font-size: 11px;
+    font-weight: 700;
+    color: #6b7280;
+    letter-spacing: 1px;
+}
+
+.neonEdge_input {
+    padding: 12px 16px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #111827;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.neonEdge_input:focus {
+    border-color: var(--coinForge-primary);
+}
+
+/* Order Summary */
+.quantumPay_summaryBox {
+    background: white;
+    padding: 32px;
+    border-radius: 16px;
+    border: 1px solid #f1f5f9;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 40px;
+}
+
+.quantumPay_summaryTitle {
+    font-size: 24px;
+    font-weight: 800;
+    color: #111827;
+    margin: 0 0 24px 0;
+}
+
+.quantumPay_row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    font-size: 16px;
+}
+
+.quantumPay_label {
+    color: #6b7280;
+}
+
+.quantumPay_value {
+    color: #111827;
+    font-weight: 600;
+}
+
+.quantumPay_divider {
+    height: 1px;
+    background: #f1f5f9;
+    margin: 24px 0;
+}
+
+.quantumPay_total {
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.quantumPay_btnPrimary {
+    width: 100%;
+    padding: 16px;
+    background: var(--coinForge-primary);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-top: 24px;
+}
+
+.quantumPay_btnPrimary:hover {
+    background: var(--coinForge-secondary);
+    transform: translateY(-2px);
+}
+
+.quantumPay_btnPrimary:disabled {
+    background: #9ca3af;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.quantumPay_trustInfo {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.quantumPay_trustItem {
+    font-size: 10px;
+    font-weight: 700;
+    color: #9ca3af;
+}
+
+/* Toast */
+.checkout_toast {
+    padding: 16px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+.checkout_toast--success {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.checkout_toast--error {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+/* Loading */
+.checkout_loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+}
+
+.checkout_spinner {
+    width: 48px;
+    height: 48px;
+    border: 4px solid #f3f4f6;
+    border-top-color: var(--coinForge-primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 16px;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.neonEdge_readonlyLine {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    padding: 10px 12px;
+    background: #fff;
+    font-size: 14px;
+}
+
+.neonEdge_copyBtn {
+    border: 1px solid #c7d7fe;
+    background: #eef4ff;
+    color: #1d4ed8;
+    padding: 6px 10px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.neonEdge_instruction {
+    margin: 2px 0 14px;
+    color: #475467;
+    font-size: 13px;
+}
+
+.neonEdge_uploadMeta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 10px;
+    border: 1px dashed #d0d5dd;
+    border-radius: 8px;
+    background: #f9fafb;
+    font-size: 13px;
+}
+
+@media (max-width: 1000px) {
+    .checkout_grid {
+        grid-template-columns: 1fr;
+    }
+    .quantumPay_summaryBox {
+        position: static;
+    }
+}
+
+@media (max-width: 760px) {
+    .checkout_plansGrid,
+    .neonEdge_methodGrid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,38 @@
+{
+  "name": "@skilz/backend",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "main": "src/bootstrapEnv.js",
+  "scripts": {
+    "dev": "node --watch-path=src --watch-path=../shared src/bootstrapEnv.js",
+    "start": "node src/bootstrapEnv.js",
+    "test": "node --test \"src/**/*.test.js\"",
+    "emulate:functions": "firebase emulators:start --only functions",
+    "enigma:batch": "node scripts/enigmaPulse/generateQuestions.js",
+    "enigma:migrate-word-cipher": "node scripts/enigmaPulse/migrateWordCipherToBrainTwisters.mjs",
+    "blogs:seed-legacy": "node scripts/seed-legacy-blogs.mjs",
+    "questions:repair-seed": "node scripts/questions/fixAndSeedQuestions.js",
+    "questions:csv": "node scripts/questions/fixAndSeedQuestions.js --write-csv-only",
+    "game-config:seed": "node scripts/seedGameEconomyConfig.mjs"
+  },
+  "dependencies": {
+    "@socket.io/redis-adapter": "^8.3.0",
+    "bcryptjs": "^3.0.3",
+    "cloudinary": "^2.10.0",
+    "cors": "^2.8.6",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.4.1",
+    "firebase-admin": "^13.10.0",
+    "jsonwebtoken": "^9.0.3",
+    "multer": "^2.1.1",
+    "nodemailer": "^8.0.10",
+    "proper-lockfile": "^4.1.2",
+    "redis": "^5.12.1",
+    "socket.io": "^4.8.3",
+    "uuid": "^14.0.0",
+    "xlsx": "^0.18.5",
+    "zod": "^3.24.1"
+  }
+}

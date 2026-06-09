@@ -1,0 +1,292 @@
+/**
+ * Sequence IQ boot / deck-prep UX — GPU-friendly (transform + opacity only).
+ * Paired with PatternRecognition.jsx phase machine.
+ */
+
+.pr-boot {
+  min-height: min(72vh, 640px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(1.25rem, 4vw, 2.5rem);
+  box-sizing: border-box;
+  font-family: 'Inter', 'Montserrat', system-ui, sans-serif;
+  color: #e2e8f0;
+  position: relative;
+  overflow: hidden;
+}
+
+.pr-boot__bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(139, 92, 246, 0.35), transparent 55%),
+    radial-gradient(ellipse 60% 50% at 100% 80%, rgba(34, 211, 238, 0.12), transparent 50%),
+    radial-gradient(ellipse 50% 40% at 0% 70%, rgba(244, 114, 182, 0.1), transparent 45%),
+    linear-gradient(180deg, #0a0518 0%, #0f0828 45%, #07051a 100%);
+  opacity: 1;
+}
+
+.pr-boot__grid {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.12;
+  background-image:
+    linear-gradient(rgba(167, 139, 250, 0.35) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(167, 139, 250, 0.35) 1px, transparent 1px);
+  background-size: 48px 48px;
+  transform: translate3d(0, 0, 0);
+}
+
+.pr-boot__content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+}
+
+.pr-boot__title {
+  font-size: clamp(0.72rem, 2.2vw, 0.85rem);
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(196, 181, 253, 0.95);
+  margin: 0 0 0.75rem;
+  font-weight: 700;
+}
+
+.pr-boot__headline {
+  font-size: clamp(1.15rem, 3.5vw, 1.45rem);
+  font-weight: 800;
+  margin: 0 0 1.25rem;
+  background: linear-gradient(90deg, #c4b5fd, #22d3ee, #f472b6);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: prBootShimmer 3.2s ease-in-out infinite;
+}
+
+@keyframes prBootShimmer {
+  0%,
+  100% {
+    background-position: 0% center;
+  }
+  50% {
+    background-position: 100% center;
+  }
+}
+
+.pr-boot__msg {
+  min-height: 2.75rem;
+  font-size: 0.92rem;
+  line-height: 1.45;
+  color: rgba(226, 232, 240, 0.88);
+  margin: 0 0 1.75rem;
+  transition: opacity 0.35s ease;
+}
+
+.pr-boot__msg--fade {
+  opacity: 0.55;
+}
+
+/* Sequence pulse boxes */
+.pr-seq {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(0.55rem, 2.5vw, 0.85rem);
+  margin-bottom: 2rem;
+}
+
+.pr-seq__box {
+  width: clamp(52px, 14vw, 68px);
+  height: clamp(52px, 14vw, 68px);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: clamp(1.1rem, 3.5vw, 1.35rem);
+  color: #f5f3ff;
+  border: 1px solid rgba(167, 139, 250, 0.45);
+  background: rgba(15, 23, 42, 0.55);
+  box-shadow:
+    0 0 24px rgba(139, 92, 246, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  transform: translate3d(0, 0, 0) scale(1);
+  opacity: 0.55;
+  will-change: transform, opacity;
+  position: relative;
+  overflow: hidden;
+}
+
+.pr-seq__box::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.14) 45%,
+    transparent 70%
+  );
+  transform: translate3d(-120%, 0, 0);
+  animation: prBootGlint 2.4s ease-in-out infinite;
+}
+
+.pr-seq__box:nth-child(1)::after {
+  animation-delay: 0s;
+}
+.pr-seq__box:nth-child(2)::after {
+  animation-delay: 0.35s;
+}
+.pr-seq__box:nth-child(3)::after {
+  animation-delay: 0.7s;
+}
+
+@keyframes prBootGlint {
+  0% {
+    transform: translate3d(-120%, 0, 0);
+  }
+  55%,
+  100% {
+    transform: translate3d(120%, 0, 0);
+  }
+}
+
+.pr-seq__box:nth-child(1) {
+  animation: prBootPulse 1.4s ease-in-out infinite;
+  animation-delay: 0s;
+}
+.pr-seq__box:nth-child(2) {
+  animation: prBootPulse 1.4s ease-in-out infinite;
+  animation-delay: 0.2s;
+}
+.pr-seq__box:nth-child(3) {
+  animation: prBootPulse 1.4s ease-in-out infinite;
+  animation-delay: 0.4s;
+}
+
+@keyframes prBootPulse {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: translate3d(0, 0, 0) scale(1);
+    box-shadow: 0 0 18px rgba(139, 92, 246, 0.2);
+  }
+  50% {
+    opacity: 1;
+    transform: translate3d(0, -4px, 0) scale(1.06);
+    box-shadow:
+      0 0 32px rgba(34, 211, 238, 0.35),
+      0 0 48px rgba(139, 92, 246, 0.25);
+  }
+}
+
+.pr-boot__tip {
+  font-size: 0.78rem;
+  color: rgba(148, 163, 184, 0.95);
+  font-style: italic;
+  margin: 0;
+  min-height: 2.5rem;
+  transition: opacity 0.3s ease;
+}
+
+.pr-boot__players {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-top: 1.25rem;
+}
+
+.pr-boot__chip {
+  font-size: 0.72rem;
+  padding: 0.35rem 0.65rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(226, 232, 240, 0.9);
+}
+
+/* Sequence IQ joining route — mode pick (GPU-safe transitions on buttons via opacity) */
+.pr-join-mode__inner {
+  max-width: min(400px, 100%);
+}
+
+.pr-join-mode__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+@media (min-width: 420px) {
+  .pr-join-mode__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.pr-join-mode__pill {
+  appearance: none;
+  cursor: pointer;
+  border-radius: 14px;
+  padding: 14px 16px;
+  font-size: 0.92rem;
+  font-weight: 700;
+  font-family: inherit;
+  color: #f5f3ff;
+  background: rgba(15, 23, 42, 0.65);
+  border: 1px solid rgba(167, 139, 250, 0.45);
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.18);
+  transition: transform 0.2s ease, opacity 0.2s ease, border-color 0.2s ease;
+}
+
+.pr-join-mode__pill:hover {
+  opacity: 0.95;
+  transform: translate3d(0, -2px, 0);
+  border-color: rgba(34, 211, 238, 0.55);
+}
+
+.pr-join-mode__pill:active {
+  transform: translate3d(0, 0, 0);
+}
+
+.pr-join-mode__back {
+  margin-top: 1.75rem;
+  background: transparent;
+  border: none;
+  color: rgba(148, 163, 184, 0.95);
+  font-size: 0.85rem;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.pr-join-mode__back:hover {
+  color: #e2e8f0;
+}
+
+/* Whoosh into live board */
+.pr-stage--whoosh-in {
+  animation: prWhooshIn 0.48s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  will-change: transform, opacity, filter;
+}
+
+@keyframes prWhooshIn {
+  from {
+    opacity: 0;
+    filter: blur(10px);
+    transform: translate3d(-28px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translate3d(0, 0, 0);
+  }
+}

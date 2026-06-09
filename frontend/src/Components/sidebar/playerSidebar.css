@@ -1,0 +1,127 @@
+.pd-sidebarInner {
+  height: 100%;
+  padding: 18px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.pd-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+}
+
+.pd-brandMark {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #ff4fd8, #6a5cff);
+  display: grid;
+  place-items: center;
+  box-shadow: 0 10px 25px rgba(106, 92, 255, 0.25);
+}
+
+.pd-brandMarkIcon {
+  font-weight: 800;
+  color: #ffffff;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+
+.pd-brandName {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  color: #101828;
+}
+
+.pd-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pd-navItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  color: #475467;
+  text-decoration: none;
+  transition: background-color 180ms ease, color 180ms ease, box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.pd-navItem:hover {
+  background: rgba(106, 92, 255, 0.06);
+  color: #101828;
+}
+
+.pd-navItem.is-active {
+  background: linear-gradient(135deg, #ff4fd8, #6a5cff);
+  color: #ffffff;
+  box-shadow: 0 14px 28px rgba(255, 79, 216, 0.22);
+}
+
+.pd-navItem.is-active .pd-navIcon {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.pd-navIcon {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  background: rgba(16, 24, 40, 0.06);
+  transition: background-color 180ms ease;
+}
+
+.pd-navLabel {
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.pd-helpCard {
+  margin-top: auto;
+  border-radius: 16px;
+  padding: 14px;
+  background: linear-gradient(135deg, rgba(106, 92, 255, 0.12), rgba(255, 79, 216, 0.12));
+  border: 1px solid rgba(16, 24, 40, 0.06);
+}
+
+.pd-helpTitle {
+  font-size: 13px;
+  font-weight: 800;
+  color: #101828;
+  margin-bottom: 4px;
+}
+
+.pd-helpText {
+  font-size: 12px;
+  color: #475467;
+  margin-bottom: 10px;
+}
+
+.pd-helpButton {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 12px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #ff4fd8, #6a5cff);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.pd-helpButton:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 22px rgba(106, 92, 255, 0.2);
+}
+

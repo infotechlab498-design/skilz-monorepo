@@ -1,0 +1,8 @@
+
+
+gameType,type,category,difficulty,question,option1,option2,option3,option4,correctIndex,hint,explanation
+enigma_pulse,word_cipher,brain_twisters,easy,"I speak without a mouth and hear without ears. What am I?",Echo,Shadow,Wind,Stone,0,Classic riddle form,An echo repeats sound without physical mouth or ears.
+enigma_pulse,word_cipher,brain_twisters,easy,"The more you take, the more you leave behind. What are they?",Footsteps,Memories,Time,Breath,0,Think about walking,Footsteps remain behind as you walk away.
+enigma_pulse,word_cipher,brain_twisters,medium,"I have cities but no houses, forests but no trees, and water but no fish. What am I?",A map,A dream,A book,A mirror,0,Paper representation,A map shows places symbolically without real structures.
+enigma_pulse,word_cipher,brain_twisters,medium,"What can travel around the world while staying in a corner?",A stamp,A coin,A spider,A shadow,0,Postal item,A postage stamp stays on an envelope corner while mail travels globally.
+enigma_pulse,word_cipher,brain_twisters,hard,"I am not alive but I grow; I don't have lungs but I need air; I don't have a mouth but water kills me. What am I?",Fire,Ice,Cloud,Stone,0,Needs oxygen to burn,Fire grows and requires air; water extinguishes it.

@@ -1,0 +1,483 @@
+/* intro */
+
+/* gammingExperienceLeft */
+
+
+/* Main About Section */
+:root {
+  --abt-content-width: min(1240px, calc(100% - 64px));
+  --abt-center-gap: clamp(28px, 4vw, 56px);
+}
+
+.section {
+  background-color: #fffaff;
+  min-height: 530px;
+  width: var(--abt-content-width);
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  padding: 80px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--abt-center-gap);
+  overflow: hidden;
+}
+
+.section .about-Left-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 600px;
+}
+
+.text-wrapper {
+  font-family: "Raleway", sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  color: #04080f;
+  margin: 0;
+  background: linear-gradient(180deg, rgba(16, 54, 248, 1) 0%, rgba(193, 23, 74, 1) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.cras-gravida-tortor {
+  color: #04080f;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Image Decoration Section */
+.image-decoration-container {
+  position: relative;
+  width: 400px;
+  height: 450px;
+  flex-shrink: 0;
+}
+
+.rectangle {
+  background-color: rgba(6, 1, 180, 0.4);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  height: 380px;
+  width: 300px;
+  position: absolute;
+  border-radius: 20px;
+  z-index: 1;
+}
+
+.rectangle:first-child {
+  top: 0;
+  left: 0;
+}
+
+.rectangle.secondary {
+  top: 60px;
+  left: 60px;
+  background-color: rgba(193, 23, 74, 0.3);
+}
+
+.about-Intro-image {
+  height: 360px;
+  width: 310px;
+  object-fit: fill;
+  border-radius: 20px;
+  position: absolute;
+  z-index: 2;
+  top: 30px;
+  left: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Gaming & Sign-In Section */
+.about-gaming-experience {
+  display: flex;
+  flex-direction: row;
+  /* gap: var(--abt-center-gap); */
+  gap: 8rem;
+  width: var(--abt-content-width);
+  padding: 80px 0;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 0 auto;
+  background-color: #ffffff;
+}
+
+.gaming-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 650px;
+}
+
+.gaming-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #000;
+}
+
+.gaming-title span {
+  color: #ff5733;
+}
+
+.gaming-description {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 24px;
+}
+
+.feature-card {
+  background-color: #1a1926;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 100%;
+}
+
+.feature-card h4 {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  margin: 0;
+}
+
+.feature-card h4 span {
+  color: #ff5733;
+}
+
+.feature-card p {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #bbb;
+  margin: 0;
+}
+
+/* Sign In Card */
+.signin-card {
+  flex: 0 0 450px;
+  background-color: #1a1926;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+.signin-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #ff5733;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.signin-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  color: #fff;
+  font-size: 14px;
+}
+
+.form-group input {
+  height: 50px;
+  padding: 0 16px;
+  border-radius: 10px;
+  border: 1px solid #333;
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  font-size: 14px;
+  outline: none;
+}
+
+.form-group input:focus {
+  border-color: #ff5733;
+}
+
+.signin-btn {
+  height: 50px;
+  background-color: #ff5733;
+  color: #fff;
+  border-radius: 10px;
+  border: none;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 10px;
+}
+
+.signin-btn:hover {
+  background-color: #ff3f1f;
+  transform: translateY(-2px);
+}
+
+.success-text {
+  color: #4cd137;
+  font-size: 14px;
+  text-align: center;
+}
+
+.error-text {
+  color: #ff8f8f;
+  font-size: 14px;
+  text-align: center;
+}
+
+.signin-link-btn {
+  background: transparent;
+  border: none;
+  color: #ffb6a7;
+  font-size: 13px;
+  text-decoration: underline;
+  cursor: pointer;
+  text-align: center;
+}
+
+.signin-link-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: #777;
+  font-size: 12px;
+  margin: 10px 0;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background-color: #333;
+}
+
+.google-btn {
+  height: 50px;
+  border-radius: 25px;
+  border: 1px solid #444;
+  background: transparent;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.google-btn:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: #fff;
+}
+
+.google-btn img {
+  width: 20px;
+  height: 20px;
+}
+
+/* FAQ Section */
+.FAQ {
+  width: var(--abt-content-width);
+  padding: 80px 0;
+  margin: 0 auto;
+}
+
+.div-wrapper {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.faq-container {
+  border: 1px solid #ff7a00;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(255, 122, 0, 0.1);
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.faq-item {
+  border-bottom: 1px solid rgba(255, 122, 0, 0.2);
+}
+
+.faq-item:last-child {
+  border-bottom: none;
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 30px;
+  cursor: pointer;
+  background-color: #000;
+  color: #fff;
+}
+
+.faq-question h4 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.icon {
+  font-size: 24px;
+  color: #ff7a00;
+}
+
+.faq-answer p {
+  padding: 30px;
+  background-color: #fff;
+  color: #444;
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* Breakpoints */
+
+@media (max-width: 1200px) {
+
+  .section,
+  .about-gaming-experience {
+    width: calc(100% - 48px);
+  }
+}
+
+@media (max-width: 1024px) {
+  .section {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+    width: calc(100% - 48px);
+    padding: 60px 0;
+  }
+
+  .section .about-Left-group {
+    max-width: 100%;
+    align-items: center;
+  }
+
+  .about-gaming-experience {
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+    width: calc(100% - 48px);
+  }
+
+  .signin-card {
+    flex: none;
+    width: 100%;
+    max-width: 550px;
+  }
+}
+
+@media (max-width: 768px) {
+  .text-wrapper {
+    font-size: 36px;
+  }
+
+  .gaming-title {
+    font-size: 30px;
+  }
+
+  .image-decoration-container {
+    width: 320px;
+    height: 380px;
+    transform: scale(0.9);
+    margin: 0 auto;
+  }
+
+  .rectangle {
+    width: 250px;
+    height: 300px;
+  }
+
+  .about-Intro-image {
+    width: 260px;
+    height: 310px;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .FAQ,
+  .section,
+  .about-gaming-experience {
+    width: calc(100% - 30px);
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 40px 0;
+  }
+
+  .text-wrapper {
+    font-size: 28px;
+  }
+
+  .cras-gravida-tortor {
+    font-size: 14px;
+  }
+
+  .image-decoration-container {
+    transform: scale(0.7);
+    margin: -40px auto;
+  }
+
+  .signin-card {
+    padding: 30px 20px;
+  }
+
+  .faq-question {
+    padding: 20px;
+  }
+
+  .faq-question h4 {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 380px) {
+  .image-decoration-container {
+    display: none;
+  }
+}

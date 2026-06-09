@@ -1,0 +1,52 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    function isAuthed() {
+      
+      return request.auth != null;
+
+    }
+
+    function lobbyVoiceAllowed(lobbyId) {
+      let lobby = firestore.get(
+        /databases/(default)/documents/lobbies/$(lobbyId)
+      ).data;
+      return isAuthed() && (
+        lobby.hostUid == request.auth.uid
+        || lobby.memberMap[request.auth.uid] == true
+        || lobby.participantMap[request.auth.uid] == true
+        || request.auth.uid in lobby.memberUids
+        || (
+          !lobby.keys().hasAny(['hostUid', 'memberMap', 'participantMap', 'memberUids'])
+          && lobby.lobbyId is string
+        )
+      );
+    }
+
+    // Voice uploads: chatVoice/{lobbyId}/{file}
+
+    match /chatVoice/{lobbyId}/{fileName} {
+
+      allow read: if lobbyVoiceAllowed(lobbyId);
+      allow write: if lobbyVoiceAllowed(lobbyId)
+        && request.resource.size < 8 * 1024 * 1024
+        && request.resource.contentType.matches('audio/.*');
+      allow delete: if false;
+    }
+
+    // Profile photos: one folder per uid (path profileImages/{uid}/profile.ext)
+
+    match /profileImages/{userId}/{fileName} {
+      allow read: if true;
+      allow write: if isAuthed()
+        && request.auth.uid == userId
+        && request.resource.size < 5 * 1024 * 1024
+        && request.resource.contentType.matches('image/.*');
+      allow delete: if isAuthed() && request.auth.uid == userId;
+    }
+
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}

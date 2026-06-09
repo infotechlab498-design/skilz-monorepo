@@ -1,0 +1,32 @@
+{
+  "errors": [
+    {
+      "id": "ERR001",
+      "category": "Runtime",
+      "description": "Port 3000 already in use (EADDRINUSE)",
+      "status": "resolved",
+      "fix": "Terminated process with PID 25716."
+    },
+    {
+      "id": "ERR002",
+      "category": "Runtime",
+      "description": "Vite HMR port 24678 already in use",
+      "status": "resolved",
+      "fix": "Verified as free after port 3000 cleanup."
+    },
+    {
+      "id": "ERR003",
+      "category": "Architectural",
+      "description": "Potential Firebase leftover code/dependencies",
+      "status": "verified",
+      "fix": "No Firebase-related code or scripts found in the current codebase."
+    },
+    {
+      "id": "ERR004",
+      "category": "Database",
+      "description": "JSON database file creation/existence",
+      "status": "resolved",
+      "fix": "Initialized users.json, scores.json, games.json and created db.json in server/data/."
+    }
+  ]
+}

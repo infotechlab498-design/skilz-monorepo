@@ -1,0 +1,257 @@
+.agsRoot {
+  padding-bottom: 32px;
+}
+
+.agsMeta {
+  margin: 0;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.agsActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.agsGlobalCard,
+.agsPanel,
+.agsAudit {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 16px 18px;
+  margin-bottom: 16px;
+}
+
+.agsGlobalCard h3,
+.agsAudit h3 {
+  margin: 0 0 12px;
+  font-size: 16px;
+}
+
+.agsTabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.agsTab {
+  border: 1px solid var(--line);
+  background: var(--card);
+  border-radius: 999px;
+  padding: 8px 16px;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  color: var(--text);
+}
+
+.agsTab.is-active {
+  color: #fff;
+  border-color: transparent;
+  background: linear-gradient(130deg, var(--primaryA), var(--primaryB));
+}
+
+.agsSubFilter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px dashed var(--line);
+  background: color-mix(in srgb, var(--card) 92%, var(--primaryA) 8%);
+}
+
+.agsSubFilterBtn {
+  border: 1px solid var(--line);
+  background: var(--card);
+  border-radius: 999px;
+  padding: 7px 14px;
+  font-weight: 600;
+  font-size: 12px;
+  cursor: pointer;
+  color: var(--text);
+}
+
+.agsSubFilterBtn.is-active {
+  color: #fff;
+  border-color: transparent;
+  background: linear-gradient(130deg, #6366f1, #8b5cf6);
+}
+
+.agsVariantBanner {
+  margin: 0 0 12px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-size: 13px;
+  background: rgba(99, 102, 241, 0.1);
+  border: 1px solid rgba(99, 102, 241, 0.25);
+}
+
+.agsGrid2,
+.agsGrid3 {
+  display: grid;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.agsGrid2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.agsGrid3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.agsField {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.agsFieldLabel {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.agsFieldInput {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 14px;
+  background: #fff;
+  width: 100%;
+}
+
+.agsFieldHint {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.agsToggleRow {
+  margin-bottom: 16px;
+}
+
+.agsToggle,
+.agsToggleInline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.agsRewardBlock {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 12px 14px 14px;
+  margin: 0 0 16px;
+}
+
+.agsRewardBlock legend {
+  font-weight: 700;
+  padding: 0 6px;
+}
+
+.agsRewardRow {
+  display: grid;
+  grid-template-columns: 72px 1fr 1fr;
+  gap: 10px;
+  align-items: end;
+  margin-top: 10px;
+}
+
+.agsRewardOutcome {
+  font-weight: 600;
+  text-transform: capitalize;
+  padding-bottom: 10px;
+}
+
+.agsPreview {
+  background: linear-gradient(135deg, #f8f5ff 0%, #fff5fa 100%);
+  border: 1px solid #eadcf8;
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin-bottom: 16px;
+}
+
+.agsPreview h4 {
+  margin: 0 0 8px;
+  font-size: 14px;
+}
+
+.agsPreview p {
+  margin: 4px 0;
+  font-size: 14px;
+}
+
+.agsPreviewNote {
+  font-size: 12px !important;
+  color: var(--muted);
+  margin-top: 8px !important;
+}
+
+.agsModes h4 {
+  margin: 0 0 8px;
+}
+
+.agsModePanel {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  margin-bottom: 8px;
+  padding: 0 12px 12px;
+}
+
+.agsModePanel summary {
+  cursor: pointer;
+  font-weight: 600;
+  padding: 12px 0;
+  text-transform: capitalize;
+}
+
+.agsModeBody {
+  display: grid;
+  gap: 12px;
+}
+
+.agsAuditHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.agsAuditList {
+  margin: 0;
+  padding-left: 18px;
+  font-size: 14px;
+  color: var(--text);
+}
+
+.agsAuditList li {
+  margin-bottom: 6px;
+}
+
+@media (max-width: 900px) {
+  .agsGrid2,
+  .agsGrid3,
+  .agsRewardRow {
+    grid-template-columns: 1fr;
+  }
+
+  .agsActions {
+    width: 100%;
+  }
+
+  .agsActions button {
+    flex: 1 1 auto;
+  }
+}

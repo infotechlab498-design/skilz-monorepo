@@ -1,0 +1,123 @@
+.nc-lobby-shell {
+  display: grid;
+  grid-template-columns: minmax(200px, 260px) 1fr minmax(220px, 280px);
+  gap: 1.25rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+  min-height: 70vh;
+  color: #e0f2fe;
+}
+
+.nc-center {
+  background: linear-gradient(160deg, rgba(8, 47, 73, 0.92), rgba(15, 23, 42, 0.95));
+  border: 1px solid rgba(34, 211, 238, 0.25);
+  border-radius: 16px;
+  padding: 1.75rem 1.5rem;
+  box-shadow: 0 0 40px rgba(34, 211, 238, 0.08);
+}
+
+.nc-title {
+  font-size: 1.85rem;
+  margin: 0 0 0.35rem;
+  letter-spacing: 0.04em;
+  color: #f0f9ff;
+  text-shadow: 0 0 18px rgba(34, 211, 238, 0.45);
+}
+
+.nc-lead {
+  margin: 0 0 1.25rem;
+  color: #94a3b8;
+  font-size: 0.95rem;
+}
+
+.nc-banner {
+  margin-bottom: 1.25rem;
+  padding: 1rem;
+  border-radius: 12px;
+  background: rgba(34, 211, 238, 0.08);
+  border: 1px solid rgba(34, 211, 238, 0.35);
+}
+
+.nc-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-bottom: 1rem;
+}
+
+.nc-btn {
+  font: inherit;
+  cursor: pointer;
+  border-radius: 10px;
+  padding: 0.55rem 1rem;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  background: rgba(15, 23, 42, 0.6);
+  color: #e2e8f0;
+}
+
+.nc-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.nc-btn--primary {
+  background: linear-gradient(135deg, #0891b2, #2563eb);
+  border-color: rgba(34, 211, 238, 0.5);
+  color: #fff;
+  box-shadow: 0 0 20px rgba(34, 211, 238, 0.25);
+}
+
+.nc-btn--secondary {
+  background: rgba(30, 41, 59, 0.95);
+  border-color: rgba(34, 211, 238, 0.4);
+  color: #e0f2fe;
+}
+
+.nc-btn--ghost {
+  background: transparent;
+  border-color: rgba(148, 163, 184, 0.35);
+}
+
+.nc-hint {
+  font-size: 0.8rem;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.45;
+}
+
+.nc-right {
+  min-width: 0;
+}
+
+.nc-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(2, 6, 23, 0.72);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 80;
+  padding: 1rem;
+}
+
+.nc-modal {
+  max-width: 420px;
+  background: #0f172a;
+  border: 1px solid rgba(34, 211, 238, 0.35);
+  border-radius: 14px;
+  padding: 1.25rem 1.35rem;
+  color: #e2e8f0;
+  box-shadow: 0 0 48px rgba(34, 211, 238, 0.12);
+}
+
+.nc-modal h3 {
+  margin-top: 0;
+  color: #22d3ee;
+}
+
+@media (max-width: 960px) {
+  .nc-lobby-shell {
+    grid-template-columns: 1fr;
+  }
+}

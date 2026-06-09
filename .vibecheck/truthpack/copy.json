@@ -1,0 +1,44 @@
+{
+  "brandName": "Skilz",
+  "games": {
+    "enigmaPulse": {
+      "errors": {
+        "insufficientQuestions": "Not enough questions are available for this match. Try another category or difficulty, or try again later.",
+        "syllogismDeckIncomplete": "Syllogism needs a full 10-question deck for each player. Pick another category or try again later."
+      }
+    },
+    "mathRush": {
+      "matchResults": {
+        "pageTitle": "Match results",
+        "subtitleDefault": "Match concluded",
+        "subtitleForfeit": "Match ended by forfeit",
+        "subtitleScore": "Match complete",
+        "headlineVictory": "Victory",
+        "headlineDefeat": "Defeat",
+        "headlineDraw": "Draw",
+        "badgeWinner": "Winner",
+        "badgeDraw": "Draw",
+        "badgeRunnerUp": "Runner-up",
+        "you": "You",
+        "botLabel": "MathBot",
+        "score": "Score",
+        "correct": "Correct",
+        "wrong": "Wrong",
+        "accuracy": "Accuracy",
+        "difficulty": "Difficulty",
+        "rounds": "Rounds",
+        "xpEarned": "XP earned",
+        "coinsEarned": "Coins earned",
+        "totalCoins": "Wallet",
+        "claimingRewards": "Claiming rewards…",
+        "rewardUnavailable": "Rewards could not be applied.",
+        "notAuthenticatedRewards": "Sign in to earn coins and XP for ranked matches.",
+        "playAgain": "Play again",
+        "backToLobby": "Back to lobby",
+        "versus": "vs",
+        "noRewardsVsBot": "Practice vs MathBot — no ranked coin rewards.",
+        "opponent": "Opponent"
+      }
+    }
+  }
+}

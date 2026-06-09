@@ -1,0 +1,19 @@
+[
+  {
+    "id": "guest_crx9do",
+    "uid": "guest_crx9do",
+    "displayName": "Guest Player",
+    "photoURL": "https://api.dicebear.com/7.x/avataaars/svg?seed=Guest",
+    "level": 1,
+    "timestamp": "2026-04-04T07:09:06.829Z"
+  },
+  {
+    "id": "guest_qobf8",
+    "uid": "guest_qobf8",
+    "displayName": "Guest Player",
+    "photoURL": "https://api.dicebear.com/7.x/avataaars/svg?seed=Guest",
+    "score": 30,
+    "level": 1,
+    "timestamp": "2026-04-04T07:39:27.917Z"
+  }
+]

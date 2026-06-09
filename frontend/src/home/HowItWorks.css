@@ -1,0 +1,153 @@
+.how-it-works {
+  padding: 80px 20px;
+  text-align: center;
+  background-color: #ffffff;
+  font-family: system-ui, sans-serif;
+  width: 100%;
+  margin: 0 auto 60px;
+}
+
+.how-it-works h2 {  
+  padding-left: 10px;
+  padding-bottom: 30px;
+}
+
+.subtitle {
+  max-width: 520px;
+  color: #666;
+  font-size: 18px;
+  margin: 0 auto 60px;
+  line-height: 1.6;
+}
+
+.steps-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  gap: 180px;
+  flex-wrap: wrap;
+}
+
+
+.steps-container::before {
+  content: "";
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 900px;
+  height: 120px;
+  background-image: url("../assets/newLine.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  z-index: 0;
+
+}
+
+.step {
+  width: 260px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.step h4 {
+  margin-top: 18px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #000;
+}
+
+.step span {
+
+  max-width: 520px;
+  color: #666;
+  font-size: 16px;
+  margin: 0 auto 60px;
+  line-height: 1.6;
+}
+
+.icon-box {
+  width: 190px;
+  height: 190px;
+  margin: 0 auto;
+  border-radius: 18px;
+  background-color: #f4f6fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-box.red {
+  background-color: #FF4F2C;
+}
+
+.icon-box img {
+  width: 190px;
+  height: 190px;
+  object-fit: contain;
+}
+
+/*   Mobile (≤ 480px) */
+
+@media (max-width: 480px) {
+  .how-it-works {
+    padding: 10px 16px;
+
+  }
+.how-it-works h2{
+  font-size: 20px;
+}
+  .steps-container {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .steps-container::before {
+    display: none;
+  }
+
+  .step {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .icon-box {
+    width: 180px;
+    height: 180px;
+  }
+
+  .icon-box img {
+    width: 180px;
+    height: 200px;
+  }
+}
+
+/*    TABLET (481px – 768px) */
+
+@media (max-width: 768px) {
+
+  .steps-container {
+    gap: 60px;
+  }
+
+  .steps-container::before {
+    display: none;
+  }
+
+  .step {
+    width: 240px;
+  }
+}
+
+/*  Larger Desktop (≥ 1200px) */
+
+@media (min-width: 1200px) {
+
+  .steps-container {
+    gap: 200px;
+  }
+}

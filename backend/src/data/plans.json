@@ -1,0 +1,43 @@
+[
+  {
+    "id": "starter",
+    "title": "Starter Pack",
+    "coins": 50,
+    "price": 500,
+    "description": "Perfect for new players to jump in, play more matches, and get a feel for the competition.",
+    "features": [
+      "50 Coins",
+      "Basic access",
+      "Standard matchmaking"
+    ],
+    "highlighted": false
+  },
+  {
+    "id": "pro",
+    "title": "Pro Gamer Pack",
+    "coins": 105,
+    "price": 1000,
+    "description": "Built for competitive players who want more games, better value, and faster progress.",
+    "features": [
+      "100 Coins + 5 Bonus",
+      "Extra XP",
+      "Priority Matchmaking"
+    ],
+    "highlighted": true
+  },
+  {
+    "id": "elite",
+    "title": "Elite Pack",
+    "coins": 160,
+    "price": 2000,
+    "description": "Unlock the full experience with bonus coins and top-tier gaming advantages.",
+    "features": [
+      "150 Coins + 10 Bonus",
+      "Play more matches",
+      "Extra XP’s",
+      "Leaderboard Boost",
+      "Priority Matchmaking"
+    ],
+    "highlighted": false
+  }
+]

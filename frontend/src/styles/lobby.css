@@ -1,0 +1,2 @@
+/* Forwards to Math Rush lobby styles (large design system lives there). */
+@import '../games/mathRush/styles/lobby.css';

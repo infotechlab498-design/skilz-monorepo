@@ -1,0 +1,33 @@
+{
+  "name": "skilz-monorepo",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Skilz — workspaces: frontend (Vite/React), backend (Express/Socket.IO)",
+  "license": "ISC",
+  "type": "module",
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "dev": "node scripts/dev-stack.mjs",
+    "dev:frontend": "npm run dev -w @skilz/frontend",
+    "dev:backend": "npm run dev -w @skilz/backend",
+    "build": "npm run build -w @skilz/frontend",
+    "start": "npm run start -w @skilz/backend",
+    "preview": "npm run preview -w @skilz/frontend",
+    "lint": "eslint .",
+    "emulate:functions": "npm run emulate:functions -w @skilz/backend"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "concurrently": "^9.2.1",
+    "eslint": "^9.39.1",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.4.24",
+    "globals": "^16.5.0"
+  },
+  "dependencies": {
+    "20": "^1.0.0"
+  }
+}

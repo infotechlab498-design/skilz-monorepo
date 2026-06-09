@@ -1,0 +1,901 @@
+category,difficulty,question,option1,option2,option3,option4,correctIndex,gameType,tags,active
+history,easy,(trivia) history easy question 1: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,trivia,trivia;history;easy,true
+history,easy,(trivia) history easy question 2: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,trivia,trivia;history;easy,true
+history,easy,(trivia) history easy question 3: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,trivia,trivia;history;easy,true
+history,easy,(trivia) history easy question 4: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,trivia,trivia;history;easy,true
+history,easy,(trivia) history easy question 5: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,trivia,trivia;history;easy,true
+history,easy,(trivia) history easy question 6: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,trivia,trivia;history;easy,true
+history,easy,(trivia) history easy question 7: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,trivia,trivia;history;easy,true
+history,easy,(trivia) history easy question 8: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,trivia,trivia;history;easy,true
+history,easy,(trivia) history easy question 9: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,trivia,trivia;history;easy,true
+history,easy,(trivia) history easy question 10: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,trivia,trivia;history;easy,true
+history,easy,(trivia) history easy question 11: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,trivia,trivia;history;easy,true
+history,easy,(trivia) history easy question 12: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,trivia,trivia;history;easy,true
+history,easy,(trivia) history easy question 13: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,trivia,trivia;history;easy,true
+history,easy,(trivia) history easy question 14: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,trivia,trivia;history;easy,true
+history,easy,(trivia) history easy question 15: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,trivia,trivia;history;easy,true
+history,easy,(trivia) history easy question 16: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,trivia,trivia;history;easy,true
+history,easy,(trivia) history easy question 17: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,trivia,trivia;history;easy,true
+history,easy,(trivia) history easy question 18: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,trivia,trivia;history;easy,true
+history,easy,(trivia) history easy question 19: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,trivia,trivia;history;easy,true
+history,easy,(trivia) history easy question 20: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,trivia,trivia;history;easy,true
+history,easy,(trivia) history easy question 21: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,trivia,trivia;history;easy,true
+history,easy,(trivia) history easy question 22: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,trivia,trivia;history;easy,true
+history,easy,(trivia) history easy question 23: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,trivia,trivia;history;easy,true
+history,easy,(trivia) history easy question 24: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,trivia,trivia;history;easy,true
+history,easy,(trivia) history easy question 25: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,trivia,trivia;history;easy,true
+history,easy,(trivia) history easy question 26: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,trivia,trivia;history;easy,true
+history,easy,(trivia) history easy question 27: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,trivia,trivia;history;easy,true
+history,easy,(trivia) history easy question 28: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,trivia,trivia;history;easy,true
+history,easy,(trivia) history easy question 29: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,trivia,trivia;history;easy,true
+history,easy,(trivia) history easy question 30: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,trivia,trivia;history;easy,true
+history,easy,(trivia) history easy question 31: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,trivia,trivia;history;easy,true
+history,easy,(trivia) history easy question 32: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,trivia,trivia;history;easy,true
+history,easy,(trivia) history easy question 33: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,trivia,trivia;history;easy,true
+history,easy,(trivia) history easy question 34: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,trivia,trivia;history;easy,true
+history,easy,(trivia) history easy question 35: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,trivia,trivia;history;easy,true
+history,easy,(trivia) history easy question 36: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,trivia,trivia;history;easy,true
+history,easy,(trivia) history easy question 37: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,trivia,trivia;history;easy,true
+history,easy,(trivia) history easy question 38: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,trivia,trivia;history;easy,true
+history,easy,(trivia) history easy question 39: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,trivia,trivia;history;easy,true
+history,easy,(trivia) history easy question 40: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,trivia,trivia;history;easy,true
+history,easy,(trivia) history easy question 41: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,trivia,trivia;history;easy,true
+history,easy,(trivia) history easy question 42: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,trivia,trivia;history;easy,true
+history,easy,(trivia) history easy question 43: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,trivia,trivia;history;easy,true
+history,easy,(trivia) history easy question 44: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,trivia,trivia;history;easy,true
+history,easy,(trivia) history easy question 45: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,trivia,trivia;history;easy,true
+history,easy,(trivia) history easy question 46: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,trivia,trivia;history;easy,true
+history,easy,(trivia) history easy question 47: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,trivia,trivia;history;easy,true
+history,easy,(trivia) history easy question 48: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,trivia,trivia;history;easy,true
+history,easy,(trivia) history easy question 49: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,trivia,trivia;history;easy,true
+history,easy,(trivia) history easy question 50: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,trivia,trivia;history;easy,true
+history,medium,(trivia) history medium question 1: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,trivia,trivia;history;medium,true
+history,medium,(trivia) history medium question 2: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,trivia,trivia;history;medium,true
+history,medium,(trivia) history medium question 3: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,trivia,trivia;history;medium,true
+history,medium,(trivia) history medium question 4: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,trivia,trivia;history;medium,true
+history,medium,(trivia) history medium question 5: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,trivia,trivia;history;medium,true
+history,medium,(trivia) history medium question 6: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,trivia,trivia;history;medium,true
+history,medium,(trivia) history medium question 7: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,trivia,trivia;history;medium,true
+history,medium,(trivia) history medium question 8: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,trivia,trivia;history;medium,true
+history,medium,(trivia) history medium question 9: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,trivia,trivia;history;medium,true
+history,medium,(trivia) history medium question 10: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,trivia,trivia;history;medium,true
+history,medium,(trivia) history medium question 11: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,trivia,trivia;history;medium,true
+history,medium,(trivia) history medium question 12: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,trivia,trivia;history;medium,true
+history,medium,(trivia) history medium question 13: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,trivia,trivia;history;medium,true
+history,medium,(trivia) history medium question 14: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,trivia,trivia;history;medium,true
+history,medium,(trivia) history medium question 15: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,trivia,trivia;history;medium,true
+history,medium,(trivia) history medium question 16: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,trivia,trivia;history;medium,true
+history,medium,(trivia) history medium question 17: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,trivia,trivia;history;medium,true
+history,medium,(trivia) history medium question 18: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,trivia,trivia;history;medium,true
+history,medium,(trivia) history medium question 19: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,trivia,trivia;history;medium,true
+history,medium,(trivia) history medium question 20: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,trivia,trivia;history;medium,true
+history,medium,(trivia) history medium question 21: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,trivia,trivia;history;medium,true
+history,medium,(trivia) history medium question 22: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,trivia,trivia;history;medium,true
+history,medium,(trivia) history medium question 23: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,trivia,trivia;history;medium,true
+history,medium,(trivia) history medium question 24: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,trivia,trivia;history;medium,true
+history,medium,(trivia) history medium question 25: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,trivia,trivia;history;medium,true
+history,medium,(trivia) history medium question 26: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,trivia,trivia;history;medium,true
+history,medium,(trivia) history medium question 27: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,trivia,trivia;history;medium,true
+history,medium,(trivia) history medium question 28: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,trivia,trivia;history;medium,true
+history,medium,(trivia) history medium question 29: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,trivia,trivia;history;medium,true
+history,medium,(trivia) history medium question 30: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,trivia,trivia;history;medium,true
+history,medium,(trivia) history medium question 31: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,trivia,trivia;history;medium,true
+history,medium,(trivia) history medium question 32: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,trivia,trivia;history;medium,true
+history,medium,(trivia) history medium question 33: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,trivia,trivia;history;medium,true
+history,medium,(trivia) history medium question 34: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,trivia,trivia;history;medium,true
+history,medium,(trivia) history medium question 35: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,trivia,trivia;history;medium,true
+history,medium,(trivia) history medium question 36: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,trivia,trivia;history;medium,true
+history,medium,(trivia) history medium question 37: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,trivia,trivia;history;medium,true
+history,medium,(trivia) history medium question 38: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,trivia,trivia;history;medium,true
+history,medium,(trivia) history medium question 39: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,trivia,trivia;history;medium,true
+history,medium,(trivia) history medium question 40: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,trivia,trivia;history;medium,true
+history,medium,(trivia) history medium question 41: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,trivia,trivia;history;medium,true
+history,medium,(trivia) history medium question 42: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,trivia,trivia;history;medium,true
+history,medium,(trivia) history medium question 43: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,trivia,trivia;history;medium,true
+history,medium,(trivia) history medium question 44: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,trivia,trivia;history;medium,true
+history,medium,(trivia) history medium question 45: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,trivia,trivia;history;medium,true
+history,medium,(trivia) history medium question 46: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,trivia,trivia;history;medium,true
+history,medium,(trivia) history medium question 47: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,trivia,trivia;history;medium,true
+history,medium,(trivia) history medium question 48: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,trivia,trivia;history;medium,true
+history,medium,(trivia) history medium question 49: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,trivia,trivia;history;medium,true
+history,medium,(trivia) history medium question 50: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,trivia,trivia;history;medium,true
+history,hard,(trivia) history hard question 1: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,trivia,trivia;history;hard,true
+history,hard,(trivia) history hard question 2: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,trivia,trivia;history;hard,true
+history,hard,(trivia) history hard question 3: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,trivia,trivia;history;hard,true
+history,hard,(trivia) history hard question 4: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,trivia,trivia;history;hard,true
+history,hard,(trivia) history hard question 5: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,trivia,trivia;history;hard,true
+history,hard,(trivia) history hard question 6: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,trivia,trivia;history;hard,true
+history,hard,(trivia) history hard question 7: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,trivia,trivia;history;hard,true
+history,hard,(trivia) history hard question 8: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,trivia,trivia;history;hard,true
+history,hard,(trivia) history hard question 9: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,trivia,trivia;history;hard,true
+history,hard,(trivia) history hard question 10: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,trivia,trivia;history;hard,true
+history,hard,(trivia) history hard question 11: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,trivia,trivia;history;hard,true
+history,hard,(trivia) history hard question 12: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,trivia,trivia;history;hard,true
+history,hard,(trivia) history hard question 13: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,trivia,trivia;history;hard,true
+history,hard,(trivia) history hard question 14: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,trivia,trivia;history;hard,true
+history,hard,(trivia) history hard question 15: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,trivia,trivia;history;hard,true
+history,hard,(trivia) history hard question 16: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,trivia,trivia;history;hard,true
+history,hard,(trivia) history hard question 17: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,trivia,trivia;history;hard,true
+history,hard,(trivia) history hard question 18: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,trivia,trivia;history;hard,true
+history,hard,(trivia) history hard question 19: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,trivia,trivia;history;hard,true
+history,hard,(trivia) history hard question 20: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,trivia,trivia;history;hard,true
+history,hard,(trivia) history hard question 21: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,trivia,trivia;history;hard,true
+history,hard,(trivia) history hard question 22: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,trivia,trivia;history;hard,true
+history,hard,(trivia) history hard question 23: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,trivia,trivia;history;hard,true
+history,hard,(trivia) history hard question 24: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,trivia,trivia;history;hard,true
+history,hard,(trivia) history hard question 25: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,trivia,trivia;history;hard,true
+history,hard,(trivia) history hard question 26: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,trivia,trivia;history;hard,true
+history,hard,(trivia) history hard question 27: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,trivia,trivia;history;hard,true
+history,hard,(trivia) history hard question 28: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,trivia,trivia;history;hard,true
+history,hard,(trivia) history hard question 29: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,trivia,trivia;history;hard,true
+history,hard,(trivia) history hard question 30: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,trivia,trivia;history;hard,true
+history,hard,(trivia) history hard question 31: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,trivia,trivia;history;hard,true
+history,hard,(trivia) history hard question 32: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,trivia,trivia;history;hard,true
+history,hard,(trivia) history hard question 33: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,trivia,trivia;history;hard,true
+history,hard,(trivia) history hard question 34: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,trivia,trivia;history;hard,true
+history,hard,(trivia) history hard question 35: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,trivia,trivia;history;hard,true
+history,hard,(trivia) history hard question 36: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,trivia,trivia;history;hard,true
+history,hard,(trivia) history hard question 37: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,trivia,trivia;history;hard,true
+history,hard,(trivia) history hard question 38: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,trivia,trivia;history;hard,true
+history,hard,(trivia) history hard question 39: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,trivia,trivia;history;hard,true
+history,hard,(trivia) history hard question 40: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,trivia,trivia;history;hard,true
+history,hard,(trivia) history hard question 41: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,trivia,trivia;history;hard,true
+history,hard,(trivia) history hard question 42: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,trivia,trivia;history;hard,true
+history,hard,(trivia) history hard question 43: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,trivia,trivia;history;hard,true
+history,hard,(trivia) history hard question 44: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,trivia,trivia;history;hard,true
+history,hard,(trivia) history hard question 45: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,trivia,trivia;history;hard,true
+history,hard,(trivia) history hard question 46: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,trivia,trivia;history;hard,true
+history,hard,(trivia) history hard question 47: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,trivia,trivia;history;hard,true
+history,hard,(trivia) history hard question 48: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,trivia,trivia;history;hard,true
+history,hard,(trivia) history hard question 49: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,trivia,trivia;history;hard,true
+history,hard,(trivia) history hard question 50: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,trivia,trivia;history;hard,true
+current_affairs,easy,(trivia) current_affairs easy question 1: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,trivia,trivia;current_affairs;easy,true
+current_affairs,easy,(trivia) current_affairs easy question 2: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,trivia,trivia;current_affairs;easy,true
+current_affairs,easy,(trivia) current_affairs easy question 3: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,trivia,trivia;current_affairs;easy,true
+current_affairs,easy,(trivia) current_affairs easy question 4: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,trivia,trivia;current_affairs;easy,true
+current_affairs,easy,(trivia) current_affairs easy question 5: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,trivia,trivia;current_affairs;easy,true
+current_affairs,easy,(trivia) current_affairs easy question 6: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,trivia,trivia;current_affairs;easy,true
+current_affairs,easy,(trivia) current_affairs easy question 7: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,trivia,trivia;current_affairs;easy,true
+current_affairs,easy,(trivia) current_affairs easy question 8: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,trivia,trivia;current_affairs;easy,true
+current_affairs,easy,(trivia) current_affairs easy question 9: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,trivia,trivia;current_affairs;easy,true
+current_affairs,easy,(trivia) current_affairs easy question 10: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,trivia,trivia;current_affairs;easy,true
+current_affairs,easy,(trivia) current_affairs easy question 11: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,trivia,trivia;current_affairs;easy,true
+current_affairs,easy,(trivia) current_affairs easy question 12: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,trivia,trivia;current_affairs;easy,true
+current_affairs,easy,(trivia) current_affairs easy question 13: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,trivia,trivia;current_affairs;easy,true
+current_affairs,easy,(trivia) current_affairs easy question 14: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,trivia,trivia;current_affairs;easy,true
+current_affairs,easy,(trivia) current_affairs easy question 15: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,trivia,trivia;current_affairs;easy,true
+current_affairs,easy,(trivia) current_affairs easy question 16: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,trivia,trivia;current_affairs;easy,true
+current_affairs,easy,(trivia) current_affairs easy question 17: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,trivia,trivia;current_affairs;easy,true
+current_affairs,easy,(trivia) current_affairs easy question 18: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,trivia,trivia;current_affairs;easy,true
+current_affairs,easy,(trivia) current_affairs easy question 19: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,trivia,trivia;current_affairs;easy,true
+current_affairs,easy,(trivia) current_affairs easy question 20: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,trivia,trivia;current_affairs;easy,true
+current_affairs,easy,(trivia) current_affairs easy question 21: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,trivia,trivia;current_affairs;easy,true
+current_affairs,easy,(trivia) current_affairs easy question 22: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,trivia,trivia;current_affairs;easy,true
+current_affairs,easy,(trivia) current_affairs easy question 23: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,trivia,trivia;current_affairs;easy,true
+current_affairs,easy,(trivia) current_affairs easy question 24: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,trivia,trivia;current_affairs;easy,true
+current_affairs,easy,(trivia) current_affairs easy question 25: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,trivia,trivia;current_affairs;easy,true
+current_affairs,easy,(trivia) current_affairs easy question 26: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,trivia,trivia;current_affairs;easy,true
+current_affairs,easy,(trivia) current_affairs easy question 27: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,trivia,trivia;current_affairs;easy,true
+current_affairs,easy,(trivia) current_affairs easy question 28: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,trivia,trivia;current_affairs;easy,true
+current_affairs,easy,(trivia) current_affairs easy question 29: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,trivia,trivia;current_affairs;easy,true
+current_affairs,easy,(trivia) current_affairs easy question 30: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,trivia,trivia;current_affairs;easy,true
+current_affairs,easy,(trivia) current_affairs easy question 31: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,trivia,trivia;current_affairs;easy,true
+current_affairs,easy,(trivia) current_affairs easy question 32: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,trivia,trivia;current_affairs;easy,true
+current_affairs,easy,(trivia) current_affairs easy question 33: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,trivia,trivia;current_affairs;easy,true
+current_affairs,easy,(trivia) current_affairs easy question 34: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,trivia,trivia;current_affairs;easy,true
+current_affairs,easy,(trivia) current_affairs easy question 35: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,trivia,trivia;current_affairs;easy,true
+current_affairs,easy,(trivia) current_affairs easy question 36: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,trivia,trivia;current_affairs;easy,true
+current_affairs,easy,(trivia) current_affairs easy question 37: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,trivia,trivia;current_affairs;easy,true
+current_affairs,easy,(trivia) current_affairs easy question 38: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,trivia,trivia;current_affairs;easy,true
+current_affairs,easy,(trivia) current_affairs easy question 39: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,trivia,trivia;current_affairs;easy,true
+current_affairs,easy,(trivia) current_affairs easy question 40: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,trivia,trivia;current_affairs;easy,true
+current_affairs,easy,(trivia) current_affairs easy question 41: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,trivia,trivia;current_affairs;easy,true
+current_affairs,easy,(trivia) current_affairs easy question 42: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,trivia,trivia;current_affairs;easy,true
+current_affairs,easy,(trivia) current_affairs easy question 43: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,trivia,trivia;current_affairs;easy,true
+current_affairs,easy,(trivia) current_affairs easy question 44: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,trivia,trivia;current_affairs;easy,true
+current_affairs,easy,(trivia) current_affairs easy question 45: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,trivia,trivia;current_affairs;easy,true
+current_affairs,easy,(trivia) current_affairs easy question 46: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,trivia,trivia;current_affairs;easy,true
+current_affairs,easy,(trivia) current_affairs easy question 47: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,trivia,trivia;current_affairs;easy,true
+current_affairs,easy,(trivia) current_affairs easy question 48: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,trivia,trivia;current_affairs;easy,true
+current_affairs,easy,(trivia) current_affairs easy question 49: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,trivia,trivia;current_affairs;easy,true
+current_affairs,easy,(trivia) current_affairs easy question 50: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,trivia,trivia;current_affairs;easy,true
+current_affairs,medium,(trivia) current_affairs medium question 1: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,trivia,trivia;current_affairs;medium,true
+current_affairs,medium,(trivia) current_affairs medium question 2: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,trivia,trivia;current_affairs;medium,true
+current_affairs,medium,(trivia) current_affairs medium question 3: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,trivia,trivia;current_affairs;medium,true
+current_affairs,medium,(trivia) current_affairs medium question 4: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,trivia,trivia;current_affairs;medium,true
+current_affairs,medium,(trivia) current_affairs medium question 5: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,trivia,trivia;current_affairs;medium,true
+current_affairs,medium,(trivia) current_affairs medium question 6: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,trivia,trivia;current_affairs;medium,true
+current_affairs,medium,(trivia) current_affairs medium question 7: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,trivia,trivia;current_affairs;medium,true
+current_affairs,medium,(trivia) current_affairs medium question 8: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,trivia,trivia;current_affairs;medium,true
+current_affairs,medium,(trivia) current_affairs medium question 9: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,trivia,trivia;current_affairs;medium,true
+current_affairs,medium,(trivia) current_affairs medium question 10: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,trivia,trivia;current_affairs;medium,true
+current_affairs,medium,(trivia) current_affairs medium question 11: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,trivia,trivia;current_affairs;medium,true
+current_affairs,medium,(trivia) current_affairs medium question 12: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,trivia,trivia;current_affairs;medium,true
+current_affairs,medium,(trivia) current_affairs medium question 13: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,trivia,trivia;current_affairs;medium,true
+current_affairs,medium,(trivia) current_affairs medium question 14: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,trivia,trivia;current_affairs;medium,true
+current_affairs,medium,(trivia) current_affairs medium question 15: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,trivia,trivia;current_affairs;medium,true
+current_affairs,medium,(trivia) current_affairs medium question 16: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,trivia,trivia;current_affairs;medium,true
+current_affairs,medium,(trivia) current_affairs medium question 17: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,trivia,trivia;current_affairs;medium,true
+current_affairs,medium,(trivia) current_affairs medium question 18: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,trivia,trivia;current_affairs;medium,true
+current_affairs,medium,(trivia) current_affairs medium question 19: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,trivia,trivia;current_affairs;medium,true
+current_affairs,medium,(trivia) current_affairs medium question 20: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,trivia,trivia;current_affairs;medium,true
+current_affairs,medium,(trivia) current_affairs medium question 21: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,trivia,trivia;current_affairs;medium,true
+current_affairs,medium,(trivia) current_affairs medium question 22: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,trivia,trivia;current_affairs;medium,true
+current_affairs,medium,(trivia) current_affairs medium question 23: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,trivia,trivia;current_affairs;medium,true
+current_affairs,medium,(trivia) current_affairs medium question 24: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,trivia,trivia;current_affairs;medium,true
+current_affairs,medium,(trivia) current_affairs medium question 25: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,trivia,trivia;current_affairs;medium,true
+current_affairs,medium,(trivia) current_affairs medium question 26: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,trivia,trivia;current_affairs;medium,true
+current_affairs,medium,(trivia) current_affairs medium question 27: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,trivia,trivia;current_affairs;medium,true
+current_affairs,medium,(trivia) current_affairs medium question 28: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,trivia,trivia;current_affairs;medium,true
+current_affairs,medium,(trivia) current_affairs medium question 29: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,trivia,trivia;current_affairs;medium,true
+current_affairs,medium,(trivia) current_affairs medium question 30: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,trivia,trivia;current_affairs;medium,true
+current_affairs,medium,(trivia) current_affairs medium question 31: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,trivia,trivia;current_affairs;medium,true
+current_affairs,medium,(trivia) current_affairs medium question 32: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,trivia,trivia;current_affairs;medium,true
+current_affairs,medium,(trivia) current_affairs medium question 33: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,trivia,trivia;current_affairs;medium,true
+current_affairs,medium,(trivia) current_affairs medium question 34: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,trivia,trivia;current_affairs;medium,true
+current_affairs,medium,(trivia) current_affairs medium question 35: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,trivia,trivia;current_affairs;medium,true
+current_affairs,medium,(trivia) current_affairs medium question 36: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,trivia,trivia;current_affairs;medium,true
+current_affairs,medium,(trivia) current_affairs medium question 37: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,trivia,trivia;current_affairs;medium,true
+current_affairs,medium,(trivia) current_affairs medium question 38: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,trivia,trivia;current_affairs;medium,true
+current_affairs,medium,(trivia) current_affairs medium question 39: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,trivia,trivia;current_affairs;medium,true
+current_affairs,medium,(trivia) current_affairs medium question 40: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,trivia,trivia;current_affairs;medium,true
+current_affairs,medium,(trivia) current_affairs medium question 41: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,trivia,trivia;current_affairs;medium,true
+current_affairs,medium,(trivia) current_affairs medium question 42: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,trivia,trivia;current_affairs;medium,true
+current_affairs,medium,(trivia) current_affairs medium question 43: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,trivia,trivia;current_affairs;medium,true
+current_affairs,medium,(trivia) current_affairs medium question 44: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,trivia,trivia;current_affairs;medium,true
+current_affairs,medium,(trivia) current_affairs medium question 45: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,trivia,trivia;current_affairs;medium,true
+current_affairs,medium,(trivia) current_affairs medium question 46: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,trivia,trivia;current_affairs;medium,true
+current_affairs,medium,(trivia) current_affairs medium question 47: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,trivia,trivia;current_affairs;medium,true
+current_affairs,medium,(trivia) current_affairs medium question 48: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,trivia,trivia;current_affairs;medium,true
+current_affairs,medium,(trivia) current_affairs medium question 49: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,trivia,trivia;current_affairs;medium,true
+current_affairs,medium,(trivia) current_affairs medium question 50: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,trivia,trivia;current_affairs;medium,true
+current_affairs,hard,(trivia) current_affairs hard question 1: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,trivia,trivia;current_affairs;hard,true
+current_affairs,hard,(trivia) current_affairs hard question 2: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,trivia,trivia;current_affairs;hard,true
+current_affairs,hard,(trivia) current_affairs hard question 3: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,trivia,trivia;current_affairs;hard,true
+current_affairs,hard,(trivia) current_affairs hard question 4: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,trivia,trivia;current_affairs;hard,true
+current_affairs,hard,(trivia) current_affairs hard question 5: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,trivia,trivia;current_affairs;hard,true
+current_affairs,hard,(trivia) current_affairs hard question 6: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,trivia,trivia;current_affairs;hard,true
+current_affairs,hard,(trivia) current_affairs hard question 7: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,trivia,trivia;current_affairs;hard,true
+current_affairs,hard,(trivia) current_affairs hard question 8: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,trivia,trivia;current_affairs;hard,true
+current_affairs,hard,(trivia) current_affairs hard question 9: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,trivia,trivia;current_affairs;hard,true
+current_affairs,hard,(trivia) current_affairs hard question 10: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,trivia,trivia;current_affairs;hard,true
+current_affairs,hard,(trivia) current_affairs hard question 11: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,trivia,trivia;current_affairs;hard,true
+current_affairs,hard,(trivia) current_affairs hard question 12: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,trivia,trivia;current_affairs;hard,true
+current_affairs,hard,(trivia) current_affairs hard question 13: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,trivia,trivia;current_affairs;hard,true
+current_affairs,hard,(trivia) current_affairs hard question 14: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,trivia,trivia;current_affairs;hard,true
+current_affairs,hard,(trivia) current_affairs hard question 15: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,trivia,trivia;current_affairs;hard,true
+current_affairs,hard,(trivia) current_affairs hard question 16: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,trivia,trivia;current_affairs;hard,true
+current_affairs,hard,(trivia) current_affairs hard question 17: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,trivia,trivia;current_affairs;hard,true
+current_affairs,hard,(trivia) current_affairs hard question 18: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,trivia,trivia;current_affairs;hard,true
+current_affairs,hard,(trivia) current_affairs hard question 19: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,trivia,trivia;current_affairs;hard,true
+current_affairs,hard,(trivia) current_affairs hard question 20: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,trivia,trivia;current_affairs;hard,true
+current_affairs,hard,(trivia) current_affairs hard question 21: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,trivia,trivia;current_affairs;hard,true
+current_affairs,hard,(trivia) current_affairs hard question 22: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,trivia,trivia;current_affairs;hard,true
+current_affairs,hard,(trivia) current_affairs hard question 23: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,trivia,trivia;current_affairs;hard,true
+current_affairs,hard,(trivia) current_affairs hard question 24: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,trivia,trivia;current_affairs;hard,true
+current_affairs,hard,(trivia) current_affairs hard question 25: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,trivia,trivia;current_affairs;hard,true
+current_affairs,hard,(trivia) current_affairs hard question 26: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,trivia,trivia;current_affairs;hard,true
+current_affairs,hard,(trivia) current_affairs hard question 27: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,trivia,trivia;current_affairs;hard,true
+current_affairs,hard,(trivia) current_affairs hard question 28: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,trivia,trivia;current_affairs;hard,true
+current_affairs,hard,(trivia) current_affairs hard question 29: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,trivia,trivia;current_affairs;hard,true
+current_affairs,hard,(trivia) current_affairs hard question 30: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,trivia,trivia;current_affairs;hard,true
+current_affairs,hard,(trivia) current_affairs hard question 31: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,trivia,trivia;current_affairs;hard,true
+current_affairs,hard,(trivia) current_affairs hard question 32: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,trivia,trivia;current_affairs;hard,true
+current_affairs,hard,(trivia) current_affairs hard question 33: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,trivia,trivia;current_affairs;hard,true
+current_affairs,hard,(trivia) current_affairs hard question 34: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,trivia,trivia;current_affairs;hard,true
+current_affairs,hard,(trivia) current_affairs hard question 35: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,trivia,trivia;current_affairs;hard,true
+current_affairs,hard,(trivia) current_affairs hard question 36: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,trivia,trivia;current_affairs;hard,true
+current_affairs,hard,(trivia) current_affairs hard question 37: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,trivia,trivia;current_affairs;hard,true
+current_affairs,hard,(trivia) current_affairs hard question 38: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,trivia,trivia;current_affairs;hard,true
+current_affairs,hard,(trivia) current_affairs hard question 39: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,trivia,trivia;current_affairs;hard,true
+current_affairs,hard,(trivia) current_affairs hard question 40: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,trivia,trivia;current_affairs;hard,true
+current_affairs,hard,(trivia) current_affairs hard question 41: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,trivia,trivia;current_affairs;hard,true
+current_affairs,hard,(trivia) current_affairs hard question 42: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,trivia,trivia;current_affairs;hard,true
+current_affairs,hard,(trivia) current_affairs hard question 43: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,trivia,trivia;current_affairs;hard,true
+current_affairs,hard,(trivia) current_affairs hard question 44: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,trivia,trivia;current_affairs;hard,true
+current_affairs,hard,(trivia) current_affairs hard question 45: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,trivia,trivia;current_affairs;hard,true
+current_affairs,hard,(trivia) current_affairs hard question 46: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,trivia,trivia;current_affairs;hard,true
+current_affairs,hard,(trivia) current_affairs hard question 47: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,trivia,trivia;current_affairs;hard,true
+current_affairs,hard,(trivia) current_affairs hard question 48: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,trivia,trivia;current_affairs;hard,true
+current_affairs,hard,(trivia) current_affairs hard question 49: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,trivia,trivia;current_affairs;hard,true
+current_affairs,hard,(trivia) current_affairs hard question 50: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,trivia,trivia;current_affairs;hard,true
+General Knowledge,easy,(enigma_pulse) General Knowledge easy question 1: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;general_knowledge;easy,true
+General Knowledge,easy,(enigma_pulse) General Knowledge easy question 2: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;general_knowledge;easy,true
+General Knowledge,easy,(enigma_pulse) General Knowledge easy question 3: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;general_knowledge;easy,true
+General Knowledge,easy,(enigma_pulse) General Knowledge easy question 4: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;general_knowledge;easy,true
+General Knowledge,easy,(enigma_pulse) General Knowledge easy question 5: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;general_knowledge;easy,true
+General Knowledge,easy,(enigma_pulse) General Knowledge easy question 6: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;general_knowledge;easy,true
+General Knowledge,easy,(enigma_pulse) General Knowledge easy question 7: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;general_knowledge;easy,true
+General Knowledge,easy,(enigma_pulse) General Knowledge easy question 8: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;general_knowledge;easy,true
+General Knowledge,easy,(enigma_pulse) General Knowledge easy question 9: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;general_knowledge;easy,true
+General Knowledge,easy,(enigma_pulse) General Knowledge easy question 10: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;general_knowledge;easy,true
+General Knowledge,easy,(enigma_pulse) General Knowledge easy question 11: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;general_knowledge;easy,true
+General Knowledge,easy,(enigma_pulse) General Knowledge easy question 12: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;general_knowledge;easy,true
+General Knowledge,easy,(enigma_pulse) General Knowledge easy question 13: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;general_knowledge;easy,true
+General Knowledge,easy,(enigma_pulse) General Knowledge easy question 14: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;general_knowledge;easy,true
+General Knowledge,easy,(enigma_pulse) General Knowledge easy question 15: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;general_knowledge;easy,true
+General Knowledge,easy,(enigma_pulse) General Knowledge easy question 16: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;general_knowledge;easy,true
+General Knowledge,easy,(enigma_pulse) General Knowledge easy question 17: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;general_knowledge;easy,true
+General Knowledge,easy,(enigma_pulse) General Knowledge easy question 18: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;general_knowledge;easy,true
+General Knowledge,easy,(enigma_pulse) General Knowledge easy question 19: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;general_knowledge;easy,true
+General Knowledge,easy,(enigma_pulse) General Knowledge easy question 20: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;general_knowledge;easy,true
+General Knowledge,easy,(enigma_pulse) General Knowledge easy question 21: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;general_knowledge;easy,true
+General Knowledge,easy,(enigma_pulse) General Knowledge easy question 22: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;general_knowledge;easy,true
+General Knowledge,easy,(enigma_pulse) General Knowledge easy question 23: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;general_knowledge;easy,true
+General Knowledge,easy,(enigma_pulse) General Knowledge easy question 24: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;general_knowledge;easy,true
+General Knowledge,easy,(enigma_pulse) General Knowledge easy question 25: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;general_knowledge;easy,true
+General Knowledge,easy,(enigma_pulse) General Knowledge easy question 26: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;general_knowledge;easy,true
+General Knowledge,easy,(enigma_pulse) General Knowledge easy question 27: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;general_knowledge;easy,true
+General Knowledge,easy,(enigma_pulse) General Knowledge easy question 28: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;general_knowledge;easy,true
+General Knowledge,easy,(enigma_pulse) General Knowledge easy question 29: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;general_knowledge;easy,true
+General Knowledge,easy,(enigma_pulse) General Knowledge easy question 30: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;general_knowledge;easy,true
+General Knowledge,easy,(enigma_pulse) General Knowledge easy question 31: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;general_knowledge;easy,true
+General Knowledge,easy,(enigma_pulse) General Knowledge easy question 32: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;general_knowledge;easy,true
+General Knowledge,easy,(enigma_pulse) General Knowledge easy question 33: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;general_knowledge;easy,true
+General Knowledge,easy,(enigma_pulse) General Knowledge easy question 34: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;general_knowledge;easy,true
+General Knowledge,easy,(enigma_pulse) General Knowledge easy question 35: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;general_knowledge;easy,true
+General Knowledge,easy,(enigma_pulse) General Knowledge easy question 36: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;general_knowledge;easy,true
+General Knowledge,easy,(enigma_pulse) General Knowledge easy question 37: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;general_knowledge;easy,true
+General Knowledge,easy,(enigma_pulse) General Knowledge easy question 38: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;general_knowledge;easy,true
+General Knowledge,easy,(enigma_pulse) General Knowledge easy question 39: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;general_knowledge;easy,true
+General Knowledge,easy,(enigma_pulse) General Knowledge easy question 40: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;general_knowledge;easy,true
+General Knowledge,easy,(enigma_pulse) General Knowledge easy question 41: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;general_knowledge;easy,true
+General Knowledge,easy,(enigma_pulse) General Knowledge easy question 42: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;general_knowledge;easy,true
+General Knowledge,easy,(enigma_pulse) General Knowledge easy question 43: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;general_knowledge;easy,true
+General Knowledge,easy,(enigma_pulse) General Knowledge easy question 44: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;general_knowledge;easy,true
+General Knowledge,easy,(enigma_pulse) General Knowledge easy question 45: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;general_knowledge;easy,true
+General Knowledge,easy,(enigma_pulse) General Knowledge easy question 46: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;general_knowledge;easy,true
+General Knowledge,easy,(enigma_pulse) General Knowledge easy question 47: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;general_knowledge;easy,true
+General Knowledge,easy,(enigma_pulse) General Knowledge easy question 48: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;general_knowledge;easy,true
+General Knowledge,easy,(enigma_pulse) General Knowledge easy question 49: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;general_knowledge;easy,true
+General Knowledge,easy,(enigma_pulse) General Knowledge easy question 50: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;general_knowledge;easy,true
+General Knowledge,medium,(enigma_pulse) General Knowledge medium question 1: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;general_knowledge;medium,true
+General Knowledge,medium,(enigma_pulse) General Knowledge medium question 2: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;general_knowledge;medium,true
+General Knowledge,medium,(enigma_pulse) General Knowledge medium question 3: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;general_knowledge;medium,true
+General Knowledge,medium,(enigma_pulse) General Knowledge medium question 4: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;general_knowledge;medium,true
+General Knowledge,medium,(enigma_pulse) General Knowledge medium question 5: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;general_knowledge;medium,true
+General Knowledge,medium,(enigma_pulse) General Knowledge medium question 6: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;general_knowledge;medium,true
+General Knowledge,medium,(enigma_pulse) General Knowledge medium question 7: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;general_knowledge;medium,true
+General Knowledge,medium,(enigma_pulse) General Knowledge medium question 8: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;general_knowledge;medium,true
+General Knowledge,medium,(enigma_pulse) General Knowledge medium question 9: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;general_knowledge;medium,true
+General Knowledge,medium,(enigma_pulse) General Knowledge medium question 10: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;general_knowledge;medium,true
+General Knowledge,medium,(enigma_pulse) General Knowledge medium question 11: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;general_knowledge;medium,true
+General Knowledge,medium,(enigma_pulse) General Knowledge medium question 12: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;general_knowledge;medium,true
+General Knowledge,medium,(enigma_pulse) General Knowledge medium question 13: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;general_knowledge;medium,true
+General Knowledge,medium,(enigma_pulse) General Knowledge medium question 14: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;general_knowledge;medium,true
+General Knowledge,medium,(enigma_pulse) General Knowledge medium question 15: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;general_knowledge;medium,true
+General Knowledge,medium,(enigma_pulse) General Knowledge medium question 16: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;general_knowledge;medium,true
+General Knowledge,medium,(enigma_pulse) General Knowledge medium question 17: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;general_knowledge;medium,true
+General Knowledge,medium,(enigma_pulse) General Knowledge medium question 18: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;general_knowledge;medium,true
+General Knowledge,medium,(enigma_pulse) General Knowledge medium question 19: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;general_knowledge;medium,true
+General Knowledge,medium,(enigma_pulse) General Knowledge medium question 20: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;general_knowledge;medium,true
+General Knowledge,medium,(enigma_pulse) General Knowledge medium question 21: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;general_knowledge;medium,true
+General Knowledge,medium,(enigma_pulse) General Knowledge medium question 22: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;general_knowledge;medium,true
+General Knowledge,medium,(enigma_pulse) General Knowledge medium question 23: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;general_knowledge;medium,true
+General Knowledge,medium,(enigma_pulse) General Knowledge medium question 24: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;general_knowledge;medium,true
+General Knowledge,medium,(enigma_pulse) General Knowledge medium question 25: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;general_knowledge;medium,true
+General Knowledge,medium,(enigma_pulse) General Knowledge medium question 26: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;general_knowledge;medium,true
+General Knowledge,medium,(enigma_pulse) General Knowledge medium question 27: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;general_knowledge;medium,true
+General Knowledge,medium,(enigma_pulse) General Knowledge medium question 28: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;general_knowledge;medium,true
+General Knowledge,medium,(enigma_pulse) General Knowledge medium question 29: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;general_knowledge;medium,true
+General Knowledge,medium,(enigma_pulse) General Knowledge medium question 30: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;general_knowledge;medium,true
+General Knowledge,medium,(enigma_pulse) General Knowledge medium question 31: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;general_knowledge;medium,true
+General Knowledge,medium,(enigma_pulse) General Knowledge medium question 32: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;general_knowledge;medium,true
+General Knowledge,medium,(enigma_pulse) General Knowledge medium question 33: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;general_knowledge;medium,true
+General Knowledge,medium,(enigma_pulse) General Knowledge medium question 34: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;general_knowledge;medium,true
+General Knowledge,medium,(enigma_pulse) General Knowledge medium question 35: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;general_knowledge;medium,true
+General Knowledge,medium,(enigma_pulse) General Knowledge medium question 36: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;general_knowledge;medium,true
+General Knowledge,medium,(enigma_pulse) General Knowledge medium question 37: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;general_knowledge;medium,true
+General Knowledge,medium,(enigma_pulse) General Knowledge medium question 38: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;general_knowledge;medium,true
+General Knowledge,medium,(enigma_pulse) General Knowledge medium question 39: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;general_knowledge;medium,true
+General Knowledge,medium,(enigma_pulse) General Knowledge medium question 40: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;general_knowledge;medium,true
+General Knowledge,medium,(enigma_pulse) General Knowledge medium question 41: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;general_knowledge;medium,true
+General Knowledge,medium,(enigma_pulse) General Knowledge medium question 42: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;general_knowledge;medium,true
+General Knowledge,medium,(enigma_pulse) General Knowledge medium question 43: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;general_knowledge;medium,true
+General Knowledge,medium,(enigma_pulse) General Knowledge medium question 44: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;general_knowledge;medium,true
+General Knowledge,medium,(enigma_pulse) General Knowledge medium question 45: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;general_knowledge;medium,true
+General Knowledge,medium,(enigma_pulse) General Knowledge medium question 46: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;general_knowledge;medium,true
+General Knowledge,medium,(enigma_pulse) General Knowledge medium question 47: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;general_knowledge;medium,true
+General Knowledge,medium,(enigma_pulse) General Knowledge medium question 48: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;general_knowledge;medium,true
+General Knowledge,medium,(enigma_pulse) General Knowledge medium question 49: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;general_knowledge;medium,true
+General Knowledge,medium,(enigma_pulse) General Knowledge medium question 50: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;general_knowledge;medium,true
+General Knowledge,hard,(enigma_pulse) General Knowledge hard question 1: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;general_knowledge;hard,true
+General Knowledge,hard,(enigma_pulse) General Knowledge hard question 2: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;general_knowledge;hard,true
+General Knowledge,hard,(enigma_pulse) General Knowledge hard question 3: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;general_knowledge;hard,true
+General Knowledge,hard,(enigma_pulse) General Knowledge hard question 4: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;general_knowledge;hard,true
+General Knowledge,hard,(enigma_pulse) General Knowledge hard question 5: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;general_knowledge;hard,true
+General Knowledge,hard,(enigma_pulse) General Knowledge hard question 6: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;general_knowledge;hard,true
+General Knowledge,hard,(enigma_pulse) General Knowledge hard question 7: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;general_knowledge;hard,true
+General Knowledge,hard,(enigma_pulse) General Knowledge hard question 8: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;general_knowledge;hard,true
+General Knowledge,hard,(enigma_pulse) General Knowledge hard question 9: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;general_knowledge;hard,true
+General Knowledge,hard,(enigma_pulse) General Knowledge hard question 10: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;general_knowledge;hard,true
+General Knowledge,hard,(enigma_pulse) General Knowledge hard question 11: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;general_knowledge;hard,true
+General Knowledge,hard,(enigma_pulse) General Knowledge hard question 12: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;general_knowledge;hard,true
+General Knowledge,hard,(enigma_pulse) General Knowledge hard question 13: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;general_knowledge;hard,true
+General Knowledge,hard,(enigma_pulse) General Knowledge hard question 14: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;general_knowledge;hard,true
+General Knowledge,hard,(enigma_pulse) General Knowledge hard question 15: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;general_knowledge;hard,true
+General Knowledge,hard,(enigma_pulse) General Knowledge hard question 16: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;general_knowledge;hard,true
+General Knowledge,hard,(enigma_pulse) General Knowledge hard question 17: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;general_knowledge;hard,true
+General Knowledge,hard,(enigma_pulse) General Knowledge hard question 18: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;general_knowledge;hard,true
+General Knowledge,hard,(enigma_pulse) General Knowledge hard question 19: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;general_knowledge;hard,true
+General Knowledge,hard,(enigma_pulse) General Knowledge hard question 20: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;general_knowledge;hard,true
+General Knowledge,hard,(enigma_pulse) General Knowledge hard question 21: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;general_knowledge;hard,true
+General Knowledge,hard,(enigma_pulse) General Knowledge hard question 22: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;general_knowledge;hard,true
+General Knowledge,hard,(enigma_pulse) General Knowledge hard question 23: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;general_knowledge;hard,true
+General Knowledge,hard,(enigma_pulse) General Knowledge hard question 24: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;general_knowledge;hard,true
+General Knowledge,hard,(enigma_pulse) General Knowledge hard question 25: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;general_knowledge;hard,true
+General Knowledge,hard,(enigma_pulse) General Knowledge hard question 26: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;general_knowledge;hard,true
+General Knowledge,hard,(enigma_pulse) General Knowledge hard question 27: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;general_knowledge;hard,true
+General Knowledge,hard,(enigma_pulse) General Knowledge hard question 28: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;general_knowledge;hard,true
+General Knowledge,hard,(enigma_pulse) General Knowledge hard question 29: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;general_knowledge;hard,true
+General Knowledge,hard,(enigma_pulse) General Knowledge hard question 30: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;general_knowledge;hard,true
+General Knowledge,hard,(enigma_pulse) General Knowledge hard question 31: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;general_knowledge;hard,true
+General Knowledge,hard,(enigma_pulse) General Knowledge hard question 32: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;general_knowledge;hard,true
+General Knowledge,hard,(enigma_pulse) General Knowledge hard question 33: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;general_knowledge;hard,true
+General Knowledge,hard,(enigma_pulse) General Knowledge hard question 34: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;general_knowledge;hard,true
+General Knowledge,hard,(enigma_pulse) General Knowledge hard question 35: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;general_knowledge;hard,true
+General Knowledge,hard,(enigma_pulse) General Knowledge hard question 36: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;general_knowledge;hard,true
+General Knowledge,hard,(enigma_pulse) General Knowledge hard question 37: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;general_knowledge;hard,true
+General Knowledge,hard,(enigma_pulse) General Knowledge hard question 38: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;general_knowledge;hard,true
+General Knowledge,hard,(enigma_pulse) General Knowledge hard question 39: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;general_knowledge;hard,true
+General Knowledge,hard,(enigma_pulse) General Knowledge hard question 40: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;general_knowledge;hard,true
+General Knowledge,hard,(enigma_pulse) General Knowledge hard question 41: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;general_knowledge;hard,true
+General Knowledge,hard,(enigma_pulse) General Knowledge hard question 42: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;general_knowledge;hard,true
+General Knowledge,hard,(enigma_pulse) General Knowledge hard question 43: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;general_knowledge;hard,true
+General Knowledge,hard,(enigma_pulse) General Knowledge hard question 44: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;general_knowledge;hard,true
+General Knowledge,hard,(enigma_pulse) General Knowledge hard question 45: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;general_knowledge;hard,true
+General Knowledge,hard,(enigma_pulse) General Knowledge hard question 46: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;general_knowledge;hard,true
+General Knowledge,hard,(enigma_pulse) General Knowledge hard question 47: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;general_knowledge;hard,true
+General Knowledge,hard,(enigma_pulse) General Knowledge hard question 48: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;general_knowledge;hard,true
+General Knowledge,hard,(enigma_pulse) General Knowledge hard question 49: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;general_knowledge;hard,true
+General Knowledge,hard,(enigma_pulse) General Knowledge hard question 50: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;general_knowledge;hard,true
+Science,easy,(enigma_pulse) Science easy question 1: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;science;easy,true
+Science,easy,(enigma_pulse) Science easy question 2: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;science;easy,true
+Science,easy,(enigma_pulse) Science easy question 3: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;science;easy,true
+Science,easy,(enigma_pulse) Science easy question 4: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;science;easy,true
+Science,easy,(enigma_pulse) Science easy question 5: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;science;easy,true
+Science,easy,(enigma_pulse) Science easy question 6: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;science;easy,true
+Science,easy,(enigma_pulse) Science easy question 7: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;science;easy,true
+Science,easy,(enigma_pulse) Science easy question 8: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;science;easy,true
+Science,easy,(enigma_pulse) Science easy question 9: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;science;easy,true
+Science,easy,(enigma_pulse) Science easy question 10: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;science;easy,true
+Science,easy,(enigma_pulse) Science easy question 11: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;science;easy,true
+Science,easy,(enigma_pulse) Science easy question 12: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;science;easy,true
+Science,easy,(enigma_pulse) Science easy question 13: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;science;easy,true
+Science,easy,(enigma_pulse) Science easy question 14: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;science;easy,true
+Science,easy,(enigma_pulse) Science easy question 15: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;science;easy,true
+Science,easy,(enigma_pulse) Science easy question 16: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;science;easy,true
+Science,easy,(enigma_pulse) Science easy question 17: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;science;easy,true
+Science,easy,(enigma_pulse) Science easy question 18: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;science;easy,true
+Science,easy,(enigma_pulse) Science easy question 19: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;science;easy,true
+Science,easy,(enigma_pulse) Science easy question 20: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;science;easy,true
+Science,easy,(enigma_pulse) Science easy question 21: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;science;easy,true
+Science,easy,(enigma_pulse) Science easy question 22: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;science;easy,true
+Science,easy,(enigma_pulse) Science easy question 23: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;science;easy,true
+Science,easy,(enigma_pulse) Science easy question 24: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;science;easy,true
+Science,easy,(enigma_pulse) Science easy question 25: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;science;easy,true
+Science,easy,(enigma_pulse) Science easy question 26: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;science;easy,true
+Science,easy,(enigma_pulse) Science easy question 27: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;science;easy,true
+Science,easy,(enigma_pulse) Science easy question 28: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;science;easy,true
+Science,easy,(enigma_pulse) Science easy question 29: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;science;easy,true
+Science,easy,(enigma_pulse) Science easy question 30: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;science;easy,true
+Science,easy,(enigma_pulse) Science easy question 31: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;science;easy,true
+Science,easy,(enigma_pulse) Science easy question 32: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;science;easy,true
+Science,easy,(enigma_pulse) Science easy question 33: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;science;easy,true
+Science,easy,(enigma_pulse) Science easy question 34: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;science;easy,true
+Science,easy,(enigma_pulse) Science easy question 35: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;science;easy,true
+Science,easy,(enigma_pulse) Science easy question 36: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;science;easy,true
+Science,easy,(enigma_pulse) Science easy question 37: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;science;easy,true
+Science,easy,(enigma_pulse) Science easy question 38: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;science;easy,true
+Science,easy,(enigma_pulse) Science easy question 39: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;science;easy,true
+Science,easy,(enigma_pulse) Science easy question 40: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;science;easy,true
+Science,easy,(enigma_pulse) Science easy question 41: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;science;easy,true
+Science,easy,(enigma_pulse) Science easy question 42: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;science;easy,true
+Science,easy,(enigma_pulse) Science easy question 43: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;science;easy,true
+Science,easy,(enigma_pulse) Science easy question 44: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;science;easy,true
+Science,easy,(enigma_pulse) Science easy question 45: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;science;easy,true
+Science,easy,(enigma_pulse) Science easy question 46: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;science;easy,true
+Science,easy,(enigma_pulse) Science easy question 47: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;science;easy,true
+Science,easy,(enigma_pulse) Science easy question 48: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;science;easy,true
+Science,easy,(enigma_pulse) Science easy question 49: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;science;easy,true
+Science,easy,(enigma_pulse) Science easy question 50: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;science;easy,true
+Science,medium,(enigma_pulse) Science medium question 1: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;science;medium,true
+Science,medium,(enigma_pulse) Science medium question 2: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;science;medium,true
+Science,medium,(enigma_pulse) Science medium question 3: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;science;medium,true
+Science,medium,(enigma_pulse) Science medium question 4: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;science;medium,true
+Science,medium,(enigma_pulse) Science medium question 5: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;science;medium,true
+Science,medium,(enigma_pulse) Science medium question 6: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;science;medium,true
+Science,medium,(enigma_pulse) Science medium question 7: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;science;medium,true
+Science,medium,(enigma_pulse) Science medium question 8: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;science;medium,true
+Science,medium,(enigma_pulse) Science medium question 9: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;science;medium,true
+Science,medium,(enigma_pulse) Science medium question 10: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;science;medium,true
+Science,medium,(enigma_pulse) Science medium question 11: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;science;medium,true
+Science,medium,(enigma_pulse) Science medium question 12: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;science;medium,true
+Science,medium,(enigma_pulse) Science medium question 13: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;science;medium,true
+Science,medium,(enigma_pulse) Science medium question 14: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;science;medium,true
+Science,medium,(enigma_pulse) Science medium question 15: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;science;medium,true
+Science,medium,(enigma_pulse) Science medium question 16: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;science;medium,true
+Science,medium,(enigma_pulse) Science medium question 17: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;science;medium,true
+Science,medium,(enigma_pulse) Science medium question 18: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;science;medium,true
+Science,medium,(enigma_pulse) Science medium question 19: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;science;medium,true
+Science,medium,(enigma_pulse) Science medium question 20: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;science;medium,true
+Science,medium,(enigma_pulse) Science medium question 21: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;science;medium,true
+Science,medium,(enigma_pulse) Science medium question 22: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;science;medium,true
+Science,medium,(enigma_pulse) Science medium question 23: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;science;medium,true
+Science,medium,(enigma_pulse) Science medium question 24: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;science;medium,true
+Science,medium,(enigma_pulse) Science medium question 25: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;science;medium,true
+Science,medium,(enigma_pulse) Science medium question 26: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;science;medium,true
+Science,medium,(enigma_pulse) Science medium question 27: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;science;medium,true
+Science,medium,(enigma_pulse) Science medium question 28: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;science;medium,true
+Science,medium,(enigma_pulse) Science medium question 29: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;science;medium,true
+Science,medium,(enigma_pulse) Science medium question 30: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;science;medium,true
+Science,medium,(enigma_pulse) Science medium question 31: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;science;medium,true
+Science,medium,(enigma_pulse) Science medium question 32: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;science;medium,true
+Science,medium,(enigma_pulse) Science medium question 33: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;science;medium,true
+Science,medium,(enigma_pulse) Science medium question 34: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;science;medium,true
+Science,medium,(enigma_pulse) Science medium question 35: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;science;medium,true
+Science,medium,(enigma_pulse) Science medium question 36: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;science;medium,true
+Science,medium,(enigma_pulse) Science medium question 37: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;science;medium,true
+Science,medium,(enigma_pulse) Science medium question 38: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;science;medium,true
+Science,medium,(enigma_pulse) Science medium question 39: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;science;medium,true
+Science,medium,(enigma_pulse) Science medium question 40: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;science;medium,true
+Science,medium,(enigma_pulse) Science medium question 41: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;science;medium,true
+Science,medium,(enigma_pulse) Science medium question 42: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;science;medium,true
+Science,medium,(enigma_pulse) Science medium question 43: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;science;medium,true
+Science,medium,(enigma_pulse) Science medium question 44: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;science;medium,true
+Science,medium,(enigma_pulse) Science medium question 45: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;science;medium,true
+Science,medium,(enigma_pulse) Science medium question 46: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;science;medium,true
+Science,medium,(enigma_pulse) Science medium question 47: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;science;medium,true
+Science,medium,(enigma_pulse) Science medium question 48: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;science;medium,true
+Science,medium,(enigma_pulse) Science medium question 49: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;science;medium,true
+Science,medium,(enigma_pulse) Science medium question 50: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;science;medium,true
+Science,hard,(enigma_pulse) Science hard question 1: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;science;hard,true
+Science,hard,(enigma_pulse) Science hard question 2: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;science;hard,true
+Science,hard,(enigma_pulse) Science hard question 3: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;science;hard,true
+Science,hard,(enigma_pulse) Science hard question 4: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;science;hard,true
+Science,hard,(enigma_pulse) Science hard question 5: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;science;hard,true
+Science,hard,(enigma_pulse) Science hard question 6: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;science;hard,true
+Science,hard,(enigma_pulse) Science hard question 7: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;science;hard,true
+Science,hard,(enigma_pulse) Science hard question 8: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;science;hard,true
+Science,hard,(enigma_pulse) Science hard question 9: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;science;hard,true
+Science,hard,(enigma_pulse) Science hard question 10: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;science;hard,true
+Science,hard,(enigma_pulse) Science hard question 11: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;science;hard,true
+Science,hard,(enigma_pulse) Science hard question 12: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;science;hard,true
+Science,hard,(enigma_pulse) Science hard question 13: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;science;hard,true
+Science,hard,(enigma_pulse) Science hard question 14: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;science;hard,true
+Science,hard,(enigma_pulse) Science hard question 15: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;science;hard,true
+Science,hard,(enigma_pulse) Science hard question 16: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;science;hard,true
+Science,hard,(enigma_pulse) Science hard question 17: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;science;hard,true
+Science,hard,(enigma_pulse) Science hard question 18: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;science;hard,true
+Science,hard,(enigma_pulse) Science hard question 19: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;science;hard,true
+Science,hard,(enigma_pulse) Science hard question 20: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;science;hard,true
+Science,hard,(enigma_pulse) Science hard question 21: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;science;hard,true
+Science,hard,(enigma_pulse) Science hard question 22: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;science;hard,true
+Science,hard,(enigma_pulse) Science hard question 23: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;science;hard,true
+Science,hard,(enigma_pulse) Science hard question 24: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;science;hard,true
+Science,hard,(enigma_pulse) Science hard question 25: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;science;hard,true
+Science,hard,(enigma_pulse) Science hard question 26: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;science;hard,true
+Science,hard,(enigma_pulse) Science hard question 27: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;science;hard,true
+Science,hard,(enigma_pulse) Science hard question 28: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;science;hard,true
+Science,hard,(enigma_pulse) Science hard question 29: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;science;hard,true
+Science,hard,(enigma_pulse) Science hard question 30: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;science;hard,true
+Science,hard,(enigma_pulse) Science hard question 31: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;science;hard,true
+Science,hard,(enigma_pulse) Science hard question 32: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;science;hard,true
+Science,hard,(enigma_pulse) Science hard question 33: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;science;hard,true
+Science,hard,(enigma_pulse) Science hard question 34: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;science;hard,true
+Science,hard,(enigma_pulse) Science hard question 35: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;science;hard,true
+Science,hard,(enigma_pulse) Science hard question 36: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;science;hard,true
+Science,hard,(enigma_pulse) Science hard question 37: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;science;hard,true
+Science,hard,(enigma_pulse) Science hard question 38: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;science;hard,true
+Science,hard,(enigma_pulse) Science hard question 39: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;science;hard,true
+Science,hard,(enigma_pulse) Science hard question 40: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;science;hard,true
+Science,hard,(enigma_pulse) Science hard question 41: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;science;hard,true
+Science,hard,(enigma_pulse) Science hard question 42: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;science;hard,true
+Science,hard,(enigma_pulse) Science hard question 43: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;science;hard,true
+Science,hard,(enigma_pulse) Science hard question 44: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;science;hard,true
+Science,hard,(enigma_pulse) Science hard question 45: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;science;hard,true
+Science,hard,(enigma_pulse) Science hard question 46: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;science;hard,true
+Science,hard,(enigma_pulse) Science hard question 47: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;science;hard,true
+Science,hard,(enigma_pulse) Science hard question 48: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;science;hard,true
+Science,hard,(enigma_pulse) Science hard question 49: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;science;hard,true
+Science,hard,(enigma_pulse) Science hard question 50: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;science;hard,true
+History,easy,(enigma_pulse) History easy question 1: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;history;easy,true
+History,easy,(enigma_pulse) History easy question 2: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;history;easy,true
+History,easy,(enigma_pulse) History easy question 3: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;history;easy,true
+History,easy,(enigma_pulse) History easy question 4: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;history;easy,true
+History,easy,(enigma_pulse) History easy question 5: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;history;easy,true
+History,easy,(enigma_pulse) History easy question 6: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;history;easy,true
+History,easy,(enigma_pulse) History easy question 7: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;history;easy,true
+History,easy,(enigma_pulse) History easy question 8: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;history;easy,true
+History,easy,(enigma_pulse) History easy question 9: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;history;easy,true
+History,easy,(enigma_pulse) History easy question 10: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;history;easy,true
+History,easy,(enigma_pulse) History easy question 11: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;history;easy,true
+History,easy,(enigma_pulse) History easy question 12: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;history;easy,true
+History,easy,(enigma_pulse) History easy question 13: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;history;easy,true
+History,easy,(enigma_pulse) History easy question 14: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;history;easy,true
+History,easy,(enigma_pulse) History easy question 15: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;history;easy,true
+History,easy,(enigma_pulse) History easy question 16: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;history;easy,true
+History,easy,(enigma_pulse) History easy question 17: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;history;easy,true
+History,easy,(enigma_pulse) History easy question 18: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;history;easy,true
+History,easy,(enigma_pulse) History easy question 19: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;history;easy,true
+History,easy,(enigma_pulse) History easy question 20: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;history;easy,true
+History,easy,(enigma_pulse) History easy question 21: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;history;easy,true
+History,easy,(enigma_pulse) History easy question 22: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;history;easy,true
+History,easy,(enigma_pulse) History easy question 23: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;history;easy,true
+History,easy,(enigma_pulse) History easy question 24: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;history;easy,true
+History,easy,(enigma_pulse) History easy question 25: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;history;easy,true
+History,easy,(enigma_pulse) History easy question 26: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;history;easy,true
+History,easy,(enigma_pulse) History easy question 27: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;history;easy,true
+History,easy,(enigma_pulse) History easy question 28: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;history;easy,true
+History,easy,(enigma_pulse) History easy question 29: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;history;easy,true
+History,easy,(enigma_pulse) History easy question 30: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;history;easy,true
+History,easy,(enigma_pulse) History easy question 31: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;history;easy,true
+History,easy,(enigma_pulse) History easy question 32: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;history;easy,true
+History,easy,(enigma_pulse) History easy question 33: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;history;easy,true
+History,easy,(enigma_pulse) History easy question 34: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;history;easy,true
+History,easy,(enigma_pulse) History easy question 35: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;history;easy,true
+History,easy,(enigma_pulse) History easy question 36: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;history;easy,true
+History,easy,(enigma_pulse) History easy question 37: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;history;easy,true
+History,easy,(enigma_pulse) History easy question 38: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;history;easy,true
+History,easy,(enigma_pulse) History easy question 39: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;history;easy,true
+History,easy,(enigma_pulse) History easy question 40: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;history;easy,true
+History,easy,(enigma_pulse) History easy question 41: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;history;easy,true
+History,easy,(enigma_pulse) History easy question 42: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;history;easy,true
+History,easy,(enigma_pulse) History easy question 43: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;history;easy,true
+History,easy,(enigma_pulse) History easy question 44: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;history;easy,true
+History,easy,(enigma_pulse) History easy question 45: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;history;easy,true
+History,easy,(enigma_pulse) History easy question 46: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;history;easy,true
+History,easy,(enigma_pulse) History easy question 47: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;history;easy,true
+History,easy,(enigma_pulse) History easy question 48: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;history;easy,true
+History,easy,(enigma_pulse) History easy question 49: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;history;easy,true
+History,easy,(enigma_pulse) History easy question 50: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;history;easy,true
+History,medium,(enigma_pulse) History medium question 1: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;history;medium,true
+History,medium,(enigma_pulse) History medium question 2: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;history;medium,true
+History,medium,(enigma_pulse) History medium question 3: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;history;medium,true
+History,medium,(enigma_pulse) History medium question 4: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;history;medium,true
+History,medium,(enigma_pulse) History medium question 5: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;history;medium,true
+History,medium,(enigma_pulse) History medium question 6: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;history;medium,true
+History,medium,(enigma_pulse) History medium question 7: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;history;medium,true
+History,medium,(enigma_pulse) History medium question 8: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;history;medium,true
+History,medium,(enigma_pulse) History medium question 9: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;history;medium,true
+History,medium,(enigma_pulse) History medium question 10: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;history;medium,true
+History,medium,(enigma_pulse) History medium question 11: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;history;medium,true
+History,medium,(enigma_pulse) History medium question 12: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;history;medium,true
+History,medium,(enigma_pulse) History medium question 13: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;history;medium,true
+History,medium,(enigma_pulse) History medium question 14: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;history;medium,true
+History,medium,(enigma_pulse) History medium question 15: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;history;medium,true
+History,medium,(enigma_pulse) History medium question 16: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;history;medium,true
+History,medium,(enigma_pulse) History medium question 17: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;history;medium,true
+History,medium,(enigma_pulse) History medium question 18: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;history;medium,true
+History,medium,(enigma_pulse) History medium question 19: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;history;medium,true
+History,medium,(enigma_pulse) History medium question 20: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;history;medium,true
+History,medium,(enigma_pulse) History medium question 21: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;history;medium,true
+History,medium,(enigma_pulse) History medium question 22: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;history;medium,true
+History,medium,(enigma_pulse) History medium question 23: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;history;medium,true
+History,medium,(enigma_pulse) History medium question 24: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;history;medium,true
+History,medium,(enigma_pulse) History medium question 25: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;history;medium,true
+History,medium,(enigma_pulse) History medium question 26: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;history;medium,true
+History,medium,(enigma_pulse) History medium question 27: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;history;medium,true
+History,medium,(enigma_pulse) History medium question 28: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;history;medium,true
+History,medium,(enigma_pulse) History medium question 29: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;history;medium,true
+History,medium,(enigma_pulse) History medium question 30: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;history;medium,true
+History,medium,(enigma_pulse) History medium question 31: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;history;medium,true
+History,medium,(enigma_pulse) History medium question 32: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;history;medium,true
+History,medium,(enigma_pulse) History medium question 33: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;history;medium,true
+History,medium,(enigma_pulse) History medium question 34: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;history;medium,true
+History,medium,(enigma_pulse) History medium question 35: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;history;medium,true
+History,medium,(enigma_pulse) History medium question 36: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;history;medium,true
+History,medium,(enigma_pulse) History medium question 37: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;history;medium,true
+History,medium,(enigma_pulse) History medium question 38: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;history;medium,true
+History,medium,(enigma_pulse) History medium question 39: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;history;medium,true
+History,medium,(enigma_pulse) History medium question 40: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;history;medium,true
+History,medium,(enigma_pulse) History medium question 41: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;history;medium,true
+History,medium,(enigma_pulse) History medium question 42: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;history;medium,true
+History,medium,(enigma_pulse) History medium question 43: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;history;medium,true
+History,medium,(enigma_pulse) History medium question 44: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;history;medium,true
+History,medium,(enigma_pulse) History medium question 45: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;history;medium,true
+History,medium,(enigma_pulse) History medium question 46: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;history;medium,true
+History,medium,(enigma_pulse) History medium question 47: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;history;medium,true
+History,medium,(enigma_pulse) History medium question 48: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;history;medium,true
+History,medium,(enigma_pulse) History medium question 49: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;history;medium,true
+History,medium,(enigma_pulse) History medium question 50: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;history;medium,true
+History,hard,(enigma_pulse) History hard question 1: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;history;hard,true
+History,hard,(enigma_pulse) History hard question 2: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;history;hard,true
+History,hard,(enigma_pulse) History hard question 3: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;history;hard,true
+History,hard,(enigma_pulse) History hard question 4: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;history;hard,true
+History,hard,(enigma_pulse) History hard question 5: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;history;hard,true
+History,hard,(enigma_pulse) History hard question 6: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;history;hard,true
+History,hard,(enigma_pulse) History hard question 7: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;history;hard,true
+History,hard,(enigma_pulse) History hard question 8: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;history;hard,true
+History,hard,(enigma_pulse) History hard question 9: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;history;hard,true
+History,hard,(enigma_pulse) History hard question 10: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;history;hard,true
+History,hard,(enigma_pulse) History hard question 11: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;history;hard,true
+History,hard,(enigma_pulse) History hard question 12: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;history;hard,true
+History,hard,(enigma_pulse) History hard question 13: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;history;hard,true
+History,hard,(enigma_pulse) History hard question 14: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;history;hard,true
+History,hard,(enigma_pulse) History hard question 15: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;history;hard,true
+History,hard,(enigma_pulse) History hard question 16: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;history;hard,true
+History,hard,(enigma_pulse) History hard question 17: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;history;hard,true
+History,hard,(enigma_pulse) History hard question 18: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;history;hard,true
+History,hard,(enigma_pulse) History hard question 19: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;history;hard,true
+History,hard,(enigma_pulse) History hard question 20: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;history;hard,true
+History,hard,(enigma_pulse) History hard question 21: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;history;hard,true
+History,hard,(enigma_pulse) History hard question 22: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;history;hard,true
+History,hard,(enigma_pulse) History hard question 23: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;history;hard,true
+History,hard,(enigma_pulse) History hard question 24: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;history;hard,true
+History,hard,(enigma_pulse) History hard question 25: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;history;hard,true
+History,hard,(enigma_pulse) History hard question 26: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;history;hard,true
+History,hard,(enigma_pulse) History hard question 27: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;history;hard,true
+History,hard,(enigma_pulse) History hard question 28: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;history;hard,true
+History,hard,(enigma_pulse) History hard question 29: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;history;hard,true
+History,hard,(enigma_pulse) History hard question 30: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;history;hard,true
+History,hard,(enigma_pulse) History hard question 31: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;history;hard,true
+History,hard,(enigma_pulse) History hard question 32: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;history;hard,true
+History,hard,(enigma_pulse) History hard question 33: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;history;hard,true
+History,hard,(enigma_pulse) History hard question 34: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;history;hard,true
+History,hard,(enigma_pulse) History hard question 35: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;history;hard,true
+History,hard,(enigma_pulse) History hard question 36: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;history;hard,true
+History,hard,(enigma_pulse) History hard question 37: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;history;hard,true
+History,hard,(enigma_pulse) History hard question 38: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;history;hard,true
+History,hard,(enigma_pulse) History hard question 39: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;history;hard,true
+History,hard,(enigma_pulse) History hard question 40: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;history;hard,true
+History,hard,(enigma_pulse) History hard question 41: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;history;hard,true
+History,hard,(enigma_pulse) History hard question 42: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;history;hard,true
+History,hard,(enigma_pulse) History hard question 43: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;history;hard,true
+History,hard,(enigma_pulse) History hard question 44: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;history;hard,true
+History,hard,(enigma_pulse) History hard question 45: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;history;hard,true
+History,hard,(enigma_pulse) History hard question 46: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;history;hard,true
+History,hard,(enigma_pulse) History hard question 47: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;history;hard,true
+History,hard,(enigma_pulse) History hard question 48: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;history;hard,true
+History,hard,(enigma_pulse) History hard question 49: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;history;hard,true
+History,hard,(enigma_pulse) History hard question 50: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;history;hard,true
+Sports,easy,(enigma_pulse) Sports easy question 1: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;sports;easy,true
+Sports,easy,(enigma_pulse) Sports easy question 2: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;sports;easy,true
+Sports,easy,(enigma_pulse) Sports easy question 3: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;sports;easy,true
+Sports,easy,(enigma_pulse) Sports easy question 4: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;sports;easy,true
+Sports,easy,(enigma_pulse) Sports easy question 5: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;sports;easy,true
+Sports,easy,(enigma_pulse) Sports easy question 6: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;sports;easy,true
+Sports,easy,(enigma_pulse) Sports easy question 7: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;sports;easy,true
+Sports,easy,(enigma_pulse) Sports easy question 8: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;sports;easy,true
+Sports,easy,(enigma_pulse) Sports easy question 9: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;sports;easy,true
+Sports,easy,(enigma_pulse) Sports easy question 10: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;sports;easy,true
+Sports,easy,(enigma_pulse) Sports easy question 11: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;sports;easy,true
+Sports,easy,(enigma_pulse) Sports easy question 12: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;sports;easy,true
+Sports,easy,(enigma_pulse) Sports easy question 13: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;sports;easy,true
+Sports,easy,(enigma_pulse) Sports easy question 14: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;sports;easy,true
+Sports,easy,(enigma_pulse) Sports easy question 15: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;sports;easy,true
+Sports,easy,(enigma_pulse) Sports easy question 16: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;sports;easy,true
+Sports,easy,(enigma_pulse) Sports easy question 17: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;sports;easy,true
+Sports,easy,(enigma_pulse) Sports easy question 18: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;sports;easy,true
+Sports,easy,(enigma_pulse) Sports easy question 19: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;sports;easy,true
+Sports,easy,(enigma_pulse) Sports easy question 20: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;sports;easy,true
+Sports,easy,(enigma_pulse) Sports easy question 21: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;sports;easy,true
+Sports,easy,(enigma_pulse) Sports easy question 22: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;sports;easy,true
+Sports,easy,(enigma_pulse) Sports easy question 23: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;sports;easy,true
+Sports,easy,(enigma_pulse) Sports easy question 24: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;sports;easy,true
+Sports,easy,(enigma_pulse) Sports easy question 25: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;sports;easy,true
+Sports,easy,(enigma_pulse) Sports easy question 26: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;sports;easy,true
+Sports,easy,(enigma_pulse) Sports easy question 27: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;sports;easy,true
+Sports,easy,(enigma_pulse) Sports easy question 28: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;sports;easy,true
+Sports,easy,(enigma_pulse) Sports easy question 29: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;sports;easy,true
+Sports,easy,(enigma_pulse) Sports easy question 30: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;sports;easy,true
+Sports,easy,(enigma_pulse) Sports easy question 31: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;sports;easy,true
+Sports,easy,(enigma_pulse) Sports easy question 32: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;sports;easy,true
+Sports,easy,(enigma_pulse) Sports easy question 33: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;sports;easy,true
+Sports,easy,(enigma_pulse) Sports easy question 34: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;sports;easy,true
+Sports,easy,(enigma_pulse) Sports easy question 35: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;sports;easy,true
+Sports,easy,(enigma_pulse) Sports easy question 36: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;sports;easy,true
+Sports,easy,(enigma_pulse) Sports easy question 37: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;sports;easy,true
+Sports,easy,(enigma_pulse) Sports easy question 38: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;sports;easy,true
+Sports,easy,(enigma_pulse) Sports easy question 39: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;sports;easy,true
+Sports,easy,(enigma_pulse) Sports easy question 40: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;sports;easy,true
+Sports,easy,(enigma_pulse) Sports easy question 41: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;sports;easy,true
+Sports,easy,(enigma_pulse) Sports easy question 42: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;sports;easy,true
+Sports,easy,(enigma_pulse) Sports easy question 43: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;sports;easy,true
+Sports,easy,(enigma_pulse) Sports easy question 44: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;sports;easy,true
+Sports,easy,(enigma_pulse) Sports easy question 45: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;sports;easy,true
+Sports,easy,(enigma_pulse) Sports easy question 46: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;sports;easy,true
+Sports,easy,(enigma_pulse) Sports easy question 47: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;sports;easy,true
+Sports,easy,(enigma_pulse) Sports easy question 48: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;sports;easy,true
+Sports,easy,(enigma_pulse) Sports easy question 49: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;sports;easy,true
+Sports,easy,(enigma_pulse) Sports easy question 50: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;sports;easy,true
+Sports,medium,(enigma_pulse) Sports medium question 1: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;sports;medium,true
+Sports,medium,(enigma_pulse) Sports medium question 2: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;sports;medium,true
+Sports,medium,(enigma_pulse) Sports medium question 3: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;sports;medium,true
+Sports,medium,(enigma_pulse) Sports medium question 4: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;sports;medium,true
+Sports,medium,(enigma_pulse) Sports medium question 5: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;sports;medium,true
+Sports,medium,(enigma_pulse) Sports medium question 6: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;sports;medium,true
+Sports,medium,(enigma_pulse) Sports medium question 7: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;sports;medium,true
+Sports,medium,(enigma_pulse) Sports medium question 8: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;sports;medium,true
+Sports,medium,(enigma_pulse) Sports medium question 9: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;sports;medium,true
+Sports,medium,(enigma_pulse) Sports medium question 10: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;sports;medium,true
+Sports,medium,(enigma_pulse) Sports medium question 11: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;sports;medium,true
+Sports,medium,(enigma_pulse) Sports medium question 12: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;sports;medium,true
+Sports,medium,(enigma_pulse) Sports medium question 13: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;sports;medium,true
+Sports,medium,(enigma_pulse) Sports medium question 14: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;sports;medium,true
+Sports,medium,(enigma_pulse) Sports medium question 15: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;sports;medium,true
+Sports,medium,(enigma_pulse) Sports medium question 16: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;sports;medium,true
+Sports,medium,(enigma_pulse) Sports medium question 17: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;sports;medium,true
+Sports,medium,(enigma_pulse) Sports medium question 18: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;sports;medium,true
+Sports,medium,(enigma_pulse) Sports medium question 19: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;sports;medium,true
+Sports,medium,(enigma_pulse) Sports medium question 20: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;sports;medium,true
+Sports,medium,(enigma_pulse) Sports medium question 21: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;sports;medium,true
+Sports,medium,(enigma_pulse) Sports medium question 22: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;sports;medium,true
+Sports,medium,(enigma_pulse) Sports medium question 23: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;sports;medium,true
+Sports,medium,(enigma_pulse) Sports medium question 24: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;sports;medium,true
+Sports,medium,(enigma_pulse) Sports medium question 25: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;sports;medium,true
+Sports,medium,(enigma_pulse) Sports medium question 26: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;sports;medium,true
+Sports,medium,(enigma_pulse) Sports medium question 27: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;sports;medium,true
+Sports,medium,(enigma_pulse) Sports medium question 28: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;sports;medium,true
+Sports,medium,(enigma_pulse) Sports medium question 29: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;sports;medium,true
+Sports,medium,(enigma_pulse) Sports medium question 30: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;sports;medium,true
+Sports,medium,(enigma_pulse) Sports medium question 31: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;sports;medium,true
+Sports,medium,(enigma_pulse) Sports medium question 32: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;sports;medium,true
+Sports,medium,(enigma_pulse) Sports medium question 33: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;sports;medium,true
+Sports,medium,(enigma_pulse) Sports medium question 34: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;sports;medium,true
+Sports,medium,(enigma_pulse) Sports medium question 35: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;sports;medium,true
+Sports,medium,(enigma_pulse) Sports medium question 36: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;sports;medium,true
+Sports,medium,(enigma_pulse) Sports medium question 37: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;sports;medium,true
+Sports,medium,(enigma_pulse) Sports medium question 38: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;sports;medium,true
+Sports,medium,(enigma_pulse) Sports medium question 39: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;sports;medium,true
+Sports,medium,(enigma_pulse) Sports medium question 40: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;sports;medium,true
+Sports,medium,(enigma_pulse) Sports medium question 41: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;sports;medium,true
+Sports,medium,(enigma_pulse) Sports medium question 42: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;sports;medium,true
+Sports,medium,(enigma_pulse) Sports medium question 43: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;sports;medium,true
+Sports,medium,(enigma_pulse) Sports medium question 44: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;sports;medium,true
+Sports,medium,(enigma_pulse) Sports medium question 45: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;sports;medium,true
+Sports,medium,(enigma_pulse) Sports medium question 46: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;sports;medium,true
+Sports,medium,(enigma_pulse) Sports medium question 47: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;sports;medium,true
+Sports,medium,(enigma_pulse) Sports medium question 48: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;sports;medium,true
+Sports,medium,(enigma_pulse) Sports medium question 49: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;sports;medium,true
+Sports,medium,(enigma_pulse) Sports medium question 50: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;sports;medium,true
+Sports,hard,(enigma_pulse) Sports hard question 1: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;sports;hard,true
+Sports,hard,(enigma_pulse) Sports hard question 2: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;sports;hard,true
+Sports,hard,(enigma_pulse) Sports hard question 3: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;sports;hard,true
+Sports,hard,(enigma_pulse) Sports hard question 4: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;sports;hard,true
+Sports,hard,(enigma_pulse) Sports hard question 5: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;sports;hard,true
+Sports,hard,(enigma_pulse) Sports hard question 6: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;sports;hard,true
+Sports,hard,(enigma_pulse) Sports hard question 7: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;sports;hard,true
+Sports,hard,(enigma_pulse) Sports hard question 8: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;sports;hard,true
+Sports,hard,(enigma_pulse) Sports hard question 9: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;sports;hard,true
+Sports,hard,(enigma_pulse) Sports hard question 10: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;sports;hard,true
+Sports,hard,(enigma_pulse) Sports hard question 11: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;sports;hard,true
+Sports,hard,(enigma_pulse) Sports hard question 12: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;sports;hard,true
+Sports,hard,(enigma_pulse) Sports hard question 13: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;sports;hard,true
+Sports,hard,(enigma_pulse) Sports hard question 14: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;sports;hard,true
+Sports,hard,(enigma_pulse) Sports hard question 15: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;sports;hard,true
+Sports,hard,(enigma_pulse) Sports hard question 16: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;sports;hard,true
+Sports,hard,(enigma_pulse) Sports hard question 17: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;sports;hard,true
+Sports,hard,(enigma_pulse) Sports hard question 18: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;sports;hard,true
+Sports,hard,(enigma_pulse) Sports hard question 19: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;sports;hard,true
+Sports,hard,(enigma_pulse) Sports hard question 20: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;sports;hard,true
+Sports,hard,(enigma_pulse) Sports hard question 21: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;sports;hard,true
+Sports,hard,(enigma_pulse) Sports hard question 22: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;sports;hard,true
+Sports,hard,(enigma_pulse) Sports hard question 23: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;sports;hard,true
+Sports,hard,(enigma_pulse) Sports hard question 24: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;sports;hard,true
+Sports,hard,(enigma_pulse) Sports hard question 25: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;sports;hard,true
+Sports,hard,(enigma_pulse) Sports hard question 26: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;sports;hard,true
+Sports,hard,(enigma_pulse) Sports hard question 27: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;sports;hard,true
+Sports,hard,(enigma_pulse) Sports hard question 28: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;sports;hard,true
+Sports,hard,(enigma_pulse) Sports hard question 29: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;sports;hard,true
+Sports,hard,(enigma_pulse) Sports hard question 30: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;sports;hard,true
+Sports,hard,(enigma_pulse) Sports hard question 31: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;sports;hard,true
+Sports,hard,(enigma_pulse) Sports hard question 32: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;sports;hard,true
+Sports,hard,(enigma_pulse) Sports hard question 33: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;sports;hard,true
+Sports,hard,(enigma_pulse) Sports hard question 34: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;sports;hard,true
+Sports,hard,(enigma_pulse) Sports hard question 35: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;sports;hard,true
+Sports,hard,(enigma_pulse) Sports hard question 36: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;sports;hard,true
+Sports,hard,(enigma_pulse) Sports hard question 37: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;sports;hard,true
+Sports,hard,(enigma_pulse) Sports hard question 38: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;sports;hard,true
+Sports,hard,(enigma_pulse) Sports hard question 39: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;sports;hard,true
+Sports,hard,(enigma_pulse) Sports hard question 40: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;sports;hard,true
+Sports,hard,(enigma_pulse) Sports hard question 41: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;sports;hard,true
+Sports,hard,(enigma_pulse) Sports hard question 42: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;sports;hard,true
+Sports,hard,(enigma_pulse) Sports hard question 43: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;sports;hard,true
+Sports,hard,(enigma_pulse) Sports hard question 44: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;sports;hard,true
+Sports,hard,(enigma_pulse) Sports hard question 45: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;sports;hard,true
+Sports,hard,(enigma_pulse) Sports hard question 46: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;sports;hard,true
+Sports,hard,(enigma_pulse) Sports hard question 47: choose the best answer.,Answer 3,Distractor 4,Distractor 1,Distractor 2,0,enigma_pulse,enigma_pulse;sports;hard,true
+Sports,hard,(enigma_pulse) Sports hard question 48: choose the best answer.,Answer 4,Distractor 1,Distractor 2,Distractor 3,0,enigma_pulse,enigma_pulse;sports;hard,true
+Sports,hard,(enigma_pulse) Sports hard question 49: choose the best answer.,Answer 1,Distractor 2,Distractor 3,Distractor 4,0,enigma_pulse,enigma_pulse;sports;hard,true
+Sports,hard,(enigma_pulse) Sports hard question 50: choose the best answer.,Answer 2,Distractor 3,Distractor 4,Distractor 1,0,enigma_pulse,enigma_pulse;sports;hard,true

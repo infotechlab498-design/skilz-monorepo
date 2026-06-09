@@ -1,0 +1,153 @@
+/* Trivia Lobby Styling */
+.lobby-container {
+
+    min-height: calc(100vh - 80px);
+    /* Adjust for header if exists */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    transition: background-color 0.5s ease;
+}
+
+.lobby-content {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    padding: 40px;
+    max-width: 800px;
+    width: 100%;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+/* User Stats Card */
+
+.player-stats-card {
+    display: flex;
+
+    align-items: center;
+    gap: 20px;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    border-radius: 16px;
+    border-left: 4px solid var(--theme-color, #4f46e5);
+}
+
+.avatar {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.player-stats-card .info h3 {
+    margin: 0;
+    font-size: 20px;
+    color: #fff;
+}
+
+.player-stats-card .info p {
+    margin: 4px 0 0 0;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Game Info Section */
+
+.game-info {
+    text-align: center;
+}
+
+.game-info h1 {
+    font-size: 36px;
+    margin-bottom: 12px;
+    background: linear-gradient(to right, #fff, rgba(255, 255, 255, 0.7));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.game-info .description {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+/* Feature Badges */
+
+.lobby-features {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 32px;
+}
+
+.feature-badge {
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.timer-feature {
+    color: #818cf8;
+}
+
+.pvp-feature {
+    color: #f87171;
+}
+
+.solo-feature {
+    color: #34d399;
+}
+
+/* Start Button */
+
+.start-game-btn {
+    width: 100%;
+    padding: 18px;
+    border: none;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.2s, filter 0.2s;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.start-game-btn:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.1);
+}
+
+.start-game-btn:active {
+    transform: translateY(0);
+}
+
+/* Loading State */
+
+.loading {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 18px;
+    background: #0a0a0a;
+}

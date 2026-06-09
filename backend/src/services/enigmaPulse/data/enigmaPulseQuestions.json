@@ -1,0 +1,2412 @@
+[
+  {
+    "text": "What has keys but can't open locks?",
+    "options": [
+      "Piano",
+      "Map",
+      "Skeleton",
+      "Safe"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "piano",
+      "a piano"
+    ],
+    "category": "General Knowledge",
+    "difficulty": "easy",
+    "imageUrl": ""
+  },
+  {
+    "text": "What has to be broken before you can use it?",
+    "options": [
+      "Egg",
+      "Glass",
+      "Promise",
+      "Silence"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "egg",
+      "an egg"
+    ],
+    "category": "General Knowledge",
+    "difficulty": "easy",
+    "imageUrl": ""
+  },
+  {
+    "text": "I'm tall when I'm young, and I'm short when I'm old. What am I?",
+    "options": [
+      "Candle",
+      "Tree",
+      "Person",
+      "Shadow"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "candle",
+      "a candle"
+    ],
+    "category": "General Knowledge",
+    "difficulty": "easy",
+    "imageUrl": ""
+  },
+  {
+    "text": "What month of the year has 28 days?",
+    "options": [
+      "February",
+      "March",
+      "All of them",
+      "August"
+    ],
+    "correctIndex": 2,
+    "acceptedAnswers": [
+      "all",
+      "all of them",
+      "every month"
+    ],
+    "category": "General Knowledge",
+    "difficulty": "easy",
+    "imageUrl": ""
+  },
+  {
+    "text": "What is full of holes but still holds water?",
+    "options": [
+      "Sponge",
+      "Sieve",
+      "Bucket",
+      "Net"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "sponge",
+      "a sponge"
+    ],
+    "category": "General Knowledge",
+    "difficulty": "easy",
+    "imageUrl": ""
+  },
+  {
+    "text": "What question can you never answer yes to?",
+    "options": [
+      "Are you asleep?",
+      "Are you hungry?",
+      "Is it raining?",
+      "Are you human?"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "are you asleep",
+      "sleeping"
+    ],
+    "category": "General Knowledge",
+    "difficulty": "easy",
+    "imageUrl": ""
+  },
+  {
+    "text": "What is always in front of you but can't be seen?",
+    "options": [
+      "Future",
+      "Wind",
+      "Air",
+      "Shadow"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "future",
+      "the future"
+    ],
+    "category": "General Knowledge",
+    "difficulty": "easy",
+    "imageUrl": ""
+  },
+  {
+    "text": "There's a one-story house in which everything is yellow. What color are the stairs?",
+    "options": [
+      "Yellow",
+      "White",
+      "There are no stairs",
+      "Blue"
+    ],
+    "correctIndex": 2,
+    "acceptedAnswers": [
+      "none",
+      "no stairs",
+      "there are no stairs"
+    ],
+    "category": "General Knowledge",
+    "difficulty": "easy",
+    "imageUrl": ""
+  },
+  {
+    "text": "What can you break, even if you never pick it up or touch it?",
+    "options": [
+      "Promise",
+      "Heart",
+      "Silence",
+      "Mirror"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "promise",
+      "a promise"
+    ],
+    "category": "General Knowledge",
+    "difficulty": "easy",
+    "imageUrl": ""
+  },
+  {
+    "text": "What goes up but never comes down?",
+    "options": [
+      "Age",
+      "Balloon",
+      "Smoke",
+      "Temperature"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "age",
+      "your age"
+    ],
+    "category": "General Knowledge",
+    "difficulty": "easy",
+    "imageUrl": ""
+  },
+  {
+    "text": "A man dies of old age on his 25th birthday. How is this possible?",
+    "options": [
+      "Leap Year",
+      "Time Travel",
+      "Botched Surgery",
+      "Different Planet"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "leap year",
+      "born on february 29"
+    ],
+    "category": "General Knowledge",
+    "difficulty": "easy",
+    "imageUrl": ""
+  },
+  {
+    "text": "What has one eye but can't see?",
+    "options": [
+      "Needle",
+      "Storm",
+      "Potato",
+      "Blind person"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "needle",
+      "a needle"
+    ],
+    "category": "General Knowledge",
+    "difficulty": "easy",
+    "imageUrl": ""
+  },
+  {
+    "text": "I speak without a mouth and hear without ears. I have nobody, but I come alive with wind. What am I?",
+    "options": [
+      "Echo",
+      "Thought",
+      "Shadow",
+      "River"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "echo",
+      "an echo"
+    ],
+    "category": "General Knowledge",
+    "difficulty": "medium",
+    "imageUrl": ""
+  },
+  {
+    "text": "The more you take, the more you leave behind. What am I?",
+    "options": [
+      "Footsteps",
+      "Money",
+      "Time",
+      "Breath"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "footsteps",
+      "steps"
+    ],
+    "category": "General Knowledge",
+    "difficulty": "medium",
+    "imageUrl": ""
+  },
+  {
+    "text": "What has cities, but no houses; forests, but no trees; and water, but no fish?",
+    "options": [
+      "Map",
+      "Dream",
+      "Book",
+      "Painting"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "map",
+      "a map"
+    ],
+    "category": "General Knowledge",
+    "difficulty": "medium",
+    "imageUrl": ""
+  },
+  {
+    "text": "What begins with T, ends with T, and has T in it?",
+    "options": [
+      "Teapot",
+      "Toast",
+      "Tent",
+      "Text"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "teapot",
+      "a teapot"
+    ],
+    "category": "General Knowledge",
+    "difficulty": "medium",
+    "imageUrl": ""
+  },
+  {
+    "text": "I am not alive, but I grow; I do not have lungs, but I need air; I do not have a mouth, but water kills me. What am I?",
+    "options": [
+      "Fire",
+      "Plant",
+      "Rust",
+      "Ice"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "fire"
+    ],
+    "category": "General Knowledge",
+    "difficulty": "medium",
+    "imageUrl": ""
+  },
+  {
+    "text": "What runs all around a backyard, yet never moves?",
+    "options": [
+      "Fence",
+      "Hose",
+      "Ant",
+      "Stream"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "fence",
+      "a fence"
+    ],
+    "category": "General Knowledge",
+    "difficulty": "medium",
+    "imageUrl": ""
+  },
+  {
+    "text": "What can travel around the world while staying in a corner?",
+    "options": [
+      "Stamp",
+      "Spider",
+      "Thought",
+      "Wind"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "stamp",
+      "a stamp"
+    ],
+    "category": "General Knowledge",
+    "difficulty": "medium",
+    "imageUrl": ""
+  },
+  {
+    "text": "I have branches, but no fruit, trunk, or leaves. What am I?",
+    "options": [
+      "Bank",
+      "Library",
+      "River",
+      "Family"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "bank",
+      "a bank"
+    ],
+    "category": "General Knowledge",
+    "difficulty": "medium",
+    "imageUrl": ""
+  },
+  {
+    "text": "What building has the most stories?",
+    "options": [
+      "Library",
+      "Hotel",
+      "Skyscraper",
+      "Bookstore"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "library",
+      "a library"
+    ],
+    "category": "General Knowledge",
+    "difficulty": "medium",
+    "imageUrl": ""
+  },
+  {
+    "text": "What is so fragile that saying its name breaks it?",
+    "options": [
+      "Silence",
+      "Glass",
+      "Ice",
+      "Promise"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "silence"
+    ],
+    "category": "General Knowledge",
+    "difficulty": "medium",
+    "imageUrl": ""
+  },
+  {
+    "text": "A word I know, six letters it contains; subtract just one, and twelve remains. What is the word?",
+    "options": [
+      "Dozens",
+      "Twelve",
+      "Sleeps",
+      "Friend"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "dozens"
+    ],
+    "category": "General Knowledge",
+    "difficulty": "medium",
+    "imageUrl": ""
+  },
+  {
+    "text": "What comes once in a minute, twice in a moment, but never in a thousand years?",
+    "options": [
+      "Letter M",
+      "Letter E",
+      "Breath",
+      "Blink"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "m",
+      "letter m"
+    ],
+    "category": "General Knowledge",
+    "difficulty": "medium",
+    "imageUrl": ""
+  },
+  {
+    "text": "I am taken from a mine and shut up in a wooden case, from which I am never released, and yet I am used by almost every person. What am I?",
+    "options": [
+      "Pencil lead / Graphite",
+      "Coal",
+      "Gold",
+      "Salt"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "pencil lead",
+      "graphite",
+      "lead"
+    ],
+    "category": "General Knowledge",
+    "difficulty": "hard",
+    "imageUrl": ""
+  },
+  {
+    "text": "The person who makes it, sells it. The person who buys it, never uses it. The person who uses it, never knows they are using it. What is it?",
+    "options": [
+      "Coffin",
+      "Password",
+      "Insurance",
+      "Name"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "coffin",
+      "a coffin"
+    ],
+    "category": "General Knowledge",
+    "difficulty": "hard",
+    "imageUrl": ""
+  },
+  {
+    "text": "I am always hungry, I must always be fed. The finger I touch will soon turn red. What am I?",
+    "options": [
+      "Fire",
+      "Debt",
+      "Rust",
+      "Time"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "fire"
+    ],
+    "category": "General Knowledge",
+    "difficulty": "hard",
+    "imageUrl": ""
+  },
+  {
+    "text": "Forward I am heavy, backward I am not. What am I?",
+    "options": [
+      "Ton",
+      "Lead",
+      "Mass",
+      "Cart"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "ton"
+    ],
+    "category": "General Knowledge",
+    "difficulty": "hard",
+    "imageUrl": ""
+  },
+  {
+    "text": "What English word retains the same pronunciation, even after you take away four of its five letters?",
+    "options": [
+      "Queue",
+      "Bee",
+      "Eye",
+      "Why"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "queue"
+    ],
+    "category": "General Knowledge",
+    "difficulty": "hard",
+    "imageUrl": ""
+  },
+  {
+    "text": "I am four letters long, read forward or backward I mean the same thing. What am I?",
+    "options": [
+      "Noon",
+      "Level",
+      "Eve",
+      "Deed"
+    ],
+    "correctIndex": 1,
+    "acceptedAnswers": [
+      "level"
+    ],
+    "category": "General Knowledge",
+    "difficulty": "hard",
+    "imageUrl": ""
+  },
+  {
+    "text": "What disappears as soon as you say its name?",
+    "options": [
+      "Silence",
+      "Secret",
+      "Dark",
+      "Thought"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "silence"
+    ],
+    "category": "General Knowledge",
+    "difficulty": "hard",
+    "imageUrl": ""
+  },
+  {
+    "text": "I am lighter than a feather, yet the strongest person cannot hold me for five minutes. What am I?",
+    "options": [
+      "Breath",
+      "Smoke",
+      "Shadow",
+      "Thought"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "breath"
+    ],
+    "category": "General Knowledge",
+    "difficulty": "hard",
+    "imageUrl": ""
+  },
+  {
+    "text": "What belongs to you but others use it more than you do?",
+    "options": [
+      "Your name",
+      "Your time",
+      "Your voice",
+      "Your money"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "your name",
+      "name"
+    ],
+    "category": "General Knowledge",
+    "difficulty": "hard",
+    "imageUrl": ""
+  },
+  {
+    "text": "I have keys but open no locks. I have space but no room. You can enter but not go outside. What am I?",
+    "options": [
+      "Keyboard",
+      "Piano",
+      "Computer",
+      "Book"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "keyboard",
+      "a keyboard"
+    ],
+    "category": "General Knowledge",
+    "difficulty": "hard",
+    "imageUrl": ""
+  },
+  {
+    "text": "What flies without wings, cries without eyes?",
+    "options": [
+      "Cloud",
+      "Wind",
+      "Thought",
+      "Time"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "cloud",
+      "a cloud"
+    ],
+    "category": "General Knowledge",
+    "difficulty": "hard",
+    "imageUrl": ""
+  },
+  {
+    "text": "Turn us on our backs, open up our stomachs. You will be the wisest of men though at start a lummox. What are we?",
+    "options": [
+      "Books",
+      "Computers",
+      "Maps",
+      "Teachers"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "books"
+    ],
+    "category": "General Knowledge",
+    "difficulty": "hard",
+    "imageUrl": ""
+  },
+  {
+    "text": "What is the chemical symbol for water?",
+    "options": [
+      "H2O",
+      "CO2",
+      "NaCl",
+      "O2"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "h2o",
+      "water"
+    ],
+    "category": "Science",
+    "difficulty": "easy",
+    "imageUrl": ""
+  },
+  {
+    "text": "How many planets are in our solar system (traditional count, including Pluto)?",
+    "options": [
+      "8",
+      "9",
+      "7",
+      "10"
+    ],
+    "correctIndex": 1,
+    "acceptedAnswers": [
+      "nine",
+      "9"
+    ],
+    "category": "Science",
+    "difficulty": "easy",
+    "imageUrl": ""
+  },
+  {
+    "text": "What gas do plants absorb from the atmosphere?",
+    "options": [
+      "Carbon dioxide",
+      "Oxygen",
+      "Nitrogen",
+      "Helium"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "carbon dioxide",
+      "co2"
+    ],
+    "category": "Science",
+    "difficulty": "easy",
+    "imageUrl": ""
+  },
+  {
+    "text": "What force pulls objects toward Earth?",
+    "options": [
+      "Gravity",
+      "Magnetism",
+      "Friction",
+      "Inertia"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "gravity"
+    ],
+    "category": "Science",
+    "difficulty": "easy",
+    "imageUrl": ""
+  },
+  {
+    "text": "What is the center of our solar system?",
+    "options": [
+      "The Sun",
+      "The Earth",
+      "Jupiter",
+      "The Moon"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "sun",
+      "the sun"
+    ],
+    "category": "Science",
+    "difficulty": "easy",
+    "imageUrl": ""
+  },
+  {
+    "text": "What part of the plant conducts photosynthesis mostly?",
+    "options": [
+      "Leaves",
+      "Roots",
+      "Stem",
+      "Flowers"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "leaves",
+      "leaf"
+    ],
+    "category": "Science",
+    "difficulty": "easy",
+    "imageUrl": ""
+  },
+  {
+    "text": "What is frozen water called?",
+    "options": [
+      "Ice",
+      "Snow",
+      "Hail",
+      "Vapor"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "ice"
+    ],
+    "category": "Science",
+    "difficulty": "easy",
+    "imageUrl": ""
+  },
+  {
+    "text": "What organ pumps blood through the body?",
+    "options": [
+      "Heart",
+      "Liver",
+      "Lung",
+      "Brain"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "heart"
+    ],
+    "category": "Science",
+    "difficulty": "easy",
+    "imageUrl": ""
+  },
+  {
+    "text": "What is the hardest natural substance on Earth?",
+    "options": [
+      "Diamond",
+      "Gold",
+      "Iron",
+      "Quartz"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "diamond"
+    ],
+    "category": "Science",
+    "difficulty": "easy",
+    "imageUrl": ""
+  },
+  {
+    "text": "What do bees produce?",
+    "options": [
+      "Honey",
+      "Wax",
+      "Pollen",
+      "Milk"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "honey"
+    ],
+    "category": "Science",
+    "difficulty": "easy",
+    "imageUrl": ""
+  },
+  {
+    "text": "What planet is known as the Red Planet?",
+    "options": [
+      "Mars",
+      "Venus",
+      "Jupiter",
+      "Saturn"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "mars"
+    ],
+    "category": "Science",
+    "difficulty": "easy",
+    "imageUrl": ""
+  },
+  {
+    "text": "What is the boiling point of water at sea level (°C)?",
+    "options": [
+      "100",
+      "0",
+      "212",
+      "50"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "100",
+      "one hundred"
+    ],
+    "category": "Science",
+    "difficulty": "easy",
+    "imageUrl": ""
+  },
+  {
+    "text": "What particle has a negative charge?",
+    "options": [
+      "Electron",
+      "Proton",
+      "Neutron",
+      "Photon"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "electron"
+    ],
+    "category": "Science",
+    "difficulty": "medium",
+    "imageUrl": ""
+  },
+  {
+    "text": "Speed of light in vacuum is approximately?",
+    "options": [
+      "300,000 km/s",
+      "150,000 km/s",
+      "1,000 km/s",
+      "Sound speed"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "300000",
+      "300,000",
+      "c"
+    ],
+    "category": "Science",
+    "difficulty": "medium",
+    "imageUrl": ""
+  },
+  {
+    "text": "DNA stands for?",
+    "options": [
+      "Deoxyribonucleic acid",
+      "Dynamic nuclear acid",
+      "Dual nature atom",
+      "Dense nucleic assembly"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "deoxyribonucleic acid",
+      "dna"
+    ],
+    "category": "Science",
+    "difficulty": "medium",
+    "imageUrl": ""
+  },
+  {
+    "text": "What is the powerhouse of the cell?",
+    "options": [
+      "Mitochondria",
+      "Nucleus",
+      "Ribosome",
+      "Golgi"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "mitochondria",
+      "mitochondrion"
+    ],
+    "category": "Science",
+    "difficulty": "medium",
+    "imageUrl": ""
+  },
+  {
+    "text": "Which blood cells fight infection?",
+    "options": [
+      "White blood cells",
+      "Red blood cells",
+      "Platelets",
+      "Plasma"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "white blood cells",
+      "white blood cell",
+      "leukocytes"
+    ],
+    "category": "Science",
+    "difficulty": "medium",
+    "imageUrl": ""
+  },
+  {
+    "text": "What is the most abundant gas in Earth atmosphere?",
+    "options": [
+      "Nitrogen",
+      "Oxygen",
+      "Carbon dioxide",
+      "Argon"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "nitrogen"
+    ],
+    "category": "Science",
+    "difficulty": "medium",
+    "imageUrl": ""
+  },
+  {
+    "text": "What is the study of fossils called?",
+    "options": [
+      "Paleontology",
+      "Geology",
+      "Archaeology",
+      "Biology"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "paleontology"
+    ],
+    "category": "Science",
+    "difficulty": "medium",
+    "imageUrl": ""
+  },
+  {
+    "text": "What type of energy is stored in a stretched spring?",
+    "options": [
+      "Potential",
+      "Kinetic",
+      "Thermal",
+      "Chemical"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "potential",
+      "elastic potential"
+    ],
+    "category": "Science",
+    "difficulty": "medium",
+    "imageUrl": ""
+  },
+  {
+    "text": "What is HCl commonly known as?",
+    "options": [
+      "Hydrochloric acid",
+      "Sulfuric acid",
+      "Nitric acid",
+      "Acetic acid"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "hydrochloric acid"
+    ],
+    "category": "Science",
+    "difficulty": "medium",
+    "imageUrl": ""
+  },
+  {
+    "text": "What device measures earthquakes?",
+    "options": [
+      "Seismograph",
+      "Barometer",
+      "Anemometer",
+      "Thermometer"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "seismograph",
+      "seismometer"
+    ],
+    "category": "Science",
+    "difficulty": "medium",
+    "imageUrl": ""
+  },
+  {
+    "text": "What is the SI unit of electric current?",
+    "options": [
+      "Ampere",
+      "Volt",
+      "Ohm",
+      "Watt"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "ampere",
+      "amp"
+    ],
+    "category": "Science",
+    "difficulty": "medium",
+    "imageUrl": ""
+  },
+  {
+    "text": "Which gas makes up most of the Sun by mass?",
+    "options": [
+      "Hydrogen",
+      "Helium",
+      "Oxygen",
+      "Carbon"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "hydrogen"
+    ],
+    "category": "Science",
+    "difficulty": "medium",
+    "imageUrl": ""
+  },
+  {
+    "text": "What principle states you cannot know position and momentum precisely?",
+    "options": [
+      "Heisenberg uncertainty",
+      "Pauli exclusion",
+      "Boyle law",
+      "Avogadro law"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "heisenberg",
+      "heisenberg uncertainty"
+    ],
+    "category": "Science",
+    "difficulty": "hard",
+    "imageUrl": ""
+  },
+  {
+    "text": "What is the speed of sound in air at ~20°C (approx m/s)?",
+    "options": [
+      "343",
+      "300",
+      "1500",
+      "100"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "343"
+    ],
+    "category": "Science",
+    "difficulty": "hard",
+    "imageUrl": ""
+  },
+  {
+    "text": "Schrodinger equation is central to?",
+    "options": [
+      "Quantum mechanics",
+      "Relativity",
+      "Thermodynamics",
+      "Fluid dynamics"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "quantum mechanics",
+      "quantum"
+    ],
+    "category": "Science",
+    "difficulty": "hard",
+    "imageUrl": ""
+  },
+  {
+    "text": "What particle mediates the strong nuclear force?",
+    "options": [
+      "Gluon",
+      "Photon",
+      "W boson",
+      "Graviton"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "gluon"
+    ],
+    "category": "Science",
+    "difficulty": "hard",
+    "imageUrl": ""
+  },
+  {
+    "text": "CRISPR is associated with?",
+    "options": [
+      "Gene editing",
+      "Telescope",
+      "Battery tech",
+      "Fusion"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "gene editing",
+      "crispr"
+    ],
+    "category": "Science",
+    "difficulty": "hard",
+    "imageUrl": ""
+  },
+  {
+    "text": "What is the half-life concept used for?",
+    "options": [
+      "Radioactive decay",
+      "Photosynthesis",
+      "Orbital period",
+      "Tides"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "radioactive decay",
+      "decay"
+    ],
+    "category": "Science",
+    "difficulty": "hard",
+    "imageUrl": ""
+  },
+  {
+    "text": "Maxwell equations describe?",
+    "options": [
+      "Electromagnetism",
+      "Gravity",
+      "Strong force",
+      "Weak force"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "electromagnetism",
+      "electromagnetic"
+    ],
+    "category": "Science",
+    "difficulty": "hard",
+    "imageUrl": ""
+  },
+  {
+    "text": "What organelle contains chlorophyll in plants?",
+    "options": [
+      "Chloroplast",
+      "Mitochondria",
+      "Vacuole",
+      "Lysosome"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "chloroplast"
+    ],
+    "category": "Science",
+    "difficulty": "hard",
+    "imageUrl": ""
+  },
+  {
+    "text": "Entropy in isolated systems tends to?",
+    "options": [
+      "Increase",
+      "Decrease",
+      "Stay fixed",
+      "Oscillate"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "increase"
+    ],
+    "category": "Science",
+    "difficulty": "hard",
+    "imageUrl": ""
+  },
+  {
+    "text": "What is Avogadro number order of magnitude?",
+    "options": [
+      "10^23",
+      "10^15",
+      "10^8",
+      "10^3"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "10^23",
+      "6.022",
+      "avogadro"
+    ],
+    "category": "Science",
+    "difficulty": "hard",
+    "imageUrl": ""
+  },
+  {
+    "text": "Which scientist proposed natural selection with Wallace?",
+    "options": [
+      "Darwin",
+      "Newton",
+      "Einstein",
+      "Curie"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "darwin",
+      "charles darwin"
+    ],
+    "category": "Science",
+    "difficulty": "hard",
+    "imageUrl": ""
+  },
+  {
+    "text": "What is the pH of pure water at 25°C?",
+    "options": [
+      "7",
+      "0",
+      "14",
+      "1"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "7",
+      "seven"
+    ],
+    "category": "Science",
+    "difficulty": "hard",
+    "imageUrl": ""
+  },
+  {
+    "text": "Who was the first President of the United States?",
+    "options": [
+      "George Washington",
+      "Thomas Jefferson",
+      "Abraham Lincoln",
+      "John Adams"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "george washington",
+      "washington"
+    ],
+    "category": "History",
+    "difficulty": "easy",
+    "imageUrl": ""
+  },
+  {
+    "text": "Ancient Egypt is famous for building?",
+    "options": [
+      "Pyramids",
+      "Aqueducts",
+      "Colosseum",
+      "Great Wall"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "pyramids",
+      "pyramid"
+    ],
+    "category": "History",
+    "difficulty": "easy",
+    "imageUrl": ""
+  },
+  {
+    "text": "World War II ended in which decade?",
+    "options": [
+      "1940s",
+      "1930s",
+      "1950s",
+      "1920s"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "1940s",
+      "1945"
+    ],
+    "category": "History",
+    "difficulty": "easy",
+    "imageUrl": ""
+  },
+  {
+    "text": "The Titanic sank in which year?",
+    "options": [
+      "1912",
+      "1905",
+      "1920",
+      "1898"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "1912"
+    ],
+    "category": "History",
+    "difficulty": "easy",
+    "imageUrl": ""
+  },
+  {
+    "text": "Who painted the Mona Lisa?",
+    "options": [
+      "Leonardo da Vinci",
+      "Michelangelo",
+      "Raphael",
+      "Van Gogh"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "leonardo da vinci",
+      "da vinci",
+      "leonardo"
+    ],
+    "category": "History",
+    "difficulty": "easy",
+    "imageUrl": ""
+  },
+  {
+    "text": "Rome was built near which river?",
+    "options": [
+      "Tiber",
+      "Nile",
+      "Thames",
+      "Seine"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "tiber"
+    ],
+    "category": "History",
+    "difficulty": "easy",
+    "imageUrl": ""
+  },
+  {
+    "text": "Which empire built the Colosseum?",
+    "options": [
+      "Roman Empire",
+      "Greek Empire",
+      "Ottoman Empire",
+      "British Empire"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "roman empire",
+      "rome",
+      "romans"
+    ],
+    "category": "History",
+    "difficulty": "easy",
+    "imageUrl": ""
+  },
+  {
+    "text": "The Berlin Wall fell in which year?",
+    "options": [
+      "1989",
+      "1991",
+      "1979",
+      "2001"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "1989"
+    ],
+    "category": "History",
+    "difficulty": "easy",
+    "imageUrl": ""
+  },
+  {
+    "text": "Who was known as the Maid of Orleans?",
+    "options": [
+      "Joan of Arc",
+      "Cleopatra",
+      "Elizabeth I",
+      "Marie Antoinette"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "joan of arc",
+      "joan"
+    ],
+    "category": "History",
+    "difficulty": "easy",
+    "imageUrl": ""
+  },
+  {
+    "text": "Which ship brought the Pilgrims to America in 1620?",
+    "options": [
+      "Mayflower",
+      "Santa Maria",
+      "Beagle",
+      "Endeavour"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "mayflower"
+    ],
+    "category": "History",
+    "difficulty": "easy",
+    "imageUrl": ""
+  },
+  {
+    "text": "The Great Wall is primarily in which country?",
+    "options": [
+      "China",
+      "Japan",
+      "India",
+      "Mongolia"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "china"
+    ],
+    "category": "History",
+    "difficulty": "easy",
+    "imageUrl": ""
+  },
+  {
+    "text": "Which war was fought between the North and South in the US?",
+    "options": [
+      "Civil War",
+      "Revolutionary War",
+      "War of 1812",
+      "Spanish-American War"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "civil war",
+      "american civil war"
+    ],
+    "category": "History",
+    "difficulty": "easy",
+    "imageUrl": ""
+  },
+  {
+    "text": "The Magna Carta was signed in which country?",
+    "options": [
+      "England",
+      "France",
+      "Spain",
+      "Germany"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "england"
+    ],
+    "category": "History",
+    "difficulty": "medium",
+    "imageUrl": ""
+  },
+  {
+    "text": "Who was the British Prime Minister for most of WWII?",
+    "options": [
+      "Winston Churchill",
+      "Neville Chamberlain",
+      "Clement Attlee",
+      "Harold Macmillan"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "winston churchill",
+      "churchill"
+    ],
+    "category": "History",
+    "difficulty": "medium",
+    "imageUrl": ""
+  },
+  {
+    "text": "The French Revolution began in which year?",
+    "options": [
+      "1789",
+      "1776",
+      "1815",
+      "1848"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "1789"
+    ],
+    "category": "History",
+    "difficulty": "medium",
+    "imageUrl": ""
+  },
+  {
+    "text": "Who was the first Emperor of Rome?",
+    "options": [
+      "Augustus",
+      "Julius Caesar",
+      "Nero",
+      "Trajan"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "augustus"
+    ],
+    "category": "History",
+    "difficulty": "medium",
+    "imageUrl": ""
+  },
+  {
+    "text": "The Black Death peaked in Europe in which century?",
+    "options": [
+      "14th",
+      "12th",
+      "16th",
+      "18th"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "14th",
+      "fourteenth"
+    ],
+    "category": "History",
+    "difficulty": "medium",
+    "imageUrl": ""
+  },
+  {
+    "text": "Which city was divided by a wall during the Cold War?",
+    "options": [
+      "Berlin",
+      "Vienna",
+      "Prague",
+      "Budapest"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "berlin"
+    ],
+    "category": "History",
+    "difficulty": "medium",
+    "imageUrl": ""
+  },
+  {
+    "text": "The Battle of Waterloo was in which year?",
+    "options": [
+      "1815",
+      "1805",
+      "1820",
+      "1799"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "1815"
+    ],
+    "category": "History",
+    "difficulty": "medium",
+    "imageUrl": ""
+  },
+  {
+    "text": "Who discovered penicillin?",
+    "options": [
+      "Alexander Fleming",
+      "Louis Pasteur",
+      "Marie Curie",
+      "Robert Koch"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "alexander fleming",
+      "fleming"
+    ],
+    "category": "History",
+    "difficulty": "medium",
+    "imageUrl": ""
+  },
+  {
+    "text": "The Ottoman Empire was centered in modern-day?",
+    "options": [
+      "Turkey",
+      "Egypt",
+      "Iran",
+      "Greece"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "turkey"
+    ],
+    "category": "History",
+    "difficulty": "medium",
+    "imageUrl": ""
+  },
+  {
+    "text": "Which dynasty built much of the Forbidden City?",
+    "options": [
+      "Ming",
+      "Han",
+      "Tang",
+      "Qing"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "ming"
+    ],
+    "category": "History",
+    "difficulty": "medium",
+    "imageUrl": ""
+  },
+  {
+    "text": "The Rosetta Stone helped decode?",
+    "options": [
+      "Hieroglyphs",
+      "Cuneiform",
+      "Linear B",
+      "Sanskrit"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "hieroglyphs",
+      "hieroglyphics"
+    ],
+    "category": "History",
+    "difficulty": "medium",
+    "imageUrl": ""
+  },
+  {
+    "text": "Who led the unification of Germany in the 19th century?",
+    "options": [
+      "Otto von Bismarck",
+      "Kaiser Wilhelm II",
+      "Frederick the Great",
+      "Metternich"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "bismarck",
+      "otto von bismarck"
+    ],
+    "category": "History",
+    "difficulty": "medium",
+    "imageUrl": ""
+  },
+  {
+    "text": "Which treaty ended World War I?",
+    "options": [
+      "Treaty of Versailles",
+      "Treaty of Paris",
+      "Treaty of Ghent",
+      "Treaty of Tordesillas"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "treaty of versailles",
+      "versailles"
+    ],
+    "category": "History",
+    "difficulty": "hard",
+    "imageUrl": ""
+  },
+  {
+    "text": "The Thirty Years War primarily involved regions in?",
+    "options": [
+      "Central Europe",
+      "Balkans",
+      "Iberia",
+      "Scandinavia"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "central europe",
+      "germany"
+    ],
+    "category": "History",
+    "difficulty": "hard",
+    "imageUrl": ""
+  },
+  {
+    "text": "Who wrote The Prince?",
+    "options": [
+      "Machiavelli",
+      "Hobbes",
+      "Locke",
+      "Rousseau"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "machiavelli",
+      "niccolo machiavelli"
+    ],
+    "category": "History",
+    "difficulty": "hard",
+    "imageUrl": ""
+  },
+  {
+    "text": "The Congress of Vienna followed which conflict?",
+    "options": [
+      "Napoleonic Wars",
+      "Crimean War",
+      "Seven Years War",
+      "Hundred Years War"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "napoleonic wars",
+      "napoleonic"
+    ],
+    "category": "History",
+    "difficulty": "hard",
+    "imageUrl": ""
+  },
+  {
+    "text": "Which empire was ruled from Constantinople before 1453?",
+    "options": [
+      "Byzantine",
+      "Roman Republic",
+      "Achaemenid",
+      "Umayyad"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "byzantine",
+      "byzantine empire"
+    ],
+    "category": "History",
+    "difficulty": "hard",
+    "imageUrl": ""
+  },
+  {
+    "text": "The Meiji Restoration began in which country?",
+    "options": [
+      "Japan",
+      "China",
+      "Korea",
+      "Vietnam"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "japan"
+    ],
+    "category": "History",
+    "difficulty": "hard",
+    "imageUrl": ""
+  },
+  {
+    "text": "Who was the longest-reigning British monarch before Elizabeth II record was broken?",
+    "options": [
+      "Queen Victoria",
+      "George III",
+      "Henry VIII",
+      "Elizabeth I"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "queen victoria",
+      "victoria"
+    ],
+    "category": "History",
+    "difficulty": "hard",
+    "imageUrl": ""
+  },
+  {
+    "text": "The Peloponnesian War was mainly between?",
+    "options": [
+      "Athens and Sparta",
+      "Rome and Carthage",
+      "Persia and Greece",
+      "Egypt and Nubia"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "athens and sparta",
+      "athens",
+      "sparta"
+    ],
+    "category": "History",
+    "difficulty": "hard",
+    "imageUrl": ""
+  },
+  {
+    "text": "Which document limited the English monarchy in 1215?",
+    "options": [
+      "Magna Carta",
+      "Bill of Rights",
+      "Domesday Book",
+      "Act of Union"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "magna carta"
+    ],
+    "category": "History",
+    "difficulty": "hard",
+    "imageUrl": ""
+  },
+  {
+    "text": "The storming of the Bastille marked the start of?",
+    "options": [
+      "French Revolution",
+      "Russian Revolution",
+      "Glorious Revolution",
+      "July Revolution"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "french revolution"
+    ],
+    "category": "History",
+    "difficulty": "hard",
+    "imageUrl": ""
+  },
+  {
+    "text": "Who was the Carthaginian general who crossed the Alps with elephants?",
+    "options": [
+      "Hannibal",
+      "Scipio",
+      "Pyrrhus",
+      "Marius"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "hannibal"
+    ],
+    "category": "History",
+    "difficulty": "hard",
+    "imageUrl": ""
+  },
+  {
+    "text": "The Code of Hammurabi is associated with?",
+    "options": [
+      "Mesopotamia",
+      "Egypt",
+      "Indus Valley",
+      "Crete"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "mesopotamia",
+      "babylon",
+      "babylonia"
+    ],
+    "category": "History",
+    "difficulty": "hard",
+    "imageUrl": ""
+  },
+  {
+    "text": "How many players does a soccer team field at once (including goalkeeper)?",
+    "options": [
+      "11",
+      "10",
+      "9",
+      "12"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "11",
+      "eleven"
+    ],
+    "category": "Sports",
+    "difficulty": "easy",
+    "imageUrl": ""
+  },
+  {
+    "text": "In basketball, shooting beyond the arc is worth how many points?",
+    "options": [
+      "3",
+      "2",
+      "1",
+      "4"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "3",
+      "three"
+    ],
+    "category": "Sports",
+    "difficulty": "easy",
+    "imageUrl": ""
+  },
+  {
+    "text": "What shape is a standard baseball field home plate area?",
+    "options": [
+      "Pentagon",
+      "Circle",
+      "Square",
+      "Triangle"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "pentagon"
+    ],
+    "category": "Sports",
+    "difficulty": "easy",
+    "imageUrl": ""
+  },
+  {
+    "text": "How many bases are on a baseball diamond (not counting home)?",
+    "options": [
+      "3",
+      "4",
+      "2",
+      "5"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "3",
+      "three"
+    ],
+    "category": "Sports",
+    "difficulty": "easy",
+    "imageUrl": ""
+  },
+  {
+    "text": "What do you call zero in tennis?",
+    "options": [
+      "Love",
+      "Nil",
+      "Duck",
+      "Blank"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "love"
+    ],
+    "category": "Sports",
+    "difficulty": "easy",
+    "imageUrl": ""
+  },
+  {
+    "text": "The Olympics are held every how many years?",
+    "options": [
+      "4",
+      "2",
+      "3",
+      "5"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "4",
+      "four"
+    ],
+    "category": "Sports",
+    "difficulty": "easy",
+    "imageUrl": ""
+  },
+  {
+    "text": "In American football, a touchdown is worth how many points before extra point?",
+    "options": [
+      "6",
+      "7",
+      "3",
+      "2"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "6",
+      "six"
+    ],
+    "category": "Sports",
+    "difficulty": "easy",
+    "imageUrl": ""
+  },
+  {
+    "text": "What sport uses a shuttlecock?",
+    "options": [
+      "Badminton",
+      "Tennis",
+      "Squash",
+      "Table tennis"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "badminton"
+    ],
+    "category": "Sports",
+    "difficulty": "easy",
+    "imageUrl": ""
+  },
+  {
+    "text": "How many periods in a standard NHL hockey game?",
+    "options": [
+      "3",
+      "4",
+      "2",
+      "5"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "3",
+      "three"
+    ],
+    "category": "Sports",
+    "difficulty": "easy",
+    "imageUrl": ""
+  },
+  {
+    "text": "What is the maximum score in ten-pin bowling per frame (without bonus wording)?",
+    "options": [
+      "10",
+      "9",
+      "12",
+      "15"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "10",
+      "ten"
+    ],
+    "category": "Sports",
+    "difficulty": "easy",
+    "imageUrl": ""
+  },
+  {
+    "text": "Marathon distance is approximately how many miles?",
+    "options": [
+      "26.2",
+      "20",
+      "30",
+      "13.1"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "26.2",
+      "26",
+      "marathon"
+    ],
+    "category": "Sports",
+    "difficulty": "easy",
+    "imageUrl": ""
+  },
+  {
+    "text": "In volleyball, how many hits per side is typical before returning?",
+    "options": [
+      "3",
+      "2",
+      "4",
+      "unlimited"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "3",
+      "three"
+    ],
+    "category": "Sports",
+    "difficulty": "easy",
+    "imageUrl": ""
+  },
+  {
+    "text": "Which country has won the most FIFA World Cup titles (mens, historically cited)?",
+    "options": [
+      "Brazil",
+      "Germany",
+      "Italy",
+      "Argentina"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "brazil"
+    ],
+    "category": "Sports",
+    "difficulty": "medium",
+    "imageUrl": ""
+  },
+  {
+    "text": "The Super Bowl trophy is named after which coach?",
+    "options": [
+      "Vince Lombardi",
+      "Tom Landry",
+      "Bill Walsh",
+      "Don Shula"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "lombardi",
+      "vince lombardi"
+    ],
+    "category": "Sports",
+    "difficulty": "medium",
+    "imageUrl": ""
+  },
+  {
+    "text": "What is a golf hole-in-one on a par-4 extremely rarely called colloquially as albatross context?",
+    "options": [
+      "Condor",
+      "Eagle",
+      "Bogey",
+      "Birdie"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "condor"
+    ],
+    "category": "Sports",
+    "difficulty": "medium",
+    "imageUrl": ""
+  },
+  {
+    "text": "NBA stands for?",
+    "options": [
+      "National Basketball Association",
+      "North Basketball Alliance",
+      "National Ball Association",
+      "National Batting Association"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "national basketball association",
+      "nba"
+    ],
+    "category": "Sports",
+    "difficulty": "medium",
+    "imageUrl": ""
+  },
+  {
+    "text": "Wimbledon is played on which surface?",
+    "options": [
+      "Grass",
+      "Clay",
+      "Hard court",
+      "Carpet"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "grass"
+    ],
+    "category": "Sports",
+    "difficulty": "medium",
+    "imageUrl": ""
+  },
+  {
+    "text": "How long is an Olympic swimming pool (long course meters)?",
+    "options": [
+      "50",
+      "25",
+      "100",
+      "33"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "50",
+      "fifty"
+    ],
+    "category": "Sports",
+    "difficulty": "medium",
+    "imageUrl": ""
+  },
+  {
+    "text": "In cricket, how many wickets in a full innings dismissal cap?",
+    "options": [
+      "10",
+      "11",
+      "9",
+      "12"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "10",
+      "ten"
+    ],
+    "category": "Sports",
+    "difficulty": "medium",
+    "imageUrl": ""
+  },
+  {
+    "text": "The Tour de France is primarily what kind of race?",
+    "options": [
+      "Cycling",
+      "Running",
+      "Sailing",
+      "Rally"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "cycling",
+      "cycle"
+    ],
+    "category": "Sports",
+    "difficulty": "medium",
+    "imageUrl": ""
+  },
+  {
+    "text": "Which sport uses the terms \"birdie\" and \"eagle\"?",
+    "options": [
+      "Golf",
+      "Badminton",
+      "Tennis",
+      "Archery"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "golf"
+    ],
+    "category": "Sports",
+    "difficulty": "medium",
+    "imageUrl": ""
+  },
+  {
+    "text": "How many minutes in a regulation NBA quarter?",
+    "options": [
+      "12",
+      "10",
+      "15",
+      "8"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "12",
+      "twelve"
+    ],
+    "category": "Sports",
+    "difficulty": "medium",
+    "imageUrl": ""
+  },
+  {
+    "text": "The Stanley Cup is awarded in which sport?",
+    "options": [
+      "Ice hockey",
+      "Basketball",
+      "Baseball",
+      "Lacrosse"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "ice hockey",
+      "hockey"
+    ],
+    "category": "Sports",
+    "difficulty": "medium",
+    "imageUrl": ""
+  },
+  {
+    "text": "A perfect game in bowling (10 frames) max score?",
+    "options": [
+      "300",
+      "200",
+      "250",
+      "100"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "300"
+    ],
+    "category": "Sports",
+    "difficulty": "medium",
+    "imageUrl": ""
+  },
+  {
+    "text": "Who holds the mens 100m world record as of common knowledge pre-2024 (Usain Bolt 9.58)?",
+    "options": [
+      "Usain Bolt",
+      "Tyson Gay",
+      "Justin Gatlin",
+      "Yohan Blake"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "usain bolt",
+      "bolt"
+    ],
+    "category": "Sports",
+    "difficulty": "hard",
+    "imageUrl": ""
+  },
+  {
+    "text": "The decathlon includes how many events?",
+    "options": [
+      "10",
+      "8",
+      "12",
+      "7"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "10",
+      "ten"
+    ],
+    "category": "Sports",
+    "difficulty": "hard",
+    "imageUrl": ""
+  },
+  {
+    "text": "What is the diameter of a basketball hoop in inches (NBA)?",
+    "options": [
+      "18",
+      "16",
+      "20",
+      "22"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "18",
+      "eighteen"
+    ],
+    "category": "Sports",
+    "difficulty": "hard",
+    "imageUrl": ""
+  },
+  {
+    "text": "Ironman triathlon swim distance in meters (standard full)?",
+    "options": [
+      "3800",
+      "1500",
+      "750",
+      "5000"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "3800",
+      "3.8 km"
+    ],
+    "category": "Sports",
+    "difficulty": "hard",
+    "imageUrl": ""
+  },
+  {
+    "text": "Which boxer was known as \"The Greatest\"?",
+    "options": [
+      "Muhammad Ali",
+      "Mike Tyson",
+      "Joe Frazier",
+      "George Foreman"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "muhammad ali",
+      "ali"
+    ],
+    "category": "Sports",
+    "difficulty": "hard",
+    "imageUrl": ""
+  },
+  {
+    "text": "How many players on an ice hockey team during play (including goalie)?",
+    "options": [
+      "6",
+      "5",
+      "7",
+      "8"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "6",
+      "six"
+    ],
+    "category": "Sports",
+    "difficulty": "hard",
+    "imageUrl": ""
+  },
+  {
+    "text": "The Ryder Cup is competed in which sport?",
+    "options": [
+      "Golf",
+      "Tennis",
+      "Cricket",
+      "Rugby"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "golf"
+    ],
+    "category": "Sports",
+    "difficulty": "hard",
+    "imageUrl": ""
+  },
+  {
+    "text": "How many lanes does a standard Olympic swimming pool have for racing?",
+    "options": [
+      "8",
+      "6",
+      "10",
+      "4"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "8",
+      "eight"
+    ],
+    "category": "Sports",
+    "difficulty": "hard",
+    "imageUrl": ""
+  },
+  {
+    "text": "F1 red flag during race means?",
+    "options": [
+      "Race stopped",
+      "Penalty",
+      "Pit closed",
+      "Safety car only"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "race stopped",
+      "stopped"
+    ],
+    "category": "Sports",
+    "difficulty": "hard",
+    "imageUrl": ""
+  },
+  {
+    "text": "How many clubs allowed in a golf bag during tournament play?",
+    "options": [
+      "14",
+      "12",
+      "10",
+      "unlimited"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "14",
+      "fourteen"
+    ],
+    "category": "Sports",
+    "difficulty": "hard",
+    "imageUrl": ""
+  },
+  {
+    "text": "Which nation invented modern volleyball?",
+    "options": [
+      "USA",
+      "Brazil",
+      "Italy",
+      "Japan"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "usa",
+      "united states",
+      "america"
+    ],
+    "category": "Sports",
+    "difficulty": "hard",
+    "imageUrl": ""
+  },
+  {
+    "text": "Olympic motto \"Citius, Altius, Fortius\" translates to?",
+    "options": [
+      "Faster, Higher, Stronger",
+      "Stronger, Braver, Wiser",
+      "Together, United, Fair",
+      "Swift, Sure, True"
+    ],
+    "correctIndex": 0,
+    "acceptedAnswers": [
+      "faster higher stronger",
+      "faster, higher, stronger"
+    ],
+    "category": "Sports",
+    "difficulty": "hard",
+    "imageUrl": ""
+  }
+]

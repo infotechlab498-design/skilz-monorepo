@@ -1,0 +1,26 @@
+{
+  "entryFee": 10,
+  "xpRewards": {
+    "capture": 15,
+    "enter": 5,
+    "finishToken": 20,
+    "winMatch": 50,
+    "safeSpot": 2
+  },
+  "coinPrizes": {
+    "rank1": 20,
+    "rank2": 15,
+    "rank3": 10,
+    "rank4": 5
+  },
+  "difficultyThresholds": {
+    "upgrade": 0.75,
+    "downgrade": 0.25,
+    "lookbackTurns": 5
+  },
+  "mistakeProbabilities": {
+    "easy": 0.40,
+    "medium": 0.15,
+    "hard": 0.05
+  }
+}

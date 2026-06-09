@@ -1,0 +1,240 @@
+.ludo-victory-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(12px, 4vw, 24px);
+  pointer-events: auto;
+}
+
+.ludo-victory-modal__panel {
+  position: relative;
+  width: min(420px, 100%);
+  max-height: min(90vh, 640px);
+  overflow-y: auto;
+  border-radius: clamp(20px, 4vw, 28px);
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.8),
+    0 24px 64px rgba(15, 23, 42, 0.35),
+    0 0 80px rgba(251, 191, 36, 0.15);
+  padding: clamp(20px, 5vw, 32px) clamp(16px, 4vw, 28px);
+  text-align: center;
+}
+
+.ludo-victory-modal__panel--winner-green { box-shadow: 0 24px 64px rgba(15, 23, 42, 0.35), 0 0 60px rgba(16, 185, 129, 0.2); }
+.ludo-victory-modal__panel--winner-red { box-shadow: 0 24px 64px rgba(15, 23, 42, 0.35), 0 0 60px rgba(244, 63, 94, 0.2); }
+.ludo-victory-modal__panel--winner-yellow { box-shadow: 0 24px 64px rgba(15, 23, 42, 0.35), 0 0 60px rgba(245, 158, 11, 0.2); }
+.ludo-victory-modal__panel--winner-blue { box-shadow: 0 24px 64px rgba(15, 23, 42, 0.35), 0 0 60px rgba(14, 165, 233, 0.2); }
+
+.ludo-victory-trophy {
+  font-size: clamp(2.5rem, 8vw, 3.5rem);
+  line-height: 1;
+  margin-bottom: 8px;
+  filter: drop-shadow(0 4px 12px rgba(251, 191, 36, 0.5));
+  animation: ludoTrophyPop 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes ludoTrophyPop {
+  0% { transform: scale(0); opacity: 0; }
+  60% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.ludo-victory-title {
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  font-weight: 900;
+  margin: 0 0 4px;
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.ludo-victory-subtitle {
+  margin: 0 0 16px;
+  color: #64748b;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.ludo-victory-avatar-wrap {
+  position: relative;
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 12px;
+}
+
+.ludo-victory-crown {
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.4rem;
+  animation: ludoCrownFloat 2s ease-in-out infinite;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+@keyframes ludoCrownFloat {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-4px); }
+}
+
+.ludo-victory-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #fff;
+  border: 3px solid #fde68a;
+  box-shadow: 0 8px 24px rgba(251, 191, 36, 0.35);
+}
+
+.ludo-victory-avatar.bg-red { background: linear-gradient(145deg, #ff6b4a, #be123c); }
+.ludo-victory-avatar.bg-green { background: linear-gradient(145deg, #34d399, #059669); }
+.ludo-victory-avatar.bg-yellow { background: linear-gradient(145deg, #fde68a, #d97706); color: #78350f; }
+.ludo-victory-avatar.bg-blue { background: linear-gradient(145deg, #67e8f9, #0369a1); }
+
+.ludo-victory-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 16px 0;
+}
+
+.ludo-victory-stat {
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+}
+
+.ludo-victory-stat--coins { background: #fffbeb; border-color: #fde68a; }
+.ludo-victory-stat--xp { background: #eff6ff; border-color: #bfdbfe; }
+
+.ludo-victory-stat-label {
+  display: block;
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: #94a3b8;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.ludo-victory-stat-value {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #1e293b;
+  margin-top: 2px;
+}
+
+.ludo-victory-ranks {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 16px 0;
+  text-align: left;
+}
+
+.ludo-victory-rank-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  opacity: 0;
+  transform: translateX(-12px);
+  animation: ludoRankReveal 0.45s ease forwards;
+}
+
+.ludo-victory-rank-row--gold { border-color: rgba(234, 179, 8, 0.45); background: linear-gradient(90deg, rgba(254, 240, 138, 0.25), #fff); }
+.ludo-victory-rank-row--silver { border-color: rgba(148, 163, 184, 0.5); }
+.ludo-victory-rank-row--bronze { border-color: rgba(180, 83, 9, 0.35); }
+
+@keyframes ludoRankReveal {
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.ludo-victory-rank-medal {
+  font-size: 1.25rem;
+  min-width: 1.75rem;
+  text-align: center;
+}
+
+.ludo-victory-rank-name {
+  flex: 1;
+  font-weight: 700;
+  color: #1e293b;
+  font-size: 0.9rem;
+}
+
+.ludo-victory-rank-row--me {
+  box-shadow: 0 0 0 2px rgba(85, 81, 255, 0.35);
+}
+
+.ludo-victory-continue {
+  width: 100%;
+  margin-top: 8px;
+  padding: 14px 20px;
+  border-radius: 14px;
+  border: none;
+  background: linear-gradient(135deg, #5551ff, #6366f1);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  box-shadow: 0 10px 24px rgba(85, 81, 255, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ludo-victory-continue:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(85, 81, 255, 0.45);
+}
+
+.ludo-victory-reactions {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+.ludo-victory-reaction-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #e2e8f0;
+  background: #fff;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.ludo-victory-reaction-btn:hover {
+  transform: scale(1.12);
+  background: #f8fafc;
+}
+
+.ludo-victory-reaction-btn--active {
+  background: #eff6ff;
+  border-color: #5551ff;
+}
+
+.ludo-victory-personal {
+  padding-top: 8px;
+}
+
+.ludo-victory-personal .ludo-victory-trophy {
+  font-size: clamp(2rem, 6vw, 2.75rem);
+}

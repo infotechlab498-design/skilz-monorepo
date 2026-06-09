@@ -1,0 +1,477 @@
+// Deploy: firebase deploy --only firestore:rules
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isAuthed() {
+      return request.auth != null;
+    }
+
+    function isOwner(uid) {
+      return isAuthed() && request.auth.uid == uid;
+    }
+
+    function isAdmin() {
+      let u = get(/databases/$(database)/documents/users/$(request.auth.uid));
+      return isAuthed()
+        && request.auth.token.email == "info@aljazeeragc.com"
+        && u.exists
+        && u.data.keys().hasAny(["role"])
+        && u.data.role == "admin";
+    }
+
+    function listContainsUid(listVal) {
+      return listVal is list && request.auth.uid in listVal;
+    }
+
+    function mapContainsUid(mapVal) {
+      return mapVal is map && mapVal[request.auth.uid] == true;
+    }
+
+    function isLobbyHost() {
+      return isAuthed() && (
+        (
+          request.resource.data.keys().hasAny(["hostUid"])
+          && request.resource.data.hostUid == request.auth.uid
+        )
+        || (
+          resource.exists
+          && resource.data.keys().hasAny(["hostUid"])
+          && resource.data.hostUid == request.auth.uid
+        )
+      );
+    }
+
+    /** Safe reads on lobby docs: optional maps/lists must be guarded so missing fields never null-deref. */
+    function lobbyAllowsUser(d) {
+      return isAuthed() && (
+        (
+          d.keys().hasAny(["hostUid"])
+          && d.hostUid == request.auth.uid
+        )
+        || (
+          d.keys().hasAny(["memberMap"])
+          && d.memberMap is map
+          && request.auth.uid in d.memberMap
+          && d.memberMap[request.auth.uid] == true
+        )
+        || (
+          d.keys().hasAny(["participantMap"])
+          && d.participantMap is map
+          && request.auth.uid in d.participantMap
+          && d.participantMap[request.auth.uid] == true
+        )
+        || (
+          d.keys().hasAny(["memberUids"])
+          && d.memberUids is list
+          && request.auth.uid in d.memberUids
+        )
+        || (
+          !d.keys().hasAny(["hostUid", "memberMap", "participantMap", "memberUids"])
+          && d.keys().hasAny(["lobbyId"])
+          && d.lobbyId is string
+        )
+      );
+    }
+
+    function isSimpleChatLobby(d, lobbyId) {
+      return d.keys().hasOnly([
+          'lobbyId',
+          'createdAt',
+          'updatedAt',
+          'welcomeSent',
+          'messageCount',
+          'lastMessageText',
+          'lastMessageType',
+          'lastMessageAt'
+        ])
+        && d.keys().hasAll(['lobbyId', 'createdAt', 'updatedAt', 'welcomeSent', 'messageCount'])
+        && d.lobbyId is string
+        && d.lobbyId == lobbyId
+        && d.createdAt is timestamp
+        && d.updatedAt is timestamp
+        && d.welcomeSent is bool
+        && d.messageCount is int
+        && d.messageCount >= 0
+        && (!d.keys().hasAny(['lastMessageText']) || d.lastMessageText is string)
+        && (!d.keys().hasAny(['lastMessageType']) || d.lastMessageType in ['text', 'voice', 'system'])
+        && (!d.keys().hasAny(['lastMessageAt']) || d.lastMessageAt is timestamp);
+    }
+
+    function parentLobbyAllowsChatWrite(lobbyId) {
+      let p = get(/databases/$(database)/documents/lobbies/$(lobbyId));
+      return p.exists && lobbyAllowsUser(p.data);
+    }
+
+    /**
+     * Lobby path ids that are always readable by any signed-in user (no membership check on the doc read).
+     * Includes legacy `trivia_chat_*` and convention-based `game_*` / `public_*`.
+     */
+    function isPublicLobbyIdPrefix(lobbyId) {
+      return lobbyId.matches('^game_.+')
+        || lobbyId.matches('^public_.+')
+        || lobbyId.matches('^trivia_chat_.+');
+    }
+
+    /**
+     * Shared lobby chat: prefix conventions OR `isPublicChat` on parent doc (trusted / Admin only).
+     */
+    function isPublicLobby(lobbyId) {
+      let p = get(/databases/$(database)/documents/lobbies/$(lobbyId));
+      return isPublicLobbyIdPrefix(lobbyId)
+        || (p.exists && p.data.get('isPublicChat', false) == true);
+    }
+
+    // ─── Lobby chat (lobbies/{id} + messages) ─────────────────────────────────
+    // Client `ensureLobbyInitialized` may read the lobby doc before it exists: never read
+    // `resource.data` unless `resource.exists` (use `resource.exists && …` so it short-circuits).
+    // Prefix public ids + `isPublicChat` bypass membership for reads; otherwise require exists + lobbyAllowsUser.
+    function lobbyDocumentReadAllowed(lobbyId) {
+      return isAuthed() && (
+        isPublicLobby(lobbyId)
+        || !resource.exists
+        || (resource.exists && lobbyAllowsUser(resource.data))
+      );
+    }
+
+    // Parent lobby doc lookup for subcollection rules (never use p.data unless p.exists).
+    function parentLobbyAllowsChatRead(lobbyId) {
+      let p = get(/databases/$(database)/documents/lobbies/$(lobbyId));
+      return isAuthed() && (
+        isPublicLobby(lobbyId)
+        || !p.exists
+        || (p.exists && lobbyAllowsUser(p.data))
+      );
+    }
+
+    function validCardPayload(d) {
+      return d.keys().hasAll(['userId', 'cardHolderName', 'last4', 'expiryDate', 'cardType'])
+        && d.userId is string
+        && d.cardHolderName is string
+        && d.last4 is string
+        && d.last4.size() == 4
+        && d.expiryDate is string
+        && d.cardType is string;
+    }
+
+    // Profiles: owner can read; writes limited (wallet/stats via Admin SDK only)
+    match /users/{userId} {
+      allow read: if isOwner(userId) || isAdmin();
+
+      // Create own profile. If coins/xp are present, cap them; merges (e.g. password metadata) may omit them.
+      allow create: if isOwner(userId)
+        && !request.resource.data.keys().hasAny(['neurochainUsedQuestionIds'])
+        && (!request.resource.data.keys().hasAny(['coins'])
+            || (request.resource.data.coins is number
+                && request.resource.data.coins >= 0
+                && request.resource.data.coins <= 500000))
+        && (!request.resource.data.keys().hasAny(['xp'])
+            || (request.resource.data.xp is number
+                && request.resource.data.xp >= 0
+                && request.resource.data.xp <= 50000000));
+
+      // Full update: wallet/game fields unchanged. Or metadata-only (e.g. passwordUpdatedAt after Auth password change).
+      allow update: if isOwner(userId)
+        && (
+          (
+            request.resource.data.coins == resource.data.coins
+            && request.resource.data.xp == resource.data.xp
+            && request.resource.data.earnedCoins == resource.data.earnedCoins
+            && request.resource.data.level == resource.data.level
+            && request.resource.data.dailyStreak == resource.data.dailyStreak
+            && request.resource.data.stats == resource.data.stats
+            && request.resource.data.games == resource.data.games
+            && request.resource.data.monthlyGameStats == resource.data.monthlyGameStats
+            && request.resource.data.rankingHistory == resource.data.rankingHistory
+            && !request.resource.data.diff(resource.data).affectedKeys().hasAny(['neurochainUsedQuestionIds'])
+          )
+          || request.resource.data.diff(resource.data).affectedKeys().hasOnly(['updatedAt', 'passwordUpdatedAt'])
+
+        );
+
+      allow delete: if false;
+
+      // Trivia: server (Admin SDK) writes played question IDs; owner may read own history for debugging.
+
+      match /playedQuestions/{questionId} {
+        allow read: if isOwner(userId);
+        allow create, update, delete: if false;
+      }
+    }
+
+    match /paymentRequests/{requestId} {
+      allow create: if isAuthed()
+        && request.resource.data.userId == request.auth.uid
+        && request.resource.data.status == 'pending'
+        && request.resource.data.coinsRequested is number
+        && request.resource.data.coinsRequested > 0
+        && request.resource.data.paymentMethod in ['jazzcash', 'easypaisa', 'bank']
+        && request.resource.data.orderId is string
+        && request.resource.data.screenshotUrl is string;
+      allow read: if isAdmin() || (isAuthed() && resource.data.userId == request.auth.uid);
+      allow update: if isAdmin();
+      allow delete: if false;
+    }
+
+    // Blog CMS: public reads for published posts only; drafts visible to admin. Writes via Admin SDK / isAdmin().
+
+    match /blogs/{blogId} {
+      allow read: if resource.data.status == 'published' || isAdmin();
+      allow create, update, delete: if isAdmin();
+    }
+
+    // Contact inquiries: writes only via Express Admin SDK; clients cannot create.
+
+    match /contactMessages/{messageId} {
+      allow create: if false;
+      allow read, update: if isAdmin();
+      allow delete: if false;
+    }
+
+    match /users/{userId}/friends/{friendId} {
+      allow read: if isOwner(userId);
+      allow create, update, delete: if isOwner(userId) && friendId != userId;
+    }
+
+    match /matches/{matchId} {
+      allow read: if isAuthed()
+        && request.auth.uid in resource.data.playerIds;
+      allow write: if false;
+    }
+
+    // NeuroChain — Cloud Functions (Admin SDK) write; players read live game state only.
+    match /neurochain_games/{gameId} {
+      allow read: if isAuthed() && request.auth.uid in resource.data.playerIds;
+      allow create, update, delete: if false;
+    }
+
+    match /neurochain_game_secrets/{gameId} {
+      allow read, write: if false;
+    }
+
+    match /neurochain_matchmaking_queue/{queueId} {
+      allow read: if isAuthed()
+        && (queueId == request.auth.uid || resource.data.userId == request.auth.uid);
+      allow create, update, delete: if false;
+    }
+
+    match /matchmakingQueue/{queueId} {
+      allow read: if isAuthed() && resource.data.uid == request.auth.uid;
+      allow create, update, delete: if false;
+    }
+
+    match /questions/{questionId} {
+      allow read: if isAuthed() && resource.data.active == true;
+      allow create, update, delete: if false;
+    }
+
+    // EnigmaPulse room history / audit snapshots. Realtime play does not read/write this path directly.
+    match /gameRooms/{roomId} {
+      allow read: if isAuthed()
+        && (
+          request.auth.uid in resource.data.playerUids
+          || request.auth.uid in resource.data.participantUids
+        );
+      allow create, update, delete: if false;
+    }
+
+    // Leaderboard snapshots are read-only from clients.
+    match /leaderboard/{seasonId} {
+      allow read: if true;
+      allow write: if false;
+      match /entries/{uid} {
+        allow read: if true;
+        allow write: if false;
+      }
+    }
+
+    match /lobbies/{lobbyId} {
+      // Reads: public by id prefix / isPublicChat, or missing doc (bootstrap), or membership.
+      allow read: if lobbyDocumentReadAllowed(lobbyId);
+      allow create: if isAuthed()
+        && (
+          (
+            request.resource.data.hostUid == request.auth.uid
+            && request.resource.data.keys().hasAll([
+              'hostUid',
+              'createdAt'
+            ])
+          )
+          || isSimpleChatLobby(request.resource.data, lobbyId)
+        );
+      allow update: if isLobbyHost()
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly([
+          'members',
+          'updatedAt',
+          'status',
+          'lastMessageAt',
+          'lastMessageText'
+        ])
+        || (
+          isAuthed()
+          && isSimpleChatLobby(resource.data, lobbyId)
+          && isSimpleChatLobby(request.resource.data, lobbyId)
+          && request.resource.data.createdAt == resource.data.createdAt
+          && request.resource.data.diff(resource.data).affectedKeys().hasOnly([
+            'updatedAt',
+            'welcomeSent',
+            'messageCount',
+            'lastMessageText',
+            'lastMessageType',
+            'lastMessageAt'
+          ])
+          && request.resource.data.messageCount >= resource.data.messageCount
+        );
+      allow delete: if false;
+    }
+
+    match /lobbies/{lobbyId}/messages/{messageId} {
+      // Reads: same public/membership rules as parent (parentLobbyAllowsChatRead).
+      allow read: if parentLobbyAllowsChatRead(lobbyId);
+      allow create: if isAuthed()
+        && (
+          parentLobbyAllowsChatWrite(lobbyId)
+          || isPublicLobby(lobbyId)
+        )
+        && request.resource.data.uid == request.auth.uid
+        && request.resource.data.type in ['text', 'voice', 'system']
+        && request.resource.data.createdAt == request.time
+        && request.resource.data.keys().hasAll(['uid', 'displayName', 'type', 'createdAt']);
+      allow update: if false;
+      allow delete: if false;
+    }
+
+    match /bots/{botId} {
+      allow read: if isAuthed();
+      allow write: if false;
+    }
+
+    // Ludo match state — Admin SDK (Node Socket server) writes only.
+    match /ludoMatches/{matchId} {
+      allow read: if isAuthed()
+        && (
+          listContainsUid(resource.data.playerIds)
+          || listContainsUid(resource.data.playerUids)
+          || listContainsUid(resource.data.participantUids)
+          || mapContainsUid(resource.data.playerMap)
+          || mapContainsUid(resource.data.participantMap)
+        );
+      allow write: if false;
+    }
+
+    // Firebase-first Ludo realtime room state.
+    match /games/{gameId} {
+      allow read: if isAuthed()
+        && (
+          listContainsUid(resource.data.playerIds)
+          || listContainsUid(resource.data.playerUids)
+          || listContainsUid(resource.data.participantUids)
+          || mapContainsUid(resource.data.playerMap)
+          || mapContainsUid(resource.data.participantMap)
+        );
+      // Gameplay authority moved to Socket.IO backend; clients must not write match state.
+      allow create, update: if false;
+      allow delete: if false;
+    }
+
+    // Billing aggregates — client read-only; writes via Cloud Functions (Admin SDK).
+    match /stats/{userId} {
+      allow read: if isOwner(userId);
+      allow write: if false;
+    }
+
+    // Billing ledger — client read-only; creates via addTransaction callable.
+    match /transactions/{txId} {
+      allow read: if isAuthed() && resource.data.userId == request.auth.uid;
+      allow create, update, delete: if false;
+    }
+
+    // Saved cards — owner CRUD (masked PAN only in app logic).
+    match /cards/{cardId} {
+      allow read: if isAuthed() && resource.data.userId == request.auth.uid;
+      allow create: if isAuthed()
+        && request.resource.data.userId == request.auth.uid
+        && validCardPayload(request.resource.data);
+      allow update: if isAuthed()
+        && resource.data.userId == request.auth.uid
+        && request.resource.data.userId == resource.data.userId
+        && validCardPayload(request.resource.data);
+      allow delete: if isAuthed() && resource.data.userId == request.auth.uid;
+    }
+
+    // Cross-user safe profile mirror (friends, lobbies).
+    match /publicProfiles/{userId} {
+      allow read: if isAuthed();
+      allow create, update: if isOwner(userId);
+      allow delete: if false;
+    }
+
+    // Denormalized friends list doc — owner merge (e.g. `friendsList`); prefer Admin for strict sync later.
+    match /friends/{userId} {
+      allow read: if isOwner(userId);
+      allow create, update: if isOwner(userId);
+      allow delete: if false;
+    }
+
+    // Game invites / challenges — server-only writes (Cloud Functions). Participants may read.
+    match /invites/{inviteId} {
+      allow read: if isAuthed()
+        && (resource.data.fromUserId == request.auth.uid
+            || resource.data.toUserId == request.auth.uid);
+      allow create, update, delete: if false;
+    }
+
+    // In-app notifications — server-only creates/updates; owner read only.
+    match /notifications/{notifId} {
+      allow read: if isAuthed() && resource.data.userId == request.auth.uid;
+      allow create, update, delete: if false;
+    }
+
+    // Direct messages.
+    match /dmThreads/{threadId} {
+      allow read: if isAuthed() && resource.data.participantMap[request.auth.uid] == true;
+      allow create: if isAuthed()
+        && request.resource.data.participantMap[request.auth.uid] == true
+        && request.resource.data.participants is list
+        && request.resource.data.participants.size() >= 2;
+      allow update: if isAuthed()
+        && resource.data.participantMap[request.auth.uid] == true
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly([
+          'updatedAt',
+          'lastMessageAt',
+          'lastMessageText',
+          'lastSenderUid',
+          'unreadCount',
+          'participantUnread'
+        ]);
+      allow delete: if false;
+    }
+
+    match /dmThreads/{threadId}/messages/{messageId} {
+      allow read: if isAuthed()
+        && get(/databases/$(database)/documents/dmThreads/$(threadId)).data.participantMap[request.auth.uid] == true;
+      allow create: if isAuthed()
+        && get(/databases/$(database)/documents/dmThreads/$(threadId)).data.participantMap[request.auth.uid] == true
+        && request.resource.data.senderUid == request.auth.uid
+        && request.resource.data.keys().hasAll(['senderUid', 'type', 'createdAt']);
+      allow update, delete: if false;
+    }
+
+    // Public FAQ documents (read-only to clients).
+    match /faqs/{faqId} {
+      allow read: if true;
+      allow write: if false;
+    }
+
+    match /newsletter_subscribers/{docId} {
+      allow create: if true;
+      allow read: if request.auth != null && request.auth.token.admin == true;
+      allow update: if request.auth != null && request.auth.token.admin == true;
+      allow delete: if request.auth != null && request.auth.token.admin == true;
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

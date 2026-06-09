@@ -1,0 +1,179 @@
+
+
+.pricing-section {
+  padding: 80px 20px;
+  background: #f8fbfd;
+  text-align: center;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.pricing-title {
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+
+.pricing-subtitle {
+  font-size: clamp(13px, 3vw, 14px);
+  color: #475467;
+  margin-bottom: 12px;
+}
+
+.pricing-note {
+  font-size: 13px;
+  color: #667085;
+  margin-bottom: 40px;
+}
+
+.pricing-note a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+
+.pricing-card {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 28px 24px;
+  box-shadow: 0 10px 24px rgba(16, 24, 40, 0.06);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(16, 24, 40, 0.08);
+}
+
+.pricing-card h3 {
+  font-size: clamp(16px, 3vw, 18px);
+  font-weight: 600;
+  margin-bottom: 14px;
+  color: #1d2939;
+}
+
+
+.price {
+  font-size: clamp(26px, 6vw, 34px);
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 14px;
+}
+
+.price span {
+  font-size: 13px;
+  font-weight: 500;
+  margin-left: 4px;
+}
+
+
+.card-desc {
+  font-size: 14px;
+  color: #667085;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px;
+  text-align: left;
+}
+
+.features li {
+  font-size: 14px;
+  color: #1d2939;
+  margin-bottom: 12px;
+  padding-left: 18px;
+  position: relative;
+}
+
+.features li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #FF5A25;
+}
+
+
+.cta-btn {
+  width: 100%;
+  padding: 14px;
+  border-radius: 6px;
+  border: none;
+  background: #eef2f6;
+  color: #1d2939;
+  /* color: #1d2939; */
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.cta-btn:hover {
+  opacity: 0.95;
+}
+
+
+.pricing-card.active {
+  border: 2px solid#FF5A25;
+}
+
+.pricing-card.active .cta-btn {
+  background: #FF5A25;
+  color: #ffffff;
+}
+
+/*   Tablet (≤ 1024px) */
+
+@media (max-width: 1024px) {
+  .pricing-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
+/*    Mobile (≤ 768px) */
+
+@media (max-width: 768px) {
+  .pricing-section {
+    padding: 60px 16px;
+  }
+
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .pricing-card {
+    padding: 24px 20px;
+  }
+}
+
+/*    Small Mobile (≤ 360px) */
+
+@media (max-width: 360px) {
+  .pricing-card {
+    padding: 20px 16px;
+  }
+
+  .features li {
+    font-size: 13px;
+  }
+
+  .cta-btn {
+    padding: 12px;
+    font-size: 14px;
+  }
+}

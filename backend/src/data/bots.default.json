@@ -1,0 +1,35 @@
+[
+  {
+    "id": "default_easy",
+    "displayName": "Rookie CPU",
+    "avatarUrl": "",
+    "difficulty": "EASY",
+    "avgMoveDelayMs": { "min": 1400, "max": 2600 },
+    "winRateTarget": 0.35,
+    "behaviorProfile": "defensive",
+    "mistakeProbability": 0.22,
+    "weights": null
+  },
+  {
+    "id": "default_medium",
+    "displayName": "Pro CPU",
+    "avatarUrl": "",
+    "difficulty": "MEDIUM",
+    "avgMoveDelayMs": { "min": 1200, "max": 2200 },
+    "winRateTarget": 0.48,
+    "behaviorProfile": "balanced",
+    "mistakeProbability": 0.12,
+    "weights": null
+  },
+  {
+    "id": "default_hard",
+    "displayName": "Master CPU",
+    "avatarUrl": "",
+    "difficulty": "HARD",
+    "avgMoveDelayMs": { "min": 900, "max": 1800 },
+    "winRateTarget": 0.58,
+    "behaviorProfile": "aggressive",
+    "mistakeProbability": 0.04,
+    "weights": null
+  }
+]

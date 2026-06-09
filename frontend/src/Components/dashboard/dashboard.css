@@ -1,0 +1,286 @@
+.dsh-wr {
+  width: 100%;
+  max-width: 1220px;
+  margin: 0 auto;
+  color: #101828;
+}
+
+.dsh-bc {
+  margin: 0 0 8px;
+  font-size: 13px;
+  color: #98a2b3;
+}
+
+.dsh-bc span {
+  color: #344054;
+  font-weight: 700;
+}
+
+.dsh-st {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.dsh-crd {
+  border-radius: 14px;
+  border: 1px solid rgba(16, 24, 40, 0.1);
+  background: #fff;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.08);
+}
+
+.dsh-crdSt {
+  padding: 14px 14px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.dsh-stT {
+  margin: 0 0 4px;
+  font-size: 12px;
+  color: #667085;
+}
+
+.dsh-stV {
+  margin: 0;
+  font-size: 30px;
+  line-height: 1.05;
+  font-weight: 800;
+  color: #111827;
+  background: none;
+  -webkit-text-fill-color: #111827;
+}
+
+.dsh-stP {
+  margin: 2px 0 0;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.dsh-stP.is-up {
+  color: #16a34a;
+}
+
+.dsh-stP.is-down {
+  color: #ef4444;
+}
+
+.dsh-stI {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #ff00b8, #6366f1);
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dsh-blgRw {
+  display: grid;
+  grid-template-columns: 1.35fr 0.95fr;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.dsh-blg {
+  min-height: 170px;
+  padding: 16px;
+}
+
+.dsh-blgL {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: stretch;
+  gap: 12px;
+}
+
+.dsh-blgTop {
+  margin: 0 0 2px;
+  color: #667085;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.dsh-blgH {
+  margin: 0 0 6px;
+  color: #fff;
+  font-size: 29px;
+  line-height: 1.15;
+  background: none;
+  -webkit-text-fill-color: #fff;
+}
+
+.dsh-blgHdk {
+  color: #111827;
+  -webkit-text-fill-color: #111827;
+}
+
+.dsh-blgP {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 15px;
+  line-height: 1.5;
+  max-width: 44ch;
+}
+
+.dsh-blgPdk {
+  color: #667085;
+}
+
+.dsh-btn {
+  width: auto;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  background: transparent;
+}
+
+.dsh-btnLink {
+  margin-top: 18px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.dsh-btnDk {
+  color: #344054;
+}
+
+.dsh-rkt {
+  border-radius: 12px;
+  background: linear-gradient(135deg, #ff00b8, #8b5cf6 55%, #6366f1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 88px;
+}
+
+.dsh-blgR {
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(0deg, rgba(11, 24, 46, 0.72), rgba(11, 24, 46, 0.72)),
+    radial-gradient(circle at 10% 20%, #2f80ed, #1f2937 60%);
+}
+
+.dsh-blgOv {
+  position: relative;
+  z-index: 1;
+}
+
+.dsh-chtRw {
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  gap: 12px;
+}
+
+.dsh-cht {
+  padding: 14px;
+}
+
+.dsh-chtL {
+  overflow: hidden;
+}
+
+.dsh-barWrap {
+  border-radius: 12px;
+  background: #1a1f37;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  padding: 6px 8px;
+}
+
+.dsh-chtFt {
+  padding: 12px 2px 0;
+}
+
+.dsh-chtT {
+  margin: 0;
+  color: #111827;
+  font-size: 18px;
+  background: none;
+  -webkit-text-fill-color: #111827;
+}
+
+.dsh-chtSub {
+  margin: 3px 0 10px;
+  color: #16a34a;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.dsh-mtr {
+  border-top: 1px solid #eaecf0;
+  padding-top: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.dsh-mtrLb {
+  margin: 0 0 2px;
+  color: #667085;
+  font-size: 12px;
+}
+
+.dsh-mtrVl {
+  margin: 0;
+  color: #1f2937;
+  font-size: 24px;
+  background: none;
+  -webkit-text-fill-color: #1f2937;
+}
+
+.dsh-rnkHd {
+  margin-bottom: 6px;
+}
+
+.dsh-lneWrap {
+  padding-top: 4px;
+}
+
+.dsh-tip {
+  border-radius: 10px;
+  background: #fff;
+  border: 1px solid rgba(16, 24, 40, 0.12);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.18);
+  padding: 8px 10px;
+  font-size: 12px;
+}
+
+.dsh-tip p {
+  margin: 0;
+  line-height: 1.35;
+  color: #344054;
+}
+
+.dsh-em {
+  padding: 18px;
+  font-size: 14px;
+  color: #667085;
+}
+
+@media (max-width: 1120px) {
+  .dsh-st {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .dsh-blgRw,
+  .dsh-chtRw {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .dsh-st {
+    grid-template-columns: 1fr;
+  }
+
+  .dsh-blgL {
+    grid-template-columns: 1fr;
+  }
+}
+

@@ -1,0 +1,302 @@
+[
+  {
+    "id": "user_1",
+    "name": "Elite Player",
+    "coins": 1005,
+    "xp": 500
+  },
+  {
+    "id": "user_1234",
+    "name": "Test User",
+    "coins": 600,
+    "xp": 0
+  },
+  {
+    "id": "google_1773135885393",
+    "xp": 0,
+    "coins": 1000,
+    "total_matches": 0,
+    "wins": 0,
+    "created_at": "2026-03-31T11:58:30.195Z",
+    "username": "Player_17731",
+    "name": "Google User (17731)",
+    "email": "google_1773135885393@mock.com"
+  },
+  {
+    "id": "google_1773654642143",
+    "xp": 0,
+    "coins": 900,
+    "total_matches": 0,
+    "wins": 0,
+    "created_at": "2026-03-31T11:58:54.595Z",
+    "username": "Player_17736",
+    "name": "Google User (17736)",
+    "email": "google_1773654642143@mock.com"
+  },
+  {
+    "id": "google_1773649501307",
+    "xp": 0,
+    "coins": 990,
+    "total_matches": 0,
+    "wins": 0,
+    "created_at": "2026-04-01T05:00:00.533Z",
+    "username": "Player_17736",
+    "name": "Google User (17736)",
+    "email": "google_1773649501307@mock.com"
+  },
+  {
+    "uid": "guest_p9gn48",
+    "displayName": "Guest Player",
+    "photoURL": "https://api.dicebear.com/7.x/avataaars/svg?seed=Guest",
+    "level": 1,
+    "xp": 0,
+    "coins": 100,
+    "streak": 0,
+    "highScore": 0,
+    "lastUpdated": "2026-04-03T05:10:03.875Z",
+    "total_matches": 1
+  },
+  {
+    "uid": "guest_he5jug",
+    "displayName": "Guest Player",
+    "photoURL": "https://api.dicebear.com/7.x/avataaars/svg?seed=Guest",
+    "level": 1,
+    "xp": 0,
+    "coins": 100,
+    "streak": 0,
+    "highScore": 0,
+    "lastUpdated": "2026-04-03T05:11:28.835Z"
+  },
+  {
+    "uid": "guest_vn6j1t",
+    "displayName": "Guest Player",
+    "photoURL": "https://api.dicebear.com/7.x/avataaars/svg?seed=Guest",
+    "level": 1,
+    "xp": 0,
+    "coins": 100,
+    "streak": 0,
+    "highScore": 0,
+    "lastUpdated": "2026-04-03T05:15:03.884Z"
+  },
+  {
+    "uid": "guest_t0sef3",
+    "displayName": "Guest Player",
+    "photoURL": "https://api.dicebear.com/7.x/avataaars/svg?seed=Guest",
+    "level": 1,
+    "xp": 0,
+    "coins": 100,
+    "streak": 0,
+    "highScore": 0,
+    "lastUpdated": "2026-04-03T06:10:52.313Z"
+  },
+  {
+    "uid": "guest_jwxry8i",
+    "displayName": "Guest Player",
+    "photoURL": "https://api.dicebear.com/7.x/avataaars/svg?seed=Guest",
+    "level": 1,
+    "xp": 0,
+    "coins": 100,
+    "streak": 0,
+    "highScore": 0,
+    "lastUpdated": "2026-04-03T06:53:59.712Z"
+  },
+  {
+    "uid": "guest_zylog",
+    "displayName": "Guest Player",
+    "photoURL": "https://api.dicebear.com/7.x/avataaars/svg?seed=Guest",
+    "level": 1,
+    "xp": 0,
+    "coins": 100,
+    "streak": 0,
+    "highScore": 0,
+    "lastUpdated": "2026-04-03T07:49:17.486Z"
+  },
+  {
+    "uid": "guest_1ylk1d",
+    "displayName": "Guest Player",
+    "photoURL": "https://api.dicebear.com/7.x/avataaars/svg?seed=Guest",
+    "level": 1,
+    "xp": 0,
+    "coins": 100,
+    "streak": 0,
+    "highScore": 0,
+    "lastUpdated": "2026-04-03T09:18:33.410Z"
+  },
+  {
+    "uid": "guest_y5h99h",
+    "displayName": "Guest Player",
+    "photoURL": "https://api.dicebear.com/7.x/avataaars/svg?seed=Guest",
+    "level": 1,
+    "xp": 0,
+    "coins": 100,
+    "streak": 0,
+    "highScore": 0,
+    "lastUpdated": "2026-04-03T10:04:53.298Z"
+  },
+  {
+    "id": "guest_rvavq5",
+    "xp": 0,
+    "coins": 90,
+    "total_matches": 0,
+    "wins": 0,
+    "created_at": "2026-04-03T12:38:19.484Z",
+    "uid": "guest_rvavq5",
+    "username": "u_guest_rvavq5",
+    "name": "Guest Player",
+    "email": "guest_rvavq5@social.local",
+    "photoURL": "https://api.dicebear.com/7.x/avataaars/svg?seed=Guest"
+  },
+  {
+    "id": "guest_w7rp7",
+    "xp": 0,
+    "coins": 100,
+    "total_matches": 0,
+    "wins": 0,
+    "created_at": "2026-04-03T12:38:42.142Z",
+    "uid": "guest_w7rp7",
+    "username": "u_guest_w7rp7",
+    "name": "Guest Player",
+    "email": "guest_w7rp7@social.local",
+    "photoURL": "https://api.dicebear.com/7.x/avataaars/svg?seed=Guest"
+  },
+  {
+    "id": "guest_w7rp7",
+    "xp": 0,
+    "coins": 100,
+    "total_matches": 0,
+    "wins": 0,
+    "created_at": "2026-04-03T12:38:42.163Z",
+    "uid": "guest_w7rp7",
+    "username": "u_guest_w7rp7",
+    "name": "Guest Player",
+    "email": "guest_w7rp7@social.local",
+    "photoURL": "https://api.dicebear.com/7.x/avataaars/svg?seed=Guest"
+  },
+  {
+    "id": "guest_gti3h8",
+    "xp": 0,
+    "coins": 70,
+    "total_matches": 0,
+    "wins": 0,
+    "created_at": "2026-04-03T12:42:24.390Z",
+    "uid": "guest_gti3h8",
+    "username": "u_guest_gti3h8",
+    "name": "Guest Player",
+    "email": "guest_gti3h8@social.local",
+    "photoURL": "https://api.dicebear.com/7.x/avataaars/svg?seed=Guest"
+  },
+  {
+    "id": "guest_qobf8",
+    "xp": 18,
+    "coins": 49,
+    "total_matches": 1,
+    "wins": 0,
+    "created_at": "2026-04-04T06:23:26.096Z",
+    "uid": "guest_qobf8",
+    "username": "u_guest_qobf8",
+    "name": "Guest Player",
+    "email": "guest_qobf8@social.local",
+    "photoURL": "https://api.dicebear.com/7.x/avataaars/svg?seed=Guest",
+    "streak": 0,
+    "level": 1,
+    "totalMatches": 1,
+    "highScore": 30,
+    "lastUpdated": "2026-04-04T07:39:27.903Z",
+    "history": [
+      {
+        "gameType": "math_rush",
+        "result": "lose",
+        "score": 20,
+        "date": "2026-04-04T11:08:46.924Z"
+      }
+    ]
+  },
+  {
+    "id": "guest_qobf8",
+    "xp": 0,
+    "coins": 100,
+    "total_matches": 0,
+    "wins": 0,
+    "created_at": "2026-04-04T06:23:26.156Z",
+    "uid": "guest_qobf8",
+    "username": "u_guest_qobf8",
+    "name": "Guest Player",
+    "email": "guest_qobf8@social.local",
+    "photoURL": "https://api.dicebear.com/7.x/avataaars/svg?seed=Guest"
+  },
+  {
+    "id": "guest_crx9do",
+    "xp": 0,
+    "coins": 95,
+    "total_matches": 1,
+    "wins": 0,
+    "created_at": "2026-04-04T07:08:43.337Z",
+    "uid": "guest_crx9do",
+    "username": "u_guest_crx9do",
+    "name": "Guest Player",
+    "email": "guest_crx9do@social.local",
+    "photoURL": "https://api.dicebear.com/7.x/avataaars/svg?seed=Guest",
+    "streak": 0,
+    "level": 1,
+    "totalMatches": 1,
+    "lastUpdated": "2026-04-04T07:09:06.816Z",
+    "history": [
+      {
+        "gameType": "math_rush",
+        "result": "lose",
+        "score": 0,
+        "date": "2026-04-04T10:49:46.596Z"
+      }
+    ]
+  },
+  {
+    "id": "841b7193-d391-4a76-9367-77b2e0b7fc35",
+    "xp": 0,
+    "coins": 100,
+    "total_matches": 0,
+    "wins": 0,
+    "created_at": "2026-04-07T06:51:30.711Z",
+    "username": "infotechlab498",
+    "email": "usamamudassar998@gmail.com",
+    "password": "$2b$10$QgL8HiwJPtn9PMRTZzvNVu9PSZkp5RXJn9Hbh56tFfi66..6AW8aK",
+    "phone": "03028576590",
+    "cnic": "33105-4944997-3"
+  },
+  {
+    "id": "7b40cfbe-fec6-42e4-9f42-074c4d7d2f21",
+    "xp": 0,
+    "coins": 100,
+    "total_matches": 0,
+    "wins": 0,
+    "created_at": "2026-04-07T07:34:54.307Z",
+    "username": "abdullah",
+    "email": "usamamudassar9998@gmail.com",
+    "password": "$2b$10$he1DYLtDejfQfd8P.ujQJO1zWY8JrZPN5epaNhjG27tur5yuthKIq",
+    "phone": "03028576540",
+    "cnic": "33105-4944999-3"
+  },
+  {
+    "id": "z5ReYDaHsHNR661ZekjcIg7dyKH3",
+    "xp": 0,
+    "coins": 80,
+    "total_matches": 0,
+    "wins": 0,
+    "created_at": "2026-04-13T09:57:14.229Z",
+    "uid": "z5ReYDaHsHNR661ZekjcIg7dyKH3",
+    "username": "usamamudassar498_gma_7dyKH3",
+    "name": "usamamudassar498_gma",
+    "email": "usamamudassar498@gmail.com"
+  },
+  {
+    "id": "UKwDZvC2bQRzyqG2e3tdcD6XpRA2",
+    "xp": 0,
+    "coins": 80,
+    "total_matches": 0,
+    "wins": 0,
+    "created_at": "2026-04-13T10:35:08.376Z",
+    "uid": "UKwDZvC2bQRzyqG2e3tdcD6XpRA2",
+    "username": "usamamudassar998_gma_6XpRA2",
+    "name": "usamamudassar998_gma",
+    "email": "usamamudassar998@gmail.com"
+  }
+]

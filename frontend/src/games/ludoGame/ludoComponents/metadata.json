@@ -1,0 +1,5 @@
+{
+  "name": "Ludo Master Engine",
+  "description": "A production-ready Ludo game system featuring modular engine logic, Strategy-pattern AI bots with three difficulty levels, and a real-time Firestore-compatible state schema.",
+  "requestFramePermissions": []
+}

@@ -1,0 +1,382 @@
+.frd-wr {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  color: #101828;
+  position: relative;
+}
+
+.frd-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.frd-bc {
+  font-size: 13px;
+  color: #98a2b3;
+}
+
+.frd-bc span {
+  color: #344054;
+  font-weight: 700;
+}
+
+.frd-crd {
+  border-radius: 14px;
+  border: 1px solid rgba(16, 24, 40, 0.08);
+  background: #fff;
+  box-shadow: 0 12px 26px rgba(15, 23, 42, 0.06);
+  padding: 14px;
+}
+
+.frd-ttl {
+  margin: 0 0 10px;
+  color: #111827;
+  font-size: 22px;
+  background: none;
+  -webkit-text-fill-color: #111827;
+}
+
+.frd-tblWrap {
+  overflow-x: auto;
+  max-height: 470px;
+  overflow-y: auto;
+}
+
+.frd-tbl {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.frd-tbl th,
+.frd-tbl td {
+  border-bottom: 1px solid #eaecf0;
+  text-align: left;
+  padding: 12px 10px;
+  vertical-align: middle;
+}
+
+.frd-tbl th {
+  color: #667085;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.frd-ply {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.frd-av {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #e2e8f0;
+}
+
+.frd-av img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.frd-nm {
+  margin: 0;
+  font-size: 16px;
+  color: #111827;
+  background: none;
+  -webkit-text-fill-color: #111827;
+  line-height: 1.2;
+}
+
+.frd-em {
+  margin: 0;
+  font-size: 11px;
+  color: #98a2b3;
+}
+
+.frd-act, .frd-gm {
+  margin: 0;
+  font-size: 12px;
+}
+
+.frd-gm {
+  color: #667085;
+}
+
+.frd-bdg {
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 10px;
+  font-size: 10px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.frd-bdg.is-on { background: linear-gradient(135deg, #35cd64, #16a34a); }
+.frd-bdg.is-off { background: linear-gradient(135deg, #94a3b8, #64748b); }
+
+.frd-actBtn {
+  border: none;
+  background: transparent;
+  color: #2563eb;
+  font-weight: 700;
+  font-size: 12px;
+  cursor: pointer;
+  padding: 0;
+}
+
+.frd-empty {
+  padding: 20px;
+  color: #667085;
+}
+
+.frd-bell {
+  position: relative;
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  border: 1px solid rgba(16, 24, 40, 0.08);
+  background: #fff;
+  color: #344054;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.frd-bellCt {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  min-width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  background: #ef4444;
+  color: #fff;
+  font-size: 11px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 5px;
+}
+
+.frd-ntDp {
+  position: absolute;
+  right: 0;
+  top: 42px;
+  width: 320px;
+  z-index: 100;
+  background: #fff;
+  border: 1px solid rgba(16, 24, 40, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 16px 30px rgba(15, 23, 42, 0.16);
+  padding: 10px;
+}
+
+.frd-ntHd {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+.frd-ntX {
+  border: none;
+  background: transparent;
+  color: #667085;
+  cursor: pointer;
+  padding: 2px 6px;
+}
+
+.frd-ntIt {
+  border: 1px solid #eaecf0;
+  border-radius: 10px;
+  padding: 8px;
+  margin-bottom: 8px;
+}
+
+.frd-ntIt.is-unread {
+  border-color: #c7d2fe;
+  background: #f8fafc;
+}
+
+.frd-ntIt.is-read {
+  opacity: 0.92;
+}
+
+.frd-ntRowBtn {
+  width: 100%;
+  border: none;
+  background: transparent;
+  padding: 0;
+  text-align: left;
+  cursor: pointer;
+}
+
+.frd-ntRowBtn:disabled {
+  cursor: default;
+}
+
+.frd-matchBanner {
+  margin: 0 0 12px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(99, 102, 241, 0.35);
+  background: linear-gradient(135deg, #eef2ff, #f8fafc);
+  font-size: 13px;
+  color: #1e293b;
+}
+
+.frd-matchBanner-title {
+  display: block;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #4f46e5;
+  margin-bottom: 4px;
+}
+
+.frd-matchBanner-meta {
+  color: #334155;
+}
+
+.frd-matchBanner-code {
+  font-size: 11px;
+  background: #e2e8f0;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.frd-matchBanner-st {
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.frd-matchBanner-warn {
+  color: #b45309;
+  font-size: 12px;
+}
+
+.frd-ntMsg {
+  margin: 0;
+  font-size: 13px;
+  color: #344054;
+}
+
+.frd-ntFt {
+  margin-top: 8px;
+  display: flex;
+  gap: 8px;
+}
+
+.frd-ntBtn {
+  border: none;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+.frd-ntBtn.is-ok {
+  background: #ecfdf3;
+  color: #067647;
+}
+
+.frd-ntBtn.is-no {
+  background: #fef3f2;
+  color: #b42318;
+}
+
+.frd-ntEmpty {
+  margin: 0;
+  color: #667085;
+  padding: 8px 4px;
+}
+
+.frd-mdOv {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.48);
+  z-index: 1200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.frd-md {
+  width: min(420px, 100%);
+  background: #fff;
+  border-radius: 14px;
+  border: 1px solid rgba(16, 24, 40, 0.1);
+  box-shadow: 0 22px 40px rgba(15, 23, 42, 0.2);
+  padding: 16px;
+}
+
+.frd-mdT {
+  margin: 0 0 4px;
+  font-size: 20px;
+  color: #111827;
+  background: none;
+  -webkit-text-fill-color: #111827;
+}
+
+.frd-mdP {
+  margin: 0 0 12px;
+  color: #667085;
+}
+
+.frd-gSel {
+  display: grid;
+  gap: 8px;
+}
+
+.frd-gBtn {
+  border: 1px solid #d0d5dd;
+  border-radius: 10px;
+  background: #fff;
+  color: #111827;
+  font-weight: 600;
+  padding: 10px 12px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.frd-gBtn.is-on {
+  border-color: #2563eb;
+  background: #eff8ff;
+}
+
+.frd-mdFt {
+  margin-top: 12px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.frd-mBtn {
+  border: none;
+  border-radius: 10px;
+  background: #1e3a5f;
+  color: #fff;
+  padding: 10px 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.frd-mBtnGh {
+  background: #f2f4f7;
+  color: #344054;
+}
+
