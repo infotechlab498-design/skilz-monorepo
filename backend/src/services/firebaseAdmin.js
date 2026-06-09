@@ -29,16 +29,19 @@ function resolveIfRelative(p) {
 }
 
 function serviceAccountJsonPath() {
+
   const primary = resolveIfRelative(process.env.FIREBASE_SERVICE_ACCOUNT_PATH || '');
   if (primary && existsSync(primary)) return primary;
   const adc = resolveIfRelative(process.env.GOOGLE_APPLICATION_CREDENTIALS || '');
   if (adc && existsSync(adc)) return adc;
   return '';
+  
 }
 
 /**
  * Lazy Firestore Admin — returns `null` if no service account path is configured or file is missing.
  */
+
 export function getAdminFirestore() {
   if (firestore) return firestore;
   const jsonPath = serviceAccountJsonPath();

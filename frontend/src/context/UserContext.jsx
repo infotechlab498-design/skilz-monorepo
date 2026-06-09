@@ -1,6 +1,7 @@
-import React, { createContext, useContext, useState, useCallback } from 'react';
+import React, { createContext, useContext, useState, useCallback, useMemo } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { setUser } from '../redux/features/auth.jsx';
+import { fetchFirestoreUserProfile } from '../redux/features/userSlice.js';
 import { getJwtUserId } from '../utils/gameAuthSync.js';
 import { getUser, toSerializableFirebase } from '../services/userService.js';
 import { callUpdateGameStats } from '../api/cloudFunctionsApi.js';
@@ -16,13 +17,32 @@ export const useUser = () => {
 export const UserProvider = ({ children }) => {
     const dispatch = useDispatch();
     const { user: authUser, isAuthenticated, loading } = useSelector((state) => state.auth);
+    const wallet = useSelector((state) => state.user);
     const [activeRoomId, setActiveRoomId] = useState(null);
 
     const userId = authUser?.uid || getJwtUserId();
 
+    /**
+     * Auth slice holds identity only; economy (coins/xp) lives in userSlice (see Header.jsx).
+     * Merge both so game lobbies and useUser() see the same balance as the site chrome.
+     */
+    const user = useMemo(() => {
+        if (!authUser && !userId) return null;
+        const base = authUser ?? { uid: userId, id: userId };
+        return {
+            ...base,
+            uid: base.uid ?? userId,
+            id: base.id ?? userId,
+            coins: Number(base.coins ?? wallet.coins ?? 0),
+            xp: Number(base.xp ?? wallet.xp ?? 0),
+            level: base.level ?? wallet.level ?? 1,
+        };
+    }, [authUser, userId, wallet.coins, wallet.xp, wallet.level]);
+
     const refreshUser = useCallback(async () => {
         if (!userId) return;
         try {
+            await dispatch(fetchFirestoreUserProfile(userId));
             const data = await getUser(userId);
             if (data) {
                 dispatch(setUser(toSerializableFirebase(data)));
@@ -41,7 +61,7 @@ export const UserProvider = ({ children }) => {
     }, [userId, refreshUser]);
 
     const value = {
-        user: authUser,
+        user,
         loading,
         isAuthenticated,
         userId,
