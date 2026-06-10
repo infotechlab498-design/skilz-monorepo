@@ -740,10 +740,66 @@ async function startServer() {
     res.type('text/plain; version=0.0.4; charset=utf-8');
     res.send(formatLudoMetricsPrometheus());
   });
+  /** Readiness probe — root path avoids `/api/:id` game route shadowing. */
+  app.get('/health', (_req, res) => {
+    res.json({ ok: true, ts: Date.now() });
+  });
 
   app.use(apiErrorHandler);
 
   const server = http.createServer(app);
+  const PORT = Number(process.env.PORT) || 3000;
+
+  if (process.env.NODE_ENV === 'production') {
+    const distPath = resolveFrontendDist();
+    app.use(express.static(distPath));
+    app.get('*', (req, res, next) => {
+      if (req.path.startsWith('/api')) return next();
+      res.sendFile(path.join(distPath, 'index.html'), (err) => {
+        if (err) next(err);
+      });
+    });
+  }
+
+  server.on('error', (err) => {
+    if (err.code === 'EADDRINUSE') {
+      console.error(
+        `[server] Port ${PORT} is already in use (EADDRINUSE). Only one process should listen on this port.\n` +
+          '  Typical causes: `npm run dev` in two terminals, or `npm run dev:backend` while root `npm run dev` is running, or a leftover Node process.\n' +
+          '  Free the port: npx kill-port ' +
+          PORT +
+          '\n' +
+          '  Windows (PowerShell): Get-NetTCPConnection -LocalPort ' +
+          PORT +
+          ' | Select-Object OwningProcess; then Stop-Process -Id <pid> -Force\n' +
+          '  Or set a different PORT in .env (and match `frontend/vite.config.js` proxy in dev).'
+      );
+      process.exit(1);
+      return;
+    }
+    console.error('[server] HTTP server error:', err);
+    process.exit(1);
+  });
+
+  // Accept HTTP immediately so Vite proxy (/api/plans, /health) works while Socket.IO + Ludo init continues.
+  await new Promise((resolve, reject) => {
+    server.once('error', reject);
+    server.listen(PORT, '0.0.0.0', () => {
+      server.off('error', reject);
+      console.log(`[server] Listening on http://0.0.0.0:${PORT} (API + Socket.IO)`);
+      console.log(`[server] Local:    http://localhost:${PORT}`);
+      void warmEnigmaQuestionPools().catch((e) => {
+        console.warn('[EnigmaPulse] pool warm failed:', e?.message || e);
+      });
+      if (process.env.NODE_ENV !== 'production') {
+        console.log(
+          '[dev] Open the SPA at http://localhost:5173 — Vite proxies /api and /socket.io to this server.'
+        );
+      }
+      resolve();
+    });
+  });
+
   const io = new Server(server, {
     cors: {
       origin: resolveSocketCorsOrigins(),
@@ -830,7 +886,6 @@ async function startServer() {
   } else {
     ludoRoomStates = new RoomStateStore(new MemoryRoomStateAdapter(ludoSeedMap));
   }
-  await loadLudoSnapshotsInto(ludoRoomStates);
   const stopLudoRoomGc = startLudoRoomGc(ludoRoomStates);
   const { store: ludoQueueStore, close: closeLudoQueueStore } = await createLudoQueueStore();
   let ludoInviteRedis = null;
@@ -847,6 +902,9 @@ async function startServer() {
   }
   const attachLudo = createLudoHandlers(io, ludoRoomStates, ludoQueueStore, ludoInviteRedis);
   const attachLobbyChat = createLobbyChatHandlers(io);
+  void loadLudoSnapshotsInto(ludoRoomStates).catch((e) => {
+    console.warn('[Ludo] Background Firestore restore failed:', e?.message || e);
+  });
   const onLudoShutdown = () => {
     void closeLudoQueueStore?.();
     stopLudoRoomGc();
@@ -1100,52 +1158,6 @@ async function startServer() {
 
   });
 
-  const PORT = Number(process.env.PORT) || 3000;
-  const onListen = () => {
-    console.log(`[server] Listening on http://0.0.0.0:${PORT} (API + Socket.IO)`);
-    console.log(`[server] Local:    http://localhost:${PORT}`);
-    void warmEnigmaQuestionPools().catch((e) => {
-      console.warn('[EnigmaPulse] pool warm failed:', e?.message || e);
-    });
-    if (process.env.NODE_ENV !== 'production') {
-      console.log(
-        '[dev] Open the SPA at http://localhost:5173 — Vite proxies /api and /socket.io to this server.'
-      );
-    }
-  };
-
-  if (process.env.NODE_ENV === 'production') {
-    const distPath = resolveFrontendDist();
-    app.use(express.static(distPath));
-    app.get('*', (req, res, next) => {
-      if (req.path.startsWith('/api')) return next();
-      res.sendFile(path.join(distPath, 'index.html'), (err) => {
-        if (err) next(err);
-      });
-    });
-  }
-
-  server.on('error', (err) => {
-    if (err.code === 'EADDRINUSE') {
-      console.error(
-        `[server] Port ${PORT} is already in use (EADDRINUSE). Only one process should listen on this port.\n` +
-          '  Typical causes: `npm run dev` in two terminals, or `npm run dev:backend` while root `npm run dev` is running, or a leftover Node process.\n' +
-          '  Free the port: npx kill-port ' +
-          PORT +
-          '\n' +
-          '  Windows (PowerShell): Get-NetTCPConnection -LocalPort ' +
-          PORT +
-          ' | Select-Object OwningProcess; then Stop-Process -Id <pid> -Force\n' +
-          '  Or set a different PORT in .env (and match `frontend/vite.config.js` proxy in dev).'
-      );
-      process.exit(1);
-      return;
-    }
-    console.error('[server] HTTP server error:', err);
-    process.exit(1);
-  });
-
-  server.listen(PORT, '0.0.0.0', onListen);
 }
 
 startServer().catch((err) => {

@@ -57,8 +57,9 @@ async function main() {
   process.on('SIGTERM', () => onSignal('SIGTERM'));
   process.on('exit', releaseLock);
 
+  // Backend first; Vite waits for /api/health so proxy does not hit ECONNREFUSED during boot.
   const concurrentlyCmd =
-    'npx concurrently -n web,api "npm run dev -w @skilz/frontend" "npm run dev -w @skilz/backend"';
+    'npx concurrently -n api,web "npm run dev -w @skilz/backend" "node scripts/wait-for-backend.mjs && npm run dev -w @skilz/frontend"';
   child = spawn(concurrentlyCmd, {
     cwd: ROOT,
     stdio: 'inherit',

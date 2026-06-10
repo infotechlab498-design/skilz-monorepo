@@ -2,6 +2,7 @@ import { defineConfig, loadEnv } from 'vite';
 import react from '@vitejs/plugin-react';
 import { fileURLToPath } from 'url';
 import { dirname, resolve } from 'path';
+import { retryApiProxyPlugin } from './vite-plugins/retryApiProxy.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -20,33 +21,28 @@ function backendDevOrigin(env) {
   return `http://127.0.0.1:${port}`;
 }
 
-/** When Vite runs without the Express backend, proxy errors are noisy; one clear hint helps. */
-function attachProxyBackendHint(proxy, backendOrigin) {
+/** Socket.IO proxy hint when backend is down (WS cannot retry as cleanly as HTTP). */
+function attachSocketProxyHint(proxy, backendOrigin) {
+  let lastWarnAt = 0;
   proxy.on('error', (err) => {
+    const now = Date.now();
+    if (now - lastWarnAt < 8_000) return;
+    lastWarnAt = now;
     console.warn(
-      `[vite-proxy] Nothing accepted connections at ${backendOrigin} (` +
-        (err.code || err.message) +
-        '). Run `npm run dev` from the monorepo root (or `npm run dev:backend` + `npm run dev:frontend`).'
+      `[vite-proxy] Socket.IO backend unavailable at ${backendOrigin} (${err?.code || err?.message}). ` +
+        'Normal during API hot-reload — client will reconnect.'
     );
   });
 }
 
-function createDevApiProxy(backendOrigin) {
+function createSocketIoProxy(backendOrigin) {
   return {
-    '/api': {
-      target: backendOrigin,
-      changeOrigin: true,
-      secure: false,
-      configure: (proxy) => attachProxyBackendHint(proxy, backendOrigin),
-    },
-    // Socket.IO long-poll + WS upgrade. Target 127.0.0.1 to avoid ::1/localhost mismatch on Windows.
-    // Client URL is configured in `frontend/src/services/socketService.js` (same-origin + this proxy in dev).
     '/socket.io': {
       target: backendOrigin,
       changeOrigin: true,
       secure: false,
       ws: true,
-      configure: (proxy) => attachProxyBackendHint(proxy, backendOrigin),
+      configure: (proxy) => attachSocketProxyHint(proxy, backendOrigin),
     },
   };
 }
@@ -56,7 +52,7 @@ export default defineConfig(({ mode }) => {
   const backendOrigin = backendDevOrigin(env);
 
   return {
-    plugins: [react()],
+    plugins: [react(), retryApiProxyPlugin(backendOrigin)],
     define: {
       'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY),
       'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY),
@@ -74,13 +70,16 @@ export default defineConfig(({ mode }) => {
       host: true,
       port: 5173,
       strictPort: true,
-      proxy: { ...createDevApiProxy(backendOrigin) },
+      // /api uses retryApiProxyPlugin; only Socket.IO stays on Vite's built-in proxy.
+      proxy: { ...createSocketIoProxy(backendOrigin) },
     },
-    // Match dev: same-origin socket + /api when testing production build locally.
     preview: {
       host: true,
       port: 4173,
-      proxy: { ...createDevApiProxy(backendOrigin) },
+      proxy: {
+        '/api': { target: backendOrigin, changeOrigin: true, secure: false },
+        ...createSocketIoProxy(backendOrigin),
+      },
     },
   };
 });

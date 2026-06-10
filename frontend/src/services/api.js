@@ -2,6 +2,25 @@ import { authHeadersAsync } from '../utils/authToken.js';
 
 const API_BASE = '/api';
 
+const DEV_FETCH_RETRIES = 8;
+const DEV_FETCH_RETRY_MS = 400;
+
+/** Retry fetch in dev when the API is briefly down (node --watch restart). */
+async function fetchWithDevRetry(url, options = {}, attempt = 0) {
+    try {
+        return await fetch(url, options);
+    } catch (err) {
+        const transient =
+            import.meta.env.DEV &&
+            attempt < DEV_FETCH_RETRIES &&
+            (err?.message?.includes('Failed to fetch') ||
+                err?.name === 'TypeError');
+        if (!transient) throw err;
+        await new Promise((r) => setTimeout(r, DEV_FETCH_RETRY_MS));
+        return fetchWithDevRetry(url, options, attempt + 1);
+    }
+}
+
 async function readJsonResponse(res) {
     const text = await res.text();
     if (!text || !text.trim()) {
@@ -20,7 +39,7 @@ async function readJsonResponse(res) {
 export const api = {
     // Fetch all pricing plans
     getPlans: async () => {
-        const res = await fetch(`${API_BASE}/plans`);
+        const res = await fetchWithDevRetry(`${API_BASE}/plans`);
         if (!res.ok) throw new Error('Failed to fetch plans');
         return res.json();
     },
