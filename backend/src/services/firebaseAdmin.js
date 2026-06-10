@@ -1,3 +1,6 @@
+
+
+
 /**
  * Firebase Admin SDK (Express API) — ESM equivalent of the Firebase docs pattern:
  *
@@ -9,6 +12,9 @@
  *   FIREBASE_SERVICE_ACCOUNT_PATH or GOOGLE_APPLICATION_CREDENTIALS
  * Relative paths resolve from the `backend/` package root.
  */
+
+
+
 import { existsSync, readFileSync } from 'fs';
 import path from 'path';
 import { initializeApp, getApps, cert } from 'firebase-admin/app';
@@ -35,7 +41,7 @@ function serviceAccountJsonPath() {
   const adc = resolveIfRelative(process.env.GOOGLE_APPLICATION_CREDENTIALS || '');
   if (adc && existsSync(adc)) return adc;
   return '';
-  
+
 }
 
 /**
