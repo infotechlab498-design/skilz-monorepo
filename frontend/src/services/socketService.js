@@ -83,7 +83,7 @@ class SocketService {
     this.socket.__skilzCoreListeners = true;
     this.socket.on('connect', () => {
       dbg('connected', this.socket.id);
-      authLog('info', 'Socket Authenticated', { socketId: this.socket.id });
+      authLog('Socket Authenticated', { socketId: this.socket.id });
       if (this.presencePingInterval) clearInterval(this.presencePingInterval);
       this.presencePingInterval = setInterval(() => {
         if (this.socket?.connected) this.socket.emit('presence:ping');
@@ -104,9 +104,12 @@ class SocketService {
   }
 
   /**
-   * Wait for Firebase auth hydration before socket handshake.
+   * Wait until Firebase user + ID token exist, then connect with `auth: { token }`.
    */
-  async waitForFirebaseAuthReady() {
+
+  async ensureConnected(options = {}) {
+    const forceRefresh = Boolean(options.forceRefresh);
+
     try {
       if (auth.authStateReady) {
         await auth.authStateReady;
@@ -114,17 +117,7 @@ class SocketService {
     } catch {
       /* ignore */
     }
-    if (!auth.currentUser) {
-      throw new Error('SOCKET_AUTH: Sign in required before connecting');
-    }
-  }
 
-  /**
-   * Wait until Firebase user + ID token exist, then connect with `auth: { token }`.
-   */
-  async ensureConnected(options = {}) {
-    const forceRefresh = Boolean(options.forceRefresh);
-    await this.waitForFirebaseAuthReady();
     const user = auth.currentUser;
     if (!user) {
       throw new Error('SOCKET_AUTH: Sign in required before connecting');

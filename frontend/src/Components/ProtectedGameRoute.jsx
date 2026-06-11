@@ -1,13 +1,16 @@
 import { Navigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth.js';
+import { auth } from '../firebase/config.js';
 
 /**
- * Requires Firebase-authenticated session (auth.currentUser mirrored in Redux).
+ * Requires Firebase-authenticated session (P0-2: Firebase is source of truth).
  * Waits for first `onAuthStateChanged` so refresh does not flash a redirect.
  */
 export default function ProtectedGameRoute({ children }) {
   const location = useLocation();
   const { firebaseReady, isAuthenticated } = useAuth();
+
+  const allowed = isAuthenticated || !!auth.currentUser?.uid;
 
   if (!firebaseReady) {
     return (
@@ -25,7 +28,7 @@ export default function ProtectedGameRoute({ children }) {
     );
   }
 
-  if (!isAuthenticated) {
+  if (!allowed) {
     return (
       <Navigate
         to="/signin"

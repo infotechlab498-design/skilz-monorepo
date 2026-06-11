@@ -162,6 +162,7 @@ const Header = () => {
 
   const { user: authUser, isAuthenticated } = useAuth();
   const availableCoins = Number(useSelector((state) => state.user.coins) || 0);
+  const showAuthenticated = isAuthenticated && !!authUser;
   const isAdmin = String(authUser?.email || "").toLowerCase() === ADMIN_EMAIL;
 
   const handleLogout = async () => {
@@ -266,7 +267,7 @@ const Header = () => {
             
           </div> */}
 
-      {!isAuthenticated ? (
+      {!showAuthenticated ? (
         <div className="nav-auth-buttons">
           <button
             className="Nav-signUp"

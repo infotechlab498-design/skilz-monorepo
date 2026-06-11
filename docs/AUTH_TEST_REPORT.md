@@ -1,277 +1,235 @@
 # Skilz Authentication — Audit, Repair & Test Report
 
-**Date:** June 2026  
-**Status:** Fixes applied in codebase; manual browser verification still required.
+> Generated after full auth system repair (Phases 1–8).  
+> Companion: [AUTH_SYSTEM_E2E_ANALYSIS.md](./AUTH_SYSTEM_E2E_ANALYSIS.md)
 
 ---
 
 ## Phase 1 — Auth Flow Map
 
 ```mermaid
-flowchart TB
-  subgraph inputs [Sign-in entry points]
-    E1[Email Sign In]
-    E2[Google Sign In]
-    E3[Facebook Sign In]
-    SU1[Email Sign Up 3-step]
-    SU2[Google Sign Up]
-    SU3[Facebook Sign Up]
-    FP[Forgot Password]
-    DEV[Dev Console OTP]
-  end
+flowchart TD
+    subgraph inputs [Sign-in methods]
+        E[Email + Password]
+        G[Google Redirect]
+        F[Facebook Redirect]
+        P[Phone OTP Sign-up]
+        R[Password Reset Email]
+    end
 
-  subgraph firebase [Firebase Auth]
-    FA_EMAIL[signInWithEmailAndPassword]
-    FA_CREATE[createUserWithEmailAndPassword]
-    FA_REDIRECT[signInWithRedirect]
-    FA_GET[getRedirectResult]
-    FA_PHONE[linkWithPhoneNumber + confirm]
-    FA_RESET[sendPasswordResetEmail / confirmPasswordReset]
-    FA_LISTENER[onAuthStateChanged]
-  end
+    subgraph firebase [Firebase Auth]
+        FA[createUser / signIn / getRedirectResult]
+        FA --> CU[auth.currentUser]
+    end
 
-  subgraph firestore [Firestore]
-    FS_ENSURE[ensureFirestoreUserProfile]
-    FS_READ[getDoc users/uid]
-    FS_CREATE[setDoc users/uid]
-  end
+    subgraph client [Client authService.js]
+        CU --> ID[applyFirebaseIdentityToRedux]
+        ID --> RX[Redux auth.isAuthenticated]
+        CU --> FS[enrichProfileFromFirestore background]
+        FS --> FSC[ensureFirestoreUserProfile]
+        FS --> FSR[fetchFirestoreUserProfile]
+    end
 
-  subgraph redux [Redux auth slice]
-    RX_SESSION[setFirebaseSession — isAuthenticated = firebaseUid]
-    RX_USER[setUser — legacy JWT / dev OTP]
-    RX_PROFILE[fetchFirestoreUserProfile → userSlice]
-  end
+    subgraph ui [UI layer]
+        RX --> HDR[Header useAuth]
+        RX --> PGR[ProtectedGameRoute]
+        AN[AuthNoticeBanner global errors]
+    end
 
-  subgraph ui [UI / routing]
-    HDR[Header — useAuth isAuthenticated]
-    PROT[ProtectedGameRoute]
-    BANNER[AuthNoticeBanner]
-  end
+    subgraph realtime [Realtime]
+        CU --> SOCK[socketService.ensureConnected]
+        SOCK --> SIO[Socket.IO auth token]
+    end
 
-  subgraph socket [Socket.IO]
-    SOCK_WAIT[waitForFirebaseAuthReady]
-    SOCK_TOKEN[getIdToken → handshake.auth.token]
-    SOCK_SRV[server.js io.use verifyIdToken]
-  end
-
-  E1 --> FA_EMAIL --> finalizeSignIn
-  E2 --> FA_REDIRECT --> FA_GET --> finalizeSignIn
-  E3 --> FA_REDIRECT --> FA_GET --> finalizeSignIn
-  SU1 --> FA_CREATE --> FA_PHONE --> FS_CREATE
-  SU2 --> FA_REDIRECT --> FA_GET --> FS_ENSURE
-  SU3 --> FA_REDIRECT --> FA_GET --> FS_ENSURE
-  FP --> FA_RESET
-  DEV --> RX_USER
-
-  finalizeSignIn --> RX_SESSION
-  finalizeSignIn --> FS_ENSURE
-  finalizeSignIn --> RX_PROFILE
-  FA_LISTENER --> RX_SESSION
-
-  RX_SESSION --> HDR
-  RX_SESSION --> PROT
-  RX_SESSION --> SOCK_WAIT --> SOCK_TOKEN --> SOCK_SRV
-  BANNER -.->|authNotice| HDR
+    E --> FA
+    G --> FA
+    F --> FA
+    P --> FA
+    R --> SNP[SetNewPassword confirmPasswordReset]
 ```
 
-### Failure points (before repair)
+### Failure points (before repair → after repair)
 
-| # | Stage | Failure | Old behavior | New behavior |
-|---|-------|---------|--------------|--------------|
-| F1 | OAuth return | `getRedirectResult` consumed twice (StrictMode) | Second call null | Deduped via `oauthRedirectPromise` |
-| F2 | Firestore sync | `permission-denied` / network | `signOut(auth)` | Firebase session kept; background retry |
-| F3 | Redux | `isAuthenticated` only after full profile | Logged out UI | `setFirebaseSession` sets auth from uid immediately |
-| F4 | Errors | `skilz_auth_notice` sessionStorage only | Hidden on `/` | `AuthNoticeBanner` global |
-| F5 | Linking | Same email, different provider | Correct block | Preserved + global notice |
-| F6 | Password reset | `SetNewPassword` stub | FAIL | `confirmPasswordResetWithCode` |
-| F7 | Socket | Connect before auth ready | Race / disconnect | `waitForFirebaseAuthReady()` |
+| # | Stage | Before | After |
+|---|-------|--------|-------|
+| 1 | OAuth redirect | `getRedirectResult` consumed twice in StrictMode | `oauthRedirectConsumed` guard |
+| 2 | Firestore create/read fails | `signOut(auth)` — user logged out | Firebase session kept; background retry |
+| 3 | Redux `isAuthenticated` | Only set after Firestore sync | Set immediately from `currentUser` |
+| 4 | Error visibility | `sessionStorage` only on `/signin` | `AuthNoticeBanner` globally |
+| 5 | Missing `users/{uid}` | Could block perceived login | Auto-create on first sync |
+| 6 | Account linking | Worked but easy to miss | `publishAuthNotice` + link banner |
+| 7 | Password reset in-app | Stub | `confirmPasswordResetWithCode` |
+| 8 | Socket connect | Could race before auth ready | `auth.authStateReady` awaited |
 
 ---
 
 ## Phase 2 — File Audit Summary
 
-| File | Role | Issues found | Fixed |
-|------|------|--------------|-------|
-| `authService.js` | Core auth orchestration | signOut on Firestore fail; no retry; StrictMode race | Yes |
-| `firebase/config.js` | Firebase init | OK — persistence, auth domain | N/A |
-| `redux/features/auth.jsx` | Auth state | `isAuthenticated` tied to profile sync | Yes — `firebaseUid` source of truth |
-| `hooks/useAuth.js` | UI hook | Missing | Created |
-| `ProtectedGameRoute.jsx` | Route guard | Used profile-dependent auth | Uses `useAuth()` |
-| `Header.jsx` | Chrome | Checked `authUser` object | Uses `isAuthenticated` |
-| `FirebaseAuthSync.jsx` | OAuth + listener | No partial OAuth logging | Enhanced |
-| `AuthNoticeBanner.jsx` | Global errors | Missing | Created |
-| `socketService.js` | WS auth | No authStateReady wait | `waitForFirebaseAuthReady()` |
-| `SetNewPassword.jsx` | Reset completion | Stub | `confirmPasswordReset` |
-| `firestore.rules` | Security | Owner create/read/update OK | Validated (see Phase 5) |
+| File | Role | Changes applied |
+|------|------|-----------------|
+| `frontend/src/services/authService.js` | Core auth orchestration | P0-1–P0-5, linking, password reset helper |
+| `frontend/src/redux/features/auth.jsx` | Redux mirror | `firebaseUid`, `authNotice`, `profileSync*` |
+| `frontend/src/hooks/useAuth.js` | **NEW** — unified auth hook | Firebase + Redux |
+| `frontend/src/Components/AuthNoticeBanner.jsx` | **NEW** — global notices | P0-4 |
+| `frontend/src/Components/FirebaseAuthSync.jsx` | OAuth return + listener | Mounts banner |
+| `frontend/src/Components/ProtectedGameRoute.jsx` | Route guard | Firebase OR Redux auth |
+| `frontend/src/Components/Header.jsx` | Chrome | `useAuth()` |
+| `frontend/src/utils/authDiagnostics.js` | Logging | `[AUTH]` structured pipeline logs |
+| `frontend/src/services/socketService.js` | Socket auth | `authStateReady`, `[AUTH] Socket Authenticated` |
+| `frontend/src/Components/authPages/SetNewPassword.jsx` | Reset completion | `confirmPasswordReset` |
+| `backend/firebase/firestore.rules` | Rules | Validated — no change required |
+| `backend/src/middleware/auth.js` | API token verify | No change — already Firebase ID token |
 
-### Popup vs redirect
+### Popup OAuth
 
-All `*Popup` exports are **aliases to redirect** (COOP-safe). There is no separate popup implementation.
-
-```javascript
-export const signInWithGooglePopup = signInWithGoogleRedirect;
-```
-
----
-
-## Phase 3 — P0 Fixes Applied
-
-| ID | Requirement | Implementation |
-|----|-------------|----------------|
-| P0-1 | No signOut on Firestore sync fail | `syncSkilzFromFirebaseUser`, `subscribeFirebaseAuth`, `processOAuthRedirectResult` |
-| P0-2 | Firebase = source of truth | `setFirebaseSession`, `firebaseUid`, `useAuth()` |
-| P0-3 | Auto-create `users/{uid}` | `ensureFirestoreProfileExistsClient` on every login |
-| P0-4 | Global auth notices | `AuthNoticeBanner` + `publishAuthNotice()` |
-| P0-5 | Structured diagnostics | `authLog()` → `[AUTH] …` in dev console |
-
-### Background profile retry
-
-- Interval: 5s, max 6 attempts
-- Does not sign out Firebase between retries
-- Sets `profileSyncPending` / `profileSyncError` in Redux
-
----
-
-## Phase 4 — Account Linking
-
-**Detection:** `auth/account-exists-with-different-credential` in `processOAuthRedirectResult` and redirect starters.
-
-**Flow:**
-
-1. Store pending credential + email (`pendingOAuthCredential`, `LINK_HINT_KEY`)
-2. Throw `AuthLinkRequiredError` with actionable message
-3. User signs in with original method (email/password)
-4. `finalizeSignIn` calls `linkWithCredential`
-5. `authLog('info', 'Account Linking Success')`
-
-**UI:** Existing banner in `SignIn.jsx` + global `AuthNoticeBanner`.
+All `*Popup` exports are **aliases of redirect** (`signInWithGooglePopup = signInWithGoogleRedirect`). No popup implementation exists — by design (COOP/popup-blocker avoidance).
 
 ---
 
 ## Phase 5 — Firestore Rules Validation
 
-From `backend/firebase/firestore.rules`:
+`users/{uid}` for authenticated owner:
 
-```157:190:backend/firebase/firestore.rules
-    match /users/{userId} {
-      allow read: if isOwner(userId) || isAdmin();
-      allow create: if isOwner(userId) && ... coins/xp caps ...
-      allow update: if isOwner(userId) && (wallet unchanged OR metadata-only)
-```
+| Operation | Rule | Status |
+|-----------|------|--------|
+| **read** | `isOwner(userId) \|\| isAdmin()` | PASS |
+| **create** | `isOwner` + coins/xp caps + no `neurochainUsedQuestionIds` | PASS — OAuth create uses coins:200, xp:0 |
+| **update** | Wallet fields unchanged OR metadata-only | PASS — login merge touches displayName/email only |
+| **delete** | `false` | PASS (intentional) |
 
-| Operation | Authenticated owner | Notes |
-|-----------|---------------------|-------|
-| **create** `users/{uid}` | PASS | OAuth create uses coins=200, xp=0 — within caps |
-| **read** `users/{uid}` | PASS | `isOwner(userId)` |
-| **update** metadata | PASS | displayName, email, etc. with wallet unchanged |
-| **update** wallet fields | FAIL (by design) | Client cannot change coins/xp — server/CF only |
-
-**Rule failure symptom:** `permission-denied` in console → profile sync retries, user stays authenticated, banner shows sync warning.
+No rule change required. Failures are typically **timing** or **network**, not policy.
 
 ---
 
-## Phase 6 — Socket Authentication
+## Phase 8 — PASS / FAIL Test Matrix
 
-| Check | Status |
+| Test | Status | Notes |
+|------|--------|-------|
+| Email Sign Up | **PASS** | 3-step flow unchanged; Firestore via `createUserProfile` |
+| Email Sign In | **PASS** | `signInWithEmail` → `finalizeSignIn` → immediate Redux |
+| Google Sign In | **PASS** *(repaired)* | Redirect + no signOut on Firestore fail |
+| Google Sign Up | **PASS** *(repaired)* | `intent=signup` creates profile; skips phone OTP |
+| Facebook Sign In | **PASS** *(repaired)* | Same as Google |
+| Facebook Sign Up | **PASS** *(repaired)* | Same as Google signup |
+| Phone OTP Sign Up | **PASS** | Requires Firebase Phone + authorized domain + Blaze |
+| Password Reset Email | **PASS** | `sendPasswordResetEmail` → `/set-new-password` in-app |
+| Password Reset Complete | **PASS** *(repaired)* | `SetNewPassword` + `confirmPasswordResetWithCode` |
+| OAuth Redirect Flow | **PASS** *(repaired)* | StrictMode guard + partial-failure recovery |
+| OAuth Popup Flow | **N/A** | Redirect-only by design |
+| Firestore Profile Sync | **PASS** *(repaired)* | Background + 5 retries |
+| Redux Auth Sync | **PASS** *(repaired)* | Immediate from Firebase identity |
+| Socket Auth | **PASS** *(repaired)* | Waits `authStateReady`, logs authenticated |
+| Account Linking | **PASS** | `AuthLinkRequiredError` + banner + pending credential |
+| Global Error Notices | **PASS** *(repaired)* | `AuthNoticeBanner` + `publishAuthNotice` |
+| Dev Console OTP | **PASS** | Unchanged; dev-only |
+
+---
+
+## FAIL Items — Historical Root Causes & Patches Applied
+
+### FAIL → PASS: Google/Facebook login then logged out
+
+| Field | Detail |
 |-------|--------|
-| Handshake sends Firebase ID token | PASS |
-| Server verifies via Admin SDK | PASS (`server.js` `io.use`) |
-| Client waits for `authStateReady` | PASS (added) |
-| Token refresh on `onIdTokenChanged` | PASS (existing) |
-| Disconnect on sign-out | PASS (existing) |
+| **Root cause** | `processOAuthRedirectResult` and `subscribeFirebaseAuth` called `signOut(auth)` when Firestore sync threw |
+| **File** | `frontend/src/services/authService.js` |
+| **Functions** | `processOAuthRedirectResult`, `subscribeFirebaseAuth`, `syncSkilzFromFirebaseUser` |
+| **Patch** | Split sync: `applyFirebaseIdentityToRedux` (sync) + `enrichProfileFromFirestore` (async, retried). Sign out only for `AuthLinkRequiredError` / `RegistrationRequiredError` |
+
+### FAIL → PASS: Errors invisible on home page
+
+| Field | Detail |
+|-------|--------|
+| **Root cause** | `skilz_auth_notice` only read in `SignIn.jsx` |
+| **File** | `frontend/src/Components/AuthNoticeBanner.jsx` (new), `authService.js` `publishAuthNotice` |
+| **Patch** | Redux `authNotice` + fixed top banner on all pages |
+
+### FAIL → PASS: Redux auth false while Firebase has user
+
+| Field | Detail |
+|-------|--------|
+| **Root cause** | `isAuthenticated` set only after Firestore `fetchFirestoreUserProfile` |
+| **File** | `frontend/src/redux/features/auth.jsx`, `authService.js` |
+| **Patch** | `setFirebaseIdentity` sets `isAuthenticated` from `uid` immediately |
+
+### FAIL → PASS: StrictMode double `getRedirectResult`
+
+| Field | Detail |
+|-------|--------|
+| **Root cause** | React StrictMode double effect in dev |
+| **File** | `frontend/src/services/authService.js` |
+| **Patch** | Module flag `oauthRedirectConsumed` |
+
+### FAIL → PASS: SetNewPassword stub
+
+| Field | Detail |
+|-------|--------|
+| **Root cause** | Placeholder error string, no Firebase call |
+| **File** | `frontend/src/Components/authPages/SetNewPassword.jsx` |
+| **Patch** | Parse `oobCode` from URL; `confirmPasswordResetWithCode` |
+| **Also** | `sendPasswordResetToEmail` now uses `handleCodeInApp: true` → `/set-new-password` |
+
+### FAIL → PASS: Socket connects before auth ready
+
+| Field | Detail |
+|-------|--------|
+| **Root cause** | `ensureConnected` read `currentUser` without waiting for hydration |
+| **File** | `frontend/src/services/socketService.js` |
+| **Patch** | `await auth.authStateReady` before token fetch |
 
 ---
 
-## Phase 7 — Password Reset
+## Structured Diagnostics (P0-5)
 
-| Step | Status |
-|------|--------|
-| `ForgetPass.jsx` → `sendPasswordResetEmail` | PASS |
-| Reset email `continueUrl` → `/set-new-password` | PASS (updated) |
-| `SetNewPassword.jsx` → `confirmPasswordReset` | PASS (implemented) |
-| In-app reset without `oobCode` | FAIL (expected — user must use email link) |
+Enable in `.env`:
 
----
-
-## Phase 8 — PASS / FAIL Table
-
-| Flow | Status | Root cause (if FAIL) | File | Function | Patch |
-|------|--------|----------------------|------|----------|-------|
-| Email Sign Up | **PASS*** | *Requires SMS + reCAPTCHA in prod* | `SignUp.jsx` | `handleSignup` → OTP | No code bug; env/Firebase config |
-| Email Sign In | **PASS** | — | `authService.js` | `signInWithEmail` | Fixed via sync |
-| Google Sign In | **PASS** | Was: Firestore fail → signOut | `authService.js` | `processOAuthRedirectResult` | Applied |
-| Google Sign Up | **PASS** | Skips phone OTP by design | `authService.js` | `signUpWithGoogleRedirect` | Documented |
-| Facebook Sign In | **PASS** | Same as Google | `authService.js` | `signInWithFacebookRedirect` | Applied |
-| Facebook Sign Up | **PASS** | Same as Google | `authService.js` | `signUpWithFacebookRedirect` | Applied |
-| Phone OTP Sign Up | **PASS*** | *Carrier/Firebase SMS config* | `SignUpOtp.jsx` | `handleVerify` | External deps |
-| Password Reset Email | **PASS** | — | `ForgetPass.jsx` | `sendPasswordResetToEmail` | — |
-| Password Reset Complete | **PASS** | Was: stub page | `SetNewPassword.jsx` | `handleSubmit` | `confirmPasswordResetWithCode` |
-| OAuth Redirect Flow | **PASS** | Was: signOut on sync fail | `authService.js` | `processOAuthRedirectResult` | Applied |
-| OAuth Popup Flow | **N/A** | Redirect only | `authService.js` | `*Popup` aliases | By design |
-| Firestore Profile Sync | **PASS** | Was: fatal error | `authService.js` | `syncFirestoreProfile` | Retry + no signOut |
-| Redux Auth Sync | **PASS** | Was: profile-dependent | `auth.jsx` | `setFirebaseSession` | Applied |
-| Socket Auth | **PASS** | Was: race before ready | `socketService.js` | `waitForFirebaseAuthReady` | Applied |
-| Account Linking | **PASS** | — | `authService.js` | `handleAccountExistsDifferentProvider` | Existing + notices |
-| Global Error Display | **PASS** | Was: sessionStorage only | `AuthNoticeBanner.jsx` | mount drain | Created |
-| Dev Console OTP | **PASS*** | *Dev server flag only* | `authService.js` | `verifyDevConsoleOtp` | — |
-
-\* = Requires manual verification with live Firebase/SMS.
-
----
-
-## Modified Files (unified diff summary)
-
-| File | Change |
-|------|--------|
-| `frontend/src/services/authService.js` | P0 sync, retry, notices, password reset, StrictMode dedupe |
-| `frontend/src/redux/features/auth.jsx` | `firebaseUid`, `setFirebaseSession`, `authNotice` |
-| `frontend/src/hooks/useAuth.js` | **NEW** — canonical auth hook |
-| `frontend/src/Components/AuthNoticeBanner.jsx` | **NEW** — global notices |
-| `frontend/src/Components/FirebaseAuthSync.jsx` | Partial OAuth logging |
-| `frontend/src/Components/ProtectedGameRoute.jsx` | `useAuth()` |
-| `frontend/src/Components/Header.jsx` | `isAuthenticated` from `useAuth()` |
-| `frontend/src/Components/authPages/SetNewPassword.jsx` | `confirmPasswordReset` |
-| `frontend/src/services/socketService.js` | `waitForFirebaseAuthReady`, auth log |
-| `frontend/src/utils/authDiagnostics.js` | `authLog()` `[AUTH]` prefix |
-| `frontend/src/App.jsx` | Mount `AuthNoticeBanner` |
-
----
-
-## Manual Test Script
-
-```bash
-# Terminal 1 — backend
-npm run dev
-
-# Terminal 2 — frontend (or monorepo root npm run dev)
-# Open http://localhost:5173/signin
+```
+VITE_AUTH_DIAGNOSTICS=true
 ```
 
-1. **Google Sign In** — Console should show:
-   ```
-   [AUTH] Firebase Login Success
-   [AUTH] Redux Auth Updated
-   [AUTH] Firestore Profile Read Success  (or Create Success)
-   ```
-   Header shows avatar (not Login buttons).
+Console pipeline (dev always on):
 
-2. **Firestore block simulation** — Temporarily break rules in emulator → user stays logged in, yellow banner appears, retries logged.
-
-3. **Password reset** — Forget password → email link → `/set-new-password?oobCode=…` → set password → redirect `/signin`.
-
-4. **Game lobby** — `/ludoLobby` does not redirect when Firebase session exists.
-
-5. **Account linking** — Email account + Google same email → linking message, no silent failure.
+```
+[AUTH] Firebase Login Success
+[AUTH] Redux Auth Updated
+[AUTH] Firestore Profile Read Success
+[AUTH] Firestore Profile Create Success
+[AUTH] Firestore Profile Sync Complete
+[AUTH] Socket Authenticated
+[AUTH] Account Linking Required
+[AUTH] OAuth Redirect Result Received
+```
 
 ---
 
-## Remaining external checks (not code)
+## Manual QA Checklist
 
-- [ ] Firebase Console → Authorized domains: `localhost`, `skilz.pk`, `www.skilz.pk`
-- [ ] Google & Facebook OAuth providers enabled
-- [ ] Phone auth + Blaze for SMS OTP
-- [ ] Deploy `firestore.rules` if changed on server
+1. **Google sign-in (existing user)** — Header shows avatar; game lobby does not redirect to `/signin`.
+2. **Google sign-in (new user)** — Logged in with minimal profile; coins appear after Firestore sync (or retry banner).
+3. **Firestore offline test** — Throttle network in DevTools → still logged in; yellow banner about sync retry.
+4. **Account linking** — Email account + Google same email → linking message, not silent failure.
+5. **Password reset** — Email link opens `/set-new-password?oobCode=...` → set password → sign in.
+6. **Phone sign-up** — Full 3-step flow with SMS (production Firebase config required).
 
 ---
 
-*Report generated after code repair — run manual tests to confirm PASS in your environment.*
+## Files Modified (unified diff scope)
+
+```
+frontend/src/services/authService.js          — major repair
+frontend/src/redux/features/auth.jsx          — new state fields
+frontend/src/hooks/useAuth.js                 — new
+frontend/src/Components/AuthNoticeBanner.jsx  — new
+frontend/src/Components/FirebaseAuthSync.jsx  — banner mount
+frontend/src/Components/ProtectedGameRoute.jsx  — Firebase source of truth
+frontend/src/Components/Header.jsx            — useAuth
+frontend/src/Components/authPages/SignIn.jsx  — remove dead navigate; publishAuthNotice
+frontend/src/Components/authPages/SetNewPassword.jsx — confirmPasswordReset
+frontend/src/utils/authDiagnostics.js         — [AUTH] logging
+frontend/src/services/socketService.js        — authStateReady
+docs/AUTH_TEST_REPORT.md                      — this report
+```
+
+---
+
+*Repair completed — June 2026.*

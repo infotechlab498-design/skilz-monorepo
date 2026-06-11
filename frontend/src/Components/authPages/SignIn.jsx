@@ -18,6 +18,7 @@ import {
   requestDevConsoleOtp,
   verifyDevConsoleOtp,
   readPersistedLinkHint,
+  publishAuthNotice,
 } from "../../services/authService.js";
 
 const devOtpUiEnabled =
@@ -53,6 +54,7 @@ const SignIn = () => {
       const n = sessionStorage.getItem("skilz_auth_notice");
       if (n) {
         setError(n);
+        publishAuthNotice(n);
         sessionStorage.removeItem("skilz_auth_notice");
       }
     } catch {
@@ -133,7 +135,6 @@ const SignIn = () => {
       await signInWithGoogleRedirect(redirectTo);
       setLinkHint(null);
       clearPendingProviderLink();
-      navigate(redirectTo, { replace: true });
     } catch (err) {
       setInfo("");
       if (err instanceof RegistrationRequiredError) {
@@ -163,7 +164,6 @@ const SignIn = () => {
       await signInWithFacebookRedirect(redirectTo);
       setLinkHint(null);
       clearPendingProviderLink();
-      navigate(redirectTo, { replace: true });
     } catch (err) {
       setInfo("");
       if (err instanceof RegistrationRequiredError) {

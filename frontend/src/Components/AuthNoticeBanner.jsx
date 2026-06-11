@@ -2,9 +2,11 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { clearAuthNotice, setAuthNotice } from '../redux/features/auth.jsx';
 
+const AUTH_NOTICE_KEY = 'skilz_auth_notice';
+
 /**
- * Global auth notices (OAuth failures, profile sync warnings).
- * Replaces sessionStorage-only `skilz_auth_notice` visibility on `/signin` alone.
+ * Global authentication notices (OAuth failures, profile sync, account linking).
+ * Replaces sessionStorage-only error surfacing on /signin.
  */
 export default function AuthNoticeBanner() {
   const dispatch = useDispatch();
@@ -12,10 +14,10 @@ export default function AuthNoticeBanner() {
 
   useEffect(() => {
     try {
-      const stored = sessionStorage.getItem('skilz_auth_notice');
-      if (stored?.trim()) {
-        dispatch(setAuthNotice(stored.trim()));
-        sessionStorage.removeItem('skilz_auth_notice');
+      const persisted = sessionStorage.getItem(AUTH_NOTICE_KEY);
+      if (persisted?.trim()) {
+        dispatch(setAuthNotice(persisted.trim()));
+        sessionStorage.removeItem(AUTH_NOTICE_KEY);
       }
     } catch {
       /* ignore */
@@ -29,40 +31,39 @@ export default function AuthNoticeBanner() {
       role="alert"
       style={{
         position: 'fixed',
-        top: 12,
-        left: '50%',
-        transform: 'translateX(-50%)',
+        top: 0,
+        left: 0,
+        right: 0,
         zIndex: 10000,
-        maxWidth: 'min(560px, calc(100vw - 24px))',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        gap: 12,
         padding: '12px 16px',
         background: '#fef3c7',
-        border: '1px solid #fcd34d',
-        borderRadius: 10,
+        borderBottom: '1px solid #fcd34d',
         color: '#78350f',
         fontSize: 14,
-        boxShadow: '0 4px 14px rgba(0,0,0,0.12)',
-        display: 'flex',
-        alignItems: 'flex-start',
-        gap: 12,
+        lineHeight: 1.45,
       }}
     >
       <span style={{ flex: 1 }}>{notice}</span>
       <button
         type="button"
         onClick={() => dispatch(clearAuthNotice())}
-        aria-label="Dismiss"
         style={{
+          flexShrink: 0,
           background: 'transparent',
-          border: 'none',
+          border: '1px solid #d97706',
+          borderRadius: 8,
+          padding: '4px 10px',
           color: '#92400e',
           cursor: 'pointer',
-          fontWeight: 700,
-          fontSize: 16,
-          lineHeight: 1,
-          padding: 0,
+          fontWeight: 600,
+          fontSize: 13,
         }}
       >
-        ×
+        Dismiss
       </button>
     </div>
   );

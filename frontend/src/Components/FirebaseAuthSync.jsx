@@ -4,7 +4,7 @@ import {
   processOAuthRedirectResult,
   subscribeFirebaseAuth,
 } from '../services/authService.js';
-import { authLog } from '../utils/authDiagnostics.js';
+import AuthNoticeBanner from './AuthNoticeBanner.jsx';
 
 /**
  * Completes OAuth redirect (Google/Facebook) before subscribing, then keeps Firebase ↔ Redux in sync.
@@ -16,24 +16,21 @@ export default function FirebaseAuthSync() {
   useEffect(() => {
     let active = true;
     let unsub = () => {};
+
     (async () => {
-      // Redux serialization is handled in auth/user services (Timestamp -> millis).
-      // This component only orchestrates redirect + auth subscription lifecycle.
       const r = await processOAuthRedirectResult().catch(() => ({ status: 'none' }));
       if (!active) return;
       unsub = subscribeFirebaseAuth();
       if (r.status === 'ok' && r.navigateTo) {
-        if (r.partial) {
-          authLog('warn', 'OAuth Redirect Partial Success', { navigateTo: r.navigateTo });
-        }
         navigate(r.navigateTo, { replace: true });
       }
     })();
+
     return () => {
       active = false;
       unsub();
     };
   }, [navigate]);
 
-  return null;
+  return <AuthNoticeBanner />;
 }

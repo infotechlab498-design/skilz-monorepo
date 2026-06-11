@@ -2,34 +2,27 @@ import { useSelector } from 'react-redux';
 import { auth } from '../firebase/config.js';
 
 /**
- * Auth state for UI and route guards.
- * `isAuthenticated` mirrors Firebase (`firebaseUid` / auth.currentUser), not Firestore sync alone.
+ * Auth hook — Firebase `currentUser` is the identity source of truth;
+ * Redux mirrors it for React rendering and route guards.
  */
 export function useAuth() {
-  const {
-    user,
-    firebaseUid,
-    isAuthenticated,
-    firebaseReady,
-    authNotice,
-    profileSyncPending,
-    profileSyncError,
-    loading,
-    error,
-  } = useSelector((s) => s.auth);
+  const firebaseReady = useSelector((s) => s.auth.firebaseReady);
+  const isAuthenticated = useSelector((s) => s.auth.isAuthenticated);
+  const user = useSelector((s) => s.auth.user);
+  const firebaseUid = useSelector((s) => s.auth.firebaseUid);
+  const authNotice = useSelector((s) => s.auth.authNotice);
+  const profileSyncPending = useSelector((s) => s.auth.profileSyncPending);
+  const profileSyncError = useSelector((s) => s.auth.profileSyncError);
 
   return {
+    firebaseReady,
+    isAuthenticated,
     user,
     firebaseUid,
-    /** True when Firebase session exists (Redux mirror of auth.currentUser). */
-    isAuthenticated,
-    firebaseReady,
+    /** Live Firebase user (may differ briefly from Redux during hydration). */
+    currentUser: auth.currentUser,
     authNotice,
     profileSyncPending,
     profileSyncError,
-    loading,
-    error,
-    /** Live Firebase user (may differ briefly during hydration). */
-    currentUser: auth.currentUser,
   };
 }
