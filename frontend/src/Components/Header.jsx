@@ -4,6 +4,7 @@ import "./Navstyle.css";
 import { useState, useEffect, useRef } from "react";
 import { useSelector } from "react-redux";
 import { signOutAppSession } from "../services/authService.js";
+import { useAuth } from "../hooks/useAuth.js";
 import { ADMIN_EMAIL } from "../config/admin.js";
 import { api } from "../services/api.js";
 import logo from "../assets/skilzLogo1-p.png";
@@ -159,7 +160,7 @@ const Header = () => {
 
 
 
-  const authUser = useSelector((state) => state.auth.user);
+  const { user: authUser, isAuthenticated } = useAuth();
   const availableCoins = Number(useSelector((state) => state.user.coins) || 0);
   const isAdmin = String(authUser?.email || "").toLowerCase() === ADMIN_EMAIL;
 
@@ -265,7 +266,7 @@ const Header = () => {
             
           </div> */}
 
-      {!authUser ? (
+      {!isAuthenticated ? (
         <div className="nav-auth-buttons">
           <button
             className="Nav-signUp"

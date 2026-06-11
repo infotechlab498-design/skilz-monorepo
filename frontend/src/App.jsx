@@ -28,6 +28,7 @@ import LobbySliders from './lobbyPages/components/LobbySliders';
 import UserSync from './Components/UserSync';
 import ProtectedGameRoute from './Components/ProtectedGameRoute.jsx';
 import FirebaseAuthSync from './Components/FirebaseAuthSync.jsx';
+import AuthNoticeBanner from './Components/AuthNoticeBanner.jsx';
 import LudoInviteListener from './games/ludoGame/components/LudoInviteListener.jsx';
 import PlayerDashboardLayout from './layout/PlayerDashboardLayout.jsx';
 import PlayerDashboardHomePage from './pages/player/playerDashboardHome.jsx';
@@ -53,6 +54,7 @@ function App() {
   return (
     <>
       <Router>
+        <AuthNoticeBanner />
         <FirebaseAuthSync />
         <LudoInviteListener />
         <Routes>

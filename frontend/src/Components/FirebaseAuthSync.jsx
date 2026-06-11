@@ -4,6 +4,7 @@ import {
   processOAuthRedirectResult,
   subscribeFirebaseAuth,
 } from '../services/authService.js';
+import { authLog } from '../utils/authDiagnostics.js';
 
 /**
  * Completes OAuth redirect (Google/Facebook) before subscribing, then keeps Firebase ↔ Redux in sync.
@@ -22,6 +23,9 @@ export default function FirebaseAuthSync() {
       if (!active) return;
       unsub = subscribeFirebaseAuth();
       if (r.status === 'ok' && r.navigateTo) {
+        if (r.partial) {
+          authLog('warn', 'OAuth Redirect Partial Success', { navigateTo: r.navigateTo });
+        }
         navigate(r.navigateTo, { replace: true });
       }
     })();

@@ -8,6 +8,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 /** Monorepo root + frontend `.env` (frontend wins on conflict). Matches backend `bootstrapEnv.js` load order. */
+
 function loadMonorepoEnv(mode) {
   const rootDir = resolve(__dirname, '..');
   const rootEnv = loadEnv(mode, rootDir, '');
@@ -16,6 +17,7 @@ function loadMonorepoEnv(mode) {
 }
 
 /** Backend listen port — keep in sync with `backend/src/server.js` (`PORT` default 3000). */
+
 function backendDevOrigin(env) {
   const port = Number(env.PORT) || 3000;
   return `http://127.0.0.1:${port}`;

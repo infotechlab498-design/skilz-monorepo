@@ -7,6 +7,7 @@ import {
   signOut,
   onAuthStateChanged,
   sendPasswordResetEmail,
+  confirmPasswordReset,
   linkWithCredential,
   fetchSignInMethodsForEmail,
 } from 'firebase/auth';
@@ -18,11 +19,20 @@ import {
 } from '../constants/userProfileDefaults.js';
 import { setAuthToken } from '../utils/authToken.js';
 import { store } from '../redux/store.js';
-import { setUser, logout, setFirebaseReady } from '../redux/features/auth.jsx';
+import {
+  setUser,
+  logout,
+  setFirebaseReady,
+  setFirebaseSession,
+  setAuthNotice,
+  setProfileSyncPending,
+  setProfileSyncError,
+} from '../redux/features/auth.jsx';
 import { fetchFirestoreUserProfile, clearUser } from '../redux/features/userSlice.js';
 import { startUserPresence, stopUserPresence } from './presenceService.js';
 import { mapFirebaseAuthError } from './firebaseAuth.js';
 import { toSerializableFirebase } from './userService.js';
+import { authLog } from '../utils/authDiagnostics.js';
 
 export { mapFirebaseAuthError };
 
@@ -38,110 +48,221 @@ export function describeSignInMethods(methods) {
 }
 
 const LINK_HINT_KEY = 'skilz_link_hint';
-/** 'signin' | 'signup' — read after OAuth redirect in {@link processOAuthRedirectResult}. */
 const OAUTH_INTENT_KEY = 'skilz_oauth_intent';
-/** Post-login path (e.g. `/` or `/signin` state) stored before `signInWithRedirect`. */
 const OAUTH_NEXT_KEY = 'skilz_oauth_next';
+const PROFILE_RETRY_MS = 5000;
+const PROFILE_RETRY_MAX = 6;
+
+/** Dedupe StrictMode / concurrent `getRedirectResult` consumption. */
+let oauthRedirectPromise = null;
+
+/** @type {Map<string, ReturnType<typeof setTimeout>>} */
+const profileRetryTimers = new Map();
+
+/** @type {Map<string, number>} */
+const profileRetryCounts = new Map();
 
 function normalizeOAuthNextPath(nextPath) {
   const s = String(nextPath || '/').trim() || '/';
   return s.startsWith('/') ? s : `/${s}`;
 }
 
+function isFirebaseAuthError(err) {
+  const code = err?.code || '';
+  return typeof code === 'string' && code.startsWith('auth/');
+}
+
+function isFirestorePermissionError(err) {
+  const code = err?.code || '';
+  return code === 'permission-denied' || code === 'unauthenticated';
+}
+
+/**
+ * Publish a user-visible auth notice (Redux + sessionStorage for legacy readers).
+ * @param {string} message
+ */
+export function publishAuthNotice(message) {
+  const msg = String(message || '').trim();
+  if (!msg) return;
+  store.dispatch(setAuthNotice(msg));
+  try {
+    sessionStorage.setItem('skilz_auth_notice', msg);
+  } catch {
+    /* ignore */
+  }
+}
+
+function skilzProviderFromFirebaseUser(firebaseUser) {
+  const pid = firebaseUser?.providerData?.[0]?.providerId;
+  if (pid === 'google.com') return 'google';
+  if (pid === 'facebook.com') return 'facebook';
+  return 'email';
+}
+
+function firebaseUserToMinimal(firebaseUser) {
+  return {
+    uid: firebaseUser.uid,
+    email: firebaseUser.email || '',
+    displayName: firebaseUser.displayName || '',
+    photoURL: firebaseUser.photoURL || '',
+    provider: skilzProviderFromFirebaseUser(firebaseUser),
+  };
+}
+
+/** Mirror Firebase session into Redux immediately (auth source of truth). */
+function applyFirebaseSessionToRedux(firebaseUser) {
+  const minimal = toSerializableFirebase(firebaseUserToMinimal(firebaseUser));
+  store.dispatch(setFirebaseSession(minimal));
+  authLog('info', 'Redux Auth Updated', { uidPrefix: firebaseUser.uid.slice(0, 8) });
+}
+
+function clearProfileRetry(uid) {
+  const t = profileRetryTimers.get(uid);
+  if (t) clearTimeout(t);
+  profileRetryTimers.delete(uid);
+  profileRetryCounts.delete(uid);
+}
+
+function scheduleProfileSyncRetry(firebaseUser) {
+  const uid = firebaseUser?.uid;
+  if (!uid || profileRetryTimers.has(uid)) return;
+
+  const attempt = (profileRetryCounts.get(uid) || 0) + 1;
+  if (attempt > PROFILE_RETRY_MAX) {
+    authLog('warn', 'Firestore Profile Sync Retry Exhausted', { uidPrefix: uid.slice(0, 8) });
+    store.dispatch(setProfileSyncError('Profile sync still pending. Try refreshing the page.'));
+    return;
+  }
+  profileRetryCounts.set(uid, attempt);
+  store.dispatch(setProfileSyncPending(true));
+
+  const timer = setTimeout(() => {
+    profileRetryTimers.delete(uid);
+    authLog('info', 'Firestore Profile Sync Retry', {
+      uidPrefix: uid.slice(0, 8),
+      attempt,
+    });
+    void syncFirestoreProfile(firebaseUser, { isRetry: true }).then((r) => {
+      if (r.profileOk) {
+        clearProfileRetry(uid);
+        store.dispatch(setProfileSyncPending(false));
+        store.dispatch(setProfileSyncError(null));
+        authLog('info', 'Firestore Profile Sync Retry Success', { uidPrefix: uid.slice(0, 8) });
+      } else if (auth.currentUser?.uid === uid) {
+        scheduleProfileSyncRetry(firebaseUser);
+      }
+    });
+  }, PROFILE_RETRY_MS);
+
+  profileRetryTimers.set(uid, timer);
+}
+
 /**
  * Consume Firebase OAuth redirect result (call once per load, before `subscribeFirebaseAuth`).
- * @returns {Promise<{ status: 'none' } | { status: 'ok', navigateTo: string }>}
+ * @returns {Promise<{ status: 'none' } | { status: 'ok', navigateTo: string, partial?: boolean }>}
  */
 export async function processOAuthRedirectResult() {
-  let result;
-  try {
-    result = await getRedirectResult(auth);
-  } catch (err) {
+  if (oauthRedirectPromise) return oauthRedirectPromise;
+
+  oauthRedirectPromise = (async () => {
+    let result;
     try {
+      result = await getRedirectResult(auth);
+    } catch (err) {
+      try {
+        sessionStorage.removeItem(OAUTH_INTENT_KEY);
+        sessionStorage.removeItem(OAUTH_NEXT_KEY);
+      } catch {
+        /* ignore */
+      }
+      if (err?.code === 'auth/account-exists-with-different-credential') {
+        let linkErr = null;
+        try {
+          await handleAccountExistsDifferentProvider(err);
+        } catch (e) {
+          linkErr = e;
+        }
+        publishAuthNotice(
+          linkErr instanceof AuthLinkRequiredError
+            ? linkErr.userMessage
+            : mapFirebaseAuthError(err)
+        );
+        return { status: 'none' };
+      }
+      authLog('error', 'OAuth Redirect Result Failed', { code: err?.code || '' });
+      publishAuthNotice(mapFirebaseAuthError(err));
+      return { status: 'none' };
+    }
+
+    if (!result?.user) {
+      return { status: 'none' };
+    }
+
+    authLog('info', 'Firebase Login Success', {
+      uidPrefix: result.user.uid.slice(0, 8),
+      provider: skilzProviderFromFirebaseUser(result.user),
+    });
+
+    let intent = null;
+    try {
+      intent = sessionStorage.getItem(OAUTH_INTENT_KEY);
       sessionStorage.removeItem(OAUTH_INTENT_KEY);
+    } catch {
+      /* ignore */
+    }
+
+    let navigateTo = '/';
+    try {
+      const n = sessionStorage.getItem(OAUTH_NEXT_KEY);
+      if (n) navigateTo = n;
       sessionStorage.removeItem(OAUTH_NEXT_KEY);
     } catch {
       /* ignore */
     }
-    if (err?.code === 'auth/account-exists-with-different-credential') {
-      let linkErr = null;
-      try {
-        await handleAccountExistsDifferentProvider(err);
-      } catch (e) {
-        linkErr = e;
-      }
-      try {
-        if (linkErr instanceof AuthLinkRequiredError) {
-          sessionStorage.setItem('skilz_auth_notice', linkErr.userMessage);
-        } else {
-          sessionStorage.setItem('skilz_auth_notice', mapFirebaseAuthError(err));
-        }
-      } catch {
-        /* ignore */
-      }
-      return { status: 'none' };
-    }
-    if (import.meta.env.DEV) {
-      console.warn('[auth] getRedirectResult:', err?.code || err);
-    }
+
     try {
-      sessionStorage.setItem('skilz_auth_notice', mapFirebaseAuthError(err));
-    } catch {
-      /* ignore */
-    }
-    return { status: 'none' };
-  }
-
-  if (!result?.user) {
-    return { status: 'none' };
-  }
-
-  let intent = null;
-  try {
-    intent = sessionStorage.getItem(OAUTH_INTENT_KEY);
-    sessionStorage.removeItem(OAUTH_INTENT_KEY);
-  } catch {
-    /* ignore */
-  }
-
-  let navigateTo = '/';
-  try {
-    const n = sessionStorage.getItem(OAUTH_NEXT_KEY);
-    if (n) navigateTo = n;
-    sessionStorage.removeItem(OAUTH_NEXT_KEY);
-  } catch {
-    /* ignore */
-  }
-
-  try {
-    if (intent === 'signup') {
-      await ensureFirestoreUserProfile(result.user);
-    }
-    await finalizeSignIn(result.user);
-  } catch (e) {
-    if (e instanceof RegistrationRequiredError || e instanceof AuthLinkRequiredError) {
-      try {
-        sessionStorage.setItem('skilz_auth_notice', e.userMessage);
-      } catch {
-        /* ignore */
+      if (intent === 'signup') {
+        await ensureFirestoreUserProfile(result.user);
+        authLog('info', 'Firestore Profile Create Success', {
+          uidPrefix: result.user.uid.slice(0, 8),
+          context: 'oauth_signup',
+        });
       }
-      await signOut(auth).catch(() => {});
-      return { status: 'none' };
-    }
-    console.error('[auth] OAuth redirect finalize failed:', e);
-    try {
-      sessionStorage.setItem('skilz_auth_notice', mapFirebaseAuthError(e));
-    } catch {
-      /* ignore */
-    }
-    await signOut(auth).catch(() => {});
-    return { status: 'none' };
-  }
+      await finalizeSignIn(result.user);
+      return { status: 'ok', navigateTo };
+    } catch (e) {
+      if (e instanceof AuthLinkRequiredError) {
+        publishAuthNotice(e.userMessage);
+        await signOut(auth).catch(() => {});
+        return { status: 'none' };
+      }
 
-  return { status: 'ok', navigateTo };
+      authLog('error', 'OAuth Finalize Partial Failure', {
+        code: e?.code || '',
+        message: e?.message || 'unknown',
+      });
+
+      applyFirebaseSessionToRedux(result.user);
+      const profileResult = await syncFirestoreProfile(result.user);
+      if (!profileResult.profileOk) {
+        publishAuthNotice(
+          'Signed in with Google/Facebook, but your game profile is still syncing. ' +
+            'You can keep playing — we will retry in the background.'
+        );
+        scheduleProfileSyncRetry(result.user);
+      } else {
+        publishAuthNotice(mapFirebaseAuthError(e));
+      }
+
+      startUserPresence(result.user.uid);
+      return { status: 'ok', navigateTo, partial: true };
+    }
+  })();
+
+  return oauthRedirectPromise;
 }
 
-/** Skilz profile missing in Firestore — user must complete Firebase sign-up first. */
+/** @deprecated Registration gate removed — profiles auto-create on login. */
 export class RegistrationRequiredError extends Error {
   constructor(message = 'User not found. Please register first.') {
     super('REGISTRATION_REQUIRED');
@@ -194,7 +315,6 @@ export function clearPendingProviderLink() {
   }
 }
 
-/** Restore link-hint banner after refresh (no credential; user must repeat OAuth). */
 export function readPersistedLinkHint() {
   try {
     const raw = sessionStorage.getItem(LINK_HINT_KEY);
@@ -211,29 +331,17 @@ export function readPersistedLinkHint() {
   }
 }
 
-/** @type {Map<string, Promise<{ user: object, token: string }>>} */
+/** @type {Map<string, Promise<{ user: object, token: string | null, profileOk: boolean }>>} */
 const syncInflight = new Map();
 
-/**
- * Apply Redux from an API login payload (dev/legacy only).
- * Note: No `localStorage` persistence (Firebase Auth persistence handles sessions).
- * @param {{ user: object, token?: string | null }} data
- */
 export function applySkilzLoginPayload(data) {
   if (!data?.user) {
     throw new Error('Could not complete sign-in');
   }
   if (data.token) setAuthToken(data.token);
   else setAuthToken(null);
-  // Guard against accidental non-serializable payloads from mixed legacy/Firebase paths.
   store.dispatch(setUser(toSerializableFirebase(data.user)));
-}
-
-function skilzProviderFromFirebaseUser(firebaseUser) {
-  const pid = firebaseUser?.providerData?.[0]?.providerId;
-  if (pid === 'google.com') return 'google';
-  if (pid === 'facebook.com') return 'facebook';
-  return 'email';
+  authLog('info', 'Redux Auth Updated', { source: 'legacy_jwt' });
 }
 
 function cloneGamesDefaults() {
@@ -244,10 +352,6 @@ function cloneGamesDefaults() {
   };
 }
 
-/**
- * Merge only safe profile metadata (never wallet/stats/game economy fields).
- * @param {import('firebase/firestore').DocumentData | undefined} data
- */
 function buildMissingProfilePatch(data) {
   const d = data || {};
   /** @type {Record<string, unknown>} */
@@ -277,8 +381,7 @@ function buildMissingProfilePatch(data) {
 }
 
 /**
- * Firestore profile for **registration only** (sign-up / OAuth registration button).
- * Login sync does not call this — missing doc → {@link RegistrationRequiredError}.
+ * Firestore profile for registration (sign-up / OAuth registration button).
  * @param {import('firebase/auth').User} firebaseUser
  */
 export async function ensureFirestoreUserProfile(firebaseUser) {
@@ -322,34 +425,63 @@ export async function ensureFirestoreUserProfile(firebaseUser) {
       games: cloneGamesDefaults(),
       createdAt: serverTimestamp(),
     });
+    authLog('info', 'Firestore Profile Create Success', { uidPrefix: uid.slice(0, 8) });
   } else {
+    authLog('info', 'Firestore Profile Read Success', { uidPrefix: uid.slice(0, 8) });
     await setDoc(ref, base, { merge: true });
     const missing = buildMissingProfilePatch(snap.data());
     if (Object.keys(missing).length > 0) {
-      await setDoc(
-        ref,
-        { ...missing, updatedAt: serverTimestamp() },
-        { merge: true }
-      );
+      await setDoc(ref, { ...missing, updatedAt: serverTimestamp() }, { merge: true });
     }
   }
 }
 
 async function ensureFirestoreProfileExistsClient(firebaseUser) {
   const ref = doc(db, 'users', firebaseUser.uid);
+  const snap = await getDoc(ref);
+  if (snap.exists()) {
+    authLog('info', 'Firestore Profile Read Success', {
+      uidPrefix: firebaseUser.uid.slice(0, 8),
+    });
+    return;
+  }
+  await ensureFirestoreUserProfile(firebaseUser);
+}
+
+/**
+ * Firestore wallet/profile sync — failures do NOT sign the user out.
+ * @param {import('firebase/auth').User} firebaseUser
+ * @param {{ isRetry?: boolean }} [options]
+ */
+async function syncFirestoreProfile(firebaseUser, options = {}) {
+  const uid = firebaseUser.uid;
   try {
-    const snap = await getDoc(ref);
-    if (snap.exists()) return;
-    // Create missing profile after auth is ready. This is a create path only.
-    await ensureFirestoreUserProfile(firebaseUser);
+    await ensureFirestoreProfileExistsClient(firebaseUser);
+    await store.dispatch(fetchFirestoreUserProfile(uid));
+    store.dispatch(setProfileSyncError(null));
+    store.dispatch(setProfileSyncPending(false));
+    if (!options.isRetry) clearProfileRetry(uid);
+    return { profileOk: true };
   } catch (e) {
-    throw e;
+    authLog('error', 'Firestore Profile Sync Failed', {
+      uidPrefix: uid.slice(0, 8),
+      code: e?.code || '',
+      firestore: isFirestorePermissionError(e),
+    });
+    store.dispatch(
+      setProfileSyncError(
+        isFirestorePermissionError(e)
+          ? 'Profile sync blocked by Firestore rules. Contact support if this persists.'
+          : 'Profile sync failed. Retrying…'
+      )
+    );
+    return { profileOk: false, error: e };
   }
 }
 
 /**
- * Requires existing `users/{uid}` in Firestore + `users.json` mirror via bootstrap.
- * Does **not** create the Firestore profile (sign-up must do that first).
+ * Sync Firebase user → Redux (immediate) → Firestore profile (best-effort, retried).
+ * Never signs out Firebase on Firestore failure.
  * @param {import('firebase/auth').User} firebaseUser
  */
 export async function syncSkilzFromFirebaseUser(firebaseUser) {
@@ -358,19 +490,20 @@ export async function syncSkilzFromFirebaseUser(firebaseUser) {
   if (existing) return existing;
 
   const promise = (async () => {
-    await ensureFirestoreProfileExistsClient(firebaseUser);
-    const minimal = {
-      uid,
-      email: firebaseUser.email || '',
-      displayName: firebaseUser.displayName || '',
-      photoURL: firebaseUser.photoURL || '',
-      provider: skilzProviderFromFirebaseUser(firebaseUser),
-    };
-    // Keep Redux payload strictly serializable if this shape grows later.
-    store.dispatch(setUser(toSerializableFirebase(minimal)));
-    await store.dispatch(fetchFirestoreUserProfile(uid));
+    authLog('info', 'Firebase Login Success', { uidPrefix: uid.slice(0, 8) });
+    applyFirebaseSessionToRedux(firebaseUser);
+
+    const profileResult = await syncFirestoreProfile(firebaseUser);
+    if (!profileResult.profileOk) {
+      scheduleProfileSyncRetry(firebaseUser);
+    }
+
     startUserPresence(uid);
-    return { user: minimal, token: null };
+    return {
+      user: firebaseUserToMinimal(firebaseUser),
+      token: null,
+      profileOk: profileResult.profileOk,
+    };
   })();
 
   syncInflight.set(uid, promise);
@@ -381,10 +514,6 @@ export async function syncSkilzFromFirebaseUser(firebaseUser) {
   }
 }
 
-/**
- * Links pending OAuth credential after user proved ownership via another provider.
- * @param {import('firebase/auth').User} firebaseUser
- */
 async function finalizeSignIn(firebaseUser) {
   if (!firebaseUser) throw new Error('Sign-in failed');
   if (pendingOAuthCredential) {
@@ -398,6 +527,7 @@ async function finalizeSignIn(firebaseUser) {
     }
     await linkWithCredential(firebaseUser, pendingOAuthCredential);
     clearPendingProviderLink();
+    authLog('info', 'Account Linking Success', { uidPrefix: firebaseUser.uid.slice(0, 8) });
   }
   return syncSkilzFromFirebaseUser(firebaseUser);
 }
@@ -418,13 +548,10 @@ async function handleAccountExistsDifferentProvider(err) {
   } catch {
     methods = [];
   }
-  if (import.meta.env.DEV) {
-    console.info('[auth] account-exists — link required', {
-      email,
-      attemptedProvider,
-      methodsCount: methods?.length ?? 0,
-    });
-  }
+  authLog('warn', 'Account Linking Required', {
+    attemptedProvider,
+    methodsCount: methods?.length ?? 0,
+  });
   try {
     sessionStorage.setItem(
       LINK_HINT_KEY,
@@ -433,17 +560,9 @@ async function handleAccountExistsDifferentProvider(err) {
   } catch {
     /* ignore */
   }
-  throw new AuthLinkRequiredError({
-    email,
-    methods,
-    attemptedProvider,
-  });
+  throw new AuthLinkRequiredError({ email, methods, attemptedProvider });
 }
 
-/**
- * Dev only (server flag ENABLE_DEV_CONSOLE_OTP=1): request OTP printed in server terminal.
- * @param {string} email
- */
 export async function requestDevConsoleOtp(email) {
   const trimmed = email.trim();
   if (!trimmed) throw new Error('Email is required');
@@ -456,11 +575,6 @@ export async function requestDevConsoleOtp(email) {
   if (!res.ok) throw new Error(data.message || 'Could not request dev OTP');
 }
 
-/**
- * Dev only: verify console OTP and apply Skilz session (signs out Firebase to avoid mismatched accounts).
- * @param {string} email
- * @param {string} code
- */
 export async function verifyDevConsoleOtp(email, code) {
   const trimmed = email.trim();
   const codeStr = String(code || '').trim();
@@ -477,31 +591,37 @@ export async function verifyDevConsoleOtp(email, code) {
   return { user: data.user, token: data.token };
 }
 
-/**
- * Firebase password reset (uses templates from Firebase Console → Authentication → Templates).
- * @param {string} email
- */
 export async function sendPasswordResetToEmail(email) {
   const trimmed = email.trim();
   if (!trimmed) throw new Error('Email is required');
   const continueUrl =
-    typeof window !== 'undefined' ? `${window.location.origin}/signin` : undefined;
+    typeof window !== 'undefined'
+      ? `${window.location.origin}/set-new-password`
+      : undefined;
   await sendPasswordResetEmail(
     auth,
     trimmed,
     continueUrl
       ? {
           url: continueUrl,
-          handleCodeInApp: false,
+          handleCodeInApp: true,
         }
       : undefined
   );
 }
 
 /**
- * @param {string} email
- * @param {string} password
+ * Complete password reset from email link (`oobCode` query param).
+ * @param {string} oobCode
+ * @param {string} newPassword
  */
+export async function confirmPasswordResetWithCode(oobCode, newPassword) {
+  const code = String(oobCode || '').trim();
+  if (!code) throw new Error('Reset link is invalid or expired. Request a new reset email.');
+  await confirmPasswordReset(auth, code, newPassword);
+  authLog('info', 'Password Reset Success');
+}
+
 export async function signInWithEmail(email, password) {
   const trimmed = email.trim();
   if (
@@ -511,8 +631,6 @@ export async function signInWithEmail(email, password) {
   ) {
     clearPendingProviderLink();
   }
-  // Do not pre-block login based on `fetchSignInMethodsForEmail`.
-  // Firebase Email Enumeration Protection may return empty methods even for valid users.
   const { user } = await signInWithEmailAndPassword(auth, trimmed, password);
   return finalizeSignIn(user);
 }
@@ -520,11 +638,6 @@ export async function signInWithEmail(email, password) {
 const googleProvider = new GoogleAuthProvider();
 googleProvider.setCustomParameters({ prompt: 'select_account' });
 
-/**
- * Google sign-in via full-page redirect (avoids COOP / `window.closed` issues from popups).
- * Resolves only if redirect fails before navigation; on success the page resumes after IdP.
- * @param {string} [nextPath] — router path after successful OAuth (default `'/'`).
- */
 export async function signInWithGoogleRedirect(nextPath = '/') {
   try {
     sessionStorage.setItem(OAUTH_INTENT_KEY, 'signin');
@@ -546,10 +659,9 @@ export async function signInWithGoogleRedirect(nextPath = '/') {
   }
 }
 
-/** @deprecated Use {@link signInWithGoogleRedirect} — kept for imports; same behavior. */
+/** Popup aliases map to redirect (COOP-safe). */
 export const signInWithGooglePopup = signInWithGoogleRedirect;
 
-/** Sign-up: OAuth redirect, then `ensureFirestoreUserProfile` runs on return when intent is `signup`. */
 export async function signUpWithGoogleRedirect(nextPath = '/') {
   try {
     sessionStorage.setItem(OAUTH_INTENT_KEY, 'signup');
@@ -571,7 +683,6 @@ export async function signUpWithGoogleRedirect(nextPath = '/') {
   }
 }
 
-/** @deprecated Use {@link signUpWithGoogleRedirect}. */
 export const signUpWithGooglePopup = signUpWithGoogleRedirect;
 
 const facebookProvider = new FacebookAuthProvider();
@@ -597,7 +708,6 @@ export async function signInWithFacebookRedirect(nextPath = '/') {
   }
 }
 
-/** @deprecated Use {@link signInWithFacebookRedirect}. */
 export const signInWithFacebookPopup = signInWithFacebookRedirect;
 
 export async function signUpWithFacebookRedirect(nextPath = '/') {
@@ -621,17 +731,19 @@ export async function signUpWithFacebookRedirect(nextPath = '/') {
   }
 }
 
-/** @deprecated Use {@link signUpWithFacebookRedirect}. */
 export const signUpWithFacebookPopup = signUpWithFacebookRedirect;
 
-/** Sign out Firebase + clear Skilz JWT + Redux. Clear JWT before Firebase so the auth listener does not treat the session as “JWT-only” and skip cleanup. */
 export async function signOutAppSession() {
+  const uid = auth.currentUser?.uid;
+  if (uid) clearProfileRetry(uid);
   stopUserPresence();
   setAuthToken(null);
   store.dispatch(clearUser());
   store.dispatch(logout());
   clearPendingProviderLink();
+  oauthRedirectPromise = null;
   await signOut(auth).catch(() => {});
+  authLog('info', 'Firebase Sign Out');
 }
 
 function clearSkilzClientWithoutFirebaseSignOut() {
@@ -640,7 +752,7 @@ function clearSkilzClientWithoutFirebaseSignOut() {
 }
 
 /**
- * Keep Redux / JWT aligned with Firebase session (refresh, restore, sign-out).
+ * Keep Redux aligned with Firebase session. Firestore failures never sign out Firebase.
  * @returns {import('firebase/auth').Unsubscribe}
  */
 export function subscribeFirebaseAuth() {
@@ -650,21 +762,29 @@ export function subscribeFirebaseAuth() {
         stopUserPresence();
         clearSkilzClientWithoutFirebaseSignOut();
         store.dispatch(clearUser());
+        authLog('info', 'Firebase Sign Out');
         return;
       }
+
       await syncSkilzFromFirebaseUser(firebaseUser);
     } catch (e) {
-      console.error('[auth] Firebase session sync failed:', e);
-      if (e instanceof RegistrationRequiredError) {
-        try {
-          sessionStorage.setItem('skilz_auth_notice', e.userMessage);
-        } catch {
-          /* ignore */
+      authLog('error', 'Auth Listener Sync Error', { code: e?.code || '' });
+
+      if (firebaseUser) {
+        applyFirebaseSessionToRedux(firebaseUser);
+        const profileResult = await syncFirestoreProfile(firebaseUser);
+        if (!profileResult.profileOk) {
+          scheduleProfileSyncRetry(firebaseUser);
+          publishAuthNotice(
+            'You are signed in, but your profile is still syncing. We will retry automatically.'
+          );
+        } else if (isFirebaseAuthError(e)) {
+          publishAuthNotice(mapFirebaseAuthError(e));
+          await signOut(auth).catch(() => {});
+          clearSkilzClientWithoutFirebaseSignOut();
+          store.dispatch(clearUser());
         }
       }
-      await signOut(auth).catch(() => {});
-      clearSkilzClientWithoutFirebaseSignOut();
-      store.dispatch(clearUser());
     } finally {
       store.dispatch(setFirebaseReady(true));
     }

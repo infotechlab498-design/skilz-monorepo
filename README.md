@@ -176,3 +176,5 @@ Do not add `firebase-admin` to the frontend workspace or `firebase` (client) to 
 ## Docs
 
 See [docs/PROJECT_MAP.md](docs/PROJECT_MAP.md) for folder layout and data flow.
+
+**Production on Hostinger VPS (skilz.pk):** [docs/HOSTINGER_VPS_DEPLOYMENT.md](docs/HOSTINGER_VPS_DEPLOYMENT.md) — nginx + PM2 + Node (not Render).
