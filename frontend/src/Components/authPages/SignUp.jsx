@@ -302,30 +302,18 @@ const SignUp = () => {
                 />
 
                 <div className="password-field">
-                  <div className="password-group" style={{ position: "relative" }}>
+                  <div className="password-group">
                     <input
                       type={showPassword ? "text" : "password"}
                       placeholder="Enter password"
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
                       required
-                      style={{ width: "100%" }}
                     />
                     <button
                       type="button"
                       className="toggle-password"
                       onClick={() => setShowPassword(!showPassword)}
-                      style={{
-                        position: "absolute",
-                        right: "10px",
-                        top: "50%",
-                        transform: "translateY(-50%)",
-                        background: "none",
-                        border: "none",
-                        color: "#4f46e5",
-                        cursor: "pointer",
-                        fontSize: "12px"
-                      }}
                     >
                       {showPassword ? "Hide" : "Show"}
                     </button>
@@ -361,25 +349,23 @@ const SignUp = () => {
                 </button>
 
                 {!isLegacy && (
-                  <div style={{ display: "flex", flexDirection: "column", gap: "10px", marginTop: "16px" }}>
-                    <p style={{ margin: 0, fontSize: "13px", color: "#64748b" }}>
+                  <div className="sign-up-social-block">
+                    <p className="sign-up-social-hint">
                       Or register with Google / Facebook (creates your Firestore profile for Skilz).
                     </p>
                     <button
                       type="button"
-                      className="signup-btn"
+                      className="signup-btn signup-btn--google"
                       disabled={loading || socialSignupBusy !== ""}
                       onClick={handleSignUpGoogle}
-                      style={{ background: "#fff", color: "#1e293b", border: "1px solid #cbd5e1" }}
                     >
                       {socialSignupBusy === "google" ? "…" : "Continue with Google"}
                     </button>
                     <button
                       type="button"
-                      className="signup-btn"
+                      className="signup-btn signup-btn--facebook"
                       disabled={loading || socialSignupBusy !== ""}
                       onClick={handleSignUpFacebook}
-                      style={{ background: "#1877f2", color: "#fff", border: "none" }}
                     >
                       {socialSignupBusy === "facebook" ? "…" : "Continue with Facebook"}
                     </button>

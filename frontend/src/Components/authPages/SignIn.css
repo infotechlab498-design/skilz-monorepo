@@ -11,15 +11,18 @@
   --si-placeholder: #94a3b8;
   --si-radius: 14px;
   --si-radius-input: 12px;
+  --si-chrome-offset: clamp(96px, 14vh, 160px);
 
-  min-height: 100vh;
+  min-height: calc(100svh - var(--si-chrome-offset));
+  min-height: calc(100dvh - var(--si-chrome-offset));
   background: var(--si-surface);
   display: flex;
   align-items: center;
   justify-content: center;
   padding: clamp(16px, 4vw, 28px);
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  width: 100%;
   box-sizing: border-box;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
 .sign-in-card {
@@ -274,6 +277,11 @@
 }
 
 @media (max-width: 480px) {
+  .sign-in-page {
+    --si-chrome-offset: clamp(80px, 12vh, 120px);
+    padding: 12px;
+  }
+
   .login-form input {
     font-size: 16px; /* iOS zoom */
   }
