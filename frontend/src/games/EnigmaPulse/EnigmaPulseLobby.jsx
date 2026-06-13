@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import {
@@ -39,6 +40,10 @@ import EnigmaPulseMobileProfile from './EnigmaPulseMobileProfile.jsx';
 import EnigmaPulseBottom from './EnigmaPulseBottom.jsx';
 import { useGameConfig } from '../../hooks/useGameConfig.js';
 import GameEntryFeeBadge, { canAffordEntryFee } from '../../Components/GameEntryFeeBadge.jsx';
+import {
+  promptInsufficientCoinsRecharge,
+  useMergedPlayerProfile,
+} from '../../hooks/useBillingAccess.js';
 
 const DIFFICULTIES = ['easy', 'medium', 'hard'];
 const CATEGORIES = ENIGMA_PULSE_LOBBY_CATEGORIES;
@@ -300,6 +305,8 @@ function EpLobbyCenterPanel({
 
 export default function EnigmaPulseLobby() {
   const navigate = useNavigate();
+  const isAuthenticated = useSelector((s) => s.auth.isAuthenticated);
+  const mergedProfile = useMergedPlayerProfile();
   const location = useLocation();
   const [searchParams, setSearchParams] = useSearchParams();
   const [gameUser, setGameUser] = useState(null);
@@ -352,7 +359,7 @@ export default function EnigmaPulseLobby() {
       return false;
     }
     if (!canAffordEntryFee(gameUser?.coins, entryFee)) {
-      toast.error(`Insufficient coins! You need ${entryFee} coins to play.`, { icon: '💰' });
+      promptInsufficientCoinsRecharge(navigate, isAuthenticated, mergedProfile, entryFee);
       return false;
     }
     return true;

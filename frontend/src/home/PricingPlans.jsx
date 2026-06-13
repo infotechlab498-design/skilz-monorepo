@@ -2,11 +2,16 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { api } from "../services/api";
+import {
+  navigateToCheckoutOrGate,
+  useMergedPlayerProfile,
+} from "../hooks/useBillingAccess.js";
 import "./PricingPlans.css";
 
 const PricingPlans = () => {
   const navigate = useNavigate();
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
+  const mergedProfile = useMergedPlayerProfile();
   const [plans, setPlans] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -26,11 +31,7 @@ const PricingPlans = () => {
 
   const handleSelectPlan = (plan) => {
     localStorage.setItem("selectedPlan", JSON.stringify(plan));
-    if (!isAuthenticated) {
-      navigate("/signin", { state: { redirectTo: "/checkout" } });
-      return;
-    }
-    navigate("/checkout");
+    navigateToCheckoutOrGate(navigate, isAuthenticated, mergedProfile);
   };
 
   if (loading) {

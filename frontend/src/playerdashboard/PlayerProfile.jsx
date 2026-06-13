@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 
 import '../Components/profile/profile.css';
 import '../Components/chat/chat.css';
@@ -15,9 +16,16 @@ import {
   uploadProfileImage,
 } from '../api/userApi.js';
 import { upsertPublicProfile } from '../api/profileApi.js';
+import { syncAuthUserFromFirestoreProfile } from '../services/authService.js';
 
 import { validateCNIC, validateEmail, validatePhone } from '../utils/validators.js';
 import { pakistanE164ToLocalDisplay, pakistanLocalToE164 } from '../utils/phoneE164.js';
+import {
+  isProfileBasicComplete,
+  isProfileBillingComplete,
+  resolveProfileComplete,
+  suggestUsernameFromIdentity,
+} from '../utils/profileCompletion.js';
 
 function toStr(v) {
   return String(v ?? '').trim();
@@ -32,9 +40,16 @@ function buildInitialForm(profile, authUser) {
   const email = toStr(profile?.email) || toStr(authUser?.email);
   const phoneRaw = toStr(profile?.phoneLocal) || toStr(profile?.phone);
   const phone = pakistanE164ToLocalDisplay(phoneRaw) || phoneRaw;
+  const username =
+    toStr(profile?.username) ||
+    suggestUsernameFromIdentity({
+      uid: profile?.uid || authUser?.uid,
+      email,
+      displayName: name || authUser?.displayName,
+    });
   return {
     name,
-    username: toStr(profile?.username),
+    username,
     email,
     phone,
     dob: toStr(profile?.dob),
@@ -69,10 +84,14 @@ export default function PlayerProfile() {
   const authUser = useSelector((s) => s.auth.user);
   const firebaseReady = useSelector((s) => s.auth.firebaseReady);
   const uid = authUser?.uid || null;
+  const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+  const completeMode = searchParams.get('complete');
 
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState('');
+  const [completionDismissed, setCompletionDismissed] = useState(false);
 
   const [profile, setProfile] = useState(null);
   const [photoURL, setPhotoURL] = useState('');
@@ -81,6 +100,25 @@ export default function PlayerProfile() {
   const [editOpen, setEditOpen] = useState(false);
   const [chatOpen, setChatOpen] = useState(false);
   const [chatTarget, setChatTarget] = useState(null);
+
+  const profileComplete = useMemo(
+    () => resolveProfileComplete(profile),
+    [profile]
+  );
+
+  const showCompletionBanner = useMemo(() => {
+    if (completionDismissed) return false;
+    if (completeMode === 'billing' && !isProfileBillingComplete(profile)) return true;
+    if (completeMode === '1' || completeMode === 'true') return !profileComplete;
+    return !profileComplete;
+  }, [completionDismissed, completeMode, profile, profileComplete]);
+
+  const completionBannerText = useMemo(() => {
+    if (completeMode === 'billing') {
+      return 'Add your phone number and CNIC to unlock coin purchases and billing.';
+    }
+    return 'Welcome! Your social account is connected. Confirm your username and add phone/CNIC when you are ready.';
+  }, [completeMode]);
 
   const canSave = useMemo(() => {
     const e = validateForm(form);
@@ -131,6 +169,13 @@ export default function PlayerProfile() {
     if (!firebaseReady) return;
     void refresh();
   }, [firebaseReady, refresh]);
+
+  useEffect(() => {
+    if (!firebaseReady || loading) return;
+    if (completeMode === '1' || completeMode === 'true' || completeMode === 'billing') {
+      setEditOpen(true);
+    }
+  }, [firebaseReady, loading, completeMode]);
 
   const onChange = useCallback((key, val) => {
     setForm((f) => {
@@ -187,11 +232,22 @@ export default function PlayerProfile() {
         tagline: toStr(form.tagline),
         bio: toStr(form.bio),
         displayName: toStr(form.name) || toStr(profile?.displayName) || toStr(authUser?.displayName) || 'Player',
+        photoURL: photoURL || toStr(profile?.photoURL) || toStr(authUser?.photoURL) || '',
       };
       const e164 = pakistanLocalToE164(form.phone);
       if (e164) patch.phoneE164 = e164;
+      const mergedForComplete = { ...(profile || {}), ...patch };
+      patch.profileComplete = isProfileBasicComplete(mergedForComplete);
       await updateUserProfile(uid, patch);
       setProfile((p) => ({ ...(p || {}), ...patch }));
+      syncAuthUserFromFirestoreProfile(uid);
+
+      if (patch.profileComplete) {
+        setCompletionDismissed(true);
+        setEditOpen(false);
+      } else if (isProfileBillingComplete(mergedForComplete)) {
+        setCompletionDismissed(true);
+      }
 
       // Security/compatibility: mirror safe fields for cross-user reads
       await upsertPublicProfile(uid, {
@@ -265,6 +321,57 @@ export default function PlayerProfile() {
         Pages / <span>Profile</span>
       </div>
       <h1 className="prf-ttl">Profile</h1>
+
+      {showCompletionBanner ? (
+        <div
+          className="prf-al"
+          role="status"
+          style={{
+            marginBottom: 16,
+            padding: '14px 16px',
+            background: '#eff6ff',
+            border: '1px solid #bfdbfe',
+            borderRadius: 12,
+            color: '#1e3a5f',
+          }}
+        >
+          <strong>Complete your profile</strong>
+          <p style={{ margin: '8px 0 12px', fontSize: 14 }}>{completionBannerText}</p>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
+            <button
+              type="button"
+              className="signup-btn"
+              style={{ margin: 0 }}
+              onClick={jumpToEdit}
+            >
+              Complete now
+            </button>
+            <button
+              type="button"
+              className="signup-btn"
+              style={{ margin: 0, background: '#64748b' }}
+              onClick={() => navigate('/')}
+            >
+              Play games anyway
+            </button>
+            <button
+              type="button"
+              style={{
+                margin: 0,
+                background: 'transparent',
+                border: 'none',
+                color: '#4f46e5',
+                cursor: 'pointer',
+                fontWeight: 600,
+                fontSize: 13,
+              }}
+              onClick={() => setCompletionDismissed(true)}
+            >
+              Dismiss
+            </button>
+          </div>
+        </div>
+      ) : null}
 
       {error ? <div className="prf-al prf-alE" role="status" aria-live="polite">{error}</div> : null}
 

@@ -1,6 +1,7 @@
 import {
   signInWithEmailAndPassword,
   signInWithRedirect,
+  signInWithPopup,
   getRedirectResult,
   GoogleAuthProvider,
   FacebookAuthProvider,
@@ -12,7 +13,7 @@ import {
   confirmPasswordReset,
 } from 'firebase/auth';
 import { doc, getDoc, setDoc, serverTimestamp } from 'firebase/firestore';
-import { auth, db } from '../firebase/config.js';
+import { auth, db, ensureAuthPersistence } from '../firebase/config.js';
 import {
   DEFAULT_USER_STATS,
   DEFAULT_USER_STATS_EXTRA,
@@ -32,6 +33,7 @@ import { startUserPresence, stopUserPresence } from './presenceService.js';
 import { mapFirebaseAuthError } from './firebaseAuth.js';
 import { toSerializableFirebase } from './userService.js';
 import { authLog } from '../utils/authDiagnostics.js';
+import { suggestUsernameFromIdentity } from '../utils/profileCompletion.js';
 
 export { mapFirebaseAuthError, confirmPasswordReset };
 
@@ -39,9 +41,23 @@ const AUTH_NOTICE_KEY = 'skilz_auth_notice';
 const LINK_HINT_KEY = 'skilz_link_hint';
 const OAUTH_INTENT_KEY = 'skilz_oauth_intent';
 const OAUTH_NEXT_KEY = 'skilz_oauth_next';
+/** Survives StrictMode remount until SPA navigates after OAuth redirect. */
+export const OAUTH_PENDING_NAV_KEY = 'skilz_oauth_pending_nav';
 
 /** Prevents StrictMode double-consumption of `getRedirectResult`. */
 let oauthRedirectConsumed = false;
+/** Replay navigation when first mount unmounted before `navigate()` (React StrictMode). */
+let lastOAuthNavigateTo = null;
+/** Single in-flight `getRedirectResult` — StrictMode mounts must share one call. */
+let oauthRedirectInflight = null;
+/** Cached result for remounts in the same page load. */
+let oauthRedirectResultCache = null;
+/** Ignore transient `null` auth callbacks while OAuth redirect is finishing. */
+let oauthRedirectProcessingUntil = 0;
+/** Refcounted global auth listener (StrictMode-safe). */
+let authStateListenerCount = 0;
+/** @type {import('firebase/auth').Unsubscribe | null} */
+let authStateUnsubscribe = null;
 
 /** @type {Map<string, ReturnType<typeof setTimeout>>} */
 const profileRetryTimers = new Map();
@@ -61,6 +77,47 @@ export function describeSignInMethods(methods) {
 function normalizeOAuthNextPath(nextPath) {
   const s = String(nextPath || '/').trim() || '/';
   return s.startsWith('/') ? s : `/${s}`;
+}
+
+function persistPendingOAuthNav(path) {
+  const target = normalizeOAuthNextPath(path);
+  lastOAuthNavigateTo = target;
+  try {
+    sessionStorage.setItem(OAUTH_PENDING_NAV_KEY, target);
+  } catch {
+    /* ignore */
+  }
+  return target;
+}
+
+/** @returns {string | null} */
+export function readPendingOAuthNavigation() {
+  if (lastOAuthNavigateTo) return lastOAuthNavigateTo;
+  try {
+    const n = sessionStorage.getItem(OAUTH_PENDING_NAV_KEY);
+    return n ? normalizeOAuthNextPath(n) : null;
+  } catch {
+    return null;
+  }
+}
+
+export function clearPendingOAuthNavigation() {
+  lastOAuthNavigateTo = null;
+  try {
+    sessionStorage.removeItem(OAUTH_PENDING_NAV_KEY);
+  } catch {
+    /* ignore */
+  }
+}
+
+function stashOAuthRedirectIntent(intent, nextPath) {
+  const target = persistPendingOAuthNav(nextPath);
+  try {
+    sessionStorage.setItem(OAUTH_INTENT_KEY, intent);
+    sessionStorage.setItem(OAUTH_NEXT_KEY, target);
+  } catch {
+    /* ignore */
+  }
 }
 
 /**
@@ -89,9 +146,47 @@ function clearPublishedAuthNotice() {
 function isIrrecoverableAuthError(err) {
   return (
     err instanceof AuthLinkRequiredError ||
-    err instanceof RegistrationRequiredError ||
-    (typeof err?.code === 'string' && err.code.startsWith('auth/') && err.code !== 'auth/network-request-failed')
+    err instanceof RegistrationRequiredError
   );
+}
+
+function isOAuthReturnLanding() {
+  try {
+    return !!(
+      sessionStorage.getItem(OAUTH_PENDING_NAV_KEY) ||
+      sessionStorage.getItem(OAUTH_NEXT_KEY) ||
+      sessionStorage.getItem(OAUTH_INTENT_KEY)
+    );
+  } catch {
+    return false;
+  }
+}
+
+function beginOAuthRedirectProcessing() {
+  oauthRedirectProcessingUntil = Date.now() + 15000;
+}
+
+function endOAuthRedirectProcessingSoon() {
+  setTimeout(() => {
+    if (Date.now() >= oauthRedirectProcessingUntil - 1000) {
+      oauthRedirectProcessingUntil = 0;
+    }
+  }, 3000);
+}
+
+/** Wait for Firebase to hydrate `currentUser` after redirect (IndexedDB restore). */
+async function waitForFirebaseUser(timeoutMs = 8000) {
+  const deadline = Date.now() + timeoutMs;
+  while (Date.now() < deadline) {
+    if (auth.currentUser?.uid) return auth.currentUser;
+    try {
+      if (auth.authStateReady) await auth.authStateReady;
+    } catch {
+      /* ignore */
+    }
+    await new Promise((r) => setTimeout(r, 120));
+  }
+  return auth.currentUser;
 }
 
 function skilzProviderFromFirebaseUser(firebaseUser) {
@@ -109,6 +204,42 @@ function minimalUserFromFirebase(firebaseUser) {
     photoURL: firebaseUser.photoURL || '',
     provider: skilzProviderFromFirebaseUser(firebaseUser),
   };
+}
+
+/**
+ * Merge Firebase identity with Firestore `users/{uid}` so navbar, games, and dashboard
+ * share one "player session" (username, coins, photo) in Redux `auth.user`.
+ * @param {ReturnType<typeof minimalUserFromFirebase>} identity
+ * @param {Record<string, unknown> | null | undefined} profile
+ */
+function mergeIdentityWithFirestoreProfile(identity, profile) {
+  const d = profile || {};
+  return toSerializableFirebase({
+    ...identity,
+    uid: identity.uid || d.uid || d.id,
+    email: d.email || identity.email || '',
+    displayName:
+      d.displayName || d.fullName || d.name || identity.displayName || 'Player',
+    username: d.username || '',
+    photoURL: d.photoURL || identity.photoURL || '',
+    coins: d.coins,
+    xp: d.xp,
+    level: d.level,
+    provider: identity.provider || d.provider || 'email',
+  });
+}
+
+/** Push Firestore profile fields into `auth.user` after wallet/profile sync. */
+export function syncAuthUserFromFirestoreProfile(uid) {
+  if (auth.currentUser?.uid !== uid) return;
+  const profile = store.getState().user?.profile;
+  if (!profile) return;
+  const identity = minimalUserFromFirebase(auth.currentUser);
+  store.dispatch(setUser(mergeIdentityWithFirestoreProfile(identity, profile)));
+}
+
+function applyFirestoreProfileToAuthUser(uid) {
+  syncAuthUserFromFirestoreProfile(uid);
 }
 
 /**
@@ -180,9 +311,16 @@ export async function ensureFirestoreUserProfile(firebaseUser) {
     updatedAt: serverTimestamp(),
   };
   if (!snap.exists()) {
+    const isOAuth = provider === 'google' || provider === 'facebook';
     await setDoc(ref, {
       ...base,
-      username: '',
+      username: isOAuth
+        ? suggestUsernameFromIdentity({
+            uid,
+            email,
+            displayName: firebaseUser.displayName || displayName,
+          })
+        : '',
       phone: '',
       phoneLocal: '',
       phoneE164: '',
@@ -195,6 +333,7 @@ export async function ensureFirestoreUserProfile(firebaseUser) {
       level: 1,
       dailyStreak: 0,
       lastPlayedDate: '',
+      profileComplete: false,
       source: provider === 'email' ? 'email_password' : 'oauth',
       stats: {
         ...DEFAULT_USER_STATS,
@@ -207,7 +346,19 @@ export async function ensureFirestoreUserProfile(firebaseUser) {
   } else {
     authLog('Firestore Profile Read Success', { uidPrefix: uid.slice(0, 8) });
     await setDoc(ref, base, { merge: true });
-    const missing = buildMissingProfilePatch(snap.data());
+    const existing = snap.data() || {};
+    const missing = buildMissingProfilePatch(existing);
+    const isOAuth = provider === 'google' || provider === 'facebook';
+    if (isOAuth && typeof existing.username === 'string' && !existing.username.trim()) {
+      missing.username = suggestUsernameFromIdentity({
+        uid,
+        email,
+        displayName: firebaseUser.displayName || displayName,
+      });
+    }
+    if (isOAuth && existing.profileComplete === undefined) {
+      missing.profileComplete = false;
+    }
     if (Object.keys(missing).length > 0) {
       await setDoc(ref, { ...missing, updatedAt: serverTimestamp() }, { merge: true });
     }
@@ -238,6 +389,7 @@ async function enrichProfileFromFirestore(uid, firebaseUser, retryAttempt = 0) {
   try {
     await ensureFirestoreProfileExistsClient(firebaseUser);
     await store.dispatch(fetchFirestoreUserProfile(uid));
+    applyFirestoreProfileToAuthUser(uid);
     startUserPresence(uid);
     store.dispatch(setProfileSyncState({ pending: false, error: null }));
     authLog('Firestore Profile Sync Complete', { uidPrefix: uid.slice(0, 8) });
@@ -331,12 +483,52 @@ async function finalizeSignIn(firebaseUser) {
 
 /**
  * Consume Firebase OAuth redirect result (call once per load, before `subscribeFirebaseAuth`).
+ * StrictMode-safe: concurrent mounts share one `getRedirectResult` call.
  * @returns {Promise<{ status: 'none' } | { status: 'ok', navigateTo: string }>}
  */
 export async function processOAuthRedirectResult() {
+  if (oauthRedirectResultCache) return oauthRedirectResultCache;
+  if (oauthRedirectInflight) return oauthRedirectInflight;
+
+  if (isOAuthReturnLanding()) beginOAuthRedirectProcessing();
+
+  oauthRedirectInflight = processOAuthRedirectResultImpl()
+    .then((r) => {
+      oauthRedirectResultCache = r;
+      return r;
+    })
+    .finally(() => {
+      oauthRedirectInflight = null;
+      endOAuthRedirectProcessingSoon();
+    });
+
+  return oauthRedirectInflight;
+}
+
+/**
+ * @returns {Promise<{ status: 'none' } | { status: 'ok', navigateTo: string }>}
+ */
+async function processOAuthRedirectResultImpl() {
   if (oauthRedirectConsumed) {
+    const pending =
+      readPendingOAuthNavigation() ||
+      (auth.currentUser?.uid ? lastOAuthNavigateTo : null);
+    if (pending && auth.currentUser?.uid) {
+      authLog('OAuth Pending Navigation Replay', {});
+      return { status: 'ok', navigateTo: pending };
+    }
+    if (isOAuthReturnLanding()) {
+      const hydrated = await waitForFirebaseUser(6000);
+      if (hydrated?.uid && pending) {
+        authLog('OAuth Hydration Replay', {});
+        await syncSkilzFromFirebaseUser(hydrated).catch(() => {});
+        return { status: 'ok', navigateTo: pending };
+      }
+    }
     return { status: 'none' };
   }
+
+  beginOAuthRedirectProcessing();
 
   let result;
   try {
@@ -372,49 +564,38 @@ export async function processOAuthRedirectResult() {
   }
 
   if (!result?.user) {
-    return { status: 'none' };
+    if (isOAuthReturnLanding()) {
+      const hydrated = await waitForFirebaseUser(8000);
+      if (hydrated?.uid) {
+        oauthRedirectConsumed = true;
+        authLog('OAuth Redirect Hydrated User', { uidPrefix: hydrated.uid.slice(0, 8) });
+        result = { user: hydrated };
+      }
+    }
+    if (!result?.user) {
+      authLog('OAuth Redirect No Result', { pendingNav: !!readPendingOAuthNavigation() });
+      return { status: 'none' };
+    }
   }
 
   let intent = null;
   try {
     intent = sessionStorage.getItem(OAUTH_INTENT_KEY);
-    sessionStorage.removeItem(OAUTH_INTENT_KEY);
   } catch {
     /* ignore */
   }
-
-  let navigateTo = '/';
-  try {
-    const n = sessionStorage.getItem(OAUTH_NEXT_KEY);
-    if (n) navigateTo = n;
-    sessionStorage.removeItem(OAUTH_NEXT_KEY);
-  } catch {
-    /* ignore */
-  }
+  authLog('OAuth Redirect Intent', { intent: intent || 'unknown' });
 
   try {
-    if (intent === 'signup') {
-      await ensureFirestoreUserProfile(result.user);
-    }
-    await finalizeSignIn(result.user);
-    clearPublishedAuthNotice();
+    const navigateTo = await finalizeOAuthSession(result.user);
+    authLog('OAuth Redirect Navigate', { hasPendingNav: !!navigateTo });
+    return { status: 'ok', navigateTo };
   } catch (e) {
     if (e instanceof RegistrationRequiredError || e instanceof AuthLinkRequiredError) {
-      publishAuthNotice(e.userMessage);
-      await signOut(auth).catch(() => {});
       return { status: 'none' };
     }
-
-    // P0-1: Firestore/sync errors must not destroy Firebase session
-    authLog('OAuth Finalize Partial Failure', { code: String(e?.code || '') });
-    applyFirebaseIdentityToRedux(result.user);
-    publishAuthNotice(
-      'Signed in with your provider. Profile sync will retry in the background.'
-    );
-    void enrichProfileFromFirestore(result.user.uid, result.user, 0);
+    throw e;
   }
-
-  return { status: 'ok', navigateTo };
 }
 
 /** Skilz profile missing in Firestore — user must complete Firebase sign-up first. */
@@ -586,6 +767,7 @@ export async function confirmPasswordResetWithCode(oobCode, newPassword) {
 }
 
 export async function signInWithEmail(email, password) {
+  await ensureAuthPersistence();
   const trimmed = email.trim();
   if (
     pendingOAuthCredential &&
@@ -598,99 +780,151 @@ export async function signInWithEmail(email, password) {
   return finalizeSignIn(user);
 }
 
-const googleProvider = new GoogleAuthProvider();
-googleProvider.setCustomParameters({ prompt: 'select_account' });
-
-export async function signInWithGoogleRedirect(nextPath = '/') {
+function clearStashedOAuthIntent() {
   try {
-    sessionStorage.setItem(OAUTH_INTENT_KEY, 'signin');
-    sessionStorage.setItem(OAUTH_NEXT_KEY, normalizeOAuthNextPath(nextPath));
+    sessionStorage.removeItem(OAUTH_INTENT_KEY);
+    sessionStorage.removeItem(OAUTH_NEXT_KEY);
+    clearPendingOAuthNavigation();
   } catch {
     /* ignore */
   }
+}
+
+/** Popup in dev avoids brittle redirect + IndexedDB races on localhost. */
+function shouldUseOAuthPopup() {
+  const flag = String(import.meta.env.VITE_OAUTH_USE_POPUP || '').trim().toLowerCase();
+  if (flag === 'true' || flag === '1') return true;
+  if (flag === 'false' || flag === '0') return false;
+  return !!import.meta.env.DEV;
+}
+
+/**
+ * Create Firestore profile + Redux session after OAuth (popup or redirect).
+ * @param {import('firebase/auth').User} firebaseUser
+ * @returns {Promise<string>} path to navigate to
+ */
+async function finalizeOAuthSession(firebaseUser) {
+  let navigateTo = '/';
   try {
-    await signInWithRedirect(auth, googleProvider);
-  } catch (err) {
-    try {
-      sessionStorage.removeItem(OAUTH_INTENT_KEY);
-      sessionStorage.removeItem(OAUTH_NEXT_KEY);
-    } catch {
-      /* ignore */
+    const n =
+      sessionStorage.getItem(OAUTH_NEXT_KEY) ||
+      sessionStorage.getItem(OAUTH_PENDING_NAV_KEY);
+    if (n) navigateTo = normalizeOAuthNextPath(n);
+    sessionStorage.removeItem(OAUTH_NEXT_KEY);
+    sessionStorage.removeItem(OAUTH_INTENT_KEY);
+  } catch {
+    /* ignore */
+  }
+  navigateTo = persistPendingOAuthNav(navigateTo);
+  beginOAuthRedirectProcessing();
+  oauthRedirectConsumed = true;
+
+  try {
+    await ensureFirestoreUserProfile(firebaseUser);
+    await finalizeSignIn(firebaseUser);
+    clearPublishedAuthNotice();
+  } catch (e) {
+    if (e instanceof RegistrationRequiredError || e instanceof AuthLinkRequiredError) {
+      publishAuthNotice(e.userMessage);
+      clearPendingOAuthNavigation();
+      await signOut(auth).catch(() => {});
+      throw e;
     }
+
+    authLog('OAuth Finalize Partial Failure', { code: String(e?.code || '') });
+    applyFirebaseIdentityToRedux(firebaseUser);
+    publishAuthNotice(
+      'Signed in with your provider. Profile sync will retry in the background.'
+    );
+    void enrichProfileFromFirestore(firebaseUser.uid, firebaseUser, 0);
+  }
+
+  authLog('OAuth Session Finalized', { hasPendingNav: !!navigateTo });
+  return navigateTo;
+}
+
+/**
+ * @typedef {{ status: 'redirect' } | { status: 'ok', navigateTo: string }} OAuthFlowResult
+ */
+
+/**
+ * Google/Facebook OAuth — popup in dev, redirect in production.
+ * @param {import('firebase/auth').AuthProvider} provider
+ * @param {'signin' | 'signup'} intent
+ * @param {string} nextPath
+ * @returns {Promise<OAuthFlowResult>}
+ */
+async function runOAuthWithProvider(provider, intent, nextPath) {
+  stashOAuthRedirectIntent(intent, nextPath);
+  await ensureAuthPersistence();
+
+  if (!shouldUseOAuthPopup()) {
+    try {
+      await signInWithRedirect(auth, provider);
+      return { status: 'redirect' };
+    } catch (err) {
+      clearStashedOAuthIntent();
+      await handleAccountExistsDifferentProvider(err);
+      throw err;
+    }
+  }
+
+  try {
+    authLog('OAuth Popup Start', { intent });
+    const result = await signInWithPopup(auth, provider);
+    const navigateTo = await finalizeOAuthSession(result.user);
+    clearPendingOAuthNavigation();
+    return { status: 'ok', navigateTo };
+  } catch (err) {
+    if (
+      err?.code === 'auth/popup-blocked' ||
+      err?.code === 'auth/cancelled-popup-request'
+    ) {
+      authLog('OAuth Popup Fallback Redirect', { code: String(err?.code || '') });
+      try {
+        await signInWithRedirect(auth, provider);
+        return { status: 'redirect' };
+      } catch (redirectErr) {
+        clearStashedOAuthIntent();
+        await handleAccountExistsDifferentProvider(redirectErr);
+        throw redirectErr;
+      }
+    }
+    clearStashedOAuthIntent();
     await handleAccountExistsDifferentProvider(err);
     throw err;
   }
+}
+
+const googleProvider = new GoogleAuthProvider();
+googleProvider.setCustomParameters({ prompt: 'select_account' });
+
+const facebookProvider = new FacebookAuthProvider();
+
+/** @returns {Promise<OAuthFlowResult>} */
+export async function signInWithGoogleRedirect(nextPath = '/') {
+  return runOAuthWithProvider(googleProvider, 'signin', nextPath);
 }
 
 export const signInWithGooglePopup = signInWithGoogleRedirect;
 
+/** @returns {Promise<OAuthFlowResult>} */
 export async function signUpWithGoogleRedirect(nextPath = '/') {
-  try {
-    sessionStorage.setItem(OAUTH_INTENT_KEY, 'signup');
-    sessionStorage.setItem(OAUTH_NEXT_KEY, normalizeOAuthNextPath(nextPath));
-  } catch {
-    /* ignore */
-  }
-  try {
-    await signInWithRedirect(auth, googleProvider);
-  } catch (err) {
-    try {
-      sessionStorage.removeItem(OAUTH_INTENT_KEY);
-      sessionStorage.removeItem(OAUTH_NEXT_KEY);
-    } catch {
-      /* ignore */
-    }
-    await handleAccountExistsDifferentProvider(err);
-    throw err;
-  }
+  return runOAuthWithProvider(googleProvider, 'signup', nextPath);
 }
 
 export const signUpWithGooglePopup = signUpWithGoogleRedirect;
 
-const facebookProvider = new FacebookAuthProvider();
-
+/** @returns {Promise<OAuthFlowResult>} */
 export async function signInWithFacebookRedirect(nextPath = '/') {
-  try {
-    sessionStorage.setItem(OAUTH_INTENT_KEY, 'signin');
-    sessionStorage.setItem(OAUTH_NEXT_KEY, normalizeOAuthNextPath(nextPath));
-  } catch {
-    /* ignore */
-  }
-  try {
-    await signInWithRedirect(auth, facebookProvider);
-  } catch (err) {
-    try {
-      sessionStorage.removeItem(OAUTH_INTENT_KEY);
-      sessionStorage.removeItem(OAUTH_NEXT_KEY);
-    } catch {
-      /* ignore */
-    }
-    await handleAccountExistsDifferentProvider(err);
-    throw err;
-  }
+  return runOAuthWithProvider(facebookProvider, 'signin', nextPath);
 }
 
 export const signInWithFacebookPopup = signInWithFacebookRedirect;
 
+/** @returns {Promise<OAuthFlowResult>} */
 export async function signUpWithFacebookRedirect(nextPath = '/') {
-  try {
-    sessionStorage.setItem(OAUTH_INTENT_KEY, 'signup');
-    sessionStorage.setItem(OAUTH_NEXT_KEY, normalizeOAuthNextPath(nextPath));
-  } catch {
-    /* ignore */
-  }
-  try {
-    await signInWithRedirect(auth, facebookProvider);
-  } catch (err) {
-    try {
-      sessionStorage.removeItem(OAUTH_INTENT_KEY);
-      sessionStorage.removeItem(OAUTH_NEXT_KEY);
-    } catch {
-      /* ignore */
-    }
-    await handleAccountExistsDifferentProvider(err);
-    throw err;
-  }
+  return runOAuthWithProvider(facebookProvider, 'signup', nextPath);
 }
 
 export const signUpWithFacebookPopup = signUpWithFacebookRedirect;
@@ -713,44 +947,69 @@ function clearSkilzClientWithoutFirebaseSignOut() {
 
 /**
  * Keep Redux aligned with Firebase session. Firebase identity is never revoked on Firestore errors.
- * @returns {import('firebase/auth').Unsubscribe}
+ * Waits for `authStateReady` so a transient `null` during persistence restore does not clear Redux.
+ * @returns {Promise<import('firebase/auth').Unsubscribe>}
  */
-export function subscribeFirebaseAuth() {
-  return onAuthStateChanged(auth, async (firebaseUser) => {
-    try {
-      if (!firebaseUser) {
-        stopUserPresence();
-        clearSkilzClientWithoutFirebaseSignOut();
-        store.dispatch(clearUser());
-        authLog('Firebase Signed Out', {});
-        return;
-      }
+export async function subscribeFirebaseAuth() {
+  try {
+    if (auth.authStateReady) {
+      await auth.authStateReady;
+    }
+  } catch {
+    /* ignore */
+  }
 
+  authStateListenerCount += 1;
+
+  if (!authStateUnsubscribe) {
+    authStateUnsubscribe = onAuthStateChanged(auth, async (firebaseUser) => {
       try {
-        await syncSkilzFromFirebaseUser(firebaseUser);
-      } catch (e) {
-        if (isIrrecoverableAuthError(e)) {
-          publishAuthNotice(
-            e instanceof AuthLinkRequiredError || e instanceof RegistrationRequiredError
-              ? e.userMessage
-              : mapFirebaseAuthError(e)
-          );
-          await signOut(auth).catch(() => {});
+        if (!firebaseUser) {
+          if (Date.now() < oauthRedirectProcessingUntil || oauthRedirectInflight) {
+            authLog('Firebase Signed Out (deferred during OAuth)', {});
+            return;
+          }
+          stopUserPresence();
           clearSkilzClientWithoutFirebaseSignOut();
           store.dispatch(clearUser());
+          authLog('Firebase Signed Out', {});
           return;
         }
 
-        // P0-1: retain Firebase session
-        authLog('Auth Sync Non-Fatal Error', { code: String(e?.code || '') });
-        applyFirebaseIdentityToRedux(firebaseUser);
-        publishAuthNotice(
-          'Signed in. Profile sync will retry in the background.'
-        );
-        void enrichProfileFromFirestore(firebaseUser.uid, firebaseUser, 0);
+        try {
+          await syncSkilzFromFirebaseUser(firebaseUser);
+        } catch (e) {
+          if (isIrrecoverableAuthError(e)) {
+            publishAuthNotice(
+              e instanceof AuthLinkRequiredError || e instanceof RegistrationRequiredError
+                ? e.userMessage
+                : mapFirebaseAuthError(e)
+            );
+            await signOut(auth).catch(() => {});
+            clearSkilzClientWithoutFirebaseSignOut();
+            store.dispatch(clearUser());
+            return;
+          }
+
+          // P0-1: retain Firebase session
+          authLog('Auth Sync Non-Fatal Error', { code: String(e?.code || '') });
+          applyFirebaseIdentityToRedux(firebaseUser);
+          publishAuthNotice(
+            'Signed in. Profile sync will retry in the background.'
+          );
+          void enrichProfileFromFirestore(firebaseUser.uid, firebaseUser, 0);
+        }
+      } finally {
+        store.dispatch(setFirebaseReady(true));
       }
-    } finally {
-      store.dispatch(setFirebaseReady(true));
+    });
+  }
+
+  return () => {
+    authStateListenerCount = Math.max(0, authStateListenerCount - 1);
+    if (authStateListenerCount === 0 && authStateUnsubscribe) {
+      authStateUnsubscribe();
+      authStateUnsubscribe = null;
     }
-  });
+  };
 }

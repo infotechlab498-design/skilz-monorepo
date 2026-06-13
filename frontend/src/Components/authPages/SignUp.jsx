@@ -14,7 +14,11 @@ import {
   signUpWithGoogleRedirect,
   signUpWithFacebookRedirect,
   AuthLinkRequiredError,
+  readPendingOAuthNavigation,
+  clearPendingOAuthNavigation,
 } from "../../services/authService.js";
+import { OAUTH_SIGNUP_PROFILE_PATH } from "../../utils/profileCompletion.js";
+import { useAuth } from "../../hooks/useAuth.js";
 import "./SignUp.css";
 import Layout from "../Layout";
 import VerifyOTP from "./SignUpOtp";
@@ -22,6 +26,7 @@ import VerifyOTP from "./SignUpOtp";
 const SignUp = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const { firebaseReady, isAuthenticated } = useAuth();
   const isLegacy = import.meta.env.VITE_LEGACY_SIGNUP === "true";
   const [step, setStep] = useState(1);
   const { phoneConfirmation, smsChallengeKey, sendPhoneLink } = usePhoneVerificationLink();
@@ -51,6 +56,8 @@ const SignUp = () => {
   const [socialSignupBusy, setSocialSignupBusy] = useState("");
   const [smsLoading, setSmsLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
+  const socialActionsLocked =
+    loading || socialSignupBusy !== "" || !acceptedTerms || !captchaChecked;
   /* STEP 1 SUBMIT */
 
   const handleSignup = async (e) => {
@@ -111,6 +118,7 @@ const SignUp = () => {
         }
 
         // Legacy path is deprecated; Firebase-native flow should be used in production.
+
       } else {
         await firebaseEmailSignUpCreateUserOnly({ email, password });
       }
@@ -136,6 +144,16 @@ const SignUp = () => {
     }
   }, [location.state]);
 
+  /** After Google/Facebook redirect or completed session, leave sign-up once Redux is hydrated. */
+  useEffect(() => {
+    if (!firebaseReady || !isAuthenticated) return;
+    const pending = readPendingOAuthNavigation();
+    if (pending) {
+      clearPendingOAuthNavigation();
+      navigate(pending, { replace: true });
+    }
+  }, [firebaseReady, isAuthenticated, navigate]);
+
   const handleSignUpGoogle = async () => {
     if (!acceptedTerms || !captchaChecked) {
       setError("Please accept the terms and confirm you're not a robot.");
@@ -144,7 +162,10 @@ const SignUp = () => {
     setError("");
     setSocialSignupBusy("google");
     try {
-      await signUpWithGoogleRedirect("/");
+      const r = await signUpWithGoogleRedirect(OAUTH_SIGNUP_PROFILE_PATH);
+      if (r?.status === "ok" && r.navigateTo) {
+        navigate(r.navigateTo, { replace: true });
+      }
     } catch (err) {
       if (err instanceof AuthLinkRequiredError) {
         setError(err.userMessage);
@@ -164,7 +185,10 @@ const SignUp = () => {
     setError("");
     setSocialSignupBusy("facebook");
     try {
-      await signUpWithFacebookRedirect("/");
+      const r = await signUpWithFacebookRedirect(OAUTH_SIGNUP_PROFILE_PATH);
+      if (r?.status === "ok" && r.navigateTo) {
+        navigate(r.navigateTo, { replace: true });
+      }
     } catch (err) {
       if (err instanceof AuthLinkRequiredError) {
         setError(err.userMessage);
@@ -351,12 +375,12 @@ const SignUp = () => {
                 {!isLegacy && (
                   <div className="sign-up-social-block">
                     <p className="sign-up-social-hint">
-                      Or register with Google / Facebook (creates your Firestore profile for Skilz).
+                      Or register with Google / Facebook — no SMS OTP. You&apos;ll finish phone &amp; CNIC on your Player Profile.
                     </p>
                     <button
                       type="button"
                       className="signup-btn signup-btn--google"
-                      disabled={loading || socialSignupBusy !== ""}
+                      disabled={socialActionsLocked}
                       onClick={handleSignUpGoogle}
                     >
                       {socialSignupBusy === "google" ? "…" : "Continue with Google"}
@@ -364,7 +388,7 @@ const SignUp = () => {
                     <button
                       type="button"
                       className="signup-btn signup-btn--facebook"
-                      disabled={loading || socialSignupBusy !== ""}
+                      disabled={socialActionsLocked}
                       onClick={handleSignUpFacebook}
                     >
                       {socialSignupBusy === "facebook" ? "…" : "Continue with Facebook"}

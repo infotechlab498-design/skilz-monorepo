@@ -1,4 +1,5 @@
 import { auth } from '../firebase/config.js';
+import { ensureFirestoreUserProfile } from '../services/authService.js';
 import { getUser } from '../services/userService.js';
 
 /** Firebase-only user id source. */
@@ -15,11 +16,11 @@ export async function ensureGameUserFromAuth() {
     const id = getJwtUserId();
     if (!id) return null;
     try {
-        // OLD BACKEND (DISABLED - MIGRATED TO FIREBASE)
-        // const res = await fetch(`/api/user/${id}`);
-        // if (!res.ok) return null;
-        // const row = await res.json();
-        const row = await getUser(id);
+        let row = await getUser(id);
+        if (!row && auth.currentUser) {
+            await ensureFirestoreUserProfile(auth.currentUser);
+            row = await getUser(id);
+        }
         if (!row) return null;
         const gameUser = {
             uid: id,

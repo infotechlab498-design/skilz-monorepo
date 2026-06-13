@@ -19,6 +19,10 @@ import { Toaster, toast } from 'sonner';
 import ChatBox from '../lobbyPages/components/ChatBox';
 import { gameLobbyId } from '../firebase/gameLobbyPath.js';
 import { useGameConfig } from '../hooks/useGameConfig.js';
+import {
+  alertInsufficientCoinsRecharge,
+  useMergedPlayerProfile,
+} from '../hooks/useBillingAccess.js';
 
 /** Firestore `lobbies/{id}` for Ludo lobby chat — must match rules `game_*` public prefix. */
 const LUDO_FIRESTORE_CHAT_LOBBY_ID = gameLobbyId('ludo');
@@ -43,6 +47,8 @@ const LudoGameLobby = () => {
     const [searchParams] = useSearchParams();
     const friendMatchId = searchParams.get('matchId') || '';
     const { user: authUser } = useSelector((state) => state.auth);
+    const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
+    const mergedProfile = useMergedPlayerProfile();
     // coins shown as UX pre-check only — NOT authoritative
     const { coins } = useSelector((state) => state.user);
     const { entryFee: ENTRY_FEE } = useGameConfig('ludo');
@@ -80,7 +86,7 @@ const LudoGameLobby = () => {
             return;
         }
         if (coins < ENTRY_FEE) {
-            alert(`Insufficient coins! Entry fee is ${ENTRY_FEE} coins.`);
+            alertInsufficientCoinsRecharge(navigate, isAuthenticated, mergedProfile, ENTRY_FEE);
             return;
         }
         setOnlineBusy(true);
@@ -247,7 +253,12 @@ const LudoGameLobby = () => {
             ]);
             toast.success(`Invite sent to ${opponent.profile?.displayName || opponent.uid}`);
         } catch (e) {
-            setLobbyError(e?.message || 'Could not send invite');
+            const msg = e?.message || 'Could not send invite';
+            if (String(msg).toLowerCase().includes('coin')) {
+                alertInsufficientCoinsRecharge(navigate, isAuthenticated, mergedProfile, ENTRY_FEE);
+            } else {
+                setLobbyError(msg);
+            }
             friendInviteRoomIdRef.current = null;
         } finally {
             setInviteBusyUid(null);

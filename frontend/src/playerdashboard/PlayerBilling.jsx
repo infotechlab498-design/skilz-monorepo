@@ -13,6 +13,7 @@ import {
   getCards,
   updateCard,
 } from '../api/playerBillingApi.js';
+import { useRequireBillingProfile } from '../hooks/useBillingAccess.js';
 
 function formatSpend(n) {
   const x = Number(n) || 0;
@@ -26,7 +27,7 @@ function formatCoins(n) {
 
 const PlayerBilling = () => {
   const user = useSelector((s) => s.auth.user);
-  const firebaseReady = useSelector((s) => s.auth.firebaseReady);
+  const { firebaseReady, allowed } = useRequireBillingProfile('/player/billing');
   const uid = user?.uid || null;
 
   const [cards, setCards] = useState([]);
@@ -127,10 +128,12 @@ const PlayerBilling = () => {
     [uid, editingCard, refresh]
   );
 
-  if (!firebaseReady) {
+  if (!firebaseReady || !allowed) {
     return (
       <div className="player-billing-page">
-        <div className="player-billing-page__loading" role="status" aria-live="polite">Loading session…</div>
+        <div className="player-billing-page__loading" role="status" aria-live="polite">
+          {firebaseReady ? 'Redirecting to profile…' : 'Loading session…'}
+        </div>
       </div>
     );
   }

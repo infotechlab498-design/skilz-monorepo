@@ -18,6 +18,10 @@ import Layout from '../Components/Layout';
 import Guideheader from './Guideheader';
 import GuideOurGame from './GuideOurGame';
 import GuideTipsSection from './GuideTipsSection';
+import {
+  navigateToCheckoutOrGate,
+  useMergedPlayerProfile,
+} from '../hooks/useBillingAccess.js';
 import './guide.css';
 
 const scrollToSection = (id) => {
@@ -268,6 +272,7 @@ const GuideCTA = ({ onPlayNow }) => (
 const Guide = () => {
   const navigate = useNavigate();
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
+  const mergedProfile = useMergedPlayerProfile();
 
   const handleStepAction = (action) => {
     switch (action) {
@@ -275,11 +280,7 @@ const Guide = () => {
         navigate('/signup');
         break;
       case 'checkout':
-        if (!isAuthenticated) {
-          navigate('/signin', { state: { redirectTo: '/checkout' } });
-        } else {
-          navigate('/checkout');
-        }
+        navigateToCheckoutOrGate(navigate, isAuthenticated, mergedProfile);
         break;
       case 'scroll-games':
         scrollToSection('our-games');

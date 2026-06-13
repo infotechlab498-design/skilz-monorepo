@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { api } from '../services/api';
 import { useUser } from '../context/UserContext';
+import { useRequireBillingProfile } from '../hooks/useBillingAccess.js';
 import PricingCard from './PricingCard';
 import CheckoutForm from './CheckoutForm';
 import UserBalance from './UserBalance';
@@ -12,6 +13,7 @@ import Layout from '../Components/Layout';
 const CheckoutPage = () => {
     const navigate = useNavigate();
     const { user, refreshUser } = useUser();
+    const { firebaseReady, allowed } = useRequireBillingProfile('/checkout');
     const [plans, setPlans] = useState([]);
     const [selectedPlan, setSelectedPlan] = useState(null);
     const [paymentMethod, setPaymentMethod] = useState('easypaisa');
@@ -117,6 +119,15 @@ const CheckoutPage = () => {
             setProcessing(false);
         }
     };
+
+    if (!firebaseReady || !allowed) {
+        return (
+            <div className="checkout_loading">
+                <div className="checkout_spinner"></div>
+                <p>Loading Secure Checkout...</p>
+            </div>
+        );
+    }
 
     if (loading) {
         return (

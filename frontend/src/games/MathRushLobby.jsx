@@ -5,6 +5,7 @@
 
 import React, { useState, useEffect, useContext } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import { motion as Motion, AnimatePresence } from 'motion/react';
 import { signOut as firebaseSignOut } from 'firebase/auth';
 import { Zap, ChevronRight, Search, Users, Trophy, Waypoints, Target, UserPlus } from 'lucide-react';
@@ -34,6 +35,10 @@ import { gameLobbyId } from '../firebase/gameLobbyPath.js';
 import Layout from '../Components/Layout.jsx';
 import { ensureGameUserFromAuth } from '../utils/gameAuthSync.js';
 import { auth } from '../firebase/config.js';
+import {
+  promptInsufficientCoinsRecharge,
+  useMergedPlayerProfile,
+} from '../hooks/useBillingAccess.js';
 
 /** `bootstrap-json-user` legacy wrapper could return `{ success, user }`. */
 
@@ -221,6 +226,8 @@ const Lobby = () => {
 
 const MathRushGameLobby = () => {
     const navigate = useNavigate();
+    const isAuthenticated = useSelector((s) => s.auth.isAuthenticated);
+    const mergedProfile = useMergedPlayerProfile();
     const [searchParams] = useSearchParams();
     const friendMatchId = searchParams.get('matchId') || '';
     const noop = () => {};
@@ -393,7 +400,7 @@ const MathRushGameLobby = () => {
         }
 
         if (!canAffordEntryFee(profile?.coins, entryFee)) {
-            toast.error(`Insufficient coins! You need ${entryFee} coins to play.`, { icon: '💰' });
+            promptInsufficientCoinsRecharge(navigate, isAuthenticated, mergedProfile, entryFee);
             return;
         }
 
@@ -442,7 +449,7 @@ const MathRushGameLobby = () => {
             return;
         }
         if (!canAffordEntryFee(profile?.coins, entryFee)) {
-            toast.error(`Insufficient coins! You need ${entryFee} coins to play.`, { icon: '💰' });
+            promptInsufficientCoinsRecharge(navigate, isAuthenticated, mergedProfile, entryFee);
             return;
         }
         try {

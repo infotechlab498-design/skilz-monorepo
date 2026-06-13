@@ -19,7 +19,10 @@ import {
   verifyDevConsoleOtp,
   readPersistedLinkHint,
   publishAuthNotice,
+  readPendingOAuthNavigation,
+  clearPendingOAuthNavigation,
 } from "../../services/authService.js";
+import { useAuth } from "../../hooks/useAuth.js";
 
 const devOtpUiEnabled =
   import.meta.env.DEV && import.meta.env.VITE_ENABLE_DEV_CONSOLE_OTP === "true";
@@ -40,6 +43,7 @@ const SignIn = () => {
 
   const navigate = useNavigate();
   const location = useLocation();
+  const { firebaseReady, isAuthenticated } = useAuth();
   const redirectTo = location.state?.redirectTo || "/";
 
   const socialBusy = socialLoading !== "";
@@ -82,6 +86,20 @@ const SignIn = () => {
           }
     );
   }, []);
+
+  /** After OAuth redirect or email login, leave the sign-in page once Redux is hydrated. */
+  useEffect(() => {
+    if (!firebaseReady || !isAuthenticated) return;
+    const pending = readPendingOAuthNavigation();
+    if (pending) {
+      clearPendingOAuthNavigation();
+      navigate(pending, { replace: true });
+      return;
+    }
+    if (location.pathname === "/signin") {
+      navigate(redirectTo, { replace: true });
+    }
+  }, [firebaseReady, isAuthenticated, navigate, location.pathname, redirectTo]);
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -131,10 +149,13 @@ const SignIn = () => {
     setInfo("");
     setSocialLoading("google");
     try {
-      setInfo("Redirecting to Google…");
-      await signInWithGoogleRedirect(redirectTo);
-      setLinkHint(null);
-      clearPendingProviderLink();
+      setInfo(import.meta.env.DEV ? "Opening Google sign-in…" : "Redirecting to Google…");
+      const r = await signInWithGoogleRedirect(redirectTo);
+      if (r?.status === "ok" && r.navigateTo) {
+        setLinkHint(null);
+        clearPendingProviderLink();
+        navigate(r.navigateTo, { replace: true });
+      }
     } catch (err) {
       setInfo("");
       if (err instanceof RegistrationRequiredError) {
@@ -160,10 +181,13 @@ const SignIn = () => {
     setInfo("");
     setSocialLoading("facebook");
     try {
-      setInfo("Redirecting to Facebook…");
-      await signInWithFacebookRedirect(redirectTo);
-      setLinkHint(null);
-      clearPendingProviderLink();
+      setInfo(import.meta.env.DEV ? "Opening Facebook sign-in…" : "Redirecting to Facebook…");
+      const r = await signInWithFacebookRedirect(redirectTo);
+      if (r?.status === "ok" && r.navigateTo) {
+        setLinkHint(null);
+        clearPendingProviderLink();
+        navigate(r.navigateTo, { replace: true });
+      }
     } catch (err) {
       setInfo("");
       if (err instanceof RegistrationRequiredError) {

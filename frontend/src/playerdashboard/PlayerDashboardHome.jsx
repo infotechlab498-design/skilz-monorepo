@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { Coins, HandCoins, ShoppingBag, Trophy, WalletCards } from 'lucide-react';
 
 import '../Components/dashboard/dashboard.css';
@@ -8,6 +9,15 @@ import BlogCard from '../Components/dashboard/BlogCard.jsx';
 import ChartBar from '../Components/dashboard/ChartBar.jsx';
 import ChartLine from '../Components/dashboard/ChartLine.jsx';
 import { fetchPlayerDashboard } from '../api/dashboardApi.js';
+import { useMergedPlayerProfile } from '../hooks/useBillingAccess.js';
+import RechargeCoinsButton from '../Components/RechargeCoinsButton.jsx';
+import {
+  BILLING_PROFILE_PATH,
+  getProfileAttentionMessage,
+  needsProfileAttention,
+  OAUTH_SIGNUP_PROFILE_PATH,
+  resolveProfileComplete,
+} from '../utils/profileCompletion.js';
 
 const EMPTY_BAR = ['01', '02', '03', '04', '05', '06', '07', '08', '09'].map((m) => ({
   month: m,
@@ -21,9 +31,16 @@ const EMPTY_LINE = ['Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec
 }));
 
 export default function PlayerDashboardHome() {
+  const navigate = useNavigate();
   const user = useSelector((s) => s.auth.user);
   const firebaseReady = useSelector((s) => s.auth.firebaseReady);
+  const mergedProfile = useMergedPlayerProfile();
   const uid = user?.uid || null;
+  const showProfileCard = needsProfileAttention(mergedProfile);
+  const profileCardMessage = getProfileAttentionMessage(mergedProfile);
+  const profileCardPath = !resolveProfileComplete(mergedProfile)
+    ? OAUTH_SIGNUP_PROFILE_PATH
+    : BILLING_PROFILE_PATH;
 
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
@@ -94,6 +111,59 @@ export default function PlayerDashboardHome() {
       </p>
 
       {error ? <div className="dsh-em" role="status" aria-live="polite">{error}</div> : null}
+
+      {/* {showProfileCard ? (
+        <div
+          className="dsh-em"
+          role="status"
+          style={{
+            marginBottom: 16,
+            padding: '14px 16px',
+            background: '#fffbeb',
+            border: '1px solid #fcd34d',
+            borderRadius: 12,
+            color: '#92400e',
+          }}
+        >
+          <strong>Complete your profile</strong>
+          <p style={{ margin: '8px 0 12px', fontSize: 14 }}>{profileCardMessage}</p>
+          <button
+            type="button"
+            className="signup-btn"
+            style={{ margin: 0 }}
+            onClick={() => navigate(profileCardPath)}
+          >
+            Go to profile
+          </button>
+        </div>
+      ) : null} */}
+
+      {/* <div
+        style={{
+          display: 'flex',
+          flexWrap: 'wrap',
+          gap: 10,
+          marginBottom: 16,
+        }}
+      >
+        <button
+          type="button"
+          className="signup-btn"
+          style={{ margin: 0 }}
+          onClick={() => navigate('/ludoLobby')}
+        >
+          Play games
+        </button>
+        <RechargeCoinsButton label="Recharge coins" style={{ margin: 0 }} />
+        <button
+          type="button"
+          className="signup-btn"
+          style={{ margin: 0, background: '#64748b' }}
+          onClick={() => navigate(showProfileCard ? profileCardPath : '/player/profile')}
+        >
+          {showProfileCard ? 'Complete profile' : 'Edit profile'}
+        </button>
+      </div> */}
 
       <div className="dsh-st">
         <StatsCard

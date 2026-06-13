@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import { toast, Toaster } from 'sonner';
 import Layout from '../../Components/Layout';
 import { ensureGameUserFromAuth } from '../../utils/gameAuthSync.js';
@@ -16,10 +17,16 @@ import {
 import { MATCH_WINDOW_MS } from '../../../../shared/neurochain/constants.js';
 import { useGameConfig } from '../../hooks/useGameConfig.js';
 import GameEntryFeeBadge, { canAffordEntryFee } from '../../Components/GameEntryFeeBadge.jsx';
+import {
+  promptInsufficientCoinsRecharge,
+  useMergedPlayerProfile,
+} from '../../hooks/useBillingAccess.js';
 import './NeuroChainLobby.css';
 
 export default function NeuroChainLobby() {
   const navigate = useNavigate();
+  const isAuthenticated = useSelector((s) => s.auth.isAuthenticated);
+  const mergedProfile = useMergedPlayerProfile();
   const [searchParams] = useSearchParams();
   const matchIdFromUrl = searchParams.get('matchId') || '';
 
@@ -51,7 +58,7 @@ export default function NeuroChainLobby() {
       return false;
     }
     if (!canAffordEntryFee(gameUser?.coins, entryFee)) {
-      toast.error(`Insufficient coins! You need ${entryFee} coins to play.`, { icon: '💰' });
+      promptInsufficientCoinsRecharge(navigate, isAuthenticated, mergedProfile, entryFee);
       return false;
     }
     return true;

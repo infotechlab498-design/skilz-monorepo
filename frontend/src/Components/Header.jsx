@@ -5,6 +5,14 @@ import { useState, useEffect, useRef } from "react";
 import { useSelector } from "react-redux";
 import { signOutAppSession } from "../services/authService.js";
 import { useAuth } from "../hooks/useAuth.js";
+import {
+  navigateToCheckoutOrGate,
+  useMergedPlayerProfile,
+} from "../hooks/useBillingAccess.js";
+import {
+  getProfileAttentionMessage,
+  needsProfileAttention,
+} from "../utils/profileCompletion.js";
 import { ADMIN_EMAIL } from "../config/admin.js";
 import { api } from "../services/api.js";
 import logo from "../assets/skilzLogo1-p.png";
@@ -160,15 +168,33 @@ const Header = () => {
 
 
 
-  const { user: authUser, isAuthenticated } = useAuth();
+  const { user: authUser, isAuthenticated, firebaseReady, currentUser } = useAuth();
+  const mergedProfile = useMergedPlayerProfile();
+  const userProfile = useSelector((state) => state.user.profile);
   const availableCoins = Number(useSelector((state) => state.user.coins) || 0);
-  const showAuthenticated = isAuthenticated && !!authUser;
+  const playerLabel =
+    authUser?.username ||
+    userProfile?.username ||
+    authUser?.displayName ||
+    userProfile?.displayName ||
+    'Player';
+  const playerInitial = playerLabel.charAt(0).toUpperCase();
+  const showAuthenticated =
+    firebaseReady && (isAuthenticated || !!currentUser?.uid) && !!(authUser || currentUser);
+  const profileNeedsAttention =
+    showAuthenticated && needsProfileAttention(mergedProfile);
+  const profileAttentionMessage = getProfileAttentionMessage(mergedProfile);
   const isAdmin = String(authUser?.email || "").toLowerCase() === ADMIN_EMAIL;
 
   const handleLogout = async () => {
     setProfileOpen(false);
     await signOutAppSession();
     navigate("/signin");
+  };
+
+  const handleRecharge = () => {
+    setProfileOpen(false);
+    navigateToCheckoutOrGate(navigate, isAuthenticated, mergedProfile);
   };
 
   useEffect(() => {
@@ -285,12 +311,45 @@ const Header = () => {
         </div>
       ) : (
         <div className="header-user-controls">
-          <div className="header-wallet-pill" title="Available coins">
+          <div
+            className="header-wallet-pill"
+            title="Recharge coins"
+            role="button"
+            tabIndex={0}
+            onClick={handleRecharge}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                handleRecharge();
+              }
+            }}
+            style={{ cursor: 'pointer' }}
+          >
             <FontAwesomeIcon icon={faCoins} className="header-wallet-icon" />
             <span className="header-wallet-value">{availableCoins.toLocaleString()}</span>
           </div>
-          <div className="group" onClick={() => setProfileOpen(true)}>
-            <span className="text-wrapper-8">{authUser.username ? authUser.username.charAt(0).toUpperCase() : "P"}</span>
+          <div
+            className="group"
+            onClick={() => setProfileOpen(true)}
+            title={profileNeedsAttention ? profileAttentionMessage || 'Complete your profile' : 'Open profile menu'}
+            style={{ position: 'relative' }}
+          >
+            <span className="text-wrapper-8">{playerInitial}</span>
+            {profileNeedsAttention ? (
+              <span
+                aria-label="Profile incomplete"
+                style={{
+                  position: 'absolute',
+                  top: -2,
+                  right: -2,
+                  width: 10,
+                  height: 10,
+                  borderRadius: '50%',
+                  background: '#f59e0b',
+                  border: '2px solid #fff',
+                }}
+              />
+            ) : null}
             {/* <span className="header-username">{authUser.username}</span> */}
           </div>
         </div>
@@ -302,8 +361,8 @@ const Header = () => {
             <div className="profile-header">
               <div className="profile-avata">P</div>
               <div>
-                <h4>{authUser?.username || "Prime User"}</h4>
-                <p>{authUser?.email || "prime@gaming.com"}</p>
+                <h4>{playerLabel}</h4>
+                <p>{authUser?.email || userProfile?.email || currentUser?.email || ""}</p>
               </div>
               <FontAwesomeIcon
                 icon={faTimes}
@@ -313,8 +372,16 @@ const Header = () => {
             </div>
 
             <ul className="profile-menu">
-             
-          
+              <li
+                onClick={() => {
+                  navigate('/player/profile');
+                  setProfileOpen(false);
+                }}
+              >
+                <FontAwesomeIcon icon={faUser} />
+                My profile
+              </li>
+
               <li
                 onClick={() => {
                   navigate(isAdmin ? "/admin/payments" : "/player/dashboard");
@@ -344,15 +411,49 @@ const Header = () => {
         <div className="mobile-menu">
           <Link to="/" onClick={() => setMobileOpen(false)}>Home</Link>
           <Link to="/blogs" onClick={() => setMobileOpen(false)}>Blogs</Link>
-          
-          {/* <Link to="/pricing" onClick={() => setMobileOpen(false)}>Pricing</Link> */}
-
           <Link to="/leaderboard" onClick={() => setMobileOpen(false)}>Leaderboard</Link>
-
-          {/* <Link to="/guides" onClick={() => setMobileOpen(false)}>Guides</Link> */}
-
+          <Link to="/guide" onClick={() => setMobileOpen(false)}>Guides</Link>
           <Link to="/about" onClick={() => setMobileOpen(false)}>About Us</Link>
           <Link to="/contact" onClick={() => setMobileOpen(false)}>Contact Us</Link>
+          {showAuthenticated ? (
+            <>
+              <button
+                type="button"
+                className="Nav-signIn"
+                style={{ marginTop: 8 }}
+                onClick={() => {
+                  setMobileOpen(false);
+                  navigate('/player/dashboard');
+                }}
+              >
+                Player Dashboard
+              </button>
+            </>
+          ) : (
+            <>
+              <button
+                type="button"
+                className="Nav-signUp"
+                style={{ marginTop: 8 }}
+                onClick={() => {
+                  setMobileOpen(false);
+                  navigate('/signup');
+                }}
+              >
+                Sign Up
+              </button>
+              <button
+                type="button"
+                className="Nav-signIn"
+                onClick={() => {
+                  setMobileOpen(false);
+                  navigate('/signin');
+                }}
+              >
+                Login
+              </button>
+            </>
+          )}
         </div>
       )}
     </header>

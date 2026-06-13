@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback, useRef, useMemo } from 'react';
 import { useParams, useNavigate, useSearchParams } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { setUser } from '../redux/features/auth.jsx';
 import { toSerializableFirebase } from '../services/userService.js';
 import { useUser } from '../context/UserContext';
@@ -55,6 +55,11 @@ import icon5 from "/dollar.png";
 import FriendMatchSessionBanner from '../Components/friends/FriendMatchSessionBanner.jsx';
 import { callSendInvite } from '../api/cloudFunctionsApi.js';
 import { useGameConfig } from '../hooks/useGameConfig.js';
+import {
+  navigateToCheckoutOrGate,
+  useMergedPlayerProfile,
+  alertInsufficientCoinsRecharge,
+} from '../hooks/useBillingAccess.js';
 import GameEntryFeeBadge, { canAffordEntryFee } from '../Components/GameEntryFeeBadge.jsx';
 
 const GameData = {
@@ -832,6 +837,8 @@ const ResultsView = React.memo(({ score, matchStats, setView, startMatchmaking, 
 
 const ProfileView = React.memo(({ user, setView }) => {
     const navigate = useNavigate();
+    const isAuthenticated = useSelector((s) => s.auth.isAuthenticated);
+    const mergedProfile = useMergedPlayerProfile();
     return (
         <div className="profile-container">
             <header className="profile-header">
@@ -912,7 +919,12 @@ const ProfileView = React.memo(({ user, setView }) => {
                                     </div>
                                 </div>
 
-                                <button className="button" onClick={() => navigate('/checkout')}>
+                                <button
+                                    className="button"
+                                    onClick={() =>
+                                      navigateToCheckoutOrGate(navigate, isAuthenticated, mergedProfile)
+                                    }
+                                >
                                     <div className="container-4">
                                         <div className="img-wrapper">
                                             {/* <img className="img" alt="Icon" src={image} /> */}
@@ -980,6 +992,8 @@ function TriviaLobby() {
     const { title, themeColor } = gameConfig;
 
     const { user: contextUser, userId, refreshUser } = useUser();
+    const isAuthenticated = useSelector((s) => s.auth.isAuthenticated);
+    const mergedProfile = useMergedPlayerProfile();
 
     // Stable object for hooks deps (avoid new `{}` every render when contextUser is null)
 
@@ -1315,7 +1329,7 @@ function TriviaLobby() {
         }
 
         if (!canAffordEntryFee(user?.coins, entryFee)) {
-            alert(`Insufficient coins! You need ${entryFee} coins to play.`);
+            alertInsufficientCoinsRecharge(navigate, isAuthenticated, mergedProfile, entryFee);
             return;
         }
 

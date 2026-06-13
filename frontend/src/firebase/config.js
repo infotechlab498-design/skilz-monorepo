@@ -28,8 +28,12 @@ if (databaseURL) {
 const app = initializeApp(firebaseConfig);
 
 export const auth = getAuth(app);
-/** Keep session across refresh / new tabs (default, set explicitly for clarity). */
-setPersistence(auth, browserLocalPersistence).catch(() => {});
+/** Resolved before OAuth / email sign-in so sessions persist across refresh. */
+export const authPersistenceReady = setPersistence(auth, browserLocalPersistence);
+
+export async function ensureAuthPersistence() {
+  await authPersistenceReady.catch(() => {});
+}
 
 /**
  * DEV ONLY: skip real SMS when using Firebase "Phone" test numbers (Console → Authentication → Phone).

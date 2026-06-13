@@ -47,7 +47,6 @@ import NeuroChainLobby from './games/neurochain/NeuroChainLobby.jsx';
 import NeuroChainGame from './games/neurochain/NeuroChainGame.jsx';
 import CognitiveGameRoom from './games/cognitive/CognitiveGameRoom.jsx';
 
-
 function App() {
 
   return (

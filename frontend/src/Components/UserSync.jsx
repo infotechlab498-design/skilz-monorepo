@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { subscribeUserProfile } from '../services/userService.js';
+import { syncAuthUserFromFirestoreProfile } from '../services/authService.js';
 import {
   buildUserStatePayloadFromUserDoc,
   clearUser,
@@ -29,6 +30,7 @@ const UserSync = () => {
       dispatch(
         syncUserFromFirestore(buildUserStatePayloadFromUserDoc(docId, dataWithoutId))
       );
+      syncAuthUserFromFirestoreProfile(docId);
     });
 
     return () => {

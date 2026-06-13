@@ -71,6 +71,8 @@ export async function createUserProfile(p) {
 
   if (isNew) {
     payload.source = "email_signup";
+    payload.provider = "email";
+    payload.profileComplete = true;
     payload.coins = 200;
     payload.xp = 0;
     payload.level = 1;
@@ -80,6 +82,8 @@ export async function createUserProfile(p) {
     payload.games = cloneGamesDefaults();
     payload.stats = { ...DEFAULT_USER_STATS, ...DEFAULT_USER_STATS_EXTRA };
     payload.createdAt = serverTimestamp();
+  } else {
+    payload.profileComplete = true;
   }
 
   await setDoc(ref, payload, { merge: true });

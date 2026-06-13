@@ -223,6 +223,25 @@
   border-color: rgba(251, 188, 5, 0.2);
 }
 
+.Math-Rush-recharge-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: 8px;
+  padding: 6px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(251, 188, 5, 0.35);
+  background: rgba(251, 188, 5, 0.12);
+  color: #fbbc05;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.Math-Rush-recharge-btn:hover {
+  background: rgba(251, 188, 5, 0.2);
+}
+
 .Math-Rush-coin-icon {
   width: 16px;
   height: 16px;

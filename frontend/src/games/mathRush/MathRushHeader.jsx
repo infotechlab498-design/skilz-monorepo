@@ -1,11 +1,19 @@
 import React, { useContext } from 'react'
 import { motion } from 'motion/react';
-import { Star, Menu } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Star, Menu, Plus } from 'lucide-react';
+import { Link, useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import { AuthContext, GameContext } from './contexts';
+import {
+  navigateToCheckoutOrGate,
+  useMergedPlayerProfile,
+} from '../../hooks/useBillingAccess.js';
 import './styles/lobby.css';
 
 export default function MathRushHeader({ lobbyMode = false }) {
+    const navigate = useNavigate();
+    const isAuthenticated = useSelector((s) => s.auth.isAuthenticated);
+    const mergedProfile = useMergedPlayerProfile();
     const authContext = useContext(AuthContext);
     const gameContext = useContext(GameContext);
     if (!authContext || !gameContext) return null;
@@ -49,6 +57,20 @@ export default function MathRushHeader({ lobbyMode = false }) {
                             <Star className="Math-Rush-coin-icon" />
                             <span className="Math-Rush-coin-v">{profile?.coins ?? 0}</span>
                         </div>
+
+                        {lobbyMode ? (
+                            <button
+                                type="button"
+                                className="Math-Rush-recharge-btn"
+                                title="Recharge coins"
+                                onClick={() =>
+                                  navigateToCheckoutOrGate(navigate, isAuthenticated, mergedProfile)
+                                }
+                            >
+                                <Plus size={14} />
+                                <span>Recharge</span>
+                            </button>
+                        ) : null}
 
                         <div className="Math-Rush-xp-box">
                             <div className="Math-Rush-xp-header">

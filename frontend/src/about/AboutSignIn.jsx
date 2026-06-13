@@ -94,8 +94,11 @@ function AboutSignIn() {
     setInfo("");
     setSocialLoading(true);
     try {
-      setInfo("Redirecting to Google...");
-      await signInWithGoogleRedirect(redirectTo);
+      setInfo(import.meta.env.DEV ? "Opening Google sign-in…" : "Redirecting to Google…");
+      const r = await signInWithGoogleRedirect(redirectTo);
+      if (r?.status === "ok" && r.navigateTo) {
+        navigate(r.navigateTo, { replace: true });
+      }
     } catch (err) {
       setInfo("");
       if (err instanceof RegistrationRequiredError) {
